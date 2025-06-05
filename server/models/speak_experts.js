@@ -1,18 +1,13 @@
 const Sequelize = require('sequelize');
-module.exports = function (sequelize, DataTypes) {
-  return sequelize.define('contact_us', {
+module.exports = function(sequelize, DataTypes) {
+  return sequelize.define('speak_experts', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    first_name: {
-      type: DataTypes.STRING(50),
-      allowNull: false,
-      defaultValue: ""
-    },
-    last_name: {
+    fullname: {
       type: DataTypes.STRING(50),
       allowNull: false,
       defaultValue: ""
@@ -26,6 +21,11 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BIGINT,
       allowNull: false,
       defaultValue: 0
+    },
+    company_name: {
+      type: DataTypes.STRING(70),
+      allowNull: false,
+      defaultValue: ""
     },
     job_title: {
       type: DataTypes.INTEGER,
@@ -41,18 +41,24 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    date: {
+    budget: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0
-    },
-    time: {
-      type: DataTypes.TIME,
-      allowNull: false,
-    },
+    }
   }, {
     sequelize,
-    tableName: 'contact_us',
-    timestamps: true
+    tableName: 'speak_experts',
+    timestamps: true,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
   });
 };

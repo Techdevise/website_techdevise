@@ -22,20 +22,18 @@ function Portfolio() {
       id: 1,
       title: "AVB Marketing",
       logo: AVBM,
-      // logoBg:"bg-[#F6D083]",
       description:
         "AVB Marketing can help your business dominate the industry with marketing and technology solutions that secure independent retail success.",
       link: "https://www.avbmarketing.com",
       platform: "Wordpress",
       image: Avg,
       gradient: "bg-gradient-to-r from-green-100 to-white",
-      layout: "image-left ",
+      layout: "image-left",
     },
     {
       id: 2,
       title: "Bubbles Wholesale",
       logo: Bubbles2,
-      //  logoBg:"bg-[#F6D083]",
       description:
         "Eureka Telecom was incorporated to bring innovation in the telecommunication industry by offering modernized telecom services.",
       link: "https://www.bubbleswholesale.com",
@@ -48,7 +46,6 @@ function Portfolio() {
       id: 3,
       title: "Mr.Refurb",
       logo: Refrub2,
-      //    logoBg:"bg-[#F6D083]",
       description:
         "Dear Customers and Partners, We warmly welcome you to Mr-Refurb, your preferred destination for high-quality, professionally refurbished hardware.",
       link: "https://mr-refurb.nl/",
@@ -61,7 +58,6 @@ function Portfolio() {
       id: 4,
       title: "TERLING FOREVER",
       logo: TERLING,
-      //   logoBg:"bg-[#F6D083]",
       description:
         "Sterling Forever was born from the belief that everyone deserves access to exquisite jewelry, without ever having to compromise on quality.",
       link: "www.sterlingforever.com",
@@ -74,7 +70,6 @@ function Portfolio() {
       id: 5,
       title: "IENGCO",
       logo: IENGCO,
-      //  logoBg:"bg-[#F6D083]",
       description:
         "Our expertise spans from initial concept development to detailed design, ensuring every aspect of your project is meticulously planned and executed.",
       link: "https://iengco.com/",
@@ -87,7 +82,6 @@ function Portfolio() {
       id: 6,
       title: "Pediatric",
       logo: Pediatric2,
-      //   logoBg: "bg-[#F6D083]",
       description:
         "Pediatric Therapy Associates is a kids focused therapy place. We are a multi-disciplinary group with the singular focus of developing your child to the fullest.",
       link: "www.therapypediatric.com",
@@ -99,7 +93,7 @@ function Portfolio() {
   ];
 
   return (
-    <div className="flex-grow bg-white relative overflow-hidden ">
+    <div className="flex-grow bg-white relative overflow-hidden">
       {/* Hero Section */}
       <div
         className="w-full h-[546px] bg-[#061611] bg-cover bg-center flex items-center justify-center text-white font-Montserrat px-4 relative"
@@ -116,7 +110,7 @@ function Portfolio() {
       </div>
 
       {/* Portfolio Content */}
-      <div className="py-16 px-0 md:px-15 bg-white w-auto mx-auto">
+      <div className="py-16 px-4 md:px-15 bg-white w-full">
         {/* Filter Buttons */}
         <div className="flex flex-wrap gap-4 justify-center mb-12">
           {["All", "Design", "Development", "Ideas", "Technology"].map(
@@ -137,15 +131,11 @@ function Portfolio() {
         </div>
 
         {/* Portfolio Items */}
-        <div className="space-y-8   ">
+        <div className="space-y-8 w-full">
           {portfolioItems.map((item) => (
-            <div
+            <div 
               key={item.id}
-              className={`flex flex-col ${
-                item.layout === "image-right"
-                  ? "lg:flex-row-reverse"
-                  : "lg:flex-row"
-              } items-center gap-6 p-6 rounded-xl w-full mx-auto`}
+              className="w-full flex justify-center"
               style={{
                 background: item.gradient.includes("linear-gradient")
                   ? item.gradient
@@ -155,71 +145,74 @@ function Portfolio() {
                   : "transparent",
               }}
             >
-                {/* <div  className="w"> */}
-              <div className="w-full lg:w-1/2 flex-shrink-0 pl-24 ms-8  ">
-                <img
-                  src={item.image}
-                  alt={`${item.title} Website`}
-                  className="rounded-lg"
-                />
-              </div>
+              <div className={`flex flex-col ${
+                item.layout === "image-right"
+                  ? "lg:flex-row-reverse"
+                  : "lg:flex-row"
+              } items-center gap-8 p-8 rounded-xl w-[1680px] max-w-full mx-auto`}>
+                {/* Image Section */}
+                <div className="w-full lg:w-1/2 flex-shrink-0">
+                  <img
+                    src={item.image}
+                    alt={`${item.title} Website`}
+                    className="rounded-lg w-full h-auto"
+                  />
+                </div>
 
-              {/* Content */}
-              <div className="w-auto lg:w-1/2 p-4 md:p-12 pr-24  items-center justify-center">
-                <h3 className="font-bold text-xl md:text-2xl text-gray-900 mb-4">
-                  {item.logo && (
-                    <img
-                      src={item.logo}
-                      alt={`${item.title} logo`}
-                      className={``}
-                    />
-                  )}
-                </h3>
-                <p className="text-gray-700 mb-6 text-base md:text-xl leading-relaxed ">
-                  {item.description}
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <h2
-                      className="font-semibold text-gray-800 mb-1 text-lg"
-                      style={{
-                        background:
-                          "linear-gradient(to right, #157B6C, #061611)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                      }}
-                    >
-                      Website Link
-                    </h2>
-                    <a
-                      href={item.link}
-                      className="text-green-800 hover:underline break-all"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.link}
-                    </a>
+                {/* Content Section */}
+                <div className="w-full lg:w-1/2 p-4 md:p-8">
+                  <div className="mb-4">
+                    {item.logo && (
+                      <img
+                        src={item.logo}
+                        alt={`${item.title} logo`}
+                        className="max-h-12 mb-4"
+                      />
+                    )}
                   </div>
-                  <div>
-                    <h2
-                      className="font-semibold text-gray-800 mb-1 text-lg"
-                      style={{
-                        background:
-                          "linear-gradient(to right, #157B6C, #061611)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                      }}
-                    >
-                      Platform
-                    </h2>
-                    <p>{item.platform}</p>
+                  <p className="text-gray-700 mb-6 text-base md:text-lg leading-relaxed">
+                    {item.description}
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <h2
+                        className="font-semibold text-gray-800 mb-1 text-lg"
+                        style={{
+                          background: "linear-gradient(to right, #157B6C, #061611)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        }}
+                      >
+                        Website Link
+                      </h2>
+                      <a
+                        href={item.link}
+                        className="text-green-800 hover:underline break-all"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.link}
+                      </a>
+                    </div>
+                    <div>
+                      <h2
+                        className="font-semibold text-gray-800 mb-1 text-lg"
+                        style={{
+                          background: "linear-gradient(to right, #157B6C, #061611)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        }}
+                      >
+                        Platform
+                      </h2>
+                      <p>{item.platform}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              </div>
-            // </div>
+            </div>
           ))}
         </div>
       </div>
