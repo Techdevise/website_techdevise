@@ -1,0 +1,25 @@
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .social_mmedia{
+       padding-left: 5.1rem;
+       padding-right: 4.5rem;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+    .social_mmedia {
+        width: 94% !important;
+       
+    }
+  
+  }
+  
+  @media only screen and (min-width: 1280px) and (max-width: 1600px) {
+    /* Larger laptops like 15", 15.6" */
+    .social_mmedia {
+        width: 94% !important;
+       
+    }
+ 
+  }
+  

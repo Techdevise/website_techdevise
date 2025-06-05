@@ -1,0 +1,11 @@
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+.dropdownStyle {
+    position: fixed;
+    top: 53px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1369px;
+    z-index: 100;
+}
+}

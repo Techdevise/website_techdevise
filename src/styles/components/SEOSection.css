@@ -1,0 +1,27 @@
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .seo_image{
+        width: 100%;
+    }
+    .seo-title {
+      font-size: 36px !important;
+    }
+  }
+  
+  @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+    .seo_secction{
+        width: 90% !important;
+    }
+    .seo-title {
+      font-size: 42px !important;
+    }
+  }
+  
+  @media only screen and (min-width: 1281px) and (max-width: 1600px) {
+    .seo_secction{
+        width: 90% !important;
+    }
+    .seo-title {
+      font-size: 46px !important;
+    }
+  }
+  

@@ -1,0 +1,19 @@
+@media only screen and (max-width:767px) and (min-width:0px){
+    .android_main {
+        height: auto;
+    }
+    .new_text_min{
+        height: auto !important;
+    }
+    .new_txxt {
+        font-size: 31px;
+        line-height: 41px !important;
+    }
+    .Androidlandingbanner  {
+        width: 100%;
+        height: auto;
+    }
+    }
+
+
+    

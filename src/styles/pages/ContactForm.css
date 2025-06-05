@@ -1,0 +1,60 @@
+.budget-bg {
+    background: rgb(15 38 30 / var(--tw-bg-opacity, 1));
+    padding: 10px;
+    border: 1px solid rgb(82 157 146 / var(--tw-border-opacity, 1));
+    border-radius: 10px;
+}
+
+@media only screen and (max-width:767px) and (min-width:0px){
+.contact-wrapper {
+    margin: 0 20px 0 20px !important;
+    padding: 11px 15px 11px 15px;
+}
+.contact_form {
+    display: block !important;
+}
+.contact_form input {
+    margin-top: 20px;
+}
+.contact_form select {
+    margin-top: 20px;
+}
+.budget-bg.col-span-2 {
+    margin-top: 20px;
+}
+.contact_form
+ textarea {
+    margin-top: 20px;
+}
+
+}
+
+/* Custom laptop-specific fine-tuning for 13" to 15.6" screens */
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .contact-wrapper {
+  }
+
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+  .contact-wrapper {
+    width: 90%;
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  .contact-wrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+ .partner_form {
+    font-size: 24px;
+    line-height: 38px;
+ }
+}
+
+
+

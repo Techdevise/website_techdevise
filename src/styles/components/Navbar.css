@@ -1,0 +1,155 @@
+
+.nav_head {
+    /* border-bottom: 1px solid #2d4642; */
+    transition: all 0.3s ease;
+    /* z-index: 999; */
+    padding: 43px 0 53px 0 !important;
+    position: fixed !important;
+    margin: 0 auto;
+    /* width: 1670px; */
+    /* width: 100%; */
+    left: 0;
+    right: 0;
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.nav_head {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    /* border-radius: 0px 0px 11px 10px; */
+    padding: 55px 40px 55px 40px !important;
+    /* padding:  20px 17px 20px !important; */
+}
+
+.nav_head_home {
+    border-bottom: 1px solid #2d4642;
+    
+  }
+ 
+  /* Navbar.css */
+.nav_head {
+  transition: background-color 0.3s ease;
+}
+
+.nav_head_home {
+  background-color: transparent;
+}
+
+.nav_head_radius {
+  /* border-radius: 20px; */
+}
+
+/* Dropdown styles */
+.absolute {
+  position: absolute;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styles */
+button {
+  cursor: pointer;
+}
+/* Add these responsive styles to your existing Navbar.css */
+
+/* Base styles */
+.nav_head {
+  transition: all 0.3s ease;
+}
+
+/* .nav_head_home {
+  background-color: transparent;
+} */
+
+.nav_head_radius {
+  border-radius: 15px;
+}
+
+/* Services dropdown positioning */
+
+/* Mobile styles */
+@media only screen and (max-width: 767px) and (min-width: 0px) {
+  .nav_head {
+    height: 70px !important;
+    padding: 0 16px !important;
+  }
+
+  .nav_head_radius {
+    border-radius: 0;
+  }
+
+}
+
+
+/* Tablet styles */
+/* Tablet styles (768px-1024px) */
+/* @media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .nav_head {
+    width: 90% !important;
+    height: 75px !important;
+    padding: 0 20px !important;
+  }
+} */
+
+/* Small laptop styles (1025px-1280px) */
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .nav_head {
+    width: 90% !important;
+    height: 78px !important;
+    padding: 0 25px !important;
+  }
+
+}
+
+/* Medium to large laptop styles (1281px-1600px) */
+@media only screen and (max-width: 1600px) and (min-width: 1281px) {
+  .nav_head {
+    width: 90% !important;
+    height: 80px !important;
+    padding: 0 30px !important;
+  }
+}
+
+/* Large screens (1601px+) */
+@media only screen and (min-width: 1601px) {
+  .nav_head {
+    width: 100% !important;
+    height: 82px !important;
+    padding: 10 40px !important;
+  }
+}
+
+/* Animation for mobile menu */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-open {
+  animation: slideDown 0.3s ease forwards;
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+  .nav_head {
+  padding: 50px 44px 59px 37px !important;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+.nav_headding {
+  font-size: 16px !important;
+}
+}

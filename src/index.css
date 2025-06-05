@@ -1,0 +1,82 @@
+@import "tailwindcss";
+/* In your main CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+/* @import './styles/global.css'; */
+
+
+
+
+@keyframes scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+}
+
+.animation-paused {
+  animation-play-state: paused;
+}
+
+@keyframes ping-slow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.animate-ping-slow {
+  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@layer utilities {
+  .location-flag:nth-child(1) {
+    @apply mr-5; 
+  }
+}
+/* @layer utilities {
+  .location-flag:nth-child(3) {
+    @apply mr-20; 
+  }
+} */
+
+/* Add this in your global CSS */
+@media screen and (max-width: 1440px) and (min-width: 1360px) {
+  .w-macbook {
+    width: 90% !important;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+  .laptop-margin {
+    margin-left: 2rem !important; /* 2rem = 32px */
+  }
+}
+
+
+
+
+  .homepage-body {
+    background-color: #061611 !important;
+  }
+
+
+  html, body {
+    overflow-x: hidden;
+  }
+
+
+  
+  
+
+
+  
+
+
+
+
+
+  

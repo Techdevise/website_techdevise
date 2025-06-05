@@ -1,0 +1,112 @@
+.innovate {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100% !important;
+    border: 1px solid #525d5a;
+    border-radius: 23px;
+}
+
+.innovate_sol {
+    width: 1680px;
+}
+.main_first {
+    width: 59%;
+}
+
+.second_main {
+    width: 40%;
+}
+
+.second_main img {
+    height: 437px;
+    object-fit: cover;
+}
+@media only screen and (max-width:767px) and (min-width:0px){
+    .main_first {
+        margin: 25px 13px 22px 13px;
+        width: 100%;
+    }
+    
+    .innovate_sol h1 {
+        font-size: 25px;
+        width: 100%;
+    }
+    .innovate {
+        padding: 0 !important;
+    }
+    .innovate_sol {
+        height: auto;
+        width: 90%;
+    }
+
+    .relative.w-\[577px\].h-\[454px\].bg-\[\#11211C\].rounded-3xl.p-8 {
+        width: 100%;
+        height: auto;
+        padding: 22px 17px 22px 17px;
+    }
+    
+    .second_main {
+        margin: 7px 16px 22px 16px;
+        width: 100%;
+    }
+    .second_main img {
+        height: auto;
+    }
+}
+@media only screen and (max-width:1024px) and (min-width:768px){
+    .innovate_sol h1 {
+        font-size: 25px;
+        width: 100%;
+    }
+    .innovate {
+        padding: 0;
+    }
+    .innovate_sol {
+        height: auto;
+    }
+    .relative.w-\[577px\].h-\[454px\].bg-\[\#11211C\].rounded-3xl.p-8 {
+        width: 100%;
+        height: auto;
+        padding: 22px 17px 22px 17px;
+    }
+    
+    .second_main {
+        margin: 7px 16px 22px 16px;
+    }
+    .second_main .relative.w-\[577px\].h-\[454px\].bg-\[\#11211C\].rounded-3xl.p-8 {
+        width: 100%;
+        height: 626px;
+        padding: 22px 17px 22px 17px;
+        margin-top: 25px;
+    }
+    .main_first {
+        margin: 25px 13px 22px 13px !Important;
+        width: 45% !important;
+    }
+    .second_main {
+        width: 45%;
+    }
+    .second_main img {
+        object-fit: contain;
+    }
+}
+.baner_space{
+    width: 90% !important;
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+    .innovate_sol {
+      width: 90%; 
+    }
+    
+  }
+
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+    .tech_dessc {
+     font-size: 16px !important;
+     
+    }
+  }
+  
+  

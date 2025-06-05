@@ -1,0 +1,78 @@
+.mask_group {
+    margin: 0 auto;
+    margin-top: 20px;
+    
+}
+tech_solution {
+    overflow-x: scroll;
+    scrollbar-width: none; 
+}
+
+.tech_solution::-webkit-scrollbar {
+    display: none; 
+  }
+  .tech_solution {
+    overflow-x: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    .responsive-style {
+      width: 100%;
+      font-size: 16px;
+    }
+    .mask_group {
+      width: 90% !important;
+      max-width: 100% !important;
+      padding: 19px 23px 0 23px !important;
+  }
+  
+  }
+  /* In your TechSolutions.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+
+/* Tablets: 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+ 
+}
+
+/* Laptops: 1025px to 1440px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+ 
+  
+}
+
+/* Large Screens: 1441px+ */
+/* @media (min-width: 1441px) {
+  .mask_group {
+    width: 90%;
+
+  }
+}
+@media screen and (max-width: 1440px) and (min-width: 1280px) {
+  .w-macbook {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1360px) {
+  .mask_group {
+    width: 90%;
+  }
+} */
+
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+  .mask_group {
+    width: 90% !important;
+  }
+}
+
+  
+  

@@ -1,0 +1,70 @@
+.arrow_new {
+    position: relative;
+    bottom: 38px;
+}
+.abc {
+    min-height: 363px;
+}
+.main_test img {
+    height: 320px;
+    
+}
+.abc:nth-child(1) {
+    padding-top: 21px;
+}
+.abc:nth-child(3) div {
+    padding-top: 14px;
+}
+.test_monial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 0px) {
+    .test_nomials {
+      width: 100% !important;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .test_nomials {
+      width: 100% !important;
+    }
+  }
+  
+  /* @media only screen and (max-width: 1280px) and (min-width: 1025px) {
+    .test_nomials {
+      width: 100% !important;
+    }
+  } */
+  /* @media only screen and (max-width:1440px) and (min-width:1281px){
+    .test_nomials {
+      width: 90% !important;
+  }
+  } */
+  
+  /* @media only screen and (max-width: 1600px) and (min-width: 1281px) {
+    .test_nomials {
+      width: 90%;
+      
+    }
+  } */
+  /* @media screen and (max-width: 1440px) and (min-width: 1280px) {
+    .wtest-macbook {
+      width: 90% !important;
+    }
+  } */
+  
+  @media screen and (min-width: 1280px) and (max-width: 1600px) {
+    .test_nomials {
+      width: 90% !important;
+    }
+    .testingg_img {
+      min-height: 320px !important;
+
+    }
+  }
+  

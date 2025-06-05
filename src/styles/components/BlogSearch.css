@@ -1,0 +1,42 @@
+@media only screen and (max-width:767px) and (min-width:0px){
+    .blog_pge {
+        width: 100% !important;
+        height: auto;
+    }
+.blo_ge1 {
+    width: 100% !important;
+    height: auto;
+}
+.flex.items-center.h-\[56px\].opacity-100.bg-gray-100.rounded-full.shadow-md.px-4.py-3.w-full.mt-10 {
+    margin: 19px;
+    width: 90% !important;
+}
+}
+@media only screen and (max-width:1024px) and (min-width:768px){
+    .blog_pge {
+        width: 100% !important;
+        height: auto;
+    }
+.blo_ge1 {
+    width: 100% !important;
+    height: auto;
+}
+.flex.items-center.h-\[56px\].opacity-100.bg-gray-100.rounded-full.shadow-md.px-4.py-3.w-full.mt-10 {
+    width: 95% !important;
+    margin: 30px auto !important;
+}
+}
+@media only screen and (max-width:1280px) and (min-width:1024px){
+    .blog_pge {
+        width: 100% !important;
+        height: auto;
+    }
+.blo_ge1 {
+    width: 100% !important;
+    height: auto;
+}
+.flex.items-center.h-\[56px\].opacity-100.bg-gray-100.rounded-full.shadow-md.px-4.py-3.w-full.mt-10 {
+    width: 95% !important;
+    margin: 30px auto !important;
+}
+}

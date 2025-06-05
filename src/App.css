@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@theme {
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xl: 100rem;
+  --breakpoint-3xl: 120rem;
+}
+
+/* Additional styles to ensure proper image positioning */
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card .image-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.homepage-body {
+  background-color: #061611;
+}
+
+
+

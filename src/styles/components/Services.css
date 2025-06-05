@@ -1,0 +1,46 @@
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #f5f8fa; 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .services-content {
+    flex: 1;
+    padding: 20px;
+    background: #2c7d7f; 
+    color: white; 
+    border-radius: 8px 0 0 8px; 
+  }
+  
+  .services-list {
+    margin-top: 20px;
+  }
+  
+  .services-list ul,
+  .additional-services ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .services-list li,
+  .additional-services li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .additional-services {
+    flex: 1;
+    padding: 20px;
+    background: #ffffff; 
+    border-radius: 0 8px 8px 0; 
+    border-left: 1px solid #e5e5e5; 
+  }
+  
+  h2,
+  h3 {
+    margin: 0;
+  }

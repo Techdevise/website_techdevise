@@ -1,0 +1,99 @@
+@media only screen and (max-width:767px) and (min-width:0px){
+    .detl_blog {
+        height: auto;
+    }
+    .detl_blog h2 {
+        height: auto;
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 27px;
+    }
+    .img_detl img {
+        height: auto;
+        width: 90% !important;
+    }
+    .rec_blog h2 {
+        text-align: center;
+    }
+    .rec_blog1 div {
+        margin-top: 20px;
+    }
+    .rec_blog {
+        width: 90% !important;
+        height: auto;
+    }
+    .rec_blog1 div img {
+        width: 100% !important;
+    }
+    .rec_blog1 {
+        display: block !important;
+    }
+    }
+    @media only screen and (max-width:1024px) and (min-width:768px){
+        .detl_blog {
+            height: auto;
+            width: 90%;
+        }
+        .detl_blog h2 {
+            height: auto;
+            font-size: 30px;
+            line-height: 40px;
+            margin-bottom: 27px;
+        }
+        .img_detl img {
+            height: auto;
+            width: 90% !important;
+        }
+        .rec_blog h2 {
+            text-align: center;
+        }
+        .rec_blog1 div {
+            margin-top: 20px;
+        }
+        .rec_blog {
+            width: 90% !important;
+            height: auto;
+        }
+        .rec_blog1 div img {
+            width: 100% !important;
+        }
+        .rec_blog1 {
+            display: block;
+        }
+        .smm_comm {
+            padding: 0 !important;
+            width: 90%;
+            margin: 36px auto;
+        }
+        }
+        @media only screen and (max-width:1700px) and (min-width:1025px){
+            .detl_blog {
+                height: auto;
+                width: 90%;
+            }
+            .detl_blog h2 {
+                height: auto;
+                font-size: 30px;
+                line-height: 40px;
+                margin-bottom: 27px;
+            }
+            .img_detl img {
+                height: auto;
+                width: 90% !important;
+            }
+            .rec_blog h2 {
+                text-align: center;
+            }
+            .rec_blog {
+                width: 90% !important;
+                height: auto;
+            }
+            .rec_blog1 div img {
+                width: 100% !important;
+            }
+            .smm_comm {
+                padding: 0 !important;
+                width: 90%;
+                margin: 36px auto;
+            }
+            }

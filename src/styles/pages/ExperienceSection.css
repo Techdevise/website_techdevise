@@ -1,0 +1,119 @@
+.custom-card {
+    width: 100% !important;
+}
+.custom-cards{
+    width: 42% !important;
+    margin-top: 40px;
+}
+.new_post {
+    rotate: 90deg;
+}
+@media only screen and (max-width:767px) and (min-width:0px){
+    .main_head_ing h1 {
+        font-size: 40px;
+    }
+    .main_head_ing {
+        margin: 0 0 25px 0 !important;
+    }
+    .main_head_ing p {
+        font-size: 16px;
+        line-height: 28px;
+        margin: 15px 0 0 0 !important;
+    }
+    .custom-cards {
+        width: 100% !important;
+        margin-top: 0px !important;
+    }
+    .new_col_mn {
+        width: 100% !important;
+    }
+    .crds_pla {
+        margin-top: 10px;
+    }
+    .new_post {
+        rotate: 90deg;
+        display: none;
+    }
+}
+@media only screen and (max-width:1024px) and (min-width:768px){
+    .years {
+        width: 100% !important;
+    }
+    .custom-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: space-between;
+    }
+    .new_col_mn {
+        width: 100%;
+    }
+    .new_continer {
+        display: block !important;
+    }
+    .custom-cards {
+        width: 100% !important;
+        margin-top: 40px;
+    }
+    .main_head_ing p {
+        max-width: 100% !important;
+    }
+    .crds_pla {
+        width: 90% !important;
+    }
+}
+@media only screen and (max-width:1280px) and (min-width:1025px){
+    .new_col_mn {
+        width: 100% !important;
+    }
+    .main_head_ing {
+        margin-bottom: 20px !important ;
+    }
+    .custom-cards {
+        margin-top: 60px !important;
+    }
+    .new_col_mn span:nth-child(2) {
+        font-size: 19px !important;
+    }
+    .new_post {
+        rotate: 89deg !important;
+    }
+    .new_post h1 {
+        position: relative !important;
+        bottom: 67px !important;
+    }
+    .new_col_mn div span {
+        text-align: center !important;
+        font-size: 18px !important;
+    }
+    .crds_pla {
+        width: 90% !important;
+    }
+}
+@media only screen and (max-width:1600px) and (min-width:1281px){
+    .new_col_mn {
+        width: 100% !important;
+    }
+    .main_head_ing {
+        margin-bottom: 78px !important;
+    }
+    .custom-cards {
+        margin-top: 60px !important;
+    }
+    .new_col_mn span:nth-child(2) {
+        font-size: 19px !important;
+    }
+    .new_post {
+        rotate: 90deg !important;
+    }
+    .new_post h1 {
+        position: relative !important;
+        bottom: 7px !important;
+    }
+    .new_col_mn div span {
+        text-align: center !important;
+        font-size: 18px !important;
+    }
+    .crds_pla {
+        width: 90% !important;
+    }
+}

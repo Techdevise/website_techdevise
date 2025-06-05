@@ -1,0 +1,106 @@
+@media only screen and (max-width:767px) and (min-width:0px){
+    .stats_block {
+        width: 90% !important;
+        height: auto !important;
+        padding: 50px 0 0 0 !important;
+        margin-bottom: 50px;
+    }
+    .stats_block1 {
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .new_flex_stat {
+        display: block !important;
+    }
+    .fist_stat {
+        width: 100%;
+        margin-top: 24px;
+    }
+    .new_flex_stat {
+        display: block !important;
+        width: 90% !important;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+}
+@media only screen and (max-width:1024px) and (min-width:768px){
+    .stats_block {
+        width: 90% !important;
+        height: auto;
+        padding: 50px 0 0 0 !important;
+        margin-bottom: 40px;
+    }
+    .stats_block1 {
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .new_flex_stat {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content:space-between ;
+    }
+    .fist_stat {
+        width: 48% !important;
+        margin-top: 24px;
+    }
+    .new_flex_stat {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+}
+@media only screen and (max-width:1280px) and (min-width:1025px){
+    .stats_block {
+        width: 90%;
+        height: auto;
+        padding: 50px 0 0 0 !important;
+        margin-bottom: 100px;
+    }
+    .stats_block1 {
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .new_flex_stat {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content:space-between ;
+    }
+    .fist_stat {
+        width: 48% !important;
+        margin-top: 24px;
+    }
+    .new_flex_stat {
+     
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+}
+@media only screen and (max-width:1600px) and (min-width:1281px){
+    .stats_block {
+        width: 90%;
+        height: auto;
+        padding: 50px 0 0 0 !important;
+        margin-bottom: 100px;
+    }
+    .stats_block1 {
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .new_flex_stat {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content:space-between ;
+    }
+    .fist_stat {
+        width: 23% !important;
+        margin-top: 24px;
+    }
+    .new_flex_stat {
+        display: block !important;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,103 @@
+/* BlockchainServices.css */
+
+/* Base styles */
+.blockchain-wrapper {
+  max-width: 100%;
+  height: auto;
+}
+
+.blockchain-img1 {
+  mix-blend-mode: luminosity;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile First Approach */
+@media only screen and (max-width: 767px) {
+  .block_chain {
+  
+  }
+
+  .blockchain {
+
+
+  }
+
+  .card_correct {
+    margin-top: 7rem !important;
+  }
+
+  .blockchain-img1 {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* Tablets and Small Laptops */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .block_chain {
+  
+  }
+
+  .blockchain {
+    font-size: 2.5rem !important;
+  }
+
+  .blockchain-img1 {
+    max-width: 90%;
+  }
+}
+
+/* Medium Laptops */
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .block_chain {
+  
+  }
+
+  .blockchain {
+  }
+}
+/* Add this in your global CSS */
+/* @media screen and (max-width: 1440px) and (min-width: 1280px) {
+  .block_chain {
+    width: 94% !important;
+  }
+} */
+
+
+/* Large Screens */
+/* @media only screen and (min-width: 1281px) and (max-width: 1600px) {
+  .block_chain {
+    width: 94%;
+    
+  }
+} */
+
+/* Extra Large Screens */
+/* @media only screen and (min-width: 1601px) {
+  .block_chain {
+  
+  }
+} */
+
+/* Special Adjustments for 13-15.6" Laptops */
+/* @media only screen and (min-width: 1281px) and (max-width: 1440px) {
+  .blockchain {
+  
+  }
+  
+} */
+
+/* Height Adjustments for Taller Screens */
+/* @media (min-height: 800px) {
+  .block_chain {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+} */
+
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+  .block_chain {
+    width: 94% !important;
+  }
+}

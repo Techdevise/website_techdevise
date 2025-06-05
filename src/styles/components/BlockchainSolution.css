@@ -1,0 +1,41 @@
+.blockchain-img {
+    mix-blend-mode: luminosity !important;
+    /* position: relative; */
+    z-index: 1;
+  }
+
+  .vector-image {
+    mix-blend-mode: luminosity !important;
+
+
+  }
+
+  /* Add to your CSS file */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* .service-carousel {
+  margin-top: 70px !important;
+} */
+
+/* Add any additional custom CSS here if needed */
+@media (max-width: 768px) {
+  .blockchain-img img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .vector-image {
+    display: none;
+  }
+}
+
+
+  
