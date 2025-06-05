@@ -29,7 +29,6 @@ import Line from '../assets/Line.png'
 import ContactForm from './ContactForm';
 import LocationSection from './LocationSection';
 import ExperienceSection from './ExperienceSection';
-import LocationSection1 from '../components/LoctionSection1';
 
 gsap.registerPlugin(TextPlugin);
 function Homepage() {
@@ -267,8 +266,8 @@ function Homepage() {
         <ContactForm />
 
       </div>
-      <div className="relative bg-[#061611]">
-        <LocationSection1 />
+      <div className="relative">
+        <LocationSection />
       </div>
 
       {/* Add extra space to prevent overlap */}

@@ -38,9 +38,9 @@ const LocationSection1 = () => {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div className={`relative w-full py-20 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-black" : "bg-white text-black"}`}>
+    <div className={`relative w-full pt-20 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-black" : "bg-white text-black"}`}>
       {/* Header */}
-      <div className="relative z-10 text-center mb-40">
+      <div className="relative z-10 text-center mb-20">
         <h3 className="text-[#00C2A8] text-xl font-semibold mb-3">Location</h3>
        <h2
           className={`text-4xl md:text-5xl font-extrabold font-Montserrat mb-4 ${isHomePage ? 'text-white' : 'text-gray-800'
@@ -77,13 +77,13 @@ const LocationSection1 = () => {
     {locations.map((loc, index) => (
       <div
         key={index}
-        className="bg-white text-black rounded-2xl p-4 w-[520px] h-[290px] md-w-[300px] md-h-[200px] sm-w-[300px] sm-h-[200px]  flex-shrink-0 flex items-center gap-4 shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
+        className="bg-white text-black rounded-2xl p-4 w-[520px] h-[200px] md-w-[300px] md-h-[200px] sm-w-[300px] sm-h-[200px]  flex-shrink-0 flex items-center gap-4 shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
       >
         {/* Left image */}
         <img
           src={loc.image}
           alt={`${loc.country} landmark`}
-          className="w-[193px] h-[237px] object-cover rounded-xl"
+          className="w-[193px] h-[150px] object-cover rounded-xl"
         />
 
         {/* Right text block */}

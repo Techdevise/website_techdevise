@@ -39,9 +39,9 @@ const LocationSection = () => {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div className={`relative w-full py-20 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-white" : "bg-black text-white"}`}>
+    <div className={`relative w-full pt-20 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-white" : "bg-black text-white"}`}>
       {/* Header */}
-      <div className="relative z-10 text-center mb-40">
+      <div className="relative z-10 text-center mb-20">
         <h3 className="text-[#00C2A8] text-xl font-semibold mb-3">Location</h3>
         <h2 className="text-4xl md:text-5xl font-extrabold font-Montserrat mb-4 text-white">
           We’d love to <span className="text-[#00C2A8]">hear</span> from you
@@ -74,22 +74,22 @@ const LocationSection = () => {
     {locations.map((loc, index) => (
       <div
         key={index}
-        className="bg-[#0E1F1A] text-white rounded-2xl p-4 w-[520px] h-[290px] md-w-[300px] md-h-[200px]  flex-shrink-0 flex items-center gap-4"
+        className=" bg-white  rounded-2xl p-4 w-[500px] h-[200px] md-w-[300px] md-h-[200px]  flex-shrink-0 flex items-center gap-4"
       >
         {/* Left image */}
         <img
           src={loc.image}
           alt={`${loc.country} landmark`}
-          className="w-[193px] h-[237px] object-cover rounded-xl"
+          className="w-[193px] h-[150px] object-cover rounded-xl"
         />
 
         {/* Right text block */}
         <div className="flex flex-col justify-center">
           <div className="flex items-center mb-2">
             {loc.flag}
-            <h4 className="ml-2 text-lg font-semibold">{loc.country}</h4>
+            <h4 className="ml-2 text-lg font-bold text-black">{loc.country}</h4>
           </div>
-          <p className="text-sm leading-snug">{loc.address}</p>
+          <p className="text-sm leading-snug text-black">{loc.address}</p>
         </div>
       </div>
     ))}

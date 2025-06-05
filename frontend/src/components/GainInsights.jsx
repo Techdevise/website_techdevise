@@ -91,7 +91,7 @@ const GainInsights = () => {
   };
 
   return (
-    <div
+   <div
       ref={sectionRef}
       className="w-full overflow-hidden"
       style={{ background: "linear-gradient(to bottom, #0B6F4F, #021711)" }}
@@ -138,8 +138,8 @@ const GainInsights = () => {
         ))}
       </div>
 
-      {/* Dots */}
-      <div className="flex justify-center gap-3 mt-[-2rem] ">
+      {/* Dots navigation */}
+      <div className="flex justify-center gap-3 mt-[-2rem]">
         {categories.map((_, index) => (
           <button
             key={index}
