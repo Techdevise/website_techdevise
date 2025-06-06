@@ -141,7 +141,16 @@ const ServicesDropdown = ({ isVisible, darkMode, closeDropdown, onMouseEnter, on
               AI Development
               <ArrowRight className="ml-2 h-4 w-4 text-[#0a6e5c] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             </span>
+          </Link> <Link to="/services/it_staff" onClick={closeDropdown}  onMouseEnter={() => setHoveredService("ai")} className="flex items-center py-3 group">
+            <span className="w-6 h-6 rounded-full  flex items-center justify-center mr-3">
+              <img src={AIDevelopment || "/placeholder.svg"} alt="AI Development" className="w-6 h-6" />
+            </span>
+            <span className="text-gray-800 font-medium group-hover:text-[#0a6e5c] flex items-center">
+            IT Staff
+              <ArrowRight className="ml-2 h-4 w-4 text-[#0a6e5c] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+            </span>
           </Link>
+
         </div>
 
 

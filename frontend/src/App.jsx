@@ -21,6 +21,7 @@ import AiDevelopment from './pages/AiDevelopment'
 import { useEffect } from 'react';
 import Careers from './pages/Careers';
 import QualityAnalysis from './pages/QualityAnalysis';
+import ITStaff from './pages/ItStaff';
 
 
 function Scroll() {
@@ -55,6 +56,7 @@ function App() {
           <Route path="/services/website-development" element={<WebsiteDevelopment />} />
           <Route path="/services/blockchain-development" element={<BlockchainDevelopment />} />
           <Route path="/services/ai-development" element={<AiDevelopment />} />
+          <Route path="/services/it_staff" element={<ITStaff />} />
         </Routes>
       </main>
 
