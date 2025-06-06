@@ -93,7 +93,10 @@ const IT_Roles = () => {
                 <div className="w-full md:w-1/2  p-6 flex flex-col justify-start">
                   {/* Header and Close Button */}
                   <div className="flex justify-between items-start mb-4">
-                    <h2 className="text-2xl font-bold"> Hire {selectedRole} Roles</h2>
+                    <h2 className="text-2xl font-bold">
+                      {" "}
+                      Hire {selectedRole} Roles
+                    </h2>
                   </div>
 
                   {/* Description */}
@@ -275,6 +278,20 @@ const IT_Roles = () => {
                         />
                       </div>
 
+                      <div className="flex items-start">
+                        <input
+                          type="checkbox"
+                          id="privacy-checkbox"
+                          className="mt-1 mr-2"
+                        />
+                        <label
+                          htmlFor="privacy-checkbox"
+                          className="block text-sm font-medium mb-1"
+                        >
+                          TechDevise will process any personal information that
+                          you provide in accordance with its <span className="font-bold text-[#157B6C] ">Privacy Policy.</span> 
+                        </label>
+                      </div>
                       <div className="flex justify-end">
                         <button
                           type="button"

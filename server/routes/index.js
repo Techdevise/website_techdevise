@@ -29,8 +29,8 @@ router.get('/cms/:id', authController.listingCms);
 router.post('/cms/:id', authController.cmsEditpost);
 
 
-router.get('/conatct_us', contactUsController.contactListing);
-router.get('/conatct_us/:id', contactUsController.contactView);
+router.get('/contact_us', contactUsController.contactListing);
+router.get('/contact_us/:id', contactUsController.contactView);
 router.get('/experts', contactUsController.expertListing);
 router.get('/experts/:id', contactUsController.expertView);
 
