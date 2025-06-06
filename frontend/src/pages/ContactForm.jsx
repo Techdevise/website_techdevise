@@ -1,10 +1,180 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../index.css'
 import "../styles/pages/ContactForm.css";
 import Contactformimg from "../assets/Contactformimg.svg";
 
+
+
+
+// Toast component
+const Toast = ({ message, isVisible, onClose, type = "success" }) => {
+  useEffect(() => {
+    if (isVisible) {
+      const timer = setTimeout(() => {
+        onClose()
+      }, 3000)
+      return () => clearTimeout(timer)
+    }
+  }, [isVisible, onClose])
+
+  if (!isVisible) return null
+
+  const bgColor = type === "success" ? "bg-green-500" : "bg-red-500"
+
+  return (
+    <div
+      className={`fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-[60] animate-in slide-in-from-top-2`}
+    >
+      <div className="flex items-center gap-2">
+        <span>{type === "success" ? "✓" : "✗"}</span>
+        <span>{message}</span>
+        <button onClick={onClose} className="ml-2 text-white hover:text-gray-200">
+          ×
+        </button>
+      </div>
+    </div>
+  )
+}
+
 const ContactForm = () => {
-    const [budget, setBudget] = useState(20000);
+  const [budget, setBudget] = useState(20000)
+
+  // Form state - matching API field names
+  const [formData, setFormData] = useState({
+    fullname: "",
+    email: "",
+    phone: "",
+    company_name: "",
+    job_title: "",
+    launch_timeline: "",
+    budget: "20000",
+    message: "",
+  })
+
+  // Toast state
+  const [toast, setToast] = useState({
+    isVisible: false,
+    message: "",
+    type: "success",
+  })
+
+  // Loading state
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [experts, setExperts] = useState([])
+
+  // Fetch experts data on component mount
+  useEffect(() => {
+    const fetchExperts = async () => {
+      try {
+        const response = await fetch("http://localhost:9090/api/experts")
+        if (response.ok) {
+          const data = await response.json()
+          setExperts(data)
+          console.log("Experts data:", data)
+        } else {
+          console.error("Failed to fetch experts")
+        }
+      } catch (error) {
+        console.error("Error fetching experts:", error)
+      }
+    }
+
+    fetchExperts()
+  }, [])
+  
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  // Handle budget change
+  const handleBudgetChange = (e) => {
+    const value = e.target.value
+    setBudget(value)
+    setFormData((prev) => ({
+      ...prev,
+      budget: value,
+    }))
+  }
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      // Prepare payload for API
+      const payload = {
+        fullname: formData.fullname,
+        email: formData.email,
+        phone: formData.phone,
+        company_name: formData.company_name,
+        job_title: formData.job_title,
+        launch_timeline: formData.launch_timeline,
+        budget: formData.budget,
+        message: formData.message,
+      }
+
+      console.log("Submitting payload:", payload)
+
+      const response = await fetch("http://localhost:9090/api/experts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+
+      const result = await response.json()
+      console.log("API Response:", result)
+
+      if (response.ok && result.success) {
+        // Show success toast
+        setToast({
+          isVisible: true,
+          message: result.message || "Form submitted successfully!",
+          type: "success",
+        })
+
+        // Reset form
+        setFormData({
+          fullname: "",
+          email: "",
+          phone: "",
+          company_name: "",
+          job_title: "",
+          launch_timeline: "",
+          budget: "20000",
+          message: "",
+        })
+        setBudget(20000)
+      } else {
+        throw new Error(result.message || "Failed to submit form")
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      setToast({
+        isVisible: true,
+        message: "Error submitting form. Please try again.",
+        type: "error",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const hideToast = () => {
+    setToast({
+      isVisible: false,
+      message: "",
+      type: "success",
+    })
+  }
 
     return (
         <div className="contact-wrapper max-w-[1680px] h-auto bg-[#061611] text-white rounded-[10px] mx-auto md:p-8 flex flex-col md:flex-row border border-[#529D92] w-macbook">
@@ -42,78 +212,110 @@ const ContactForm = () => {
                 </h3>
 
                
-                <form className="contact_form grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input
-                        type="text"
-                        placeholder="Full Name"
-                        className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]" />
-                    <input
-                        type="email"
-                        placeholder="Business Email"
-                        className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]" />
-                    <input
-                        type="text"
-                        placeholder="Mobile Number"
-                        className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]" />
-                    <input
-                        type="text"
-                        placeholder="Company Name"
-                        className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]" />
-                    <select className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]">
-                        <option value="">Job Title</option>
+                 <form onSubmit={handleSubmit} className="contact_form grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input
+              type="text"
+              name="fullname"
+              value={formData.fullname}
+              onChange={handleInputChange}
+              placeholder="Full Name"
+              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              placeholder="Business Email"
+              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
+              required
+            />
+            <input
+              type="text"
+              name="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
+              placeholder="Mobile Number"
+              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
+              required
+            />
+            <input
+              type="text"
+              name="company_name"
+              value={formData.company_name}
+              onChange={handleInputChange}
+              placeholder="Company Name"
+              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
+              required
+            />
+            <select
+              name="job_title"
+              value={formData.job_title}
+              onChange={handleInputChange}
+              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
+              required
+            >
+              <option value="">Job Title</option>
+              <option value="1">Entrepreneur</option>
+              <option value="2">Manager</option>
+              <option value="3">Director</option>
+              <option value="4">C-Level</option>
+              <option value="5">Student</option>
+              <option value="6">Others</option>
+            </select>
+            <select
+              name="launch_timeline"
+              value={formData.launch_timeline}
+              onChange={handleInputChange}
+              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
+              required
+            >
+              <option value="">Launch Timeline?</option>
+              <option value="1">Immediately</option>
+              <option value="2">2-3 Months</option>
+              <option value="3">4-6 Months</option>
+              <option value="4">After 6 Months</option>
+            </select>
 
-                        <option value="Entrepreneur">Entrepreneur</option>
-                        <option value="Manager">Manager</option>
-                        <option value="Director">Director</option>
-                        <option value="Director">C-Level</option>
-                        <option value="Student">Student</option>
-                        <option value="Others">Others</option>
-
-
-                    </select>
-                    <select className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]">
-                        <option value="">Launch Timeline?</option>
-                        <option value="1 Month">Immediately</option>
-                        <option value="3 Months">2-3 Months</option>
-                        <option value="6 Months">4-6 Months</option>
-                        <option value="6 Months">After 6 Months</option>
-                        {/* <option value="6 Months">Schedule a Demo</option>
-                        <option value="6 Months"></option> */}
-
-                    </select>
-
-                    <div className="budget-bg col-span-2">
-                        <label className="block text-[#ffffff] mb-2">Budget</label>
-                        <div className="flex items-center gap-4">
-                            <input
-                                type="range"
-                                min="1000"
-                                max="100000"
-                                value={budget}
-                                onChange={(e) => setBudget(e.target.value)}
-                                className="w-full rounded-lg"
-                                style={{ background: "#157B6C" }}
-                            />
-                            <span className="text-lg md:text-2xl font-medium">${budget.toLocaleString()}</span>
-                        </div>
-                    </div>
-                    <textarea
-                        placeholder="Message"
-                        className="col-span-2 w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] h-[150px] border border-[#529D92]"
-                    ></textarea>
-
-                    <div className="col-span-2 flex justify-start">
-                        <button
-                            type="submit"
-                            className="bg-[#FFFFFF] text-[#137365] font-bold py-4 px-12 rounded-lg hover:bg-[#3BC46F] transition-colors shadow-md hover:text-white hover:bg-green-700 transition-all duration-300 hover:scale-105"
-                        >
-                            Submit
-                        </button>
-                    </div>
-                </form>
+            <div className="budget-bg col-span-2">
+              <label className="block text-[#ffffff] mb-2">Budget</label>
+              <div className="flex items-center gap-4">
+                <input
+                  type="range"
+                  min="1000"
+                  max="100000"
+                  value={budget}
+                  onChange={handleBudgetChange}
+                  className="w-full rounded-lg"
+                  style={{ background: "#157B6C" }}
+                />
+                <span className="text-lg md:text-2xl font-medium">${budget.toLocaleString()}</span>
+              </div>
             </div>
-        </div>
-    );
-};
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              placeholder="Message"
+              className="col-span-2 w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] h-[150px] border border-[#529D92]"
+            ></textarea>
 
-export default ContactForm;
+            <div className="col-span-2 flex justify-start">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-[#FFFFFF] text-[#137365] font-bold py-4 px-12 rounded-lg hover:bg-[#3BC46F] transition-colors shadow-md hover:text-white hover:bg-green-700 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
+                <Toast message={toast.message} isVisible={toast.isVisible} onClose={hideToast} type={toast.type} />
+            </div>
+          </form>
+        </div>
+      </div>
+
+  )
+}
+
+export default ContactForm

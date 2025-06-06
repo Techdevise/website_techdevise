@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import GettouchForm from "./GettouchForm";
  
 const Button = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
- 
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <>
       <div className="inline-block">
@@ -14,8 +14,7 @@ const Button = () => {
           <span
             className="relative z-10 w-full h-full flex items-center justify-center group-hover:text-white transition-colors duration-300"
             style={{
-              background:
-                "linear-gradient(to right, #14532d 0, #4ade80 10%, #14532d 20%)",
+              background: "linear-gradient(to right, #14532d 0, #4ade80 10%, #14532d 20%)",
               backgroundPosition: "0",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -28,7 +27,7 @@ const Button = () => {
           <span className="absolute inset-0 bg-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></span>
         </button>
       </div>
- 
+
       <style jsx global>{`
         @keyframes shine {
           0% {
@@ -42,14 +41,10 @@ const Button = () => {
           }
         }
       `}</style>
- 
-      <GettouchForm
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-         className="fixed "
-      />
+
+      <GettouchForm isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} className="fixed" />
     </>
-  );
-};
- 
-export default Button;
+  )
+}
+
+export default Button
