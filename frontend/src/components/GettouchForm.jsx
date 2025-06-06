@@ -1,6 +1,7 @@
-
-import { useState, useEffect } from "react"
-import { X } from "lucide-react"
+import React, { useState, useEffect } from "react";
+import { X } from "lucide-react";
+import Alexjenson from "../assets/Alexjenson.svg";
+import Mobileshowcase from "../assets/Mobileshowcase.svg";
 
 // Toast component
 const Toast = ({ message, isVisible, onClose }) => {
@@ -188,24 +189,24 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
               <div className="flex items-start gap-4">
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden border-2 border-teal-600">
                   <img
-                    src="/placeholder.svg?height=96&width=96"
+                    src={Alexjenson}
                     alt="Alex Johnson"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
                   <h3 className="text-xl md:text-2xl font-semibold">Alex Johnson</h3>
-                  <p className="text-teal-200">Seoproductief</p>
-                  <p className="text-teal-200">Head, Marketing</p>
+                  <p className="text-teal-200">Company Name: Seoproductief</p>
+                  <p className="text-teal-200">Designation: Head, Marketing</p>
                 </div>
               </div>
-              <p className="mt-4 text-sm md:text-base">We developed a great partnership with Techdevise...</p>
+              <p className="mt-4 lg:text-[18px] font-Montserrat text-sm md:text-base">We developed a great partnership with Techdevise. Their dedication to our website is evident in all aspects of the site. We appreciate their attention to detail and creative approach in bringing our new exhibit to life online.</p>
             </div>
 
             <div className="flex justify-center mt-8 gap-2">
               <div className="w-24 md:w-32 bg-white rounded-3xl overflow-hidden shadow-lg">
                 <img
-                  src="/placeholder.svg?height=122&width=128"
+                  src={Mobileshowcase}
                   alt="App Screenshot"
                   className="w-full h-[100px] md:h-[122px]"
                 />
@@ -362,11 +363,11 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
                 </div>
 
                 {/* Submit Button */}
-                <div className="col-span-1 md:col-span-2 flex justify-end mt-4">
+                <div className="col-span-1 md:col-span-2 flex justify-center mt-4">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-teal-700 text-white py-3 px-8 rounded-md text-lg font-medium hover:bg-teal-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-[200px] h-[49px] bg-teal-700 text-white py-3 px-8 rounded-md text-lg font-medium hover:bg-teal-800 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? "Submitting..." : "Apply"}
                   </button>

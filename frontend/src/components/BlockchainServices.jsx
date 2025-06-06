@@ -3,9 +3,9 @@ import '../index.css'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 import "../styles/components/BlockchainServices.css"
 import blockchain from "../assets/blockchain.png"
-import blockchainicon from "../assets/blockchainicon.png"
-import layericon from "../assets/layericon.png"
-import blockchaindotcom from "../assets/blockchaindotcom.png"
+import Consultation from "../assets/Consultation.svg"
+import layericon from "../assets/layericon.svg"
+import blockchaindotcom from "../assets/blockchaindotcom.svg"
 import Centralized from "../assets/Centralized.svg"
 import Marketplace from "../assets/Marketplace.svg"
 import Smart from "../assets/Smart.svg"
@@ -25,7 +25,7 @@ const BlockchainServices = () => {
 
   const originalCards = [
     {
-      icon: blockchainicon,
+      icon: Consultation,
       title: "Blockchain Consultation\n& Integration",
       description:
         "From strategy development to implementation, our custom Blockchain software development experts will guide you through every stage of your blockchain application development journey. Antier's deep industry knowledge and proven track record ensure successful blockchain integration.",
@@ -165,6 +165,7 @@ useEffect(() => {
   return (
     <div className="block_chain w-full bg-[#061611] text-white p-8 md:p-8 h-auto">
       <div className="w-full max-w-[1680px] mx-auto">
+        
         {/* Header Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div>
@@ -201,28 +202,26 @@ useEffect(() => {
             style={{ transform: `translateX(-${currentSlide * cardWidthWithGap}px)` }}
           >
             {cards.map((card, index) => (
-              <div
-                key={index}
-                className="w-[550px] bg-[#0c2018] rounded-[26px] p-6 border border-[#163029] h-auto min-h-[400px] mb-auto flex-shrink-0"
-              >
-                <div className="w-[100px] h-[100px] bg-[#157B6C] rounded-full flex items-center justify-center mb-6 relative">
+            <div className="flex w-[900px] bg-[#0B3327] rounded-[26px] p-6 border border-[#163029] h-auto min-h-[450px] mb-auto flex-shrink-0 shadow-lg shadow-[#157B6C]/20">
+  {/* Left: Image */}
+  <div className="w-[40%]">
+    <img src={card.icon} alt="card visual" className="rounded-xl object-cover w-full h-full" />
+  </div>
 
-                  <div className="absolute inset-2 rounded-full border-2 border-dashed border-white"></div>
+  {/* Right: Text */}
+  <div className="w-[60%] pl-6 flex flex-col justify-center">
+    <h3 className="text-[24px] font-bold text-white mb-4 leading-tight">
+      {card.title.split("\n").map((line, i) => (
+        <React.Fragment key={i}>
+          {line}
+          {i < card.title.split("\n").length - 1 && <br />}
+        </React.Fragment>
+      ))}
+    </h3>
+    <p className="text-[15px] text-gray-300">{card.description}</p>
+  </div>
+</div>
 
-
-                  <img src={card.icon || "/placeholder.svg"} alt="icon" className="w-[40px] h-[40px] z-10" />
-                </div>
-
-                <h3 className="text-[28px] font-font-Montserrat font-extrabold mb-4">
-                  {card.title.split("\n").map((line, i) => (
-                    <React.Fragment key={i}>
-                      {line}
-                      {i < card.title.split("\n").length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
-                </h3>
-                <p className="text-[16px] w-full mt-5 font-Montserrat text-gray-300">{card.description}</p>
-              </div>
             ))}
           </div>
 
