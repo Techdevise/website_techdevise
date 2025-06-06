@@ -1,12 +1,12 @@
 var DataTypes = require("sequelize").DataTypes;
-var _speak_experts = require("./speak_experts");
+var _hire_roles = require("./hire_roles");
 
 function initModels(sequelize) {
-  var speak_experts = _speak_experts(sequelize, DataTypes);
+  var hire_roles = _hire_roles(sequelize, DataTypes);
 
 
   return {
-    speak_experts,
+    hire_roles,
   };
 }
 module.exports = initModels;

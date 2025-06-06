@@ -2,6 +2,7 @@ var express = require('express');
 const authController = require('../controller/admin/authController');
 const jobsController = require('../controller/admin/jobsController');
 const contactUsController = require('../controller/admin/contactUsController');
+const itRolesController = require('../controller/admin/itRolesController');
 var router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware").isAuthenticated;
 /* GET home page. */
@@ -33,6 +34,8 @@ router.get('/contact_us', contactUsController.contactListing);
 router.get('/contact_us/:id', contactUsController.contactView);
 router.get('/experts', contactUsController.expertListing);
 router.get('/experts/:id', contactUsController.expertView);
+
+router.get('/roles', itRolesController.itroleListing);
 
 
 
