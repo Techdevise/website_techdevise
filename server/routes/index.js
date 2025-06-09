@@ -36,6 +36,8 @@ router.get('/experts', contactUsController.expertListing);
 router.get('/experts/:id', contactUsController.expertView);
 
 router.get('/roles', itRolesController.itroleListing);
+router.get('/roles/:id', itRolesController.viewRoles);
+router.delete('/roles/delete/:id', itRolesController.deleteRole);
 
 
 

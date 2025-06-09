@@ -60,11 +60,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     help: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
     image: {
       type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: false,
+      defaultValue: ''
     },
     position: {
       type: DataTypes.INTEGER,

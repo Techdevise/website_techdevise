@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import SEODevelopment from '../components/SEODevelopment';
 import FrontendDevelopment from '../components/FrontendDevelopment';
 import PHPDeveloper from '../components/PHPDeveloper';
@@ -6,22 +7,23 @@ import mask from "../assets/mask.png";
 
 function OpenPositions() {
   const [selectedFunction, setSelectedFunction] = useState(null);
+  const [functions, setFunctions] = useState([]);
 
-  const functions = [
-    'Front end Designer',
-    'UI/UX Designer',
-    'PHP Developer',
-    'SEO Executive',
-    'BDE',
-    'Content Writer',
-    'Laravel Developer',
-    'Business Analyst',
-    'Front End Development',
-    "HR Executive",
-    "Marketing",
-    "Python Developer",
-    "Quality Assurance",
-  ];
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const res = await axios.get('http://localhost:9090/api/jobs'); 
+        if (res.data.success) {
+          const jobTitles = res.data.data.map(job => job.title);
+          setFunctions(jobTitles);
+        }
+      } catch (error) {
+        console.error('Error fetching jobs:', error);
+      }
+    };
+
+    fetchJobs();
+  }, []);
 
   const renderSelectedComponent = () => {
     switch ((selectedFunction || '').trim().toLowerCase()) {
@@ -31,8 +33,6 @@ function OpenPositions() {
         return <PHPDeveloper />;
       case 'front end development':
         return <FrontendDevelopment />;
-      // case 'Content Writer':
-      //   return <ContentWriter />;
       default:
         return (
           <div className="flex flex-col md:flex-row items-center justify-center h-full gap-6 md:gap-8">
@@ -55,9 +55,7 @@ function OpenPositions() {
     <div className="mx-auto max-w-[1678px] w-full min-h-[345px] bg-white rounded-lg shadow-lg p-4 md:p-8 lg:p-12">
       {/* Header */}
       <div className="flex flex-col text-center space-y-4 mb-8 md:mb-12">
-        <h2 className="text-2xl md:text-4xl font-bold text-black">
-          Open Positions
-        </h2>
+        <h2 className="text-2xl md:text-4xl font-bold text-black">Open Positions</h2>
         <p className="text-sm md:text-base font-medium max-w-2xl mx-auto">
           If you're someone who thrives in a fast-paced, collaborative, and constantly evolving environment, then Apptunix is the perfect place to accelerate your career.
         </p>
@@ -69,7 +67,7 @@ function OpenPositions() {
         <div className="lg:w-1/3 p-4 md:p-6 border rounded-lg lg:border-r-0 lg:rounded-r-none">
           <h3 className="text-lg md:text-xl font-bold mb-4">Function</h3>
           <ul className="space-y-3 md:space-y-4">
-            {functions.map((job, index) => (
+            {functions.length > 0 ? functions.map((job, index) => (
               <li
                 key={index}
                 className="flex items-center space-x-3 cursor-pointer"
@@ -83,7 +81,9 @@ function OpenPositions() {
                 />
                 <span className="text-sm md:text-base text-gray-700">{job}</span>
               </li>
-            ))}
+            )) : (
+              <p className="text-gray-500 text-sm">Loading job titles...</p>
+            )}
           </ul>
         </div>
 

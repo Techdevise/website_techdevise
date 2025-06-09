@@ -1,8 +1,11 @@
-const { JobPosition, JobTitle } = require('../../models');
+const { JobPosition, JobTitle, JobOption } = require('../../models');
 const uploadPdf = require("../../utils/uploadPdf");
 const { validationResult } = require("express-validator");
 module.exports = {
   //  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<   JOB Position     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></JOB>
+
+
+
 addJobPosition: async (req, res) => {
   try {
     const errors = validationResult(req);
@@ -101,6 +104,33 @@ addJobPosition: async (req, res) => {
          return res.status(200).json({
         success: true,
         message: "Get all job  successfully",
+        data: getJobs,
+      });
+    } catch (error) {
+     console.log(error);
+      return res.status(500).json({
+        success: false,
+        message: "Something went wrong",
+        error: error.message,
+      });
+    }
+   },
+
+
+
+    job_Option_Listing:async(req,res)=>{
+    try {
+       const getJobs = await JobOption.findAll({
+          include:[{
+          model:JobTitle,
+          as:"jobtitle"
+        }],
+        where:{status:1}
+       })
+      
+         return res.status(200).json({
+        success: true,
+        message: "Get all JobOption  successfully",
         data: getJobs,
       });
     } catch (error) {
