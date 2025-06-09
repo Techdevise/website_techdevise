@@ -50,6 +50,8 @@ db.Sequelize = Sequelize;
  db.JobOption = require("./job_options")(sequelize,Sequelize)
  db.ContactUs = require("./contact_us")(sequelize,Sequelize)
  db.SpeakExperts = require("./speak_experts")(sequelize,Sequelize)
+ db.ItRole = require("./it_roles")(sequelize,Sequelize)
+ db.HireingRole = require("./hire_roles")(sequelize,Sequelize)
 
 
 db.JobOption.hasMany(db.JobPosition, {
@@ -69,6 +71,16 @@ db.JobTitle.hasMany(db.JobOption, {
 db.JobOption.belongsTo(db.JobTitle, {
   foreignKey: 'job_id',
   as: 'jobtitle'
+});
+
+db.ItRole.hasMany(db.HireingRole, {
+  foreignKey: 'It_role_id',
+  as: 'HireRoles'
+});
+
+db.HireingRole.belongsTo(db.ItRole, {
+  foreignKey: 'It_role_id',
+  as: 'It_Role'
 });
 
 
