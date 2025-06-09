@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('speak_experts', {
     id: {
-      autoIncrement: true,
+  autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -22,10 +22,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: 0
     },
-    company_name: {
-      type: DataTypes.STRING(70),
-      allowNull: false,
-      defaultValue: ""
+    message: {
+      type: DataTypes.TEXT,
+      allowNull: false
     },
     job_title: {
       type: DataTypes.INTEGER,
@@ -37,14 +36,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: 0
     },
-    message: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
     budget: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0
+    },
+    company_name: {
+      type: DataTypes.STRING(150),
+      allowNull: false,
+      defaultValue: ""
     }
   }, {
     sequelize,
