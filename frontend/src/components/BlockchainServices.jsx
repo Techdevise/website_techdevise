@@ -81,8 +81,8 @@ const BlockchainServices = () => {
   ]
 
   const cards = [originalCards[originalCards.length - 1], ...originalCards, originalCards[0]]
-  const cardWidth = 550
-  const gap = 16
+  const cardWidth = 1200
+  const gap = 0
   const cardWidthWithGap = cardWidth + gap
 
   const handleNext = () => {
@@ -112,131 +112,158 @@ const BlockchainServices = () => {
     }
 
     const el = transitionRef.current
-    el.addEventListener("transitionend", transitionEnd)
-    return () => el.removeEventListener("transitionend", transitionEnd)
-  }, [currentSlide])
+    if (el) {
+      el.addEventListener("transitionend", transitionEnd)
+      return () => el.removeEventListener("transitionend", transitionEnd)
+    }
+  }, [currentSlide, cards.length, cardWidthWithGap])
 
-useEffect(() => {
-  if (!transitionRef.current) return;
+  useEffect(() => {
+    if (!transitionRef.current) return
 
-  const distance = currentSlide * cardWidthWithGap;
+    const distance = currentSlide * cardWidthWithGap
 
-  gsap.to(transitionRef.current, {
-    x: -distance,
-    duration: 0.8,
-    ease: "power2.inOut",
-    onComplete: () => {
-      setIsTransitioning(false);
+    gsap.to(transitionRef.current, {
+      x: -distance,
+      duration: 0.8,
+      ease: "power2.inOut",
+      onComplete: () => {
+        setIsTransitioning(false)
 
-      // Reset when on cloned slides
-      if (currentSlide === cards.length - 1) {
-        gsap.set(transitionRef.current, { x: -cardWidthWithGap });
-        setCurrentSlide(1);
-      } else if (currentSlide === 0) {
-        gsap.set(transitionRef.current, { x: -(cards.length - 2) * cardWidthWithGap });
-        setCurrentSlide(cards.length - 2);
+        // Reset when on cloned slides
+        if (currentSlide === cards.length - 1) {
+          gsap.set(transitionRef.current, { x: -cardWidthWithGap })
+          setCurrentSlide(1)
+        } else if (currentSlide === 0) {
+          gsap.set(transitionRef.current, { x: -(cards.length - 2) * cardWidthWithGap })
+          setCurrentSlide(cards.length - 2)
+        }
+      },
+    })
+  }, [currentSlide, cards.length, cardWidthWithGap])
+
+  useEffect(() => {
+    const container = scrollLockRef.current
+    if (!container) return
+
+    const handleWheel = (e) => {
+      if (isTransitioning) {
+        e.preventDefault()
+        return
       }
-    }
-  });
-}, [currentSlide]);
 
-useEffect(() => {
-  const container = scrollLockRef.current;
-  if (!container) return;
+      const isDown = e.deltaY > 0
+      const isUp = e.deltaY < 0
 
-  const handleWheel = (e) => {
-    if (isTransitioning) {
-      e.preventDefault();
-      return;
+      e.preventDefault()
+      if (isDown) handleNext()
+      if (isUp) handlePrev()
     }
 
-    const isDown = e.deltaY > 0;
-    const isUp = e.deltaY < 0;
+    container.addEventListener("wheel", handleWheel, { passive: false })
+    return () => container.removeEventListener("wheel", handleWheel)
+  }, [isTransitioning])
 
-    e.preventDefault();
-    if (isDown) handleNext();
-    if (isUp) handlePrev();
-  };
-
-  container.addEventListener("wheel", handleWheel, { passive: false });
-  return () => container.removeEventListener("wheel", handleWheel);
-}, [isTransitioning]);
 
   return (
-    <div className="block_chain w-full bg-[#061611] text-white p-8 md:p-8 h-auto">
-      <div className="w-full max-w-[1680px] mx-auto">
-        
-        {/* Header Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div>
-            <h1
-              style={{
-                display: "inline-table",
-                background: "linear-gradient(to right, #e0e0e0, #157B6C)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-              className="blockchain text-[28px] md:text-5xl font-extrabold font-Montserrat w-full max-w-[762px] mb-10 mt-10"
-            >
-              Our Blockchain
-              <br />
-              Development <span className="text-[#4fbfa5]">Services</span>
-            </h1>
-            <p className="mt-4 text-xl font-Montserrat font-normal md:text-base ml-0">
-              <span className="text-[20px] font-Montserrat font-bold">Tech Devise</span> provides a full suite of blockchain development
-              services to help <br /> businesses harness the full potential of the technology and stay ahead in today's
-              <br />
-              competitive web3 era.
-            </p>
-          </div>
-          <div className="flex justify-center md:justify-end">
-            <BlockchainIllustration />
-          </div>
-        </div>
-
-        {/* Slider */}
-        <div ref={scrollLockRef} className="overflow-hidden mt-[-230px] sm:mt-[-120px] md:mt-[-120px] lg:mt-[-230px]">
-          <div
-            ref={transitionRef}
-            className="card_correct flex transition-transform duration-500 gap-4"
-            style={{ transform: `translateX(-${currentSlide * cardWidthWithGap}px)` }}
-          >
-            {cards.map((card, index) => (
-            <div className="flex w-[900px] bg-[#0B3327] rounded-[26px] p-6 border border-[#163029] h-auto min-h-[450px] mb-auto flex-shrink-0 shadow-lg shadow-[#157B6C]/20">
-  {/* Left: Image */}
-  <div className="w-[40%]">
-    <img src={card.icon} alt="card visual" className="rounded-xl object-cover w-full h-full" />
+  <div className="block_chain w-full bg-[#061611] text-white p-8 md:p-8 h-auto">
+  <div className="w-full max-w-[1680px] mx-auto">
+    {/* Header Section */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      <div>
+        <h1
+          style={{
+            display: "inline-table",
+            background: "linear-gradient(to right, #e0e0e0, #157B6C)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+          className="blockchain text-[28px] md:text-5xl font-extrabold font-Montserrat w-full max-w-[762px] mb-10 mt-10"
+        >
+          Our Blockchain
+          <br />
+          Development <span className="text-[#4fbfa5]">Services</span>
+        </h1>
+        <p className="mt-4 text-xl font-Montserrat font-normal md:text-base ml-0">
+          <span className="text-[20px] font-Montserrat font-bold">Tech Devise</span> provides a full suite of blockchain development
+          services to help <br /> businesses harness the full potential of the technology and stay ahead in today's
+          <br />
+          competitive web3 era.
+        </p>
+      </div>
+      <div className="flex justify-center md:justify-end">
+        <BlockchainIllustration />
+      </div>
+    </div>
   </div>
 
-  {/* Right: Text */}
-  <div className="w-[60%] pl-6 flex flex-col justify-center">
-    <h3 className="text-[24px] font-bold text-white mb-4 leading-tight">
-      {card.title.split("\n").map((line, i) => (
-        <React.Fragment key={i}>
-          {line}
-          {i < card.title.split("\n").length - 1 && <br />}
-        </React.Fragment>
-      ))}
-    </h3>
-    <p className="text-[15px] text-gray-300">{card.description}</p>
-  </div>
+  <div ref={scrollLockRef} className="w-full overflow-hidden mt-[-230px] sm:mt-[-120px] md:mt-[-120px] lg:mt-[-230px]">
+    <div
+      ref={transitionRef}
+      className="card_correct flex transition-transform duration-500 gap-10 px-8"
+      style={{ transform: `translateX(-${currentSlide * cardWidthWithGap}px)` }}
+    >
+      {cards.map((card, index) => (
+        <div
+          key={index}
+className="flex flex-col sm:flex-row w-full md:w-[700px] lg:w-[900px] bg-[#0B3327] rounded-[20px] p-4 sm:p-6 border border-transparent bg-gradient-to-r from-[#157B6C] to-[#ffffff] p-[2px] h-auto min-h-[450px] mb-auto flex-shrink-0 shadow-lg shadow-[#157B6C]/20"
+        >
+          {/* Left: Image */}
+         <div className="w-full sm:w-[40%] mb-4 sm:mb-0">
+  <img src={card.icon} alt="card visual" className="rounded-xl object-cover w-full h-full" />
 </div>
 
-            ))}
-          </div>
 
-          {/* Navigation */}
-          <div className="flex justify-end mt-8 gap-2">
-            <button onClick={handlePrev} className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-              <FaArrowLeft className="text-[#157B6C] text-md" />
-            </button>
-            <button onClick={handleNext} className="w-10 h-10 rounded-full bg-[#157B6C] flex items-center justify-center">
-              <FaArrowRight className="text-white text-md" />
-            </button>
+          {/* Right: Text */}
+         <div className="w-full sm:w-[60%] sm:pl-6 flex flex-col justify-center">
+  <h3 className="text-[24px] sm:text-[35px] font-Montserrat font-bold text-white mb-4 leading-tight">
+    {card.title.split("\n").map((line, i) => (
+      <React.Fragment key={i}>
+        {line}
+        {i < card.title.split("\n").length - 1 && <br />}
+      </React.Fragment>
+    ))}
+  </h3>
+  <p className="text-[14px] sm:text-[16px] font-Montserrat text-white">{card.description}</p>
+</div>
+
+        </div>
+      ))}
+    </div>
+      {/* Navigation */}
+    <div className="flex justify-center items-center mt-12 gap-6">
+            {/* <button
+              onClick={handlePrev}
+              className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300"
+            >
+              <FaArrowLeft className="text-white text-lg" />
+            </button> */}
+
+           {/* Slide indicators */}
+<div className="flex justify-center mt-6 gap-3">
+  {originalCards.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => setCurrentSlide(index + 1)}
+      className={`h-[6px] rounded-full transition-all duration-300 ${
+        (currentSlide - 1) % originalCards.length === index
+          ? "bg-white w-8"
+          : "bg-white/30 w-6 hover:bg-white/50"
+      }`}
+    />
+  ))}
+</div>
+
+
+            {/* <button
+              onClick={handleNext}
+              className="w-12 h-12 rounded-full bg-[#157B6C] hover:bg-[#1a8f7a] flex items-center justify-center transition-all duration-300"
+            >
+              <FaArrowRight className="text-white text-lg" />
+            </button> */}
           </div>
         </div>
       </div>
-    </div>
   )
 }
 

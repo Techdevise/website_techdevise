@@ -5,8 +5,6 @@ import Contactformimg from "../assets/Contactformimg.svg";
 
 
 
-
-// Toast component
 const Toast = ({ message, isVisible, onClose, type = "success" }) => {
   useEffect(() => {
     if (isVisible) {
@@ -39,7 +37,6 @@ const Toast = ({ message, isVisible, onClose, type = "success" }) => {
 const ContactForm = () => {
   const [budget, setBudget] = useState(20000)
 
-  // Form state - matching API field names
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
@@ -51,18 +48,15 @@ const ContactForm = () => {
     message: "",
   })
 
-  // Toast state
   const [toast, setToast] = useState({
     isVisible: false,
     message: "",
     type: "success",
   })
 
-  // Loading state
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [experts, setExperts] = useState([])
 
-  // Fetch experts data on component mount
   useEffect(() => {
     const fetchExperts = async () => {
       try {
@@ -83,7 +77,6 @@ const ContactForm = () => {
   }, [])
   
 
-  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({
@@ -92,7 +85,6 @@ const ContactForm = () => {
     }))
   }
 
-  // Handle budget change
   const handleBudgetChange = (e) => {
     const value = e.target.value
     setBudget(value)
@@ -102,7 +94,6 @@ const ContactForm = () => {
     }))
   }
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -134,14 +125,12 @@ const ContactForm = () => {
       console.log("API Response:", result)
 
       if (response.ok && result.success) {
-        // Show success toast
+
         setToast({
           isVisible: true,
           message: result.message || "Form submitted successfully!",
           type: "success",
         })
-
-        // Reset form
         setFormData({
           fullname: "",
           email: "",

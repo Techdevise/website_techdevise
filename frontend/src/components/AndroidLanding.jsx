@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import '../styles/components/AndroidLanding.css'
 import Androidlandingbanner from "../assets/Androidlandingbanner.svg"
+import Uiuxdesignmobile from "../assets/Uiuxdesignmobile.svg"
+import Androidapplications from "../assets/Androidapplications.svg"
+import Androidappdevelopment from "../assets/Androidappdevelopment.svg"
+import Analyzingandroid from "../assets/Analyzingandroid.svg"
+import Androidmaintenance from "../assets/Androidmaintenance.svg"
 import Androidapplication from "../assets/Androidapplication.svg"
 import Uiuxdevelopment from "../assets/Uiuxdevelopment.svg"
 import Androidapplication1 from "../assets/Androidapplication1.svg"
@@ -25,7 +30,7 @@ const categories = [
     iconBg: "#EA9C99",
     borderColor: "border-red-200",
     text: "Our UI/UX experts craft intuitive designs tailored for Android users.",
-    image: Androidlandingbanner,
+    image: Uiuxdesignmobile,
   },
   {
     title: "Tech Stack and Android Application Architecture",
@@ -34,7 +39,7 @@ const categories = [
     iconBg: "#67C792",
     borderColor: "border-green-200",
     text: "We define the tech stack and structure the perfect Android architecture.",
-    image: Androidlandingbanner,
+    image: Androidapplications,
   },
   {
     title: "Android App Development",
@@ -43,7 +48,7 @@ const categories = [
     iconBg: "#FFE74E",
     borderColor: "border-yellow-200",
     text: "We develop scalable and efficient Android apps ready for the Play Store.",
-    image: Androidlandingbanner,
+    image: Androidappdevelopment,
   },
   {
     title: "Analyzing Android Solutions",
@@ -52,7 +57,7 @@ const categories = [
     iconBg: "#C897EB",
     borderColor: "border-purple-200",
     text: "We analyze your Android solution for maximum performance and reliability.",
-    image: Androidlandingbanner,
+    image: Analyzingandroid,
   },
   {
     title: "Maintenance",
@@ -61,7 +66,7 @@ const categories = [
     iconBg: "#DAD07A",
     borderColor: "border-amber-200",
     text: "We provide ongoing support and maintenance for your Android applications.",
-    image: Androidlandingbanner,
+    image: Androidmaintenance,
   },
 ];
 
@@ -111,19 +116,18 @@ const AndroidLanding = () => {
     ))}
   </div>
 
-        {/* Description Text */}
         <div className="text-center max-w-4xl mb-10 px-4 mt-6">
           <p className="text-gray-700">{categories[selectedIndex].text}</p>
         </div>
 
         {/* Image Section */}
-        <div className="Androidlandingbanner w-full h-auto overflow-hidden rounded-lg shadow-md">
-          <img
-            src={Androidlandingbanner}
-            alt="Team collaborating on Android development"
-            className="w-full h-full object-cover"
-          />
-        </div>
+       <div className="Androidlandingbanner w-full h-auto overflow-hidden rounded-lg shadow-md">
+  <img
+    src={categories[selectedIndex].image}
+    alt={categories[selectedIndex].title}
+    className="w-full h-full object-cover"
+  />
+</div>
       </div>
     </div>
   )
