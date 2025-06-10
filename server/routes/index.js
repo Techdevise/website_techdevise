@@ -3,6 +3,7 @@ const authController = require('../controller/admin/authController');
 const jobsController = require('../controller/admin/jobsController');
 const contactUsController = require('../controller/admin/contactUsController');
 const itRolesController = require('../controller/admin/itRolesController');
+const blogController = require('../controller/admin/blogController');
 var router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware").isAuthenticated;
 /* GET home page. */
@@ -40,5 +41,11 @@ router.get('/roles/:id', itRolesController.viewRoles);
 router.delete('/roles/delete/:id', itRolesController.deleteRole);
 
 
+router.get('/blogs',blogController.blogListing)
+router.get('/blog_Create',blogController.createPage)
+router.post('/blogs/create',blogController.addBlogOption)
+router.put('/blogs/:id/status', blogController.updateStatus)
+router.get('/blogs/:id', blogController.editPage)
+router.post('/blogs/:id/update', blogController.updateBlogOption);
 
 module.exports = router;

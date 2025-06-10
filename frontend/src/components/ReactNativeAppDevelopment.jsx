@@ -5,6 +5,10 @@ import Reactnativeimage from "../assets/Reactnativeimage.svg";
 import Handicon from "../assets/Handicon.svg";
 import Settingicon from "../assets/Settingicon.svg";
 import Reactnate from "../assets/Reactnate.svg";
+import React_Plugin from "../assets/Group 647.svg";
+import React_Interactive from "../assets/Group 644.svg";
+import React_Native from "../assets/Group 645.svg";
+import Native_Support from "../assets/Group 647.svg";
 
 const ReactNativeAppDevelopment = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,32 +18,42 @@ const ReactNativeAppDevelopment = () => {
     {
       iconBg: "#FFCFD0",
       icon: Handicon,
-      title: "React Native App\nDevelopment",
+      title: "React Native App Development",
       description:
         "Under our React Native App Development service we offer cross-development apps that can be used to run on android, iOS, and other mobile platforms as well. React Native App Development costs less and also takes less time to develop.",
     },
     {
       iconBg: "#C5FDC9",
       icon: Settingicon,
-      title: "React Native \nCustomizations",
+      title: "React Native Customizations",
       description:
-        "Our React Native Customization service helps businesses modify features and functionality of their React Native apps. Our team of experts can customize your app according to your business needs and enhance it with additional features.",
+        "Our team specializes in React Native app Customizations. Hence, whatever feature you require in your app, our team will be able to offer the same. Also, our React Native Customizations are affordably priced. Contact us today for the best quote.",
     },
     {
       iconBg: "#FFF9C4",
-      icon: Settingicon,
-      title: "React Native \nCustomizations",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,."
+      icon: React_Plugin,
+      title: "React Plugin Development",
+      description: "Our team specializes in React Native app Customizations. Hence, whatever feature you require in your app, our team will be able to offer the same. Also, our React Native Customizations are affordably priced. Contact us today for the best quote."
     },
     {
       iconBg: "#FFF9C4",
-      icon: Settingicon,
-      title: "React Native \nCustomizations",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,."
+      icon: React_Interactive,
+      title: "React Interactive UI Development",
+      description: "At TechDevise we offer React Interactive UI Development services. The experts in our team will be able to provide the right kind of React Interactive UI as per your needs. Hence, if you are looking for similar services at affordable rates, contact us today!"
     },
-    
+       {
+      iconBg: "#FFF9C4",
+      icon: React_Native,
+      title: "React Native Consulting",
+      description: "At TechDevise, we not only offer development and design services, but we also offer to consult services as well. If you want to know more about React Native, opt for our React Native Consulting today. We ensure that you will be satisfied by consulting us."
+    },
+       {
+      iconBg: "#FFF9C4",
+      icon: Native_Support,
+      title: "React Native Support & Maintenance",
+      description: "If you are looking for quality React Native Support & Maintenance, then we have the best engineers to look after your projects. Our team expertise in various React Native Support & Maintenance services and we assure you that all your projects will run smoothly with our maintenance and support services."
+    },
 
-    // Add more cards here if needed...
   ];
 
   // Show 2 cards at a time

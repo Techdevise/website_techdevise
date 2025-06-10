@@ -52,6 +52,7 @@ db.Sequelize = Sequelize;
  db.SpeakExperts = require("./speak_experts")(sequelize,Sequelize)
  db.ItRole = require("./it_roles")(sequelize,Sequelize)
  db.HireingRole = require("./hire_roles")(sequelize,Sequelize)
+ db.Blogs = require("./blogs")(sequelize,Sequelize)
 
 
 db.JobOption.hasMany(db.JobPosition, {

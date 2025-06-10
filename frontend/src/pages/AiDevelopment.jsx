@@ -1,5 +1,4 @@
 import React from 'react'
-import TrustedBy from "../pages/TrustedBy"
 import AiSolutionsSection from '../components/AiSolutionsSection'
 import AIServices from '../components/AIServices'
 import AIStatsSection from '../components/AIStatsSection'
@@ -9,7 +8,8 @@ import AIPillars from '../components/AIPillars'
 import AiTechStack from '../components/AiTechStack'
 import Blockchainbanner from '../assets/Blockchainbanner.svg'
 import Vedioimg from '../assets/Vedioimg.png';
-
+import { ArrowUpRight } from "lucide-react";
+import TrustedByAi from './TrustedByAi'
 
 function AiDevelopment() {
     return (
@@ -23,22 +23,40 @@ function AiDevelopment() {
 
             {/* Content */}
             <div className="relative text-center text-white px-6 max-w-4xl z-10">
-                <button className="absolute top-[-70px] left-1/2 transform -translate-x-1/2 bg-white bg-opacity-20 p-5 rounded-full hover:bg-opacity-40">
-                    <img src={Vedioimg} alt="Video" className="w-10 h-10" />
-                </button>
-                <h1 className="text-[42px] font-Montserrat font-extrabold mb-4 mt-10">
-                Best Ai Development Company
-                </h1>
+                 {/* <button className="absolute -top-16 left-[56%] transform -translate-x-1/2 bg-white bg-opacity-20 p-3 mt-[17.5rem]  rounded-full hover:bg-opacity-40">
+              Quality Analysis
+            </button> */}
+              <div className="relative w-full flex justify-center items-center">
+            <button className="absolute -top-16 left-[56%] transform -translate-x-1/2 bg-white bg-opacity-20 p-3   rounded-full hover:bg-opacity-40">
+            AI solutions that deliver real ROI
+            </button>
+          </div>
+                  <h1 className="text-5xl font-Montserrat font-bold mb-4 mt-10 leading-tight" style={{
+                        display: "inline-table",
+                        background: "linear-gradient(to right, #EDF5F3, #157B6C)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                        textFillColor: "transparent",
+                        color: "#157B6C",
+                    }}>
+                       Best Ai Development Company
+                    </h1>
                 <p className="text-lg leading-relaxed mb-6">
-                With expertise in over 40 blockchain protocols, we are leading the charge toward the web3 future with our advanced blockchain development services.
+            Boost your business operations 20x with our advanced AI development services. Automate repetitive <br />
+tasks, make data-driven decisions, and run your business more efficiently with less effort.
                 </p>
-                <button className="bg-[#157B6C] px-6 py-3 rounded-full text-white text-lg font-medium hover:bg-[#145e54] transition">
-                  Consult Our Experts
-                </button>
+                  <button className="flex items-center gap-2 bg-[#22D5E4] text-black font-medium px-6 py-3 rounded-full transition-colors mx-auto">
+                            <span>Consult Our Experts</span>
+                            <div className="bg-white rounded-full w-8 h-8 flex items-center justify-center ml-1">
+                              <ArrowUpRight className="h-4 w-4 text-[#2DC4A9]" />
+                            </div>
+                          </button>
+               
             </div>
         </section>
         <div>
-        <TrustedBy />
+        <TrustedByAi />
         </div>
         <div>
             <AiSolutionsSection />

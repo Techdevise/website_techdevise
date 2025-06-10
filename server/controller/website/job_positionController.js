@@ -120,12 +120,10 @@ addJobPosition: async (req, res) => {
 
     job_Option_Listing:async(req,res)=>{
     try {
-       const getJobs = await JobOption.findAll({
-          include:[{
-          model:JobTitle,
-          as:"jobtitle"
-        }],
-        where:{status:1}
+     
+       const { job_id } = req.params;
+       const getJobs = await JobOption. findOne({
+     where:{job_id:job_id}
        })
       
          return res.status(200).json({
