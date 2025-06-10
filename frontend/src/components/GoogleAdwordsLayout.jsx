@@ -7,31 +7,36 @@ const GoogleAdwordsLayout = () => {
   const items = [
     {
       text: "Certified Agency",
-      arrow: "bg-white",
+      arrow: "bg-[#5CEA90]",
+       selectedBg: "bg-[#5CEA90]",
       content:
         "Tech Devise is certified by Google as a reputed Adwords agency. Our certification and partnership prove that we know all the intricate details about Google Adwords.",
     },
     {
       text: "24 x 7 Support",
       arrow: "bg-[#EA9C99]",
+        selectedBg: "bg-[#EA9C99]",
       content:
         "We are available 24x7 to support you with your Google Adwords needs. Our dedicated support team ensures you’re never left in the dark.",
     },
     {
       text: "Affordable",
       arrow: "bg-[#67C792]",
+       selectedBg: "bg-[#67C792]",
       content:
         "Our Adwords services are designed to deliver results without breaking the bank. We offer competitive pricing with maximum ROI.",
     },
     {
       text: "Experience",
       arrow: "bg-[#FFE74E]",
+       selectedBg: "bg-[#FFE74E]",
       content:
         "With years of experience in managing Google Adwords campaigns, we bring a wealth of knowledge and expertise to the table.",
     },
     {
       text: "Flexible Plans",
       arrow: "bg-[#C897EB]",
+        selectedBg: "bg-[#C897EB]",
       content:
         "Choose from a variety of flexible Adwords plans tailored to your business goals and budget.",
     },
@@ -49,15 +54,15 @@ const GoogleAdwordsLayout = () => {
               key={index}
               onClick={() => setSelectedIndex(index)}
               className={`cursor-pointer flex items-center justify-between p-3 sm:p-4 rounded-full shadow-md w-80 border-2 border-black transition-colors duration-300 ${
-                isSelected ? "bg-[#EE94B8]" : "bg-white"
+                 isSelected ? item.selectedBg : "bg-white"
               }`}
             >
               <span className="text-sm sm:text-base md:text-lg lg:text-base xl:text-lg text-black font-medium">
                 {item.text}
               </span>
               <div
-                className={`w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] flex items-center justify-center rounded-full text-black text-sm sm:text-base transition-colors duration-300 ${
-                  isSelected ? "bg-white" : item.arrow
+                className={`w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] flex items-center justify-center rounded-full text-[1.3rem] text-black transition-colors duration-300 ${
+                   isSelected ? "bg-white" : item.arrow
                 }`}
               >
                 ↗

@@ -27,9 +27,9 @@ export default function ServicesSection() {
           Our <span className="text-emerald-400">Services</span>
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mt-4 text-sm md:text-base">
-          At Tech Devise, we provide cutting-edge IT solutions designed to drive innovation, efficiency, and security
-          for businesses of all sizes. Our expertise spans across multiple domains, ensuring that your technology needs
-          are met with precision and excellence.
+          The services that we offer, help you create your space in the digital world. Now there is no need to worry!
+          Come to us with problems and leave with solutions.
+
         </p>
       </div>
       <div className="new_main_flx">
@@ -57,9 +57,9 @@ export default function ServicesSection() {
               </span>
             </button>
           </div>
-          <div className="new_seec_serv w-full md:w-1/2 flex items-center justify-center bg-[#5DC6B9] p-4"  style={{
-    background: 'linear-gradient(to left, #5DC6B9 0%, #5DC6B9 40%, #99EAE0 40%, #99EAE0 100%)',
-  }}>
+          <div className="new_seec_serv w-full md:w-1/2 flex items-center justify-center bg-[#5DC6B9] p-4" style={{
+            background: 'linear-gradient(to left, #5DC6B9 0%, #5DC6B9 40%, #99EAE0 40%, #99EAE0 100%)',
+          }}>
             <img
               src={ecommerce || "/placeholder.svg"}
               alt="E-commerce Illustration"

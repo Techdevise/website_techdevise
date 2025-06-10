@@ -24,7 +24,7 @@ export default function Portfolio() {
       title: "Reach more",
       subtitle: "with Google Ads",
       titleColor: "text-[#F29900]",
-      description: "Automated ads that help you find the right customers.",
+      description: "Whatever your business goal, drive better results with Performance Max.",
       image: Ads2,
       bgColor: "bg-[#FEF7E0]",
     },
@@ -33,7 +33,7 @@ export default function Portfolio() {
       subtitle: "with Search Ads",
       titleColor: "text-[#1C73E8]",
       description:
-        "Get in front of customers when they're searching for your business.",
+        "Whatever your business goal, drive better results with Performance Max.",
       image: Ads3,
       bgColor: "bg-[#D2E3FC]",
     },
@@ -98,7 +98,7 @@ export default function Portfolio() {
           className="absolute top-0 left-0 w-full h-full opacity-0"
         >
           <div className="flex justify-center items-center h-full p-6 bg-white">
-            <div className="max-w-[80%] w-full gap-8 items-center justify-start flex mr-auto">
+            <div className="w-full max-w-[63%] w-full gap-8 items-center justify-center flex ml-auto mr-auto md:justify-between md:flex-row flex-col">
               {/* Image container with dynamic background color */}
               <div
                 className={`relative w-full max-w-[400px] mx-auto md:mx-0 ${slide.bgColor} rounded-xl p-6`}
@@ -106,7 +106,7 @@ export default function Portfolio() {
                 <img
                   src={slide.image}
                   alt="Google Ads"
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-[300px] rounded-lg"
                 />
                 <button className="absolute top-4 left-4 bg-white rounded-full p-2 shadow-md">
                   <FaPlay className="text-green-600 text-lg" />
@@ -115,15 +115,15 @@ export default function Portfolio() {
  
               {/* Text content */}
               <div className="text-center md:text-left w-[100%] -ml-[3rem] relative z-20 ">
-                <h1 className="font-extrabold font-Montserrat leading-[120px]">
-                  <span className={`  ${slide.titleColor} block text-[155px]`}>
+                <h1 style={{ fontFamily: "Montserrat" }} className="font-extrabold leading-[120px]">
+                  <span className={`  ${slide.titleColor} block text-[100px]`}>
                     {slide.title}
                   </span>
-                  <span className="text-black block text-[110px]">
+                  <span className="text-black block text-[70px]">
                     {slide.subtitle}
                   </span>
                 </h1>
-                <p className="mt-4 text-gray-600 text-center w-full mx-auto md:mx-0 font-bold text-xs">
+                <p className="mt-2 ml-[-1rem] text-[#000000] text-center w-full mx-auto md:mx-0 text-[14px]" style={{ fontFamily: "Montserrat" }}>
                   {slide.description}
                 </p>
               </div>

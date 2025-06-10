@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { motion } from "framer-motion"
 import { ArrowUpRight, X } from "lucide-react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -129,13 +130,16 @@ const IT_Roles = () => {
             </p>
           </div>
           <div className="lg:w-1/3 flex justify-center lg:justify-end">
-            <img
+            <motion.img
               src={ITArow}
               alt="Arrow Graphic"
-              className="max-w-[80px] lg:max-w-[100px]"
+              className="max-w-[80px] lg:max-w-[100px]"  animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
             />
           </div>
         </div>
+
+
 
         {/* Role Tabs */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mb-10">

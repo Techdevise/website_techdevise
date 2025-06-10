@@ -8,6 +8,9 @@ import MobileAppServices from "../components/MobileAppServices";
 import AndroidLanding from "../components/AndroidLanding";
 import ReactNativeAppDevelopment from "../components/ReactNativeAppDevelopment";
 import TechStack from "../components/TechStack";
+import blockchainarrow from '../assets/blockchainarrow.svg';
+import { motion } from "framer-motion";
+import { Play } from "lucide-react";
 
 const MobileDevelopment = () => {
     return (
@@ -21,11 +24,29 @@ const MobileDevelopment = () => {
 
 
                 <div className="relative text-center text-white px-6 max-w-4xl z-10">
-                    <div className="relative w-full flex justify-center items-center">
-                        <button className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-20 p-5 rounded-full hover:bg-opacity-40 animate-ping-slow">
-                            <img src={Vedioimg} alt="Video" className="w-10 h-10" />
-                        </button>
-                    </div>
+                  <div className="flex justify-center mt-20 md:mt-0">
+    <button className="bg-opacity-20 p-5 hover:bg-opacity-40">
+      <div className="relative flex items-center justify-center">
+  
+        <motion.div
+          className="absolute w-20 h-20 rounded-full border-2 border-white"
+          animate={{
+            scale: [1, 1.2],
+            opacity: [0.7, 0.3],
+          }}
+          transition={{
+            duration: 2.8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <div className="relative w-16 h-16 rounded-full bg-white flex items-center justify-center z-10 shadow-md">
+          <Play className="text-violet-500 w-6 h-6" />
+        </div>
+      </div>
+    </button>
+  </div>
+
 
                     <h1 className="text-5xl font-Montserrat font-bold mb-4 mt-10 leading-tight" style={{
                         display: "inline-table",
@@ -45,9 +66,9 @@ const MobileDevelopment = () => {
                     </p>
                     <button className="flex items-center gap-2 bg-[#157B6C] hover:bg-[#25a892] text-white font-medium px-6 py-3 rounded-full transition-colors mx-auto">
                         <span>Mobile App Development</span>
-                        <div className="bg-white rounded-full w-8 h-8 flex items-center justify-center ml-1">
-                            <ArrowRight className="h-4 w-4 text-[#2DC4A9]" />
-                        </div>
+                        <div className="bg-white rounded-full w-[38px] h-[38px] flex items-center justify-center ml-5">
+                             <img src={blockchainarrow} alt="blockchainarrow" className="w-4 h-4" />
+                           </div>
                     </button>
                 </div>
             </section>
