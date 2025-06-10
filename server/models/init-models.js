@@ -1,12 +1,12 @@
 var DataTypes = require("sequelize").DataTypes;
-var _blogs = require("./blogs");
+var _job_subtitle = require("./job_subtitle");
 
 function initModels(sequelize) {
-  var blogs = _blogs(sequelize, DataTypes);
+  var job_subtitle = _job_subtitle(sequelize, DataTypes);
 
 
   return {
-    blogs,
+    job_subtitle,
   };
 }
 module.exports = initModels;

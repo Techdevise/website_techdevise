@@ -34,6 +34,8 @@ try {
             const isMatch = await bcrypt.compare(password, findemail.password);
             if (isMatch) {
                 req.flash("success", "Login Successful");
+                 console.log(req.body);
+                 
                 req.session.admin = findemail;
                 return res.redirect("/admin/dashboard");
             } else {
