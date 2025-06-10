@@ -1,46 +1,74 @@
 import React from "react";
 import Aiservicesimg3 from "../assets/Aiservicesimg3.svg";
+import AIlog0 from "../assets/Group 457.svg";
+import { ArrowUpRight } from "lucide-react";
 
 const AIStatsSection = () => {
   return (
     <section
-      className="w-full max-w-[1922px] h-[600px] bg-cover bg-center relative flex items-center justify-center px-4 sm:px-8 lg:px-20 m-auto"
+      className="w-full h-auto py-16 bg-cover bg-center px-4 sm:px-8 lg:px-20 flex items-center justify-center"
       style={{
-        backgroundImage: `url(${Aiservicesimg3})`,
+        backgroundImage: `linear-gradient(rgba(20, 69, 80, 0.7), rgba(14, 104, 124, 0.69)), url(${Aiservicesimg3})`,
       }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="max-w-[1680px] w-full text-center text-white z-10">
+        {/* AI Logo */}
+        <div className="flex justify-center mb-6">
+          <img className="w-40 md:w-52 "  src={AIlog0} alt="AI Logo" />
+        </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto text-center text-white">
-        <h2 className="text-5xl font-bold mb-4">AI</h2>
-        <p className="text-lg mb-10">
-          Our Artificial intelligence development solutions helped businesses reduce manual work and
-          everyday tasks by 40%. Book a free consultation with our custom AI development services
-          agency to automate your business operations.
+        {/* Description */}
+        <p className="text-base sm:text-lg md:text-xl mb-10 leading-relaxed">
+          Our Artificial Intelligence development solutions helped businesses reduce manual work and everyday tasks by 40%.
+          <br className="hidden md:block" />
+          Book a free consultation with our custom AI development services agency to automate your business operations.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <div className="w-[300px] h-[100px] bg-[#FFF2CD] text-black rounded-lg flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold">20%</span>
-            <span className="text-sm text-center">Reduction in<br />Manual Work</span>
+        {/* Stats */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 mb-10 w-full max-w-[1620px] mx-auto">
+          {/* Card 1 */}
+          <div className="bg-[#FFF2CD] text-black rounded-lg flex items-center px-4 py-6 h-[120px]">
+            <span className="text-[32px] md:text-[40px] font-bold w-[30%] text-left">20%</span>
+            <span className="text-[18px] md:text-[20px] text-left w-[70%]">
+              Reduction in <br />
+              Manual Work
+            </span>
           </div>
-          <div className="w-[300px] h-[100px] bg-white text-black rounded-lg flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold">30%</span>
-            <span className="text-sm text-center">Lower Operational<br />Costs</span>
+
+          {/* Card 2 */}
+          <div className="bg-white text-black rounded-lg flex items-center px-4 py-6 h-[120px]">
+            <span className="text-[32px] md:text-[40px] font-bold w-[30%] text-left">30%</span>
+            <span className="text-[18px] md:text-[20px] text-left w-[70%]">
+              Lower Operational <br />
+              Costs
+            </span>
           </div>
-          <div className="w-[300px] h-[100px] bg-[#CFF1DD] text-black rounded-lg flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold">40%</span>
-            <span className="text-sm text-center">Faster Data<br />Reporting</span>
+
+          {/* Card 3 */}
+          <div className="bg-[#CFF1DD] text-black rounded-lg flex items-center px-4 py-6 h-[120px]">
+            <span className="text-[32px] md:text-[40px] font-bold w-[30%] text-left">40%</span>
+            <span className="text-[18px] md:text-[20px] text-left w-[70%]">
+              Faster Data <br />
+              Reporting
+            </span>
           </div>
-          <div className="w-[300px] h-[100px] bg-[#FFE5E5] text-black rounded-lg flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold">30%</span>
-            <span className="text-sm text-center">Increased<br />Productivity</span>
+
+          {/* Card 4 */}
+          <div className="bg-[#FFE5E5] text-black rounded-lg flex items-center px-4 py-6 h-[120px]">
+            <span className="text-[32px] md:text-[40px] font-bold w-[30%] text-left">30%</span>
+            <span className="text-[18px] md:text-[20px] text-left w-[70%]">
+              Increased <br />
+              Productivity
+            </span>
           </div>
         </div>
 
-        <button className="w-full md:w-auto bg-[#157B6C] px-6 py-3 rounded-full text-white text-lg font-medium hover:bg-[#145e54] transition">
-          Consult Our Experts
-          <span className="text-xl">→</span>
+        {/* Call to Action */}
+        <button className="flex items-center gap-2 bg-[#22D5E4] text-black font-medium px-6 py-3 rounded-full transition hover:bg-[#1cc1d2] mx-auto">
+          <span>Consult Our Experts</span>
+          <div className="bg-white rounded-full w-8 h-8 flex items-center justify-center ml-1">
+            <ArrowUpRight className="h-4 w-4 text-[#22D5E4]" />
+          </div>
         </button>
       </div>
     </section>

@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const ModelsAideveloper = () => {
   return (
-    <div className="w-full max-w-[1920px] h-auto m-auto bg-gradient-to-r from-white to-[#BBD2DC] flex flex-col items-center justify-center px-10">
+    <div className="w-full max-w-[1920px] h-auto m-auto bg-gradient-to-r from-white to-[#BBD2DC] flex flex-col items-center justify-center px-10 mt-10">
       <div className="text-center mb-10">
         <h1 className="text-[48px] font-Montserrat font-extrabold text-black leading-snug">
         Models our AI Developers are Proficient with

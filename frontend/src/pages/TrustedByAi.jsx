@@ -41,7 +41,11 @@ const brands = [
 const TrustedByAi = () => {
   const [isPaused, setIsPaused] = useState(false);
   return (
-    <div className="w-full bg-[#061611] text-white flex items-center justify-center relative overflow-hidden p-6 md:px-12 shadow-[0px_2px_10px_rgba(0,2,3,0.5)]">
+    <div className="w-full bg-[#061611] text-white flex items-center justify-center relative overflow-hidden p-6 md:px-12 shadow-[0px_2px_10px_rgba(0,2,3,0.5)]" style={{
+                  
+                        background: "linear-gradient(to right, #005163, #01090A)",
+                      
+                    }}>
      
       <div className="hidden md:block flex-shrink-0 text-left ml-4 md:ml-20 pr-6 border-r border-white-600 z-10 laptop-margin">
         <p className="text-xl md:text-2xl font-bold font-Montserrat">Trusted by leading</p>  
@@ -62,7 +66,7 @@ const TrustedByAi = () => {
               key={index}
               className="flex-shrink-0 flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
-              <img src={brand.icon} alt={brand.name} className="h-16 md:h-16 mb-2 gap-0" />
+              <img src={brand.icon} alt={brand.name} className="h-16 md:h-16 mb-2 gap-0 " />
               <p className="text-xs md:text-sm text-gray-400 font-bold">{brand.name}</p>
             </div>
           ))}

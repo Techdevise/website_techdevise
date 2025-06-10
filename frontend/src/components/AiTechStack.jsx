@@ -161,79 +161,65 @@ const AiTechStack = () => {
 
 
   return (
-    <div className="p-auto ml-30 py-8">
-      <div className="w-full h-auto mt-10 flex flex-col items-center justify-center text-center bg-white">
-        <h2 className="w-[1068px] text-[42px] font-extrabold font-Montserrat text-black">Tech Stack, We Use As an Artificial
-          Intelligence Development Company!</h2>
-        <p className="text-[18px] font-Montserrat text-black mt-2 w-3/5">
-          Our AI app developers excel in a diverse and advanced tech stack. From backend frameworks to development
-          tools, we meticulously select the best-in-class components to ensure your app meets the most stringent technical standards.</p>
-      </div>
+  <div className="p-auto py-4 md:py-8">
+  <div className="w-full h-auto mt-6 md:mt-10 flex flex-col items-center justify-center text-center bg-white px-4">
+    <h2 className="w-full max-w-[1068px] text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold font-Montserrat text-black">
+      Tech Stack, We Use As an Artificial Intelligence Development Company!
+    </h2>
+    <p className="text-sm sm:text-base md:text-[18px] font-Montserrat text-black mt-2 w-full md:w-4/5 lg:w-3/5">
+      Our AI app developers excel in a diverse and advanced tech stack. From backend frameworks to development
+      tools, we meticulously select the best-in-class components to ensure your app meets the most stringent technical standards.
+    </p>
+  </div>
 
-      <div className="rounded-lg shadow-lg w-full max-w-[1629px] h-auto m-auto relative mt-4 text-center and justify-center bg-dark" style={{ backgroundImage: `url(${Aiservicesimg4})` }}>
-        {/* Tab Navigation */}
-        <div className="flex border-b">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              className={`px-8 py-4 text-[24px] font-Montserrat font-semibold ${activeTab === tab ? "border-b-2 border-black" : "text-white"
-                }`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-        {/* Technology Cards */}
-        <div className="relative flex justify-start overflow-hidden">
-          <div
-            ref={wrapperRef}
-            className="flex w-max gap-8 py-6 px-4"
+  <div className="rounded-lg shadow-lg w-full max-w-[1629px] h-auto mx-auto relative mt-4 text-center justify-center bg-dark"
+    style={{
+      backgroundImage: `linear-gradient(to right, rgba(136, 139, 155, 0.26), rgb(29, 29, 65)), url(${Aiservicesimg4})`,
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+    }}
+  >
+    {/* Tab Navigation */}
+    <div className="flex overflow-x-auto py-2 px-4">
+      <div className="flex space-x-2 md:space-x-4 min-w-max">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            className={`px-4 py-2 md:px-8 md:py-4 text-sm sm:text-base md:text-[24px] font-Montserrat font-semibold whitespace-nowrap ${
+              activeTab === tab 
+                ? "border-b-2 border-black text-black" 
+                : "text-white hover:text-gray-300"
+            }`}
+            onClick={() => setActiveTab(tab)}
           >
-            <div ref={slideRef} className="flex gap-8">
-              {technologies[activeTab].map((tech, index) => (
-                <div key={index} className="flex flex-col items-center min-w-[162px]">
-                  <div className="w-full h-[120px] sm:h-[145px] border rounded-xl flex items-center justify-center mb-2">
-                    <img
-                      src={tech.logo || "/placeholder.svg"}
-                      alt={tech.name}
-                      className="w-[80px] sm:w-[106px] h-[40px] sm:h-[55px] object-contain"
-                    />
-                  </div>
-
-                  <span className="text-sm text-center">{tech.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation Arrows */}
-        {/* <div className="absolute bottom-0 right-4 flex space-x-2">
-          <button onClick={handlePrev} className="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                fillRule="evenodd"
-                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
+            {tab}
           </button>
-          <button onClick={handleNext} className="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                fillRule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
-        </div> */}
-
-
+        ))}
       </div>
     </div>
+
+    {/* Technology Cards */}
+    <div className="relative flex justify-start overflow-hidden px-2">
+      <div ref={wrapperRef} className="flex w-max gap-4 md:gap-8 py-4 md:py-6 px-2">
+        <div ref={slideRef} className="flex gap-4 md:gap-8">
+          {technologies[activeTab].map((tech, index) => (
+            <div key={index} className="flex flex-col items-center min-w-[100px] sm:min-w-[130px] md:min-w-[162px]">
+              <div className="w-full h-[80px] sm:h-[120px] md:h-[145px] border rounded-xl flex items-center justify-center mb-1 md:mb-2 bg-white">
+                <img
+                  src={tech.logo || "/placeholder.svg"}
+                  alt={tech.name}
+                  className="w-[50px] sm:w-[80px] md:w-[106px] h-[25px] sm:h-[40px] md:h-[55px] object-contain bg-white"
+                />
+              </div>
+              <span className="text-xs sm:text-sm text-center text-white">{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   )
 }
 
