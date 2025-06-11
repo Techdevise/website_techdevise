@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import Navbar from '../layout/Navbar';
 import LetsTalkForm from '../components/LetsTalkForm';
 import LocationSection from './LocationSection';
-import Careers1 from '../assets/Careers1.svg';
+import Careerspageimg from '../assets/Careerspageimg.svg';
 import lamp from '../assets/lamp.png';
 import light from '../assets/light.png';
 import SEODevelopment from '../components/SEODevelopment';
@@ -62,7 +62,7 @@ function Careers() {
       <div
         className="w-full h-[546px] bg-[#061611] bg-cover bg-center flex items-center justify-center text-white font-Montserrat px-4 relative"
         style={{
-          backgroundImage: `url(${Careers1})`,
+          backgroundImage: `url(${Careerspageimg})`,
           backgroundSize: "100% 100",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center"
