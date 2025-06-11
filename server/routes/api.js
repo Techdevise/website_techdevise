@@ -4,10 +4,12 @@ const job_positionController = require('../controller/website/job_positionContro
 const contactUsController = require('../controller/website/contactUsController');
 const itRolesController = require('../controller/website/itRolesController');
 const blogController = require('../controller/website/blogController');
+const cmsController = require('../controller/website/cmsController');
 var apiRouter = express.Router();
 
  apiRouter.post('/job_position' ,jobValidationRules,job_positionController.addJobPosition)
  apiRouter.get('/jobs' ,job_positionController.job_listing)
+ apiRouter.get('/sub_jobs/:job_id' ,job_positionController.jobSub_listing)
  apiRouter.get('/jobs_Options/:job_id' ,job_positionController.job_Option_Listing)
  apiRouter.post('/contact_us' ,contactUsController.add_Contact)
  apiRouter.post('/experts' ,contactUsController.add_Experts)
@@ -16,5 +18,6 @@ var apiRouter = express.Router();
   apiRouter.post('/roles/create' ,itRolesController.createRole)
 
     apiRouter.get('/blogs' ,blogController.listing_blogs)
+    apiRouter.get('/cms' ,cmsController.listingCms)
 
 module.exports = apiRouter;

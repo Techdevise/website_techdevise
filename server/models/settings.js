@@ -1,52 +1,51 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('job_options', {
+  return sequelize.define('settings', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    job_id: {
-      type: DataTypes.INTEGER,
+    email: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+      defaultValue: ""
+    },
+    phone: {
+      type: DataTypes.BIGINT,
       allowNull: false,
       defaultValue: 0
     },
-     sub_job_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
-    },
-    location: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      defaultValue: ""
-    },
-    responsibilities: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-      defaultValue: ""
-    },
-    requirements: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-      defaultValue: ""
-    },
-    experience: {
+    facebook_link: {
       type: DataTypes.STRING(70),
       allowNull: false,
       defaultValue: ""
     },
-    status: {
-      type: DataTypes.INTEGER,
+    instagram_link: {
+      type: DataTypes.STRING(70),
       allowNull: false,
-      defaultValue: 1
+      defaultValue: ""
+    },
+    linkedin_link: {
+      type: DataTypes.STRING(70),
+      allowNull: false,
+      defaultValue: ""
+    },
+    twitter_link: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+      defaultValue: ""
+    },
+    address: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
+      defaultValue: ""
     }
   }, {
     sequelize,
-    tableName: 'job_options',
+    tableName: 'settings',
     timestamps: true,
-    paranoid: true,
     indexes: [
       {
         name: "PRIMARY",

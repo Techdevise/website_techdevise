@@ -26,6 +26,7 @@
                           <tr>
                             <th> Sr.No </th>
                             <th> Job </th>
+                            <!-- <th> Sub Job </th> -->
                             <th> First Name </th>
                             <th> Last Name </th>
                             <th> Email </th>
@@ -39,6 +40,7 @@
                           <tr id="job-<%= job.id %>">
                           <td><%= index + 1 %></td>
                            <td><%= job.joboption?.jobtitle?.title %></td>
+                           <!-- <td><%= job.joboption?.jobSub_title?.name %></td> -->
                            <td><%= job.first_name %></td>
                           <td><%= job.last_name %></td>
                           <td><%= job.email %></td>

@@ -1,68 +1,81 @@
-const { JobPosition, JobTitle, JobOption } = require("../../models");
+const { JobPosition, JobTitle, JobOption, JobSubTitle } = require("../../models");
 
 
 
 module.exports = {
 
 
-  jobListing: async (req, res) => {
-    try {
-      const jobs = await JobPosition.findAll({
-        include: [
-          {
-            model: JobOption,
-            as: 'joboption',
-            include: [
-              {
-                model: JobTitle,
-                as: 'jobtitle'
-              }
-            ]
-          }
-        ],
-        order: [['id', 'DESC']]
-      });
-
-
-      res.render("pages/jobs/joblist", {
-        jobs: jobs,
-        title: "Job"
-      });
-
-    } catch (error) {
-      console.log(error);
-
-      const errorMessage = error.message || 'Something went wrong, please try again later.';
-      req.flash("error", errorMessage);
-      return res.redirect("/admin/dashboard");
-    }
-  },
-  viewPage: async (req, res) => {
-    try {
-      const { id } = req.params;
-      const job = await JobPosition.findOne({
-        include: [{
+ jobListing: async (req, res) => {
+  try {
+    const jobs = await JobPosition.findAll({
+      include: [
+        {
           model: JobOption,
-          as: "joboption",
-          include: [{
-            model: JobTitle,
-            as: "jobtitle"
-          }]
-        }],
-        where: {
-          id: id,
-        },
-      })
-      res.render("pages/jobs/jobview", {
-        jobs: job,
-        title: "Job"
-      })
-    } catch (error) {
-      const errorMessage = error.message || 'Something went wrong, please try again later.';
-      req.flash("error", errorMessage);
-      return res.redirect("/admin/dashboard");
-    }
-  },
+          as: 'joboption',
+          include: [
+            {
+              model: JobTitle,
+              as: 'jobtitle',
+             
+            }
+          ],
+        }
+      ],
+      order: [['id', 'DESC']],
+ 
+    });
+
+     
+    res.render("pages/jobs/joblist", {
+      jobs,
+      title: "Job"
+    });
+
+  } catch (error) {
+    console.log(error);
+    const errorMessage = error.message || 'Something went wrong, please try again later.';
+    req.flash("error", errorMessage);
+    return res.redirect("/admin/dashboard");
+  }
+},
+
+viewPage: async (req, res) => {
+  try {
+    const { id } = req.params;
+    const job = await JobPosition.findOne({
+      where: { id },
+      include: [
+        {
+          model: JobOption,
+          as: 'joboption',
+          include: [
+            {
+              model: JobTitle,
+              as: 'jobtitle',
+              include: [
+                {
+                  model: JobSubTitle,
+                  as: 'jobsubtitle'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    });
+
+    res.render("pages/jobs/jobview", {
+      jobs: job,
+      title: "Job"
+    });
+
+  } catch (error) {
+    const errorMessage = error.message || 'Something went wrong, please try again later.';
+    req.flash("error", errorMessage);
+    return res.redirect("/admin/dashboard");
+  }
+},
+
 
 
 
@@ -96,24 +109,33 @@ module.exports = {
     }
   },
 
-  createPage: async (req, res) => {
-    try {
-      const job = await JobTitle.findAll();
-      res.render("pages/jobs/jobOptionCreate", {
-        title: "JobOption",
-        job: job
-      })
-    } catch (error) {
-      const errorMessage = error.message || 'Something went wrong, please try again later.';
-      req.flash("error", errorMessage);
-      return res.redirect("/admin/dashboard");
-    }
-  },
+ createPage: async (req, res) => {
+  try {
+    const jobs = await JobTitle.findAll();
+    const subjobs = await JobSubTitle.findAll();
+
+    res.render("pages/jobs/jobOptionCreate", {
+      title: "JobOption",
+      jobs,
+      subjobs,
+    });
+
+  } catch (error) {
+    const errorMessage = error.message || 'Something went wrong, please try again later.';
+    req.flash("error", errorMessage);
+    return res.redirect("/admin/dashboard");
+  }
+},
+
+
+
+
   addJobOption: async (req, res) => {
     try {
-      const { job_id, location, responsibilities, requirements, experience } = req.body;
+      const { job_id,sub_job_id, location, responsibilities, requirements, experience } = req.body;
       await JobOption.create({
         job_id,
+        sub_job_id,
         location,
         responsibilities,
         requirements,
@@ -129,6 +151,8 @@ module.exports = {
       return res.redirect("/admin/dashboard");
     }
   },
+
+
   updateStatus: async (req, res) => {
     try {
 
@@ -218,17 +242,15 @@ module.exports = {
 
   //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>subjobTitle listing  with add 
 
-  jobListing: async (req, res) => {
+  jobTitleListing: async (req, res) => {
     try {
       const jobs = await JobTitle.findAll({
-     
+
         order: [['id', 'DESC']]
       });
-
-
-      res.render("pages/jobs/joblist", {
+      res.render("pages/jobs/jobtilte", {
         jobs: jobs,
-        title: "Job"
+        title: "Job_Sub"
       });
 
     } catch (error) {
@@ -240,4 +262,125 @@ module.exports = {
     }
   },
 
+
+  updateStatusJob: async (req, res) => {
+    try {
+
+      const userId = req.params.id;
+      const { status } = req.body;
+
+      const job = await JobTitle.findOne({
+        where: {
+          id: userId,
+        },
+      });
+      job.status = status;
+      await job.save();
+
+      res.json({
+        success: true,
+        message: 'jOB title status updated successfully',
+      });
+
+    } catch (error) {
+      const errorMessage = error.message || 'Something went wrong, please try again later.';
+      req.flash("error", errorMessage);
+      res.status(500).json({
+        success: false,
+        message: 'Something went wrong. Please try again.',
+      });
+    }
+  },
+
+  jobSubTitleListing: async (req, res) => {
+    try {
+      const { job_id } = req.params
+      const jobtitle = await JobTitle.findOne({
+        where: { id: job_id }
+      })
+      const jobs = await JobSubTitle.findAll({
+        where: { job_id: job_id },
+        order: [['id', 'DESC']]
+      });
+
+
+      res.render("pages/jobs/jobSub_tilte", {
+        jobtitle:jobtitle,
+        jobs: jobs,
+        title: "Job_Sub"
+      });
+
+    } catch (error) {
+      console.log(error);
+
+      const errorMessage = error.message || 'Something went wrong, please try again later.';
+      req.flash("error", errorMessage);
+      return res.redirect("/admin/dashboard");
+    }
+  },
+
+
+createPageSub: async (req, res) => {
+  try {
+    const { job_id } = req.params;
+
+    const jobtitle = await JobTitle.findOne({ where: { id: job_id } });
+
+    res.render("pages/jobs/addSubJob", {
+      title: "JobOption",
+      job_id, // Pass this to the form
+      job: jobtitle
+    });
+  } catch (error) {
+    const errorMessage = error.message || 'Something went wrong, please try again later.';
+    req.flash("error", errorMessage);
+    return res.redirect("/admin/dashboard");
+  }
+},
+  addSubJob: async (req, res) => {
+    try {
+      const { job_id, location, name } = req.body;
+      await JobSubTitle.create({
+        job_id,
+        name,
+        location,
+      });
+
+      req.flash("success", "Job option created successfully");
+      res.redirect(`/admin/jobsubliting/${job_id}`);
+    } catch (error) {
+      console.log(error);
+      const errorMessage = error.message || 'Something went wrong, please try again later.';
+      req.flash("error", errorMessage);
+      return res.redirect("/admin/dashboard");
+    }
+  },
+    updateStatusSub: async (req, res) => {
+    try {
+
+      const userId = req.params.id;
+      const { status } = req.body;
+
+      const job = await JobSubTitle.findOne({
+        where: {
+          id: userId,
+        },
+      });
+      job.status = status;
+      await job.save();
+
+      res.json({
+        success: true,
+        message: 'jOB title status updated successfully',
+      });
+
+    } catch (error) {
+      const errorMessage = error.message || 'Something went wrong, please try again later.';
+      req.flash("error", errorMessage);
+      res.status(500).json({
+        success: false,
+        message: 'Something went wrong. Please try again.',
+      });
+    }
+  },
 }

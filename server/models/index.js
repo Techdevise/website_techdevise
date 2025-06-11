@@ -54,6 +54,7 @@ db.Sequelize = Sequelize;
  db.ItRole = require("./it_roles")(sequelize,Sequelize)
  db.HireingRole = require("./hire_roles")(sequelize,Sequelize)
  db.Blogs = require("./blogs")(sequelize,Sequelize)
+ db.Setting = require("./settings")(sequelize,Sequelize)
 
 
 db.JobOption.hasMany(db.JobPosition, {
@@ -95,4 +96,14 @@ db.JobSubTitle.belongsTo(db.JobTitle, {
   as: 'jobTitle'
 });
 
+
+db.JobSubTitle.hasMany(db.JobOption, {
+  foreignKey: 'sub_job_id',
+  as: 'Options'
+});
+
+db.JobOption.belongsTo(db.JobSubTitle, {
+  foreignKey: 'sub_job_id',
+  as: 'jobSub_title'
+});
 module.exports = db;

@@ -4,6 +4,7 @@ const jobsController = require('../controller/admin/jobsController');
 const contactUsController = require('../controller/admin/contactUsController');
 const itRolesController = require('../controller/admin/itRolesController');
 const blogController = require('../controller/admin/blogController');
+const settingController = require('../controller/admin/settingController');
 var router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware").isAuthenticated;
 /* GET home page. */
@@ -15,6 +16,13 @@ router.post('/login',authController.login_post)
 router.get('/logout', authController.logout)
 router.use(authMiddleware)
 router.get('/dashboard',authController.dashboard)
+
+router.get('/jobsliting',jobsController.jobTitleListing)
+router.put('/jobsliting/:id/status', jobsController.updateStatusJob)
+router.get('/jobsubliting/:job_id',jobsController.jobSubTitleListing)
+router.get('/jobsub_Create/:job_id', jobsController.createPageSub);
+router.post('/jobsub_Create/create', jobsController.addSubJob);
+router.put('/jobsubliting/:id/status', jobsController.updateStatusSub)
 
 router.get('/jobs',jobsController.jobListing)
 router.get('/jobs/:id',jobsController.viewPage)
@@ -30,6 +38,8 @@ router.post('/joboption/:id/update', jobsController.updateJobOption);
 router.get('/cms/:id', authController.listingCms);
 router.post('/cms/:id', authController.cmsEditpost);
 
+router.get('/setting/:id', settingController.listingSetting);
+router.post('/setting/:id', settingController.settingEditpost);
 
 router.get('/contact_us', contactUsController.contactListing);
 router.get('/contact_us/:id', contactUsController.contactView);

@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 import { ArrowUpRight } from "lucide-react";
-import Mobilebackimg from '../assets/QAImage.jpg';
-import TrustQA from './TrustQA';
-import Acceleratebusiness from '../components/Acceleratebusiness';
-import GainInsights from '../components/GainInsights';
-import Fueling from '../components/Fueling';
-import AnalystRecognition from '../components/AnalystRecognition';
-import TeamInto from '../components/TeamInto';
-import blockchainarrow from '../assets/blockchainarrow.svg';
+import Mobilebackimg from "../assets/QAImage.jpg";
+import TrustQA from "./TrustQA";
+import Acceleratebusiness from "../components/Acceleratebusiness";
+import GainInsights from "../components/GainInsights";
+import Fueling from "../components/Fueling";
+import AnalystRecognition from "../components/AnalystRecognition";
+import TeamInto from "../components/TeamInto";
+import blockchainarrow from "../assets/blockchainarrow.svg";
 
 const QualityAnalysis = () => {
   return (
@@ -21,14 +21,14 @@ const QualityAnalysis = () => {
 
         {/* Main content */}
         <div className="relative text-center text-white px-6 max-w-4xl z-10 mt-20">
-          <div className="relative w-full flex justify-center items-center">
-            <button className="absolute w-[160px] h-[47px] -top-16 left-[56%] transform -translate-x-1/2 bg-white bg-opacity-20 p-3 mt-[17.5rem]  rounded-full hover:bg-opacity-40">
+          <div className="relative w-full flex justify-center items-center ">
+            <button className="absolute w-[160px] h-[47px] -top-16 left-[60%] transform -translate-x-1/2 bg-white bg-opacity-20 p-3 mt-[17.5rem]  rounded-full hover:bg-opacity-40">
               Quality Analysis
             </button>
           </div>
 
-          <h1 
-            className="text-4xl font-Montserrat font-bold mb-4 mt-[17.5rem] leading-tight" 
+          <h1
+            className="text-4xl font-Montserrat font-bold mb-4 mt-[17.5rem] leading-tight"
             style={{
               display: "inline-table",
               background: "linear-gradient(to right, #FFFFFF, #9A9A14)",
@@ -39,29 +39,35 @@ const QualityAnalysis = () => {
               color: "#157B6C",
             }}
           >
-            Redefining Software Quality using AI Engineering<br />
+            Redefining Software Quality using AI Engineering
+            <br />
             Excellence, Assuring Accuracy
           </h1>
-          
+
           <p className="text-lg leading-relaxed mb-6">
-            We help you revolutionize your quality journey with AI-powered assurance and engineering quick releases, minimized errors, and elevated user experiences.
+            We help you revolutionize your quality journey with AI-powered
+            assurance and engineering quick releases, minimized errors, and
+            elevated user experiences.
           </p>
-          
+
           {/* <button className="flex items-center gap-2 bg-[#9EDF84] hover:bg-[#9EDF84] text-black font-medium px-6 py-3 rounded-full transition-colors mx-auto">
             <span>know more</span>
             <div className="bg-white rounded-full w-8 h-8 flex items-center justify-center ml-1">
               <ArrowUpRight className="h-4 w-4 text-[#2DC4A9]" />
             </div>
           </button> */}
-         <div className="flex justify-center">
-  <button className="flex items-center w-auto h-auto pt-[6px] pr-[10px] pb-[7px] pl-[20px] gap-2 rounded-full bg-[#9EDF84] hover:bg-[#9EDF84] text-black text-[16px] font-Montserrat font-medium px-6 py-3 transition-colors">
-    <span>Know More</span>
-    <div className="bg-white rounded-full w-[30px] h-[30px] flex items-center justify-center ml-2">
-      <img src={blockchainarrow} alt="blockchainarrow" className="w-4 h-4" />
-    </div>
-  </button>
-</div>
-
+          <div className="flex justify-center">
+            <button className="flex items-center w-auto h-auto pt-[6px] pr-[10px] pb-[7px] pl-[20px] gap-2 rounded-full bg-[#9EDF84] hover:bg-[#9EDF84] text-black text-[16px] font-Montserrat font-medium px-6 py-3 transition-colors">
+              <span>Know More</span>
+              <div className="bg-white rounded-full w-[30px] h-[30px] flex items-center justify-center ml-2">
+                <img
+                  src={blockchainarrow}
+                  alt="blockchainarrow"
+                  className="w-4 h-4"
+                />
+              </div>
+            </button>
+          </div>
         </div>
 
         {/* TrustQA component at the bottom */}
@@ -69,13 +75,13 @@ const QualityAnalysis = () => {
           <TrustQA />
         </div>
       </section>
-      <Acceleratebusiness/>
-      <GainInsights/>
-      <Fueling/>
-      <AnalystRecognition/>
-      <TeamInto/>
+      <Acceleratebusiness />
+      <GainInsights />
+      <Fueling />
+      <AnalystRecognition />
+      <TeamInto />
     </main>
   );
-}
+};
 
 export default QualityAnalysis;
