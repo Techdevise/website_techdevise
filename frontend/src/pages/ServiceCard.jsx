@@ -12,11 +12,9 @@ export default function ServiceCard({
     <div
       className={`${
         fullWidth ? "w-full" : "flex-1"
-      } rounded-3xl overflow-hidden relative p-8`}
+      } rounded-3xl overflow-hidden relative`}
       style={{
-        background: `linear-gradient(to bottom, ${topColor} 70%, ${bottomColor} 30%)`,
-      }}
-    >
+        background: `linear-gradient(to bottom, ${topColor} 70%, ${bottomColor} 30%)`, padding: "33px 22px 48px 22px"}}>
      
       <h3 className="text-2xl font-bold text-[#00000] mb-4">{title}</h3>
       <p className="mb-6 max-w-md text-[#00000]">{description}</p>

@@ -18,10 +18,7 @@
   
   }
 
-  .blockchain {
 
-
-  }
 
   .card_correct {
     margin-top: 7rem !important;
@@ -54,8 +51,7 @@
   
   }
 
-  .blockchain {
-  }
+
 }
 /* Add this in your global CSS */
 /* @media screen and (max-width: 1440px) and (min-width: 1280px) {

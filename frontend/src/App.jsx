@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { ToastContainer } from "react-toastify";
 import './index.css'
@@ -25,6 +26,8 @@ import QualityAnalysis from './pages/QualityAnalysis';
 import ITStaff from './pages/ItStaff';
 
 
+
+
 function Scroll() {
   const { pathname } = useLocation()
   useEffect(() => {
@@ -33,10 +36,13 @@ function Scroll() {
   return null
 }
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   return (
     <BrowserRouter>
       <Scroll />
-      {/* Navbar always on top */}
       <Navbar />
 
       {/* Main content */}
@@ -47,7 +53,7 @@ function App() {
 
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/career" element={<Careers />} />
-            <Route path="/career1" element={<Careers1 />} />
+          <Route path="/career1" element={<Careers1 />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/gettouch" element={<GettouchForm />} />
@@ -62,10 +68,14 @@ function App() {
         </Routes>
       </main>
 
-      {/* Footer always at bottom */}
+
+
+      <Footer onContactClick={openModal} />
+      <GettouchForm isOpen={isModalOpen} onClose={closeModal} />
+
+
       <Footer />
 
-      {/* Toast messages */}
       <ToastContainer />
     </BrowserRouter>
   );

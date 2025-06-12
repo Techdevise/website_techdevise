@@ -40,10 +40,16 @@ function TechAboutSection() {
 
                 <div className="text-white font-Montserrat text-base sm:text-[17px] md:text-[18px] lg:text-[19px] mt-5 space-y-4 max-w-7xl mx-auto tech_dessc">
   <p>
-    At <span className="font-semibold">Tech Devise</span>possesses a professional team of experts! Our main objective is to satisfy<br className="hidden sm:block" /> our client needs. Our area of expertise is offering excellent services since we keep meeting<br className="hidden sm:block" />the needs of our clients even beyond the delivery term. We, at Tech Devise, work very<br className="hidden sm:block" />methodically to provide ultimate satisfaction to clients. Our work begins with a consultation<br className="hidden sm:block" />with our client. We understand your needs better and suggest you the best solution. This is<br className="hidden sm:block" />followed by development and implementation of your project. Upon delivery, we assure quality<br className="hidden sm:block" />support and maintenance
+    At <span className="font-semibold">Tech Devise</span>, we are passionate about delivering innovative technology solutions that<br className="hidden sm:block" />
+    drive business success. With a team of highly skilled developers, designers, and IT experts,<br className="hidden sm:block" />
+    we specialize in creating cutting-edge software, web applications, mobile apps, and enterprise<br className="hidden sm:block" />
+    solutions tailored to meet your unique needs.
   </p>
   <p>
-    At, Tech Devise our dynamic and innovative team works in a simple process. For us, knowing<br className="hidden sm:block" />the client's preferences and expectations is absolutely vital. Ensuring that the client and our<br className="hidden sm:block" />staff are in agreement depends mostly on effective communication. Once we have the brief<br className="hidden sm:block" />under grasp, we want to show a sketch before starting design. We ensure that the client is in<br className="hidden sm:block" />the loop throughout the process. There is constant support from our team until the end of the<br className="hidden sm:block" />project.
+    Our mission is to empower businesses with scalable, secure, and efficient digital solutions<br className="hidden sm:block" />
+    that enhance productivity and growth. We stay ahead of the curve by leveraging the latest<br className="hidden sm:block" />
+    technologies, industry best practices, and a customer-centric approach to ensure<br className="hidden sm:block" />
+    seamless digital transformation.
   </p>
 </div>
 

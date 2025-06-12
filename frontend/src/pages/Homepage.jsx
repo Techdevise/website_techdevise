@@ -173,15 +173,17 @@ function Homepage() {
                 <img
                   src={lamp}
                   alt="Lamp"
-                  className="absolute top-[-390px] left-[300px] w-[36.31px] h-[230.56px] opacity-100"
-                />
+                  className="absolute top-[-390px] left-[300px] w-[36.31px] h-[230.56px] opacity-100" style={{
+    top: window.innerWidth === 1440 ? "-370px" : "-390px",
+  }}/>
 
 
                 <img
                   src={light}
                   alt="Lamp Logo"
-                  className="absolute top-[-392px] left-[470px] w-[49.99px] h-[317.44px] opacity-100"
-                />
+                  className="hidden sm:block absolute top-[-392px] left-[470px] w-[49.99px] h-[317.44px] opacity-100" style={{
+    top: window.innerWidth === 1440 ? "-370px" : "-390px",
+  }}/>
               </div>
               {/* Line Image */}
               {/* <img
@@ -247,7 +249,7 @@ function Homepage() {
       {/* <ServicesSection /> */}
 
 
-      <div className="block_service relative flex justify-center items-center py-0 z-10 mt-10">
+      <div className="block_service relative flex justify-center items-center py-0 z-10 mt-0 md:mt-10">
         <BlockchainServices />
       </div>
 

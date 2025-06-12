@@ -1,25 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "../styles/components/Footer.css";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-// import Rectangle114 from "../assets/Rectangle 114.png";
-// import Rectangle191 from "../assets/Rectangle 191.png";
-import Footerblog1 from "../assets/Footerblog1.svg";
-import Footerblog2 from "../assets/Footerblog2.svg";
-import techdeviselogo from "../assets/techdeviselogo.png";
-import Facebook from "../assets/Facebook.svg";
-import Instagram from "../assets/Instagram.svg";
-import LinkedIN from "../assets/LinkedIN.svg";
-import Twitter from "../assets/Twitter.svg";
-import Location from "../assets/Location.png";
-import Gmaillogo from "../assets/Gmaillogo.png";
-import Phonelogo from "../assets/Phonelogo.png";
-const Footer = () => {
-  return (
-    <footer className="footer-bg relative text-white py-12 px-6 fotter_padding">
-      <div className="px-6 mx-auto">
-        {/* Background Image */}
-        <div className=" inset-0 z-0 rounded-t-[90px]"></div>
+  import React from "react";
+  import { Link } from "react-router-dom";
+  import "../styles/components/Footer.css";
+  import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+  // import Rectangle114 from "../assets/Rectangle 114.png";
+  // import Rectangle191 from "../assets/Rectangle 191.png";
+  import Footerblog1 from "../assets/Footerblog1.svg"
+  import Footerblog2 from "../assets/Footerblog2.svg"
+  import techdeviselogo from "../assets/techdeviselogo.png"
+  import Facebook from "../assets/Facebook.svg"
+  import Instagram from "../assets/Instagram.svg"
+  import LinkedIN from "../assets/LinkedIN.svg"
+  import Twitter from "../assets/Twitter.svg"
+  import Location from "../assets/Location.png"
+  import Gmaillogo from "../assets/Gmaillogo.png"
+  import Phonelogo from "../assets/Phonelogo.png"
+  const Footer = () => {
+    return (
+      <footer className="footer-bg relative text-white py-12 px-6 fotter_padding">
+        <div className="px-6 mx-auto">
+          {/* Background Image */}
+          <div
+            className=" inset-0 z-0 rounded-t-[90px]"
+
+          ></div>
 
         {/* Main Footer Content */}
         <div className="relative z-10 container mx-auto min-h-[50vh]">
@@ -47,31 +50,24 @@ const Footer = () => {
           </div>
           <hr className="border-[#217669] my-8" />
 
-          {/* Middle Section */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* About Section */}
-            <div>
-              <div className="flex items-center mb-4 justify-center md:justify-start">
-                <img
-                  src={techdeviselogo}
-                  alt="Tech Devise Logo"
-                  className="w-[179px] h-[56px]"
-                />
-                <span className="text-2xl font-bold ml-2"></span>
+            {/* Middle Section */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {/* About Section */}
+              <div>
+                <div className="flex items-center mb-4 justify-center md:justify-start">
+                  <img src={techdeviselogo} alt="Tech Devise Logo" className="w-[179px] h-[56px]" />
+                  <span className="text-2xl font-bold ml-2"></span>
+                </div>
+                <p className="text-white opacity-100 space-y-2 text-[18px] font-normal leading-[27px] font-montserrat text-center md:text-left">
+                  Tech Devise is a digital solution provider which offers various digital services that will help your online business to flourish. We expertise in providing services like digital marketing, app development, web development, CMS development and many more.
+                </p>
+                <div className="flex justify-center md:justify-start">
+                  <button className="whitespace-nowrap mt-4 w-[183px] h-[49px] rounded-lg bg-white font-bold text-[16px] text-[#137365] px-10 py-2">
+                    Contact Now!
+                  </button>
+                </div>
+
               </div>
-              <p className="text-white opacity-100 space-y-2 text-[18px] font-normal leading-[27px] font-montserrat text-center md:text-left">
-                Tech Devise is a digital solution provider which offers various
-                digital services that will help your online business to
-                flourish. We expertise in providing services like digital
-                marketing, app development, web development, CMS development and
-                many more.
-              </p>
-              <div className="flex justify-center md:justify-start">
-                <button className="whitespace-nowrap mt-4 w-[183px] h-[49px] rounded-lg bg-white font-bold text-[16px] text-[#137365] px-10 py-2">
-                  Contact Now!
-                </button>
-              </div>
-            </div>
 
             {/* Services */}
             <div className="text-center md:text-left">
