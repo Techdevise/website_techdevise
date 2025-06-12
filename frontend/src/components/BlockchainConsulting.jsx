@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
 import '../styles/components/BlockchainConsulting.css'
 import Consultingimage from '../assets/Consultingimage.svg';
-import Iosabout from "../assets/Iosabout.png";
+import Enterpriseblockchain from "../assets/Enterpriseblockchain.svg";
+import Integrationblockchain from '../assets/Integrationblockchain.svg';
+import Layer1blockchain from '../assets/Layer1blockchain.svg';
+import Layer2blockchain from '../assets/Layer2blockchain.svg';
+import Ntfblockchain from '../assets/Ntfblockchain.svg';
+import Web3blockchain from '../assets/Web3blockchain.svg';
 import Vector from '../assets/Vector.svg'; 
 import Lamp1 from '../assets/Lamp1.svg';
 import Lamp2 from '../assets/Lamp2.svg';
@@ -11,15 +16,45 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 const slides = [
   {
     image: Consultingimage,
-    heading: "Blockchain\nConsulting Services",
-    description: `  Unlock expert Blockchain consulting services with strategic guidance to build robust, customized solutions that fit your business needs..`,
+    heading: "Smart Contract\nDevelopment & Audit",
+    description: `  Our smart contract development company designs and deploys self-executing contracts tailored to business needs. TechDevise smart contract development services ensure smooth functionality across blockchain networks.`,
   },
   {
-    image: Iosabout, 
-    heading: "Creating Seamless\niOS Experiences for All Users",
+    image: Enterpriseblockchain, 
+    heading: "Enterprise Blockchain\nDevelopment",
+    description: `Being a leading enterprise blockchain development company, we specialize in creating high-performance networks. By leveraging our enterprise blockchain development services, you can improve operational efficiency.`,
+  },
+  {
+    image: Enterpriseblockchain, 
+    heading: "Blockchain\nIntegration",
+    description: `Our blockchain development solutions enable businesses to integrate distributed ledger technology with minimal disruption. Our custom blockchain development company ensures automation across multiple industries.`,
+  },
+  {
+    image: Integrationblockchain, 
+    heading: "Enterprise Blockchain\nDevelopment",
     description: `Our iOS development team ensures top-notch user interfaces combined with seamless backend integration.
     We build scalable and future-proof apps that resonate with your audience, helping you grow your brand
     effectively on iOS platforms.`,
+  },
+  {
+    image: Layer1blockchain, 
+    heading: "Layer 1 Blockchain\nDevelopment",
+    description: `Being a top blockchain software development company, we create scalable networks with custom consensus mechanisms. This blockchain application development ensures security, efficiency, and flexibility for future growth.`,
+  },
+  {
+    image: Layer2blockchain, 
+    heading: "Layer 2 Blockchain\nDevelopment",
+    description: `Our blockchain solutions development focuses on optimizing scalability through rollups and sidechains. Businesses can hire blockchain developers to create efficient Layer 2 solutions that improve network performance.`,
+  },
+  {
+    image: Ntfblockchain, 
+    heading: "NFT\nDevelopment",
+    description: `Our NFT development company specializes in creating blockchain-based digital assets for gaming, art, and real estate. With NFT development services, businesses can build NFT marketplaces and mint tokens.`,
+  },
+  {
+    image: Web3blockchain, 
+    heading: "Web3\nDevelopment",
+    description: `TechDevise Web3 development services include creating blockchain-powered platforms. Businesses seeking blockchain app development services can build Web3 applications that redefine user interaction and data privacy.`,
   },
 ];
 

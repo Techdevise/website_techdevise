@@ -81,9 +81,24 @@ const BlockchainServices = () => {
   ]
 
   const cards = [originalCards[originalCards.length - 1], ...originalCards, originalCards[0]]
-  const cardWidth = 1200
+ const [cardWidth, setCardWidth] = useState(0)
+const containerRef = useRef()
+
+useEffect(() => {
+  const updateWidth = () => {
+    if (containerRef.current) {
+      setCardWidth(containerRef.current.offsetWidth)
+    }
+  }
+
+  updateWidth()
+  window.addEventListener('resize', updateWidth)
+  return () => window.removeEventListener('resize', updateWidth)
+}, [])
+
+
   const gap = 0
-  const cardWidthWithGap = cardWidth + gap
+const cardWidthWithGap = cardWidth + gap
 
   const handleNext = () => {
     if (isTransitioning) return
@@ -156,8 +171,8 @@ const BlockchainServices = () => {
       const isUp = e.deltaY < 0
 
       e.preventDefault()
-      if (isDown) handleNext()
-      if (isUp) handlePrev()
+     if (isDown && currentSlide < cards.length - 1) handleNext()
+if (isUp && currentSlide > 0) handlePrev()
     }
 
     container.addEventListener("wheel", handleWheel, { passive: false })
@@ -199,15 +214,18 @@ const BlockchainServices = () => {
 
   <div ref={scrollLockRef} className="w-full overflow-hidden mt-[-230px] sm:mt-[-120px] md:mt-[-120px] lg:mt-[-230px]">
     <div
-      ref={transitionRef}
-      className="card_correct flex transition-transform duration-500 gap-10 px-8"
-      style={{ transform: `translateX(-${currentSlide * cardWidthWithGap}px)` }}
-    >
+  ref={transitionRef}
+  className="card_correct flex transition-transform duration-500 gap-10 px-8"
+  style={{ transform: `translateX(-${currentSlide * cardWidthWithGap}px)` }}
+>
+
       {cards.map((card, index) => (
-        <div
-          key={index}
-className="flex flex-col sm:flex-row w-full md:w-[700px] lg:w-[900px] bg-[#0B3327] rounded-[20px] p-4 sm:p-6 border border-transparent bg-gradient-to-r from-[#157B6C] to-[#ffffff] p-[2px] h-auto min-h-[450px] mb-auto flex-shrink-0 shadow-lg shadow-[#157B6C]/20"
-        >
+       <div
+  key={index}
+  ref={index === 0 ? containerRef : null} 
+  className="flex flex-col sm:flex-row w-full max-w-[95vw] md:max-w-[80vw] lg:max-w-[65vw] xl:max-w-[1000px] bg-[#0B3327] rounded-[20px] p-4 sm:p-6 border border-transparent bg-gradient-to-r from-[#157B6C] to-[#ffffff] p-[2px] h-auto min-h-[450px] mb-auto flex-shrink-0 shadow-lg shadow-[#157B6C]/20"
+>
+
           {/* Left: Image */}
          <div className="w-full sm:w-[40%] mb-4 sm:mb-0">
   <img src={card.icon} alt="card visual" className="rounded-xl object-cover w-full h-full" />

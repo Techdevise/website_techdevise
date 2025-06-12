@@ -12,7 +12,7 @@ export default function ServiceCard({
     <div
       className={`${
         fullWidth ? "w-full" : "flex-1"
-      } rounded-3xl overflow-hidden relative p-9`}
+      } rounded-3xl overflow-hidden relative p-8`}
       style={{
         background: `linear-gradient(to bottom, ${topColor} 70%, ${bottomColor} 30%)`,
       }}

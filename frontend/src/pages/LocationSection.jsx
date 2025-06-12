@@ -74,7 +74,7 @@ const LocationSection = () => {
     {locations.map((loc, index) => (
       <div
         key={index}
-        className=" bg-white  rounded-2xl p-4 w-[500px] h-[200px] md-w-[300px] md-h-[200px]  flex-shrink-0 flex items-center gap-4"
+        className=" bg-white  rounded-2xl p-4 w-[500px] h-[200px] md-w-[300px] md-h-[200px] flex-shrink-0 flex items-center gap-4"
       >
         {/* Left image */}
         <img

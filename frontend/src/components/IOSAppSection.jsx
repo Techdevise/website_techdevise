@@ -4,6 +4,8 @@ import "../styles/components/IOSAppSection.css"
 import Iosabout from "../assets/Iosabout.png";
 import blockchain from "../assets/blockchain.png";
 import Mobilerrowicon from "../assets/Mobilerrowicon.svg";
+import Techuseranroid from "../assets/Techuseranroid.svg";
+import Buildingnativeapp from "../assets/Buildingnativeapp.svg";
 
 
 const slides = [
@@ -20,11 +22,14 @@ const slides = [
     interactive app on iOS devices. Get in touch with our team to get immediate results.`,
   },
   {
-    image: blockchain, 
-    heading: "Creating Seamless iOS Experiences for All Users",
-    description: `Our iOS development team ensures top-notch user interfaces combined with seamless backend integration.
-    We build scalable and future-proof apps that resonate with your audience, helping you grow your brand
-    effectively on iOS platforms.`,
+    image: Techuseranroid, 
+    heading: "Tech Devise: Developing User-friendly and Flexible ANDROID APPLICATIONS",
+    description: `Tech Devise is an emerging digital marketing company that specializes in the field of Android App development. Our firm possesses passionate professionals that hold various accolades in the aspect of mobile application development. The Android Apps developed by our team has helped numerous businesses to reach out to their target audience efficiently. The applications developed are backed with relevant market research and complete industry analysis such that it meets the standard of the concerned sector. Moreover, the technology adopted is of the finest quality making the applications formulated easy-to-use and flexible as per the needs and demands of our customers.`,
+  },
+  {
+    image: Buildingnativeapp, 
+    heading: "Building Interactive, Robust, and Scalable React Native App",
+    description: `At Tech Devise we expertise in building React Native App Development. In this process, we create a cross mobile platform that allows you to publish your app on various mobile platforms. In this process, you do not need to create individual apps for various kinds of mobile platforms. All you need is only to React Native App and this will run across various mobile platforms. This development process is less time consuming and is also budget-friendly.`,
   },
 ];
 

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import woman from "../assets/woman-scrolling-laptop 1.svg";
+import Automationexperts from "../assets/Automationexperts.svg";
+import Automationexperts2 from "../assets/Automationexperts2.svg";
+import Automationexperts3 from "../assets/Automationexperts3.svg";
+import Automationexperts4 from "../assets/Automationexperts4.svg";
+import Automationexperts5 from "../assets/Automationexperts5.svg";
 // import img1 from "../assets/feature1.svg"; // replace with real images
 // import img2 from "../assets/feature2.svg";
 // import img3 from "../assets/feature3.svg";
@@ -18,32 +23,32 @@ function TeamInto() {
     {
       title: "TechDevice Explorer",
       description:
-        "Explore devices seamlessly and run tests across various platforms using our intuitive explorer interface.",
-      image: woman,
+        "Test Execution at lightning speed with nothing to install or maintain. Reduce total cost of ownership and eliminate the need for any hardware maintenance.",
+      image: Automationexperts,
     },
     {
       title: "Cross-Functional",
       description:
         "Empower cross-functional teams to collaborate and automate tests efficiently across departments.",
-      image: woman,
+      image: Automationexperts2,
     },
     {
       title: "TestAgent powered by Copado AI Platform",
       description:
         "AI-powered testing agent that helps detect issues and improves test coverage intelligently.",
-      image: woman,
+      image: Automationexperts3,
     },
     {
       title: "Complete End-to-End Testing",
       description:
         "From frontend to backend, ensure all components work harmoniously with our full-stack testing.",
-      image: woman,
+      image: Automationexperts4,
     },
     {
       title: "Tackle Defects Faster",
       description:
         "Get detailed insights and logs to find and fix defects faster than ever before.",
-      image: woman,
+      image: Automationexperts5,
     },
   ];
 

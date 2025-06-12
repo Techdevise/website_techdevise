@@ -115,7 +115,7 @@ const Navbar = () => {
           ${isHomePage && !scrolled ? "nav_head_home" : "nav_head_radius"}
           ${isHomePage && !scrolled ? 'text-white bg-transparent' : 'bg-black text-white shadow-2xl'}    
           bg-opacity-50 dark:bg-opacity-60
-          fixed top-0 left-0 right-0 w-full md:w-[90%] lg:w-[90%] xl:w-[90%] 2xl:w-[100%] h-[70px] md:h-[75px] lg:h-[78px] xl:h-auto  px-4 md:px-6 flex justify-between items-center bg-cover bg-center opacity-100 mx-auto z-50
+          fixed top-0 left-0 right-0 w-full md:w-[90%] lg:w-[90%] xl:w-[100%] 2xl:w-[100%] h-[70px] md:h-[75px] lg:h-[78px] xl:h-auto  px-4 md:px-10 flex justify-between items-center bg-cover bg-center opacity-100 mx-auto z-50
            ${scrolled ? 'backdrop-blur-lg' : ''}`}
         style={{
           backgroundImage: isHomePage && !scrolled ? "url('your-image-url.jpg')" : 'none',
@@ -126,7 +126,7 @@ const Navbar = () => {
       >
         <div className="navMain w-[1680px] m-auto  md:px-6 flex justify-between items-center bg-cover bg-center">
           <div className="flex items-center w-auto xl:w-[55%] h-[60px] md:h-[70px] xl:h-[90px]">
-            <Link to="http://localhost:3000/">
+            <Link to="https://app.techdevise.com/">
               <img
                 alt="Tech Devise Logo"
                 className="w-[100px] sm:w-[110px] md:w-[140px] lg:w-[160px] xl:w-[130px] h-auto"

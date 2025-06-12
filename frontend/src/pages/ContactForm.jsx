@@ -238,34 +238,36 @@ const ContactForm = () => {
               className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
               required
             />
-            <select
-              name="job_title"
-              value={formData.job_title}
-              onChange={handleInputChange}
-              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
-              required
-            >
-              <option value="">Job Title</option>
-              <option value="1">Entrepreneur</option>
-              <option value="2">Manager</option>
-              <option value="3">Director</option>
-              <option value="4">C-Level</option>
-              <option value="5">Student</option>
-              <option value="6">Others</option>
-            </select>
-            <select
-              name="launch_timeline"
-              value={formData.launch_timeline}
-              onChange={handleInputChange}
-              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
-              required
-            >
-              <option value="">Launch Timeline?</option>
-              <option value="1">Immediately</option>
-              <option value="2">2-3 Months</option>
-              <option value="3">4-6 Months</option>
-              <option value="4">After 6 Months</option>
-            </select>
+           <select
+  name="job_title"
+  value={formData.job_title}
+  onChange={handleInputChange}
+  className="w-full appearance-none p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92] [&::-ms-expand]:hidden"
+  required
+>
+  <option value="">Job Title</option>
+  <option value="1">Entrepreneur</option>
+  <option value="2">Manager</option>
+  <option value="3">Director</option>
+  <option value="4">C-Level</option>
+  <option value="5">Student</option>
+  <option value="6">Others</option>
+</select>
+
+<select
+  name="launch_timeline"
+  value={formData.launch_timeline}
+  onChange={handleInputChange}
+  className="w-full appearance-none p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92] [&::-ms-expand]:hidden"
+  required
+>
+  <option value="">Launch Timeline?</option>
+  <option value="1">Immediately</option>
+  <option value="2">2-3 Months</option>
+  <option value="3">4-6 Months</option>
+  <option value="4">After 6 Months</option>
+</select>
+
 
             <div className="budget-bg col-span-2">
               <label className="block text-[#ffffff] mb-2">Budget</label>

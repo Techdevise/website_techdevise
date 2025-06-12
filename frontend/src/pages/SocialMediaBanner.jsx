@@ -1,62 +1,60 @@
 import React from "react";
+import "../styles/pages/SocialMediaBanner.css"
 import whitearrow from "../assets/whitearrow.png";
-import Arrowlogo from "../assets/Arrowlogo.png";
-import Upworklogo from "../assets/Upworklogo.png";
-import Trustpilot from "../assets/Trustpilot.png";
-import Clutch from "../assets/Clutch.png";
+import Vector from "../assets/Vector.png";
+import Upwork from "../assets/Upwork.png";
+import Arrowlogo from "../assets/Arrowlogo.png"
+import Upworklogo from "../assets/Upworklogo.png"
+import Trustpilot from "../assets/Trustpilot.png"
+import Clutch from "../assets/Clutch.png"
+// import Linkdinarrow from "../assets/Linkdinarrow.svg"
+// import ArrowIcon from "../assets/ArrowIcon.svg"
 
 const SocialMediaBanner = () => {
   return (
-    <div className="w-full px-4 sm:px-6 md:px-10 mt-10">
-      <div className="max-w-[1680px] w-full mx-auto bg-[#062018] rounded-3xl flex flex-col lg:flex-row items-center justify-between p-6 sm:p-10 gap-8">
-        {/* Left Section */}
-        <div className="relative text-center lg:text-left">
-          <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold"
-            style={{
-              background: "linear-gradient(to right, #e0e0e0, #157B6C)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            <span className="text-gray-300">You can</span>{" "}
-            <span className="text-green-400">Find</span> <br /> Us on
-          </h2>
-          <img
-            src={Arrowlogo}
-            alt="Arrowlogo"
-            className="absolute top-0 right-[-315px] w-[100px] sm:w-[140px] md:w-[200px] hidden sm:block"
-          />
-        </div>
-
-        {/* Right Section */}
-        <div className="grid grid-cols-2 gap-4 w-full max-w-2xl">
-          <a
-            href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all"
-            className="bg-[#0077B5] text-white flex items-center justify-center rounded-lg p-4 h-[100px] sm:h-[120px]"
-          >
-            <img src={whitearrow} alt="LinkedIn" className="w-[120px] sm:w-[160px]" />
+    <div className="new_find w-[1680px] h-[312px] m-auto mt-[100px] bg-[#062018] flex items-center justify-between px-10 rounded-3xl opacity-100">
+      <div style={{
+        display: 'inline-table',
+        background: "linear-gradient(to right, #e0e0e0, #157B6C)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text",
+        textFillColor: "transparent",
+        color: "#157B6C",
+      }} className="fnt_txxt text-white text-5xl font-extrabold">
+        <span className="text-gray-300">You can</span> <span className="text-green-400"> Find </span> <br /> Us on
+        <img src={Arrowlogo} alt="Arrologo" className="lo_go visi_no w-[222px] h-[122px] mt-[-110px] ml-[120%]" />
+      </div>
+      <div className="socl_icco1 flex space-x-5">
+        <div className="socl_icco grid grid-cols-2 gap-0">
+          <a href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all" className="bg-[#0077B5] text-white w-[440px] h-[132px] opacity-100 flex items-center justify-center text-xl font-bold">
+            <img
+              src={whitearrow}
+              alt="LinkedIn"
+              className="new_wid w-[196px] h-auto mr-auto ml-6"
+            />
+         
           </a>
-
-          <a
-            href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all"
-            className="bg-green-500 text-white flex items-center justify-center rounded-tr-2xl p-4"
-          >
-            <img src={Upworklogo} alt="Upwork" className="w-[90px] sm:w-[130px]" />
+          <a href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all" className="bg-green-500 text-white px-6 py-4 rounded-tr-2xl flex items-center justify-center text-xl font-bold">
+            <img
+              src={Upworklogo}
+              alt="Upwork"
+              className="new_wid w-[137px] h-auto mr-auto"
+            />
           </a>
-
-          <a
-            href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all"
-            className="bg-[#17313B] text-white flex items-center justify-center rounded-lg p-4 h-[100px] sm:h-[120px]"
-          >
-            <img src={Clutch} alt="Clutch" className="w-[80px] sm:w-[110px]" />
+          <a href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all" className="bg-[#17313B] text-white w-[440px] h-[132px] opacity-100 flex items-center justify-center text-xl font-bold">
+            <img
+              src={Clutch}
+              alt="clutch"
+              className="new_wid w-[120px] h-auto mr-auto ml-6"
+            />
           </a>
-
-          <a
-            href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all"
-            className="bg-[#0AB67B] text-white flex items-center justify-center rounded-br-2xl p-4"
-          >
-            <img src={Trustpilot} alt="Trustpilot" className="w-[140px] sm:w-[200px]" />
+          <a href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all" className="bg-[#0AB67B] text-white px-6 py-4 rounded-br-2xl flex items-center justify-center text-xl font-bold">
+            <img
+              src={Trustpilot}
+              alt="Trustpilot"
+              className="new_wid w-[206px] h-auto mr-auto"
+            />
           </a>
         </div>
       </div>
