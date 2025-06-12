@@ -193,13 +193,13 @@ if (isUp && currentSlide > 0) handlePrev()
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
-          className="blockchain text-[28px] md:text-5xl font-extrabold font-Montserrat w-full max-w-[762px] mb-10 mt-10"
+          className="blockchain text-[28px] md:text-5xl font-extrabold font-Montserrat w-full max-w-[762px] mt-0 mb-0 md:mt-10 md:mb-10 text-center md:text-left"
         >
           Our Blockchain
           <br />
           Development <span className="text-[#4fbfa5]">Services</span>
         </h1>
-        <p className="mt-4 text-xl font-Montserrat font-normal md:text-base ml-0">
+        <p className="mt-4 text-base sm:text-lg md:text-base font-Montserrat font-normal leading-relaxed text-white text-center md:text-left">
           <span className="text-[20px] font-Montserrat font-bold">Tech Devise</span> provides a full suite of blockchain development
           services to help <br /> businesses harness the full potential of the technology and stay ahead in today's
           <br />
@@ -233,8 +233,8 @@ if (isUp && currentSlide > 0) handlePrev()
 
 
           {/* Right: Text */}
-         <div className="w-full sm:w-[60%] sm:pl-6 flex flex-col justify-center">
-  <h3 className="text-[24px] sm:text-[35px] font-Montserrat font-bold text-white mb-4 leading-tight">
+         <div className="w-full sm:w-[60%] sm:pl-6 flex flex-col justify-center items-center text-center sm:items-start sm:text-left min-h-[280px] sm:min-h-[320px] py-4">
+  <h3 className="text-[20px] sm:text-[28px] font-Montserrat font-bold text-white mb-3 leading-snug">
     {card.title.split("\n").map((line, i) => (
       <React.Fragment key={i}>
         {line}
@@ -242,14 +242,14 @@ if (isUp && currentSlide > 0) handlePrev()
       </React.Fragment>
     ))}
   </h3>
-  <p className="text-[14px] sm:text-[16px] font-Montserrat text-white">{card.description}</p>
+  <p className="text-[14px] sm:text-[16px] font-Montserrat text-white leading-relaxed">{card.description}</p>
 </div>
 
         </div>
       ))}
     </div>
       {/* Navigation */}
-    <div className="flex justify-center items-center mt-12 gap-6">
+    <div className="flex justify-center items-center mt-0 md:mt-10 gap-6">
             {/* <button
               onClick={handlePrev}
               className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300"

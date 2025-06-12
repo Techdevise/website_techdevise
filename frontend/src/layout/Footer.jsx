@@ -14,7 +14,8 @@
   import Location from "../assets/Location.png"
   import Gmaillogo from "../assets/Gmaillogo.png"
   import Phonelogo from "../assets/Phonelogo.png"
-  const Footer = () => {
+  const Footer = ({onContactClick }) => {
+    
     return (
       <footer className="footer-bg relative text-white py-12 px-6 fotter_padding">
         <div className="px-6 mx-auto">
@@ -62,7 +63,7 @@
                   Tech Devise is a digital solution provider which offers various digital services that will help your online business to flourish. We expertise in providing services like digital marketing, app development, web development, CMS development and many more.
                 </p>
                 <div className="flex justify-center md:justify-start">
-                  <button className="whitespace-nowrap mt-4 w-[183px] h-[49px] rounded-lg bg-white font-bold text-[16px] text-[#137365] px-10 py-2">
+                  <button onClick={onContactClick} className="whitespace-nowrap mt-4 w-[183px] h-[49px] rounded-lg bg-white font-bold text-[16px] text-[#137365] px-10 py-2">
                     Contact Now!
                   </button>
                 </div>
