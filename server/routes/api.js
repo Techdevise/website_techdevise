@@ -5,6 +5,7 @@ const contactUsController = require('../controller/website/contactUsController')
 const itRolesController = require('../controller/website/itRolesController');
 const blogController = require('../controller/website/blogController');
 const cmsController = require('../controller/website/cmsController');
+const sliderController = require('../controller/website/sliderController');
 var apiRouter = express.Router();
 
  apiRouter.post('/job_position' ,jobValidationRules,job_positionController.addJobPosition)
@@ -20,4 +21,11 @@ var apiRouter = express.Router();
     apiRouter.get('/blogs' ,blogController.listing_blogs)
     apiRouter.get('/cms' ,cmsController.listingCms)
 
+
+
+    apiRouter.get('/react_native' ,sliderController.listing_React)
+    apiRouter.get('/ai' ,sliderController.listing_Ai_Integrated)
+    apiRouter.get('/blockchain' ,sliderController.listing_Blockchain)
+    apiRouter.get('/seamless' ,sliderController.listing_Seamless)
+    
 module.exports = apiRouter;

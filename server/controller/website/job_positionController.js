@@ -3,90 +3,6 @@ const { JobPosition, JobTitle, JobOption, JobSubTitle } = require('../../models'
 const { validationResult } = require("express-validator");
 const { uploadPdf } = require('../../utils/uploadPdf');
 module.exports = {
-  //  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<   JOB Position     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></JOB>
-
-
-
-  // addJobPosition: async (req, res) => {
-  //   try {
-  //     const errors = validationResult(req);
-  //     if (!errors.isEmpty()) {
-  //       return res.status(400).json({
-  //         success: false,
-  //         errors: errors.array(),
-  //       });
-  //     }
-
-  //     const {
-  //       first_name,
-  //       last_name,
-  //       email,
-  //       phone,
-  //       country_code,
-  //       message,
-  //       type,
-  //       linkedin_profile,
-  //       about_us,
-  //       job_id,
-  //       sub_job_id
-  //     } = req.body;
-
-  //     let pdfFilePath = "";
-
-  //     // Upload the file if it exists
-  //     if (req.files && req.files.pdf_file) {
-  //       const pdfFile = req.files.pdf_file;
-  //       pdfFilePath = await uploadPdf(pdfFile);
-  //     }
-
-  //     const getJobs = await JobTitle.findOne({
-  //       where: { status: 1, id: job_id },
-  //     });
-
-  //      const getSubJobs = await JobSubTitle.findOne({
-  //       where: { status: 1, id: job_id },
-  //     });
-
-  //     const newJob = await JobPosition.create({
-  //       job_id: job_id,
-  //       sub_job_id:sub_job_id,
-  //       first_name,
-  //       last_name,
-  //       email,
-  //       phone,
-  //       country_code,
-  //       message,
-  //       type,
-  //       linkedin_profile,
-  //       about_us,
-  //       pdf_file: pdfFilePath,
-  //     });
-
-  //     return res.status(201).json({
-  //       success: true,
-  //       message: "Job position added successfully",
-  //       data: newJob,
-  //     });
-  //   } catch (error) {
-  //     console.error("Error adding job position:", error);
-  //     return res.status(500).json({
-  //       success: false,
-  //       message: "Something went wrong",
-  //       error: error.message,
-  //     });
-  //   }
-  // },
-
-
-
-
-
-
-
-
-
-
-
 
   //  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<   JOB TITLE     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></JOB>
 
@@ -118,7 +34,7 @@ module.exports = {
         where: { id: job_id, status: 1 }
       })
       const getJobs = await JobSubTitle.findAll({
-        where: { job_id: jobtitle.id },
+        where: { job_id: jobtitle.id,status: 1 },
         order: [['id', 'DESC']]
       })
 
@@ -144,10 +60,10 @@ module.exports = {
 
       const { job_id } = req.params;
        const jobt = await JobSubTitle.findOne({
-        where: { id: job_id }
+        where: { id: job_id,}
       })
       const getJobs = await JobOption.findOne({
-        where: { sub_job_id:job_id },
+        where: { sub_job_id:job_id, },
         include: [
               {
                 model: JobSubTitle,

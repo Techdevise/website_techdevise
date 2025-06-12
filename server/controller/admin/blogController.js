@@ -42,45 +42,46 @@ module.exports = {
     },
 
 
- addBlogOption: async (req, res) => {
-    try {
-        const { job_title, title, sub_title, date, is_read } = req.body;
-      let imagePath = "";
+    addBlogOption: async (req, res) => {
+        try {
+            const { job_title, title, sub_title, date, is_read } = req.body;
+            let imagePath = "";
 
-        if (req.files && req.files.image) {
-            const image = req.files.image;
-            const uploadDir = path.join(__dirname, '../../public/images');
+            if (req.files && req.files.image) {
+                const image = req.files.image;
+                const uploadDir = path.join(__dirname, '../../public/images');
 
-            if (!fs.existsSync(uploadDir)) {
-                fs.mkdirSync(uploadDir, { recursive: true });
+                if (!fs.existsSync(uploadDir)) {
+                    fs.mkdirSync(uploadDir, { recursive: true });
+                }
+
+                const fileName = `${Date.now()}_${image.name}`;
+                const uploadPath = path.join(uploadDir, fileName);
+
+                await image.mv(uploadPath);
+                imagePath = `/${fileName}`;
             }
 
-            const fileName = `${Date.now()}_${image.name}`;
-            const uploadPath = path.join(uploadDir, fileName);
 
-            await image.mv(uploadPath);
-            imagePath = `/${fileName}`;
+            await Blogs.create({
+                job_title,
+                title,
+                sub_title,
+                date,
+                is_read,
+                image: imagePath,
+                status:1
+            });
+
+            req.flash("success", "Blog created successfully");
+            res.redirect("/admin/blogs");
+        } catch (error) {
+            console.error("Error while creating blog:", error);
+            const errorMessage = error.message || "Something went wrong, please try again later.";
+            req.flash("error", errorMessage);
+            res.redirect("/admin/dashboard");
         }
-
-        
-        await Blogs.create({
-            job_title,
-            title,
-            sub_title,
-            date,
-            is_read,
-            image: imagePath
-        });
-
-        req.flash("success", "Blog created successfully");
-        res.redirect("/admin/blogs");
-    } catch (error) {
-        console.error("Error while creating blog:", error);
-        const errorMessage = error.message || "Something went wrong, please try again later.";
-        req.flash("error", errorMessage);
-        res.redirect("/admin/dashboard");
-    }
-},
+    },
 
 
 
@@ -136,7 +137,7 @@ module.exports = {
     },
     updateBlogOption: async (req, res) => {
         try {
-            const {  job_title, title, sub_title, date, is_read, } = req.body;
+            const { job_title, title, sub_title, date, is_read, } = req.body;
             const blogId = req.params.id;
 
             const blog = await Blogs.findByPk(blogId);
@@ -144,29 +145,29 @@ module.exports = {
                 req.flash("error", "Blogs  not found.");
                 return res.redirect("/admin/joboption");
             }
-let imagePath = blog.image; 
+            let imagePath = blog.image;
 
-        if (req.files && req.files.image) {
-            const image = req.files.image;
-            const uploadDir = path.join(__dirname, '../../public/images');
+            if (req.files && req.files.image) {
+                const image = req.files.image;
+                const uploadDir = path.join(__dirname, '../../public/images');
 
-            if (!fs.existsSync(uploadDir)) {
-                fs.mkdirSync(uploadDir, { recursive: true });
+                if (!fs.existsSync(uploadDir)) {
+                    fs.mkdirSync(uploadDir, { recursive: true });
+                }
+
+                const fileName = `${Date.now()}_${image.name}`;
+                const uploadPath = path.join(uploadDir, fileName);
+
+                await image.mv(uploadPath);
+                imagePath = `/${fileName}`;
+
+                const oldImagePath = path.join(__dirname, '../../public', blog.image || '');
+                if (blog.image && fs.existsSync(oldImagePath)) {
+                    fs.unlinkSync(oldImagePath);
+                }
             }
-
-            const fileName = `${Date.now()}_${image.name}`;
-            const uploadPath = path.join(uploadDir, fileName);
-
-            await image.mv(uploadPath);
-            imagePath = `/${fileName}`;
-
-            const oldImagePath = path.join(__dirname, '../../public', blog.image || '');
-            if (blog.image && fs.existsSync(oldImagePath)) {
-                fs.unlinkSync(oldImagePath);
-            }
-        }
             await blog.update({
-              job_title, title, sub_title, date, is_read, image:imagePath
+                job_title, title, sub_title, date, is_read, image: imagePath
             });
 
             req.flash("success", "Blogs updated successfully.");

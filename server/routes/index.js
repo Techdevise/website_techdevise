@@ -5,6 +5,7 @@ const contactUsController = require('../controller/admin/contactUsController');
 const itRolesController = require('../controller/admin/itRolesController');
 const blogController = require('../controller/admin/blogController');
 const settingController = require('../controller/admin/settingController');
+const sliderController = require('../controller/admin/sliderController');
 var router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware").isAuthenticated;
 /* GET home page. */
@@ -23,6 +24,16 @@ router.get('/jobsubliting/:job_id',jobsController.jobSubTitleListing)
 router.get('/jobsub_Create/:job_id', jobsController.createPageSub);
 router.post('/jobsub_Create/create', jobsController.addSubJob);
 router.put('/jobsubliting/:id/status', jobsController.updateStatusSub)
+
+router.get('/slider',sliderController.sliderLiting)
+router.get('/slider/:type', sliderController.sliderLiting)
+router.get('/slider_add',sliderController.addsliderPage)
+router.post('/slider/add',sliderController.addSlider)
+router.get('/slider/:id',sliderController.editPage)
+router.get('/slider_View/:id',sliderController.viewPage)
+router.post('/slider/:id/update',sliderController.updateSlider)
+router.put('/slider/:id/status', sliderController.updateStatus)
+router.delete('/slider/:id/delete', sliderController.deleteSlider)
 
 router.get('/jobs',jobsController.jobListing)
 router.get('/jobs/:id',jobsController.viewPage)

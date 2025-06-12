@@ -1,11 +1,17 @@
+"use client"
 
-
+import { useState } from "react"
 import Jobpostingbanner from "../assets/Jobpostingbanner.svg"
 import { MapPin, X } from "lucide-react"
 import JobApplicationModal from "../components/JobApplicationModal"
 
 const JobPosting = ({ job, onClose }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   if (!job) return null
+
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
 
   return (
     <div className="relative w-full max-w-[1300px] max-h-[90vh] bg-white shadow-lg rounded-md flex flex-col md:flex-row overflow-y-auto overflow-x-hidden mx-auto">
@@ -63,6 +69,7 @@ const JobPosting = ({ job, onClose }) => {
         <div className="mt-auto pt-4">
           <button
             className="w-full md:w-[200px] bg-[#157B6C] hover:bg-teal-700 text-white font-medium py-2 px-6 rounded transition-colors"
+            onClick={openModal}
           >
             Apply
           </button>

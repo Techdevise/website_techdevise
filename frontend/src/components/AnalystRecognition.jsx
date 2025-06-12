@@ -51,8 +51,8 @@ const AnalystRecognition = () => {
           <p className="text-white text-lg mb-10 max-w-3xl">
             Our AI development services company delivers cutting-edge computer
             vision models for image recognition, object detection, and quality
-            inspections. These models are powered by our AI software
-            development services to enhance efficiency.
+            inspections. These models are powered by our AI software development
+            services to enhance efficiency.
           </p>
 
           <button className="flex items-center gap-2 text-sm mb-4 text-white font-semibold px-5 py-2 rounded-full border border-white hover:bg-white hover:text-black transition">
@@ -97,15 +97,15 @@ const AnalystRecognition = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#00000099] to-[#00000000] p-6 flex flex-col justify-end">
                   {/* Title */}
-               <h2
-  className={`text-white font-bold transition-all duration-300 justify-center ${
-    isExpanded
-      ? "text-[30px] relative mb-2"
-      : "text-[30px] absolute top-[340px] left-1/2 -translate-x-1/2 -translate-y-1/2  rotate-[45deg] whitespace-nowrap mb-[50px]"
-  }`}
->
-  {item.text}
-</h2>
+                  <h2
+                    className={`text-white font-bold transition-all duration-300 justify-center ${
+                      isExpanded
+                        ? "text-[30px] relative mb-2"
+                        : "text-[30px] absolute top-[340px] left-1/2 -translate-x-1/2 -translate-y-1/2  rotate-[45deg] whitespace-nowrap mb-[50px]"
+                    }`}
+                  >
+                    {item.text}
+                  </h2>
 
                   {/* Subtitle only shown if expanded */}
                   <p

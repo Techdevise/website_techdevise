@@ -72,28 +72,26 @@ const AccelerateBusiness = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {services[activeService].items.map((item, index) => (
-            <div 
-              key={index} 
-              className="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-            >
-              <div className="h-48 md:h-[23rem] overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300  "
-                
-                />
-                {/* Overlay with text */}
-                <div className="absolute inset-0 flex flex-col justify-end p-4">
-                  <h4 className="text-[20px] font-semibold text-white">{item.name}</h4>
-                  <p className="text-sm text-white">{item.title}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">
+  {services[activeService].items.map((item, index) => (
+    <div 
+      key={index} 
+      className="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+    >
+      <div className="h-48 md:h-[23rem] overflow-hidden">
+        <img
+          src={item.image}
+          alt={item.name}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        />
+        <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+          <h4 className="text-[20px] font-semibold text-white">{item.name}</h4>
+          <p className="text-sm text-white">{item.title}</p>
         </div>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </div>
   );

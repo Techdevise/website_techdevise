@@ -1,12 +1,12 @@
 var DataTypes = require("sequelize").DataTypes;
-var _settings = require("./settings");
+var _quality_analysis = require("./quality_analysis");
 
 function initModels(sequelize) {
-  var settings = _settings(sequelize, DataTypes);
+  var quality_analysis = _quality_analysis(sequelize, DataTypes);
 
 
   return {
-    settings,
+    quality_analysis,
   };
 }
 module.exports = initModels;

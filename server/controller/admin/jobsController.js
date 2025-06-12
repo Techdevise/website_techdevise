@@ -344,6 +344,7 @@ createPageSub: async (req, res) => {
         job_id,
         name,
         location,
+        status:1
       });
 
       req.flash("success", "Job option created successfully");
