@@ -1,4 +1,4 @@
-import React, { useEffect, useLocation, useRef } from 'react';
+import React, { useState, useEffect, useLocation, useRef } from 'react';
 // import Navbar from '../layout/Navbar';
 import '../index.css';
 import '../styles/pages/Homepage.css';
@@ -31,7 +31,8 @@ import LocationSection from './LocationSection';
 import ExperienceSection from './ExperienceSection';
 
 gsap.registerPlugin(TextPlugin);
-function Homepage() {
+function Homepage({ setIsModalOpen }) {
+
   const textRef = useRef(null);
   const cursorRef = useRef(null);
 
@@ -195,7 +196,7 @@ function Homepage() {
 
 
             {/* CTA Button */}
-            <button className="consultants_btn relative z-20 border border-white text-white px-[24px] py-[20px] rounded-[12px] 
+            <button onClick={() => setIsModalOpen(true)} className="consultants_btn relative z-20 border border-white text-white px-[24px] py-[20px] rounded-[12px] 
                   font-Archivo text-[20px] font-semibold flex items-center justify-center gap-2 
                   w-[280px] h-[70px] mt-[115px] hover:bg-white hover:text-black 
                   transition-colors duration-300 whitespace-nowrap">

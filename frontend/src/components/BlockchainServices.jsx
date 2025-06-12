@@ -18,10 +18,11 @@ import gsap from "gsap";
 const BlockchainServices = () => {
   const [currentSlide, setCurrentSlide] = useState(1)
   const [isTransitioning, setIsTransitioning] = useState(false)
-    const [hasScrolledToEnd, setHasScrolledToEnd] = useState(false)
-  const cardsPerSlide = 1
-  const transitionRef = useRef() 
+  const cardsPerSlide = 3
+  const transitionRef = useRef()
   const scrollLockRef = useRef()
+  const containerRef = useRef()
+
 
   const originalCards = [
     {
@@ -80,25 +81,83 @@ const BlockchainServices = () => {
     },
   ]
 
-  const cards = [originalCards[originalCards.length - 1], ...originalCards, originalCards[0]]
- const [cardWidth, setCardWidth] = useState(0)
-const containerRef = useRef()
+ const cards = [...originalCards, ...originalCards, ...originalCards]
 
-useEffect(() => {
-  const updateWidth = () => {
-    if (containerRef.current) {
-      setCardWidth(containerRef.current.offsetWidth)
+  const [cardWidth, setCardWidth] = useState(0)
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.offsetWidth
+        // Calculate card width to show 3 cards with gaps
+        const gap = 0 // 2rem gap between cards
+        const cardWidthCalc = (containerWidth - gap * 2) / 3
+        setCardWidth(cardWidthCalc)
+      }
     }
-  }
 
-  updateWidth()
-  window.addEventListener('resize', updateWidth)
-  return () => window.removeEventListener('resize', updateWidth)
-}, [])
+    updateWidth()
+    window.addEventListener("resize", updateWidth)
+    return () => window.removeEventListener("resize", updateWidth)
+  }, [])
 
 
   const gap = 0
-const cardWidthWithGap = cardWidth + gap
+  const cardWidthWithGap = cardWidth + gap
+
+  const handleWheel = (e) => {
+    e.preventDefault()
+    if (isTransitioning) return
+
+    const direction = e.deltaY > 0 ? 1 : -1
+    setIsTransitioning(true)
+    setCurrentSlide((prev) => prev + direction)
+  }
+
+  const slideToIndex = (index) => {
+    const visibleCards = 3
+    const centerOffset = (visibleCards - 1) / 2
+    const xOffset = (index - centerOffset) * cardWidthWithGap
+
+    gsap.to(transitionRef.current, {
+      x: -xOffset,
+      duration: 0.8,
+      ease: "power2.inOut",
+      onComplete: () => {
+        setIsTransitioning(false)
+        // Handle infinite scroll reset
+        if (index >= cards.length - 1) {
+          setCurrentSlide(originalCards.length + 1)
+          gsap.set(transitionRef.current, { x: -originalCards.length * cardWidthWithGap })
+        } else if (index <= 0) {
+          setCurrentSlide(originalCards.length - 2)
+          gsap.set(transitionRef.current, { x: -(originalCards.length - 2) * cardWidthWithGap })
+        }
+      },
+    })
+  }
+
+  useEffect(() => {
+    if (cardWidth > 0) {
+      slideToIndex(currentSlide)
+    }
+  }, [currentSlide, cardWidth])
+
+  // Initialize position
+  useEffect(() => {
+    if (cardWidth > 0 && transitionRef.current) {
+      setCurrentSlide(originalCards.length + 1) // Start from first real card
+      gsap.set(transitionRef.current, { x: -originalCards.length * cardWidthWithGap })
+    }
+  }, [cardWidth])
+
+  useEffect(() => {
+    const container = scrollLockRef.current
+    if (!container) return
+
+    container.addEventListener("wheel", handleWheel, { passive: false })
+    return () => container.removeEventListener("wheel", handleWheel)
+  }, [isTransitioning])
 
   const handleNext = () => {
     if (isTransitioning) return
@@ -112,76 +171,8 @@ const cardWidthWithGap = cardWidth + gap
     setCurrentSlide((prev) => prev - 1)
   }
 
-  useEffect(() => {
-    const transitionEnd = () => {
-      setIsTransitioning(false)
-      if (currentSlide === cards.length - 1) {
-        transitionRef.current.style.transition = "none"
-        setCurrentSlide(1)
-        transitionRef.current.style.transform = `translateX(-${cardWidthWithGap}px)`
-      } else if (currentSlide === 0) {
-        transitionRef.current.style.transition = "none"
-        setCurrentSlide(cards.length - 2)
-        transitionRef.current.style.transform = `translateX(-${(cards.length - 2) * cardWidthWithGap}px)`
-      }
-    }
-
-    const el = transitionRef.current
-    if (el) {
-      el.addEventListener("transitionend", transitionEnd)
-      return () => el.removeEventListener("transitionend", transitionEnd)
-    }
-  }, [currentSlide, cards.length, cardWidthWithGap])
-
-  useEffect(() => {
-    if (!transitionRef.current) return
-
-    const distance = currentSlide * cardWidthWithGap
-
-    gsap.to(transitionRef.current, {
-      x: -distance,
-      duration: 0.8,
-      ease: "power2.inOut",
-      onComplete: () => {
-        setIsTransitioning(false)
-
-        // Reset when on cloned slides
-        if (currentSlide === cards.length - 1) {
-          gsap.set(transitionRef.current, { x: -cardWidthWithGap })
-          setCurrentSlide(1)
-        } else if (currentSlide === 0) {
-          gsap.set(transitionRef.current, { x: -(cards.length - 2) * cardWidthWithGap })
-          setCurrentSlide(cards.length - 2)
-        }
-      },
-    })
-  }, [currentSlide, cards.length, cardWidthWithGap])
-
-  useEffect(() => {
-    const container = scrollLockRef.current
-    if (!container) return
-
-    const handleWheel = (e) => {
-      if (isTransitioning) {
-        e.preventDefault()
-        return
-      }
-
-      const isDown = e.deltaY > 0
-      const isUp = e.deltaY < 0
-
-      e.preventDefault()
-     if (isDown && currentSlide < cards.length - 1) handleNext()
-if (isUp && currentSlide > 0) handlePrev()
-    }
-
-    container.addEventListener("wheel", handleWheel, { passive: false })
-    return () => container.removeEventListener("wheel", handleWheel)
-  }, [isTransitioning])
-
-
   return (
-  <div className="block_chain w-full bg-[#061611] text-white p-8 md:p-8 h-auto">
+  <div className="block_chain w-full bg-[#061611] text-white p-0 w-full h-auto">
   <div className="w-full max-w-[1680px] mx-auto">
     {/* Header Section */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -210,7 +201,7 @@ if (isUp && currentSlide > 0) handlePrev()
         <BlockchainIllustration />
       </div>
     </div>
-  </div>
+  </div>      
 
   <div ref={scrollLockRef} className="w-full overflow-hidden mt-[-230px] sm:mt-[-120px] md:mt-[-120px] lg:mt-[-230px]">
     <div

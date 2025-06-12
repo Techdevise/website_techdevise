@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { ToastContainer } from "react-toastify";
 import './index.css'
@@ -43,17 +43,18 @@ function App() {
   return (
     <BrowserRouter>
       <Scroll />
+      {/* Navbar always on top */}
       <Navbar />
 
       {/* Main content */}
       <main className="flex-grow m-auto">
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Homepage setIsModalOpen={openModal} />} />
           <Route path="/about" element={<About />} />
 
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/career" element={<Careers />} />
-          <Route path="/career1" element={<Careers1 />} />
+            <Route path="/career1" element={<Careers1 />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/gettouch" element={<GettouchForm />} />
@@ -67,14 +68,16 @@ function App() {
           <Route path="/services/it_staff" element={<ITStaff />} />
         </Routes>
       </main>
+      
 
+    
+     
 
-
-      <Footer onContactClick={openModal} />
       <GettouchForm isOpen={isModalOpen} onClose={closeModal} />
+      
 
-
-      <Footer />
+    
+      <Footer onContactClick={openModal} />
 
       <ToastContainer />
     </BrowserRouter>

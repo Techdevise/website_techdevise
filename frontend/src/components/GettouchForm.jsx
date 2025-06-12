@@ -380,6 +380,7 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
 
       {/* Toast Notification */}
       <Toast message={toast.message} isVisible={toast.isVisible} onClose={hideToast} />
+      
     </>
   )
 }
