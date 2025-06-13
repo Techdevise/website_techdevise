@@ -50,7 +50,7 @@
                           <img
                             src="/images<%= gallery.image %>"
                             alt="Uploaded Image"
-                            style="width: 50px; height: auto"
+                            style="width: 50px; height: 50px"
                           />
                           <% } else { %> No file <% } %>
                         </td>
@@ -85,7 +85,7 @@
                             onclick="confirmDelete('<%= gallery.id %>')"
                           >
                             <i class="fas fa-trash text-danger fa-lg"></i>
-                          </a>
+                        </a>
                         </td>
                       </tr>
                       <% }) %>
@@ -106,39 +106,42 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
   function confirmDelete(sliderId) {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`/admin/gallery/${sliderId}/delete`, {
-          method: "DELETE",
-          headers: { "Content-Type": "application/json" },
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      fetch(`/admin/gallery/${sliderId}/delete`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network error");
+          }
+          return response.json();
         })
-          .then((response) => {
-            if (!response.ok) throw new Error("Network error");
-            return response.json();
-          })
-          .then((data) => {
-            document.getElementById(`slider-${sliderId}`).remove();
-            Swal.fire("Deleted!", "The slider has been deleted.", "success");
-          })
-          .catch((err) => {
-            Swal.fire(
-              "Error!",
-              "There was a problem deleting the slider.",
-              "error"
-            );
-            console.error("Delete error:", err);
-          });
-      }
-    });
-  }
+        .then((data) => {
+          document.getElementById(`gallery-${sliderId}`).remove();
+          Swal.fire("Deleted!", "The gallery has been deleted.", "success");
+        })
+        .catch((err) => {
+          Swal.fire(
+            "Error!",
+            "There was a problem deleting the gallery.",
+            "error"
+          );
+          console.error("Delete error:", err);
+        });
+    }
+  });
+}
+
 </script>
 
 <!-- Toggle Status -->

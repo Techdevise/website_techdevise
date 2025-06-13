@@ -11,7 +11,7 @@ module.exports = {
                 let whereClause = {
                 };
     
-                if (typeFilter === '1' || typeFilter === '2' || typeFilter === '3'|| typeFilter === '4' ) {
+                if (typeFilter === '1' || typeFilter === '2' || typeFilter === '3'|| typeFilter === '4'|| typeFilter === '5' || typeFilter === '6' ) {
                     whereClause.type = typeFilter;
                 }
     
@@ -214,17 +214,17 @@ module.exports = {
                 return res.redirect("/admin/slider");
               }
         
-              await Sliders.destroy({ where: { id } });
+              await role.destroy();
         
               req.flash("success", "Slider deleted successfully.");
-              return res.redirect("/admin/slider");
-        
-            } catch (error) {
-              console.log(error);
-              const errorMessage = error.message || 'Failed to delete role.';
-              req.flash("error", errorMessage);
-              return res.redirect("/admin/slider");
-            }
+               res.json({ success: true, message: 'Slider deleted successfully' });
+
+        } catch (error) {
+            console.log(error);
+            const errorMessage = error.message || 'Failed to delete role.';
+            req.flash("error", errorMessage);
+            res.status(500).json({ success: false, message: 'Something went wrong. Please try again.' });
+        }
           },
 
 }

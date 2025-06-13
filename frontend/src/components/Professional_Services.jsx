@@ -31,8 +31,7 @@ const Professional_Services = () => {
     className="w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] xl:w-[700px] h-auto object-contain"
   />
 
-  {/* Text on right side - only visible on lg screens and up */}
-  <div className="hidden lg:flex absolute right-0 h-full items-center mr-[90px] mb-[535px]">
+  <div className="hidden lg:flex absolute right-0 h-full w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] xl:w-[700px] items-center mr-[90px] mb-[535px]">
     <span
       className="text-[#A2A2A2] whitespace-nowrap font-Montserrat font-extrabold text-[30px] xl:text-[50px] tracking-wide"
       style={{

@@ -40,7 +40,7 @@
                           <img
                             src="/images<%= role.image %>"
                             alt="Uploaded Image"
-                            style="width: 50px; height: auto"
+                            style="width: 50px; height: 50px"
                           />
                           <% } else { %> No file <% } %>
                         </td>
@@ -48,12 +48,13 @@
                           <a href="/admin/roles/<%= role.id %>" title="View">
                             <i class="fas fa-eye text-primary fa-lg"></i>
                           </a>
-                          <!-- <button
+                             <a
+                            href="javascript:void(0);"
                             title="Delete"
                             onclick="confirmDelete('<%= role.id %>')"
                           >
-                            <i class="fas fa-trash-alt text-danger fa-lg"></i>
-                          </button> -->
+                            <i class="fas fa-trash text-danger fa-lg"></i>
+                          </a>
                         </td>
                       </tr>
                       <% }) %>
@@ -70,6 +71,7 @@
 </div>
 <%- include('../../layouts/common/footer.ejs') %>
 
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
   function confirmDelete(roleId) {
@@ -83,30 +85,25 @@
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        // Make API call to delete
-        fetch(`/admin/roles/delete/${roleId}`, {
+        fetch(`/admin/roles/${roleId}/delete`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
         })
           .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
+            if (!response.ok) throw new Error("Network error");
             return response.json();
           })
           .then((data) => {
-            // Remove the row from the table
             document.getElementById(`role-${roleId}`).remove();
-
             Swal.fire("Deleted!", "The role has been deleted.", "success");
           })
-          .catch((error) => {
+          .catch((err) => {
             Swal.fire(
               "Error!",
               "There was a problem deleting the role.",
               "error"
             );
-            console.error("Error:", error);
+            console.error("Delete error:", err);
           });
       }
     });

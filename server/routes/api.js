@@ -20,6 +20,7 @@ var apiRouter = express.Router();
 
     apiRouter.get('/blogs' ,blogController.listing_blogs)
      apiRouter.get('/teams' ,blogController.listing_Team)
+     apiRouter.get('/techTeam' ,blogController.listing_TechTeam)
       apiRouter.get('/officeActivity' ,blogController.listing_Office_Activity)
     apiRouter.get('/cms' ,cmsController.listingCms)
 
@@ -29,6 +30,9 @@ var apiRouter = express.Router();
     apiRouter.get('/ai' ,sliderController.listing_Ai_Integrated)
     apiRouter.get('/blockchain' ,sliderController.listing_Blockchain)
     apiRouter.get('/seamless' ,sliderController.listing_Seamless)
+    apiRouter.get('/blockchain_con' ,sliderController.listing_Blockchain_Consulting)
+    apiRouter.get('/ai_service' ,sliderController.listing_Ai_Service)
+
     
 
       apiRouter.get('/digital_As' ,sliderController.listing_Assurance)

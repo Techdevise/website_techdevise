@@ -78,6 +78,25 @@ viewPage: async (req, res) => {
 
 
 
+  delete_JobPosition: async (req, res) => {
+            try {
+              const { id } = req.params;
+        
+              const con = await JobPosition.findOne({ where: { id } });
+             
+        
+              await con.destroy();
+        
+              req.flash("success", "Job Position Us deleted successfully.");
+               res.json({ success: true, message: 'Job Position deleted successfully' });
+
+        } catch (error) {
+            console.log(error);
+            const errorMessage = error.message || 'Failed to delete role.';
+            req.flash("error", errorMessage);
+            res.status(500).json({ success: false, message: 'Something went wrong. Please try again.' });
+        }
+          },
 
 
 

@@ -8,6 +8,7 @@ const settingController = require('../controller/admin/settingController');
 const sliderController = require('../controller/admin/sliderController');
 const qualityController = require('../controller/admin/qualityController');
 const galleryController = require('../controller/admin/galleryController');
+const teamController = require('../controller/admin/teamController');
 var router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware").isAuthenticated;
 /* GET home page. */
@@ -49,6 +50,7 @@ router.delete('/quality/:id/delete', qualityController.deleteQuality)
 
 router.get('/jobs',jobsController.jobListing)
 router.get('/jobs/:id',jobsController.viewPage)
+router.delete('/jobs/:id/delete',jobsController.delete_JobPosition)
 
 router.get('/joboption',jobsController.jobOptionList)
 router.get('/joboptionCreate',jobsController.createPage)
@@ -66,12 +68,14 @@ router.post('/setting/:id', settingController.settingEditpost);
 
 router.get('/contact_us', contactUsController.contactListing);
 router.get('/contact_us/:id', contactUsController.contactView);
+router.delete('/contact_us/:id/delete', contactUsController.deleteContect_us);
 router.get('/experts', contactUsController.expertListing);
 router.get('/experts/:id', contactUsController.expertView);
+router.delete('/experts/:id/delete', contactUsController.delete_SpeakExperts);
 
 router.get('/roles', itRolesController.itroleListing);
 router.get('/roles/:id', itRolesController.viewRoles);
-router.delete('/roles/delete/:id', itRolesController.deleteRole);
+router.delete('/roles/:id/delete', itRolesController.deleteRole);
 
 
 router.get('/blogs',blogController.blogListing)
@@ -80,6 +84,15 @@ router.post('/blogs/create',blogController.addBlogOption)
 router.put('/blogs/:id/status', blogController.updateStatus)
 router.get('/blogs/:id', blogController.editPage)
 router.post('/blogs/:id/update', blogController.updateBlogOption);
+router.delete('/blogs/:id/delete', blogController.deleteBlog);
+
+router.get('/team',teamController.teamListing)
+router.get('/team_Create',teamController.createPage)
+router.post('/team/create',teamController.addTeam)
+router.put('/team/:id/status', teamController.updateStatus)
+router.get('/team/:id', teamController.editPage)
+router.post('/team/:id/update', teamController.updateTeam);
+router.delete('/team/:id/delete', teamController.deleteTeam);
 
 router.get('/gallery',galleryController.galleryLiting)
 router.get('/gallery/:type',galleryController.galleryLiting)

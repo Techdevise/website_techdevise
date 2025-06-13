@@ -10,7 +10,7 @@ const DesktopIndustryVision = () => {
   useEffect(() => {
     const fetchIndustries = async () => {
       try {
-        const res = await axios.get("http://localhost:9090/api/seamless"); // Replace with your actual API endpoint
+        const res = await axios.get("http://localhost:9090/api/seamless"); 
         if (res.data.success) {
           setIndustries(res.data.data);
         }
@@ -44,11 +44,11 @@ const DesktopIndustryVision = () => {
           <div className="flex bg-[#0A211B] rounded-3xl p-6 w-[733px] h-[164px] mt-[50px] max-w-3xl items-center justify-between macbook-card">
             <div>
               <p className="text-white text-lg font-medium macbook-card-text">
-                Fuel Success in a Digital-First World with <span className="font-bold text-[#8CBEB7]">300+</span> Visionaries.
+                Fuel Success in a Digital-First <br /> World with <span className="font-bold text-[#8CBEB7]">300+</span> Visionaries.
               </p>
             </div>
             <div className="bg-white rounded-lg px-6 py-3 flex items-center cursor-pointer shadow-md">
-              <button className="text-[#157B6C] w-[220px] h-[70px] font-bold text-[20px] font-montserrat flex items-center macbook-button">
+              <button className="text-[#157B6C] w-[320px] h-[50px] font-bold text-[20px] font-montserrat flex items-center macbook-button">
                 Let's Innovate Together
                 <svg width="50" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M13 5L20 12L13 19" stroke="#0A6E58" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
