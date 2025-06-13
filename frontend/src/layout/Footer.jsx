@@ -14,7 +14,7 @@
   import Location from "../assets/Location.png"
   import Gmaillogo from "../assets/Gmaillogo.png"
   import Phonelogo from "../assets/Phonelogo.png"
-  const Footer = () => {
+  const Footer = ({onContactClick }) => {
     return (
       <footer className="footer-bg relative text-white py-12 px-6 fotter_padding">
         <div className="px-6 mx-auto">
@@ -62,7 +62,7 @@
                   Tech Devise is a digital solution provider which offers various digital services that will help your online business to flourish. We expertise in providing services like digital marketing, app development, web development, CMS development and many more.
                 </p>
                 <div className="flex justify-center md:justify-start">
-                  <button className="whitespace-nowrap mt-4 w-[183px] h-[49px] rounded-lg bg-white font-bold text-[16px] text-[#137365] px-10 py-2">
+                  <button onClick={onContactClick } className="whitespace-nowrap mt-4 w-[183px] h-[49px] rounded-lg bg-white font-bold text-[16px] text-[#137365] px-10 py-2">
                     Contact Now!
                   </button>
                 </div>
@@ -138,41 +138,33 @@
             </div>
           </div>
 
-        <div className="relative text-white py-6 px-3 md:px-20 rounded-lg bg-cover bg-center bg-no-repeat opacity-100 text-6xl font-semibold md:bg-[rgba(255,255,255,0.05)] my-12 macbook-footer">
+        <div
+            style={{ padding: "30px 30px" }}
+            className="relative text-white py-6 px-6 md:px-20 rounded-lg bg-cover bg-center bg-no-repeat opacity-100 text-6xl font-semibold bg-[rgba(255,255,255,0.05)] my-12 macbook-footer"
+          >
             <div className="flex flex-col md:flex-row justify-between items-center text-gray-300 text-sm text-center md:text-left">
               {/* Address and Contact */}
               <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 macbook-contact-container">
-              <p className="flex items-start space-x-2 text-white font-normal text-[18px] leading-[29px] max-w-[520px] md:max-w-[520px] macbook-address">
-
-                  <img
-                    src={Location || "/placeholder.svg"}
-                    alt="Location Icon"
-                    className="w-6 h-6 macbook-icon hidden md:block mt-12"
-                  />
-                  <span >
-                    F - 268, Industrial Area, Sector 74, Sahibzada <br /> Ajit
-                    Singh Nagar, Punjab 160071
+                <p
+                  style={{ padding: "0 70px 0 0" }}
+                  className="flex items-center space-x-2 text-white font-normal text-[18px] opacity-100 leading-[29px] macbook-address"
+                >
+                  <img src={Location || "/placeholder.svg"} alt="Location Icon" className="w-6 h-6 macbook-icon" />
+                  <span>
+                    F - 268, Industrial Area, Sector 74, Sahibzada <br /> Ajit Singh Nagar, Punjab 160071
                   </span>
                 </p>
-                <div className="w-full flex justify-between items-center px-0 md:px-10">
-                  <p className="flex items-center space-x-1 md:space-x-2 text-white font-normal text-[16px] md:text-[18px] leading-[26px] md:leading-[29px] macbook-email">
-                    <img
-                      src={Gmaillogo || "/placeholder.svg"}
-                      alt="Gmail Icon"
-                      className="macbook-icon"
-                    />
-                    <span>techdevise@gmail.com</span>
-                  </p>
-
-                  <p className="flex items-center space-x-1 pl-2 md:space-x-2 text-white font-normal text-[16px] md:text-[18px] leading-[26px] md:leading-[29px] macbook-phone">
-                    <img
-                      src={Phonelogo || "/placeholder.svg"}
-                      alt="Phone Icon"
-                      className="macbook-icon"
-                    />
-                    <span>+91 1234567891</span>
-                  </p>
-                </div>
+                <p
+                  style={{ padding: "0 70px 0 0" }}
+                  className="flex items-center space-x-2 text-white font-normal text-[18px] opacity-100 leading-[29px] macbook-email"
+                >
+                  <img src={Gmaillogo || "/placeholder.svg"} alt="Gmail Icon" className="macbook-icon" />
+                  <span>techdevise@gmail.com</span>
+                </p>
+                <p className="flex items-center space-x-2 text-white font-normal text-[18px] opacity-100 leading-[29px] macbook-phone">
+                  <img src={Phonelogo || "/placeholder.svg"} alt="Phone Icon" className="macbook-icon" />
+                  <span>+91 1234567891</span>
+                </p>
               </div>
 
               {/* Social Icons */}
@@ -181,41 +173,25 @@
                   href="#"
                   className="w-[30px] h-[30px] flex items-center justify-center rounded-lg opacity-100 macbook-social-icon"
                 >
-                  <img
-                    src={Facebook || "/placeholder.svg"}
-                    alt="Facebook"
-                    className="w-full h-full object-contain"
-                  />
+                  <img src={Facebook || "/placeholder.svg"} alt="Facebook" className="w-full h-full object-contain" />
                 </a>
                 <a
                   href="#"
                   className="w-[30px] h-[30px] flex items-center justify-center rounded-lg opacity-100 macbook-social-icon"
                 >
-                  <img
-                    src={Instagram || "/placeholder.svg"}
-                    alt="Instagram"
-                    className="w-full h-full object-contain"
-                  />
+                  <img src={Instagram || "/placeholder.svg"} alt="Instagram" className="w-full h-full object-contain" />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all"
                   className="w-[30px] h-[30px] flex items-center justify-center rounded-lg opacity-100 macbook-social-icon"
                 >
-                  <img
-                    src={LinkedIN || "/placeholder.svg"}
-                    alt="LinkedIn"
-                    className="w-full h-full object-contain"
-                  />
+                  <img src={LinkedIN || "/placeholder.svg"} alt="LinkedIn" className="w-full h-full object-contain" />
                 </a>
                 <a
                   href="#"
                   className="w-[30px] h-[30px] flex items-center justify-center rounded-lg opacity-100 macbook-social-icon"
                 >
-                  <img
-                    src={Twitter || "/placeholder.svg"}
-                    alt="Twitter"
-                    className="w-full h-full object-contain"
-                  />
+                  <img src={Twitter || "/placeholder.svg"} alt="Twitter" className="w-full h-full object-contain" />
                 </a>
               </div>
             </div>
