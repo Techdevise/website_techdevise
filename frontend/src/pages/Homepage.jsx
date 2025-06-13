@@ -175,7 +175,7 @@ function Homepage({ setIsModalOpen }) {
                   src={lamp}
                   alt="Lamp"
                   className="absolute top-[-390px] left-[300px] w-[36.31px] h-[230.56px] opacity-100" style={{
-    top: window.innerWidth === 1440 ? "-370px" : "-390px",
+    top: window.innerWidth === 1440 ? "-411px" : "-390px",
   }}/>
 
 
@@ -183,7 +183,7 @@ function Homepage({ setIsModalOpen }) {
                   src={light}
                   alt="Lamp Logo"
                   className="hidden sm:block absolute top-[-392px] left-[470px] w-[49.99px] h-[317.44px] opacity-100" style={{
-    top: window.innerWidth === 1440 ? "-370px" : "-390px",
+    top: window.innerWidth === 1440 ? "-412px" : "-390px",
   }}/>
               </div>
               {/* Line Image */}

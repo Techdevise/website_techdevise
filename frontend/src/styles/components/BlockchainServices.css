@@ -5,6 +5,33 @@
   max-width: 100%;
   height: auto;
 }
+/* Add these styles to your BlockchainServices.css file */
+
+.carousel-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Smooth transitions for cards */
+.card {
+  will-change: transform, opacity;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Add a subtle glow effect to the center card */
+.card[style*="scale(1)"] {
+  box-shadow: 0 0 25px rgba(21, 123, 108, 0.4);
+}
+
+/* Ensure the container has enough height for the scaled cards */
+.block_chain {
+  overflow-x: hidden;
+  /* padding-bottom: 2rem; */
+}
 
 .blockchain-img1 {
   mix-blend-mode: luminosity;
