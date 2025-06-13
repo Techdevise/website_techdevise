@@ -7,16 +7,30 @@
       <div class="content-wrapper">
         <div class="row">
           <div class="col-12 grid-margin">
-            <div class="card">   
+            <div class="card">
               <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
                   <h4 class="card-title mb-0">Sliders</h4>
-                   <a href="/admin/slider" class="btn btn-info">All</a>
-            <a href="/admin/slider/1" class="btn btn-danger">React Native</a>
-            <a href="/admin/slider/2" class="btn btn-warning">Ai Integrated</a>
-            <a href="/admin/slider/3" class="btn btn-success">Blockchain</a>
-            <a href="/admin/slider/4" class="btn btn-success">Seamless Vision</a>
-                  <a href="/admin/slider_add" class="btn text-white" style="background-color: #157b6c">
+                  <a href="/admin/slider" class="btn btn-info">All</a>
+                  <a href="/admin/slider/1" class="btn btn-danger"
+                    >React Native</a
+                  >
+                  <a href="/admin/slider/2" class="btn btn-warning"
+                    >Ai Integrated</a
+                  >
+                  <a href="/admin/slider/3" class="btn btn-success"
+                    >Blockchain</a
+                  >
+                  <a href="/admin/slider/4" class="btn btn-success"
+                    >Seamless Vision</a
+                  >
+                  <a
+                    href="/admin/slider_add"
+                    class="btn text-white"
+                    style="background-color: #157b6c"
+                  >
                     <i class="fas fa-plus"></i> Create Slider
                   </a>
                 </div>
@@ -35,43 +49,61 @@
                     </thead>
                     <tbody>
                       <% slider.forEach((slider, index) => { %>
-                        <tr id="slider-<%= slider.id %>">
-                          <td><%= index + 1 %></td>
-                          <td><%= slider.title %></td>
-                          <td><%= slider.message %></td>
-                          <td>
-                            <% if (slider.image) { %>
-                              <img src="/images<%= slider.image %>" alt="Uploaded Image" style="width: 50px; height: auto" />
-                            <% } else { %>
-                              No file
-                            <% } %>
-                          </td>
-                          <td>
-                            <button
-                              class="btn <%= slider.status == 1 ? 'btn-success' : 'btn-danger' %> btn-sm toggle-status"
-                              data-id="<%= slider.id %>"
-                              data-status="<%= slider.status %>"
-                              title="Toggle Status"
-                            >
-                              <%= slider.status == 1 ? 'Active' : 'Inactive' %>
-                            </button>
-                          </td>
-                          <td>
-                            <a href="/admin/slider_View/<%= slider.id %>" title="View">
-                              <i class="fas fa-eye text-primary fa-lg"></i>
-                            </a>
-                            <a href="/admin/slider/<%= slider.id %>" title="Edit">
-                              <i class="fas fa-pen text-warning fa-lg"></i>
-                            </a>
-                            <a
-                              href="javascript:void(0);"
-                              title="Delete"
-                              onclick="confirmDelete('<%= slider.id %>')"
-                            >
-                              <i class="fas fa-trash text-danger fa-lg"></i>
-                            </a>
-                          </td>
-                        </tr>
+                      <tr id="slider-<%= slider.id %>">
+                        <td><%= index + 1 %></td>
+                        <td title="<%= slider.title %>">
+                          <%= slider.title.length > 20 ?
+                          slider.title.substring(0, 25) + "..." : slider.title
+                          %>
+                        </td>
+                        <td title="<%= slider.message %>">
+                          <%= slider.message.length > 20 ?
+                          slider.message.substring(0, 25) + "..." :
+                          slider.message %>
+                        </td>
+                        <td>
+                          <% if (slider.image) { %>
+                          <img
+                            src="/images<%= slider.image %>"
+                            alt="Uploaded Image"
+                            style="width: 50px; height: auto"
+                          />
+                          <% } else { %> No file <% } %>
+                        </td>
+                        <td>
+                          <button
+                            class="btn <%= slider.status == 1 ? 'btn-success' : 'btn-danger' %> btn-sm toggle-status"
+                            data-id="<%= slider.id %>"
+                            data-status="<%= slider.status %>"
+                            title="Toggle Status"
+                          >
+                            <%= slider.status == 1 ? 'Active' : 'Inactive' %>
+                          </button>
+                        </td>
+                        <td>
+                          <a
+                            href="/admin/slider_View/<%= slider.id %>"
+                            title="View"
+                          >
+                            <i class="fas fa-eye text-primary fa-lg me-3"></i>
+                          </a>
+
+                          <a
+                            href="/admin/slider_Edit/<%= slider.id %>"
+                            title="Edit"
+                          >
+                            <i class="fas fa-pen text-warning fa-lg me-3"></i>
+                          </a>
+
+                          <a
+                            href="javascript:void(0);"
+                            title="Delete"
+                            onclick="confirmDelete('<%= slider.id %>')"
+                          >
+                            <i class="fas fa-trash text-danger fa-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
                       <% }) %>
                     </tbody>
                   </table>
@@ -113,7 +145,11 @@
             Swal.fire("Deleted!", "The slider has been deleted.", "success");
           })
           .catch((err) => {
-            Swal.fire("Error!", "There was a problem deleting the slider.", "error");
+            Swal.fire(
+              "Error!",
+              "There was a problem deleting the slider.",
+              "error"
+            );
             console.error("Delete error:", err);
           });
       }
@@ -136,9 +172,15 @@
         if (response.success) {
           const button = $('.toggle-status[data-id="' + sliderId + '"]');
           if (newStatus === 1) {
-            button.text("Active").removeClass("btn-danger").addClass("btn-success");
+            button
+              .text("Active")
+              .removeClass("btn-danger")
+              .addClass("btn-success");
           } else {
-            button.text("Inactive").removeClass("btn-success").addClass("btn-danger");
+            button
+              .text("Inactive")
+              .removeClass("btn-success")
+              .addClass("btn-danger");
           }
           button.data("status", newStatus);
         }

@@ -1,5 +1,5 @@
 
-const { Sliders } = require("../../models");
+const { Sliders, Quality } = require("../../models");
 
 
 module.exports = {
@@ -93,4 +93,64 @@ module.exports = {
             });
         }
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       listing_Assurance: async (req, res) => {
+
+        try {
+            const dig = await Quality.findAll({
+                where: { status: 1, type: 1 }
+            })
+
+            return res.status(200).json({
+                success: true,
+                message: "Get all Digital Assurance  successfully",
+                data: dig,
+            });
+        } catch (error) {
+            console.log(error);
+            return res.status(500).json({
+                success: false,
+                message: "Something went wrong",
+                error: error.message,
+            });
+        }
+    },
+    listing_Engineering: async (req, res) => {
+
+        try {
+            const dig = await Quality.findAll({
+                where: { status: 1, type: 2 }
+            })
+
+            return res.status(200).json({
+                success: true,
+                message: "Get all Digital Engineering  successfully",
+                data: dig,
+            });
+        } catch (error) {
+            console.log(error);
+            return res.status(500).json({
+                success: false,
+                message: "Something went wrong",
+                error: error.message,
+            });
+        }
+    },
+
 }

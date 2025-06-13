@@ -19,6 +19,8 @@ var apiRouter = express.Router();
   apiRouter.post('/roles/create' ,itRolesController.createRole)
 
     apiRouter.get('/blogs' ,blogController.listing_blogs)
+     apiRouter.get('/teams' ,blogController.listing_Team)
+      apiRouter.get('/officeActivity' ,blogController.listing_Office_Activity)
     apiRouter.get('/cms' ,cmsController.listingCms)
 
 
@@ -28,4 +30,7 @@ var apiRouter = express.Router();
     apiRouter.get('/blockchain' ,sliderController.listing_Blockchain)
     apiRouter.get('/seamless' ,sliderController.listing_Seamless)
     
+
+      apiRouter.get('/digital_As' ,sliderController.listing_Assurance)
+    apiRouter.get('/digital_Eng' ,sliderController.listing_Engineering)
 module.exports = apiRouter;

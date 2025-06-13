@@ -74,7 +74,6 @@ function App() {
       <GettouchForm isOpen={isModalOpen} onClose={closeModal} />
 
 
-      <Footer />
 
       <ToastContainer />
     </BrowserRouter>

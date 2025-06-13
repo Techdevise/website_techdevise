@@ -1,12 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Aiservicesimg5 from "../assets/Aiservicesimg5.svg";
-import Aichatbots from "../assets/Layer_1.svg";
-import Aismartpricing from "../assets/2150038860 1.svg";
-import Aipredictiveanalytics from "../assets/image 29.svg";
+import axios from "axios";
 
 const AiSolutionsSection = () => {
   const sliderRef = useRef(null);
+  const [cards, setCards] = useState([]);
 
   const handleScroll = (direction) => {
     const scrollAmount = 400;
@@ -18,28 +17,23 @@ const AiSolutionsSection = () => {
     }
   };
 
-  const cards = [
-    {
-      title: "AI Chatbots for<br/>Support",
-      desc: "Cut customer service costs using AI chatbots to automate responses and handle inquiries 24/7.",
-      image: Aichatbots,
-    },
-    {
-      title: "Smart Pricing<br/> Models",
-      desc: "Use AI-driven insights to analyze market trends and optimize pricing strategies for maximum profit.",
-      image: Aismartpricing,
-    },
-    {
-      title: "Predictive<br/> Analytics",
-      desc: "Make better business decisions with predictive AI analytics that forecast trends and customer behaviour.",
-      image: Aipredictiveanalytics,
-    },
-    {
-      title: "AI Route<br/> Planning",
-      desc: "Plan optimal delivery routes using AI to reduce fuel costs and improve logistics efficiency.",
-      image: Aipredictiveanalytics,
-    },
-  ];
+  // Fetch data from the API
+  useEffect(() => {
+    const fetchAiSolutions = async () => {
+      try {
+        const res = await axios.get("http://localhost:9090/api/ai");
+        if (res.data.success) {
+          setCards(res.data.data);
+        } else {
+          console.error("Failed to fetch AI solutions");
+        }
+      } catch (err) {
+        console.error("Error fetching AI solutions:", err);
+      }
+    };
+
+    fetchAiSolutions();
+  }, []);
 
   return (
     <div
@@ -81,12 +75,12 @@ const AiSolutionsSection = () => {
               <div
                 key={idx}
                 className="min-w-[400px] max-w-[400px] h-[300px] bg-cover bg-center rounded-lg relative overflow-hidden flex items-end p-4 text-white shadow-lg"
-                style={{ backgroundImage: `url(${card.image})` }}
-                title={card.title.replace(/<br\/>/g, ' ')}
+                style={{ backgroundImage: `url(http://localhost:9090/images${card.image})` }}
+                title={card.title?.replace(/<br\/?>/g, ' ')}
               >
                 <div className="z-10">
                   <h2 className="text-[30px] font-bold" dangerouslySetInnerHTML={{ __html: card.title }} />
-                  <p className="text-sm mt-1">{card.desc}</p>
+                  <p className="text-sm mt-1">{card.message}</p>
                 </div>
                 <div className="absolute inset-0 bg-black bg-opacity-30 z-0" />
               </div>

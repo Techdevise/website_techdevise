@@ -57,6 +57,7 @@ db.Sequelize = Sequelize;
  db.Setting = require("./settings")(sequelize,Sequelize)
  db.Sliders = require("./sliders")(sequelize,Sequelize)
  db.Quality = require("./quality_analysis")(sequelize,Sequelize)
+ db.Gallery = require("./techdevise_life")(sequelize,Sequelize)
 
 
 db.JobOption.hasMany(db.JobPosition, {

@@ -1,12 +1,12 @@
 var DataTypes = require("sequelize").DataTypes;
-var _quality_analysis = require("./quality_analysis");
+var _techdevise_life = require("./techdevise_life");
 
 function initModels(sequelize) {
-  var quality_analysis = _quality_analysis(sequelize, DataTypes);
+  var techdevise_life = _techdevise_life(sequelize, DataTypes);
 
 
   return {
-    quality_analysis,
+    techdevise_life,
   };
 }
 module.exports = initModels;

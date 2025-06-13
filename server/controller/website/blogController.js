@@ -1,5 +1,5 @@
 
-const { Blogs } = require("../../models");
+const { Blogs, Gallery } = require("../../models");
 
 
 module.exports = {
@@ -23,6 +23,58 @@ module.exports = {
                 error: error.message,
             });
         }
-    }
+    },
 
+
+
+
+
+
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Gallery>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+       listing_Team: async (req, res) => {
+    
+            try {
+                const team = await Gallery.findAll({
+                    where: { status: 1, type: 1 }
+                })
+    
+                return res.status(200).json({
+                    success: true,
+                    message: "Get all Team Work  successfully",
+                    data: team,
+                });
+            } catch (error) {
+                console.log(error);
+                return res.status(500).json({
+                    success: false,
+                    message: "Something went wrong",
+                    error: error.message,
+                });
+            }
+        },
+        listing_Office_Activity: async (req, res) => {
+    
+            try {
+                const Office_Activity = await Gallery.findAll({
+                    where: { status: 1, type: 2 }
+                })
+    
+                return res.status(200).json({
+                    success: true,
+                    message: "Get all Office Activity  successfully",
+                    data: Office_Activity,
+                });
+            } catch (error) {
+                console.log(error);
+                return res.status(500).json({
+                    success: false,
+                    message: "Something went wrong",
+                    error: error.message,
+                });
+            }
+        },
 }

@@ -6,6 +6,8 @@ const itRolesController = require('../controller/admin/itRolesController');
 const blogController = require('../controller/admin/blogController');
 const settingController = require('../controller/admin/settingController');
 const sliderController = require('../controller/admin/sliderController');
+const qualityController = require('../controller/admin/qualityController');
+const galleryController = require('../controller/admin/galleryController');
 var router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware").isAuthenticated;
 /* GET home page. */
@@ -29,11 +31,21 @@ router.get('/slider',sliderController.sliderLiting)
 router.get('/slider/:type', sliderController.sliderLiting)
 router.get('/slider_add',sliderController.addsliderPage)
 router.post('/slider/add',sliderController.addSlider)
-router.get('/slider/:id',sliderController.editPage)
+router.get('/slider_Edit/:id',sliderController.editPage)
 router.get('/slider_View/:id',sliderController.viewPage)
 router.post('/slider/:id/update',sliderController.updateSlider)
 router.put('/slider/:id/status', sliderController.updateStatus)
 router.delete('/slider/:id/delete', sliderController.deleteSlider)
+
+router.get('/quality',qualityController.qualityLiting)
+router.get('/quality/:type', qualityController.qualityLiting)
+router.get('/quality_add',qualityController.addqualityPage)
+router.post('/quality/add',qualityController.addQuality)
+router.get('/quality_Edit/:id',qualityController.editPage)
+router.get('/quality_View/:id',qualityController.viewPage)
+router.post('/quality/:id/update',qualityController.updateQuality)
+router.put('/quality/:id/status', qualityController.updateStatus)
+router.delete('/quality/:id/delete', qualityController.deleteQuality)
 
 router.get('/jobs',jobsController.jobListing)
 router.get('/jobs/:id',jobsController.viewPage)
@@ -68,5 +80,12 @@ router.post('/blogs/create',blogController.addBlogOption)
 router.put('/blogs/:id/status', blogController.updateStatus)
 router.get('/blogs/:id', blogController.editPage)
 router.post('/blogs/:id/update', blogController.updateBlogOption);
+
+router.get('/gallery',galleryController.galleryLiting)
+router.get('/gallery/:type',galleryController.galleryLiting)
+router.get('/gallery_create',galleryController.addgalleryPage)
+router.post('/gallery/create',galleryController.addGallery)
+router.put('/gallery/:id/status',galleryController.updateStatus)
+router.delete('/gallery/:id/delete',galleryController.deleteGallery)
 
 module.exports = router;
