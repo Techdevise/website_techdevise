@@ -40,15 +40,14 @@ function ITExperts() {
     };
 
     return (
-        <div
-            className="mx-auto mt-[30px] w-[1672px] h-[447px] opacity-100 flex items-center justify-between">
+       <div className="mx-auto mt-[30px] max-w-[1750px] w-full px-4 md:px-10 h-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             {/* Left Side Text */}
-            <div className="flex-1 pr-12">
-                <div className="relative">
+            <div className="w-full lg:w-1/2 lg:pr-12">
+                <div className="relative text-center px-4 sm:px-6">
                     <h2 className="text-left text-4xl font-bold font-montserrat text-[#157B6C] mb-2">
                         Meet Our IT Experts
                     </h2>
-                    <h1 className="w-full max-w-[708px] font-montserrat font-bold text-[48px] font-[#00000] opacity-100">
+                    <h1 className="w-full max-w-3xl mx-auto font-montserrat font-bold text-3xl sm:text-4xl md:text-5xl text-black leading-snug">
                         Driving Innovation Forward
                     </h1>
                     <p className='w-full max-w-[618px] font-[18px] font-montserrat text-[#000000] font-medium opacity-100'>Get an inside look at our talented IT team, the minds behind our cutting-edge solutions. Their expertise, dedication, and innovation power our success, ensuring seamless technology solutions for business worldwide.</p>
@@ -78,7 +77,7 @@ function ITExperts() {
 
             <div
                 ref={carouselRef}
-                className="flex-1 flex overflow-x-scroll scrollbar-hide space-x-4 scroll-smooth relative"
+                className="w-full lg:w-1/2 flex overflow-x-auto scrollbar-hide space-x-4 scroll-smooth"
               >
                 {experts.map((expert, index) => (
                     <div

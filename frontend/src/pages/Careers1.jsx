@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import JobPosting from '../components/JobPosting';
+import CareerPosting from '../components/CareerPosting';
 import Careerspageimg from '../assets/Careerspageimg.svg';
 
 
@@ -26,7 +26,7 @@ function Careers1() {
       
       <div className="w-full max-w-[1680px] mt-10 px-4">
          {job ? (
-        <JobPosting job={job} />
+        <CareerPosting job={job} />
       ) : (
         <p className="text-center text-red-500">No job data available.</p>
       )}
