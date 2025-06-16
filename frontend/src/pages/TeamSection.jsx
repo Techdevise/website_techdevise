@@ -31,7 +31,7 @@ const teamData = [
 function TeamSection() {
   return (
     <div
-      className="mx-auto mt-[30px] w-[1662px] h-[688px] opacity-100 bg-white"
+      className="w-full max-w-[1750px] h-auto mt-10 px-4 md:px-10 mx-auto bg-white"
       style={{ overflow: 'hidden' }}
     >
       <h2 className="text-center text-4xl font-bold text-black">
