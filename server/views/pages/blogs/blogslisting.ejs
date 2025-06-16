@@ -59,7 +59,7 @@
                           <img
                             src="/images<%= blog.image %>"
                             alt="Uploaded Image"
-                            style="width: 50px; height: auto"
+                            style="width: 50px; height: 50px"
                           />
                           <% } else { %> No file <% } %>
                         </td>
@@ -77,6 +77,13 @@
                           <a href="/admin/blogs/<%= blog.id %>" title="View">
                             <i class="fas fa-edit text-primary fa-lg"></i>
                           </a>
+                             <a
+                            href="javascript:void(0);"
+                            title="Delete"
+                            onclick="confirmDelete('<%= blog.id %>')"
+                          >
+                            <i class="fas fa-trash text-danger fa-lg"></i>
+                          </a>
                         </td>
                       </tr>
                       <% }) %>
@@ -92,7 +99,43 @@
   </div>
 </div>
 <%- include('../../layouts/common/footer.ejs') %>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function confirmDelete(blogId) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`/admin/blogs/${blogId}/delete`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error("Network error");
+            return response.json();
+          })
+          .then((data) => {
+            document.getElementById(`blog-${blogId}`).remove();
+            Swal.fire("Deleted!", "The blog has been deleted.", "success");
+          })
+          .catch((err) => {
+            Swal.fire(
+              "Error!",
+              "There was a problem deleting the blogs.",
+              "error"
+            );
+            console.error("Delete error:", err);
+          });
+      }
+    });
+  }
+</script>
 <script>
   $(document).on("click", ".toggle-status", function () {
     const jobId = $(this).data("id");

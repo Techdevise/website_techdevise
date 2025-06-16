@@ -181,6 +181,29 @@ module.exports = {
         }
     },
 
+      deleteBlog: async (req, res) => {
+                try {
+                  const { id } = req.params;
+            
+                  const blog = await Blogs.findOne({ where: { id } });
+                  if (!blog) {
+                    req.flash("error", "Blog not found.");
+                    return res.redirect("/admin/slider");
+                  }
+            
+                  await blog.destroy();
+            
+                  req.flash("success", "Blog deleted successfully.");
+                   res.json({ success: true, message: 'Slider deleted successfully' });
+    
+            } catch (error) {
+                console.log(error);
+                const errorMessage = error.message || 'Failed to delete role.';
+                req.flash("error", errorMessage);
+                res.status(500).json({ success: false, message: 'Something went wrong. Please try again.' });
+            }
+              },
+
 
 
 

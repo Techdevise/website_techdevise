@@ -94,6 +94,48 @@ module.exports = {
         }
     },
 
+     listing_Blockchain_Consulting: async (req, res) => {
+
+        try {
+            const sem = await Sliders.findAll({
+                where: { status: 1, type: 5 }
+            })
+
+            return res.status(200).json({
+                success: true,
+                message: "Get all Blockchain Consulting Vision successfully",
+                data: sem,
+            });
+        } catch (error) {
+            console.log(error);
+            return res.status(500).json({
+                success: false,
+                message: "Something went wrong",
+                error: error.message,
+            });
+        }
+    },
+     listing_Ai_Service: async (req, res) => {
+
+        try {
+            const sem = await Sliders.findAll({
+                where: { status: 1, type: 6 }
+            })
+
+            return res.status(200).json({
+                success: true,
+                message: "Get all Ai Service Vision successfully",
+                data: sem,
+            });
+        } catch (error) {
+            console.log(error);
+            return res.status(500).json({
+                success: false,
+                message: "Something went wrong",
+                error: error.message,
+            });
+        }
+    },
 
 
 

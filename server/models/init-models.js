@@ -1,12 +1,12 @@
 var DataTypes = require("sequelize").DataTypes;
-var _techdevise_life = require("./techdevise_life");
+var _techdevise_team = require("./techdevise_team");
 
 function initModels(sequelize) {
-  var techdevise_life = _techdevise_life(sequelize, DataTypes);
+  var techdevise_team = _techdevise_team(sequelize, DataTypes);
 
 
   return {
-    techdevise_life,
+    techdevise_team,
   };
 }
 module.exports = initModels;

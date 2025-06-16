@@ -1,5 +1,5 @@
 
-const { Blogs, Gallery } = require("../../models");
+const { Blogs, Gallery, Team } = require("../../models");
 
 
 module.exports = {
@@ -67,6 +67,29 @@ module.exports = {
                     success: true,
                     message: "Get all Office Activity  successfully",
                     data: Office_Activity,
+                });
+            } catch (error) {
+                console.log(error);
+                return res.status(500).json({
+                    success: false,
+                    message: "Something went wrong",
+                    error: error.message,
+                });
+            }
+        },
+
+
+           listing_TechTeam: async (req, res) => {
+    
+            try {
+                const team = await Team.findAll({
+                    where: { status: 1, }
+                })
+    
+                return res.status(200).json({
+                    success: true,
+                    message: "Get all Team  successfully",
+                    data: team,
                 });
             } catch (error) {
                 console.log(error);

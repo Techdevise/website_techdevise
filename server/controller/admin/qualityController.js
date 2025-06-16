@@ -217,14 +217,14 @@ module.exports = {
               await quality.destroy({ where: { id } });
         
               req.flash("success", "Quality deleted successfully.");
-              return res.redirect("/admin/quality");
-        
-            } catch (error) {
-              console.log(error);
-              const errorMessage = error.message || 'Failed to delete role.';
-              req.flash("error", errorMessage);
-              return res.redirect("/admin/quality");
-            }
+                res.json({ success: true, message: 'Quality deleted successfully' });
+
+        } catch (error) {
+            console.log(error);
+            const errorMessage = error.message || 'Failed to delete role.';
+            req.flash("error", errorMessage);
+            res.status(500).json({ success: false, message: 'Something went wrong. Please try again.' });
+        }
           },
 
 }

@@ -68,14 +68,14 @@ module.exports = {
       await HireingRole.destroy({ where: { id } });
 
       req.flash("success", "Role deleted successfully.");
-      return res.redirect("/admin/role-listing");
+        res.json({ success: true, message: 'Role deleted successfully' });
 
-    } catch (error) {
-      console.log(error);
-      const errorMessage = error.message || 'Failed to delete role.';
-      req.flash("error", errorMessage);
-      return res.redirect("/admin/role-listing");
-    }
+        } catch (error) {
+            console.log(error);
+            const errorMessage = error.message || 'Failed to delete role.';
+            req.flash("error", errorMessage);
+            res.status(500).json({ success: false, message: 'Something went wrong. Please try again.' });
+        }
   },
 
 
