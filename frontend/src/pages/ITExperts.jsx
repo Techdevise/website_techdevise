@@ -29,28 +29,32 @@ function ITExperts() {
     const carouselRef = useRef(null);
 
     const handleScroll = (direction) => {
-        if (carouselRef.current) {
-            const scrollAmount = 300;
-            if (direction === 'left') {
-                carouselRef.current.scrollLeft -= scrollAmount;
-            } else {
-                carouselRef.current.scrollLeft += scrollAmount;
-            }
-        }
-    };
+  if (carouselRef.current) {
+    const card = carouselRef.current.firstElementChild;
+    const scrollAmount = card ? card.offsetWidth + 16 : 250; // 16 for gap (space-x-4)
+
+    if (direction === 'left') {
+      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
+};
+
+
 
     return (
        <div className="mx-auto mt-[30px] max-w-[1750px] w-full px-4 md:px-10 h-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             {/* Left Side Text */}
             <div className="w-full lg:w-1/2 lg:pr-12">
-                <div className="relative text-center px-4 sm:px-6">
-                    <h2 className="text-left text-4xl font-bold font-montserrat text-[#157B6C] mb-2">
+                <div className="relative md:text-start max-w-screen-xl mx-auto">
+                    <h2 className="text-center md:text-left text-4xl font-bold font-montserrat text-[#157B6C] mb-2">
                         Meet Our IT Experts
                     </h2>
-                    <h1 className="w-full max-w-3xl mx-auto font-montserrat font-bold text-3xl sm:text-4xl md:text-5xl text-black leading-snug">
+                    <h1 className="w-full font-montserrat font-bold text-2xl sm:text-3xl md:text-5xl text-black leading-snug text-center md:text-left">
                         Driving Innovation Forward
                     </h1>
-                    <p className='w-full max-w-[618px] font-[18px] font-montserrat text-[#000000] font-medium opacity-100'>Get an inside look at our talented IT team, the minds behind our cutting-edge solutions. Their expertise, dedication, and innovation power our success, ensuring seamless technology solutions for business worldwide.</p>
+                    <p className='w-full max-w-2xl mx-auto text-[14px] sm:text-[16px] md:text-[18px] font-montserrat text-black font-medium mt-4 text-center md:text-left'>Get an inside look at our talented IT team, the minds behind our cutting-edge solutions. Their expertise, dedication, and innovation power our success, ensuring seamless technology solutions for business worldwide.</p>
                 </div>
                 
                 <div className="flex items-center justify-end space-x-4 mt-20">

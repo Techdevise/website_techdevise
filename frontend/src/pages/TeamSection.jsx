@@ -49,14 +49,13 @@ function TeamSection() {
               className={`absolute top-1/2 left-0 w-full h-1/2 ${member.bgColor} z-0 rounded-t-md`}
             ></div>
 
-            <div className="w-full aspect-[3/4] relative rounded-t-md overflow-hidden z-10">
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
+     <div className="w-[180px] h-[240px] relative rounded-t-md overflow-hidden z-10 mx-auto sm:w-full sm:aspect-[3/4] sm:h-auto sm:mx-0">
+  <img
+    src={member.image}
+    alt={member.name}
+    className="w-full h-full object-cover object-center"
+  />
+</div>
             {/* Info Section */}
             <div className="absolute bottom-0 w-full bg-white bg-opacity-80 p-4 text-center z-20">
               <h3 className="text-xl font-bold text-black">{member.name}</h3>
