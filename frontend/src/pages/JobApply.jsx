@@ -1,11 +1,14 @@
-"use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
+import Careerspageimg from "../assets/Careerspageimg.svg";
 import { X } from "lucide-react";
-import "react-toastify/dist/ReactToastify.css";
 
-const JobApplicationModal = ({ isOpen, onClose, jobId, jobTitle }) => {
+function JobApply() {
+  const location = useLocation();
+  const job = location.state?.job;
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -45,7 +48,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId, jobTitle }) => {
     form.append("type", "job");
     form.append("linkedin_profile", formData.linkedinProfile);
     form.append("about_us", formData.source);
-    form.append("jobOption_id", jobId);
+    form.append("jobOption_id", job?.id);
 
     if (resume) form.append("pdf_file", resume);
 
@@ -53,7 +56,6 @@ const JobApplicationModal = ({ isOpen, onClose, jobId, jobTitle }) => {
     try {
       await axios.post(`http://localhost:9090/api/job_position`, form);
       toast.success("Application submitted successfully!");
-      onClose();
     } catch (error) {
       console.error("Error submitting form:", error);
       toast.error(error.response?.data?.message || "Something went wrong. Please try again.");
@@ -62,21 +64,27 @@ const JobApplicationModal = ({ isOpen, onClose, jobId, jobTitle }) => {
     }
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 mt-10">
-      <div className="relative w-full max-w-[950px] bg-white rounded-md overflow-y-auto max-h-[90vh]">
-        <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
-          <X className="w-5 h-5" />
-        </button>
+    <div className="flex-grow bg-[#FAFAFA] relative overflow-hidden">
+      <div
+        className="w-full h-[546px] bg-[#061611] bg-cover bg-center flex items-center justify-center text-white font-Montserrat px-4 relative"
+        style={{
+          backgroundImage: `url(${Careerspageimg})`,
+          backgroundSize: "100% 100",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+        }}
+      >
+        <div className="flex flex-col items-center justify-center text-center mt-[30px] md:mt-0 px-4">
+          <h1 className="text-[28px] md:text-[48px] font-bold">Careers</h1>
+        </div>
+      </div>
 
-        <div className="p-8">
+      {job ? (
+        <div className="w-full max-w-[1570px] bg-white rounded-md mx-auto mt-10 mb-10 p-8">
           <div className="mb-6">
             <p className="text-[#157B6C] font-Montserrat text-[18px]">Apply At TechDevise For</p>
-            <h2 className="text-3xl font-bold font-Montserrat">
-              {jobTitle}
-            </h2>
+            <h2 className="text-3xl font-bold font-Montserrat">{job.title}</h2>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -132,7 +140,7 @@ const JobApplicationModal = ({ isOpen, onClose, jobId, jobTitle }) => {
             </div>
 
             <p className="text-[14px] text-black font-bold font-Montserrat">
-              If you are unable to submit your details, then please share your updated CV/Resume at {" "}
+              If you are unable to submit your details, then please share your updated CV/Resume at{" "}
               <a href="mailto:hr@techdevise.com" className="underline">hr@techdevise.com</a>
             </p>
 
@@ -143,9 +151,11 @@ const JobApplicationModal = ({ isOpen, onClose, jobId, jobTitle }) => {
             </div>
           </form>
         </div>
-      </div>
+      ) : (
+        <p className="text-center text-red-500 mt-10">No job data available.</p>
+      )}
     </div>
   );
-};
+}
 
-export default JobApplicationModal;
+export default JobApply;

@@ -21,7 +21,9 @@ import BlockchainDevelopment from './pages/BlockchainDevelopment'
 import AiDevelopment from './pages/AiDevelopment'
 import { useEffect } from 'react';
 import Careers from './pages/Careers';
+import SEODevelopment from './components/SEODevelopment';
 import Careers1 from './pages/Careers1';
+import JobApply from './pages/JobApply';
 import QualityAnalysis from './pages/QualityAnalysis';
 import ITStaff from './pages/ItStaff';
 
@@ -54,7 +56,9 @@ function App() {
 
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/career" element={<Careers />} />
-            <Route path="/career1" element={<Careers1 />} />
+           <Route path="/" element={<SEODevelopment />} />
+            <Route path="/careers1" element={<Careers1 />} />
+              <Route path="/JobApply" element={<JobApply />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/gettouch" element={<GettouchForm />} />

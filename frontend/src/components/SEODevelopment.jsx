@@ -1,10 +1,11 @@
 // components/SEODevelopment.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import JobPosting from './JobPosting';
 import { MapPin } from 'lucide-react'; 
 
 function SEODevelopment() {
-  const [selectedJob, setSelectedJob] = useState(null);
+  const navigate = useNavigate();
 
   const seoJobs = [
     {
@@ -151,11 +152,7 @@ function SEODevelopment() {
   ];
 
   const handleJobClick = (job) => {
-    setSelectedJob(job);
-  };
-
-  const handleCloseJobPosting = () => {
-    setSelectedJob(null);
+    navigate('/careers1', { state: { job } });
   };
 
   return (
@@ -178,13 +175,13 @@ function SEODevelopment() {
         ))}
       </div>
 
-      {selectedJob && (
+      {/* {selectedJob && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="max-w-[1527px] max-h-[90vh] overflow-auto">
             <JobPosting job={selectedJob} onClose={handleCloseJobPosting} />
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

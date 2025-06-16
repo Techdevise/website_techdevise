@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import JobPosting from '../components/JobPosting';
 import Careerspageimg from '../assets/Careerspageimg.svg';
 
 
 function Careers1() {
+  const location = useLocation();
+  const job = location.state?.job;
   return (
     <div className="flex-grow bg-[#FAFAFA] relative overflow-hidden">
       <div
@@ -21,8 +24,12 @@ function Careers1() {
       </div>
 
       
-      <div className="mt-10 px-4">
-        <JobPosting />
+      <div className="w-full max-w-[1680px] mt-10 px-4">
+         {job ? (
+        <JobPosting job={job} />
+      ) : (
+        <p className="text-center text-red-500">No job data available.</p>
+      )}
       </div>
     </div>
   );
