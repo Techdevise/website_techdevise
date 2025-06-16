@@ -39,7 +39,7 @@ const LocationSection = () => {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div className={`relative w-full pt-20 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-white" : "bg-black text-white"}`}>
+    <div className={`relative w-full pt-20 px-4 md:px-32 mb-10 ${isHomePage ? "bg-[#061611] text-white" : "bg-black text-white"}`}>
       {/* Header */}
       <div className="relative z-10 text-center mb-20">
         <h3 className="text-[#00C2A8] text-xl font-semibold mb-3">Location</h3>
@@ -70,30 +70,34 @@ const LocationSection = () => {
 
   {/* Overlay for location cards, centered */}
 <div className="absolute inset-0 z-10 flex items-center justify-center">
-  <div className="flex justify-center items-center gap-6 flex-wrap max-w-auto ">
-    {locations.map((loc, index) => (
-      <div
-        key={index}
-        className=" bg-[#061611]  rounded-2xl p-4 w-[500px] h-[200px] md-w-[300px] md-h-[200px] flex-shrink-0 flex items-center gap-4 border border-gray-100"
-      >
-        {/* Left image */}
-        <img
-          src={loc.image}
-          alt={`${loc.country} landmark`}
-          className="w-[193px] h-[150px] object-cover rounded-xl"
-        />
+ <div className="flex justify-center items-center gap-6 flex-wrap">
+  {locations.map((loc, index) => (
+    <div
+      key={index}
+      className="bg-[#061611] rounded-2xl p-4 w-full sm:w-[350px] md:w-[500px] h-[200px] flex-shrink-0 flex items-center gap-4 border border-gray-100"
+    >
+      {/* Left image */}
+      <img
+        src={loc.image}
+        alt={`${loc.country} landmark`}
+        className="w-[120px] sm:w-[150px] md:w-[193px] h-[120px] sm:h-[150px] object-cover rounded-xl"
+      />
 
-        {/* Right text block */}
-        <div className="flex flex-col justify-center">
-          <div className="flex items-center mb-2">
-            {loc.flag}
-            <h4 className="ml-2 text-[21px] font-weight-700 font-Montserrat text-[#FFFFFF]">{loc.country}</h4>
-          </div>
-          <p className="text-[16px] font-weight-300 font-Montserrat leading-snug text-[#FFFFFF]">{loc.address}</p>
+      {/* Right text block */}
+      <div className="flex flex-col justify-center">
+        <div className="flex items-center mb-2">
+          {loc.flag}
+          <h4 className="ml-2 text-[18px] sm:text-[20px] md:text-[21px] font-semibold font-Montserrat text-[#FFFFFF]">
+            {loc.country}
+          </h4>
         </div>
+        <p className="text-[14px] sm:text-[15px] md:text-[16px] font-light font-Montserrat leading-snug text-[#FFFFFF]">
+          {loc.address}
+        </p>
       </div>
-    ))}
-  </div>
+    </div>
+  ))}
+</div>
 </div>
 
 </div>

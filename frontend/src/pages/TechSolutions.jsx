@@ -96,7 +96,7 @@ const TechSolutions = () => {
               textFillColor: "transparent",
               color: "#157B6C",
             }}
-            className="text-2xl sm:text-4xl md:text-5xl font-extrabold font-montserrat text-[#8DBFB7] w-full md:w-[90%] lg:w-[600px] mb-4 ml-0 md:ml-5"
+            className="text-2xl sm:text-4xl md:text-5xl font-extrabold font-montserrat text-[#8DBFB7] w-full md:w-[90%] lg:w-[600px] mb-4 ml-2 md:ml-5"
           >
             Innovative Technology<br/>Solutions
           </h1>
@@ -123,7 +123,7 @@ const TechSolutions = () => {
                 ></i>
                   <div
                   className={`h-[2px] bg-[#157B6C] transition-all duration-300 mt-1 ${
-                    selectedCategory === category ? "w-28" : "w-0"
+                    selectedCategory === category ? "w-20" : "w-0"
                   }`}
                 ></div>
               </li>

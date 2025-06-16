@@ -52,6 +52,7 @@ router.get('/jobs',jobsController.jobListing)
 router.get('/jobs/:id',jobsController.viewPage)
 router.delete('/jobs/:id/delete',jobsController.delete_JobPosition)
 
+
 router.get('/joboption',jobsController.jobOptionList)
 router.get('/joboptionCreate',jobsController.createPage)
 router.post('/joboption/create',jobsController.addJobOption)
@@ -59,6 +60,8 @@ router.put('/joboption/:id/status', jobsController.updateStatus)
 router.get('/joboption/:id', jobsController.editPage)
 router.post('/joboption/:id/update', jobsController.updateJobOption);
 
+router.get('/careers',jobsController.careerListing)
+router.get('/careers/:id',jobsController.viewPageCareer)
 
 router.get('/cms/:id', authController.listingCms);
 router.post('/cms/:id', authController.cmsEditpost);

@@ -25,6 +25,30 @@ tech_solution {
       max-width: 100% !important;
       padding: 19px 23px 0 23px !important;
   }
+    .tech_solution {
+    margin-top: 10px;
+  }
+
+  .tech_solution .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .tech_solution .grid > div {
+    height: auto !important;
+    padding: 12px 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+    .tech_solution .grid img {
+    margin: 0 auto 6px auto !important;
+    width: 36px;
+    height: 36px;
+  }
+
+  .tech_solution .grid span {
+    font-size: 14px !important;
+  }
   
   }
   /* In your TechSolutions.css */
@@ -37,8 +61,6 @@ tech_solution {
 }
 
 
-
-/* Tablets: 768px to 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
  
 }
@@ -48,25 +70,6 @@ tech_solution {
  
   
 }
-
-/* Large Screens: 1441px+ */
-/* @media (min-width: 1441px) {
-  .mask_group {
-    width: 90%;
-
-  }
-}
-@media screen and (max-width: 1440px) and (min-width: 1280px) {
-  .w-macbook {
-    width: 90% !important;
-  }
-}
-
-@media screen and (max-width: 1440px) and (min-width: 1360px) {
-  .mask_group {
-    width: 90%;
-  }
-} */
 
 @media screen and (min-width: 1280px) and (max-width: 1600px) {
   .mask_group {

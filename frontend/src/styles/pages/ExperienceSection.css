@@ -1,5 +1,6 @@
 .custom-card {
     width: 100% !important;
+      height: 100% !important;
 }
 .custom-cards{
     width: 42% !important;
@@ -7,6 +8,10 @@
 }
 .new_post {
     rotate: 90deg;
+}
+.new_col_mn {
+    width: 100% !important;
+    max-width: 100% !important;
 }
 @media only screen and (max-width:767px) and (min-width:0px){
     .main_head_ing h1 {
@@ -20,21 +25,50 @@
         line-height: 28px;
         margin: 15px 0 0 0 !important;
     }
+
     .custom-cards {
         width: 100% !important;
+         height: 70%;
         margin-top: 0px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
-    .new_col_mn {
+
+    .custom-card {
+        display: grid;
+        height: 70%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
         width: 100% !important;
     }
+
+    .new_col_mn {
+        width: 100% !important;
+        height: 200px !important;
+        padding: 16px !important;
+    }
+
+ 
+    .new_col_mn > span:first-child {
+        font-size: 36px !important; 
+    }
+
+    .new_col_mn div span {
+        font-size: 16px !important;
+    }
+
     .crds_pla {
         margin-top: 10px;
     }
+
     .new_post {
         rotate: 90deg;
         display: none;
     }
 }
+
+
 @media only screen and (max-width:1024px) and (min-width:768px){
     .years {
         width: 100% !important;

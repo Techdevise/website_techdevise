@@ -41,7 +41,7 @@ const ExperienceCard = ({ targetValue, label, bgColor, highlightColor }) => {
         {count}+
       </span>
       <div
-        className={`${highlightColor} h-[100px] absolute bottom-0 left-0 right-0 rounded-[26px] flex items-center justify-center`}
+        className={`${highlightColor} h-[70px] md:h-[100px] absolute bottom-0 left-0 right-0 rounded-[26px] flex items-center justify-center`}
       >
         <span className="text-[24px] font-semibold">{label}</span>
       </div>
@@ -79,7 +79,7 @@ const ExperienceSection = () => {
           </div>
           {/* Primary Cards Column */}
           <div className="custom-card flex flex-col md:flex-row gap-x-8 gap-y-8 cards_on">
-           <ExperienceCard targetValue={500} label="Clients" bgColor="bg-[#99EAE0]" highlightColor="bg-[#FFFFFF94]" /> 
+           <ExperienceCard targetValue={500} label="Clients" bgColor="bg-[#99EAE0]"  highlightColor="bg-[#FFFFFF94]" /> 
            <ExperienceCard targetValue={20} label="Countries" bgColor="bg-[#A5D1F3]" highlightColor="bg-[#FFFFFF94]" />
           </div>
         </div>

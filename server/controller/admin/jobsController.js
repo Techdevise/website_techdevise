@@ -22,6 +22,7 @@ module.exports = {
         }
       ],
       order: [['id', 'DESC']],
+      where:{type:1}
  
     });
 
@@ -75,6 +76,9 @@ viewPage: async (req, res) => {
     return res.redirect("/admin/dashboard");
   }
 },
+
+
+
 
 
 
@@ -403,4 +407,86 @@ createPageSub: async (req, res) => {
       });
     }
   },
+
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Career>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></Career>
+
+  careerListing: async (req, res) => {
+  try {
+    const career = await JobPosition.findAll({
+      include: [
+        {
+          model: JobOption,
+          as: 'joboption',
+          include: [
+            {
+              model: JobTitle,
+              as: 'jobtitle',
+             
+            }
+          ],
+        }
+      ],
+      order: [['id', 'DESC']],
+      where:{type:2}
+ 
+    });
+
+     
+    res.render("pages/Careers/careerlist", {
+      career,
+      title: "Careers"
+    });
+
+  } catch (error) {
+    console.log(error);
+    const errorMessage = error.message || 'Something went wrong, please try again later.';
+    req.flash("error", errorMessage);
+    return res.redirect("/admin/dashboard");
+  }
+},
+
+viewPageCareer: async (req, res) => {
+  try {
+    const { id } = req.params;
+    const career = await JobPosition.findOne({
+      where: { id },
+      include: [
+        {
+          model: JobOption,
+          as: 'joboption',
+          include: [
+            {
+              model: JobTitle,
+              as: 'jobtitle',
+              include: [
+                {
+                  model: JobSubTitle,
+                  as: 'jobsubtitle'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    });
+
+    res.render("pages/Careers/careerview", {
+      career: career,
+      title: "Careers"
+    });
+
+  } catch (error) {
+    const errorMessage = error.message || 'Something went wrong, please try again later.';
+    req.flash("error", errorMessage);
+    return res.redirect("/admin/dashboard");
+  }
+},
 }
+
+
+
+
+
+

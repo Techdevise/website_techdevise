@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('job_positions', {
     id: {
       autoIncrement: true,
@@ -45,7 +45,9 @@ module.exports = function(sequelize, DataTypes) {
     type: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0
+      defaultValue: 0,
+      comment: "1=>About,2=>Career	"
+
     },
     linkedin_profile: {
       type: DataTypes.STRING(200),
@@ -61,6 +63,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(200),
       allowNull: false,
       defaultValue: ""
+    },
+    located: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      comment: "1=>yes,0=>no	"
+
+    },
+    questions_employe: {
+      type: DataTypes.TEXT,
+      allowNull: true,
     }
   }, {
     sequelize,
