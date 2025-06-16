@@ -45,18 +45,14 @@ const JobPosting = ({ job, onClose}) => {
         <div className="mb-6">
           <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Responsibilities</h2>
           <p className="text-sm md:text-base text-gray-700 whitespace-pre-line">
-           {job.responsibilities.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
+         {job.responsibilities}
           </p>
         </div>
 
         <div className="mb-6">
           <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Requirements</h2>
           <p className="text-sm md:text-base text-gray-700 whitespace-pre-line">
-            {job.requirements.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
+            {job.requirements}
           </p>
         </div>
 

@@ -45,7 +45,7 @@ const IOSAppSection = () => {
   return (
     <div className="new_sec_about w-[1678px] mx-auto inset-x-0 flex items-center overflow-hidden p-0">
       {/* Left Side: Image */}
-      <div className="w-full md:w-1/2 lg:w-1/3 m-0 flex justify-center">
+      <div className="w-full md:w-1/2 lg:w-1/3 m-0 flex justify-center px-4">
         <img
           src={`http://localhost:9090/images${slides[currentSlide].image}`} // Ensure this is a valid image URL
           alt="Slide Visual"
@@ -66,20 +66,20 @@ const IOSAppSection = () => {
         </button>
 
         {/* Arrow Buttons */}
-        <div className="relative flex gap-4 justify-end bottom-10">
-          <button
-            onClick={goToPrevSlide}
-            className="w-10 h-10 p-3 bg-black flex items-center justify-center text-white rounded-full hover:bg-gray-800"
-          >
-            <FaArrowLeft />
-          </button>
-          <button
-            onClick={goToNextSlide}
-            className="w-10 h-10 p-3 bg-black flex items-center justify-center text-white rounded-full hover:bg-gray-800"
-          >
-            <FaArrowRight />
-          </button>
-        </div>
+      <div className="relative flex gap-4 justify-end bottom-0 md:bottom-10">
+  <button
+    onClick={goToPrevSlide}
+    className="w-10 h-10 p-3 bg-black flex items-center justify-center text-white rounded-full hover:bg-gray-800"
+  >
+    <FaArrowLeft />
+  </button>
+  <button
+    onClick={goToNextSlide}
+    className="w-10 h-10 p-3 bg-black flex items-center justify-center text-white rounded-full hover:bg-gray-800"
+  >
+    <FaArrowRight />
+  </button>
+</div>
       </div>
     </div>
   );

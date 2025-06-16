@@ -79,7 +79,7 @@ export default function IOSAppDevelopment() {
           {/* Content section */}
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="flex-1 max-w-[800px]">
-              <h1 className="text-4xl md:text-6xl font-Montserrat font-extrabold text-black mb-4">
+              <h1 className="text-3xl md:text-6xl font-Montserrat font-extrabold text-black mb-4">
                 {steps[activeIndex].heading}
               </h1>
               <p className="text-[#000000] font-Montserrat text-[16px] md:text-[18px] leading-relaxed">
