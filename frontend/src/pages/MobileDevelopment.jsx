@@ -99,11 +99,11 @@ const MobileDevelopment = () => {
       <section className="w-full flex justify-center bg-white">
         <MobileAppServices />
       </section>
-      <section className="py-10">
+      <section className="py-0 md:py-10">
         <AndroidLanding />
       </section>
       <section
-        className="py-10"
+        className="py-0 md:py-10"
         style={{ background: "linear-gradient(to right, #F2F4FF, #EDEFFD)" }}
       >
         <ReactNativeAppDevelopment />
