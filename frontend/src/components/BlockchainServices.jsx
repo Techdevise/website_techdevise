@@ -297,7 +297,7 @@ const BlockchainServices = () => {
             return (
               <div
                 key={index}
-                className="card flex flex-col sm:flex-row w-[100px] md:w-[680px] bg-[#0B3327] rounded-[20px] p-4 sm:p-6 border border-transparent bg-gradient-to-r from-[#157B6C] to-[#ffffff] p-[2px] h-auto mb-auto flex-shrink-0 shadow-lg shadow-[#157B6C]/20 transition-all duration-300"
+                className="card flex flex-col sm:flex-row w-[300px] md:w-[680px] bg-[#0B3327] rounded-[20px] p-4 sm:p-6 border border-transparent bg-gradient-to-r from-[#157B6C] to-[#ffffff] p-[2px] h-auto mb-auto flex-shrink-0 shadow-lg shadow-[#157B6C]/20 transition-all duration-300"
                 style={{
                   zIndex: zIndex,
                   scrollSnapAlign: "center"
