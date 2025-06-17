@@ -7,7 +7,7 @@ import Mobileserviceimg1 from "../assets/Mobileserviceimg1.svg";
 
 const MobileAppServices = () => {
   return (
-    <div className="mob_ser w-[1678px] bg-white flex flex-col md:flex-row items-start justify-between  py-10 mx-auto gap-0 md:gap-10">
+    <div className="mob_ser w-[1678px] flex flex-col md:flex-row items-start justify-between  py-10 mx-auto gap-0 md:gap-10">
       <div className="mob_ser1 relative w-full md:w-[720px] h-[350px] text-center md:text-start mb-8 md:mb-0">
         {/* Image layer with 30% opacity */}
         <div

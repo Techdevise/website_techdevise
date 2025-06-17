@@ -74,7 +74,7 @@ const AndroidLanding = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <div className="android_main flex justify-center items-center bg-white">
+    <div className="android_main flex justify-center items-center ">
       <div className="new_text_min w-[1678px] h-auto bg-white p-8 flex flex-col items-center">
         {/* Heading Section */}
         <div className="text-center mb-10 mt-8 max-w-3xl">

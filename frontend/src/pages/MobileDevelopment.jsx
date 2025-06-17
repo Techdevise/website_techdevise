@@ -83,7 +83,7 @@ const MobileDevelopment = () => {
 
 
       {/* iOS App Development Section */}
-      <section className="py-10 bg-white">
+      <section className="py-10 bg-[#FAFAFA]">
         <IOSAppDevelopment />
       </section>
 
@@ -96,10 +96,10 @@ const MobileDevelopment = () => {
       </section>
 
       {/* Mobile App Services Section */}
-      <section className="w-full flex justify-center bg-white">
+      <section className="w-full flex justify-center bg-[#FAFAFA]">
         <MobileAppServices />
       </section>
-      <section className="py-0 md:py-10">
+      <section className="py-0 md:py-10 bg-[#FAFAFA]">
         <AndroidLanding />
       </section>
       <section

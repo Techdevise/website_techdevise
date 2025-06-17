@@ -95,7 +95,43 @@ const TechOfferings = () => {
     },
   ]
 
-
+const handleScroll = (direction) => {
+  const container = carouselRef.current;
+  if (!container) return;
+  const card = container.querySelector(".snjy_new");
+  const cardWidth = card?.offsetWidth || 1200;
+  const gap = 32;
+  const scrollAmount = cardWidth + gap;
+  const currentScroll = container.scrollLeft;
+  const maxScroll = container.scrollWidth - container.clientWidth;
+  const tolerance = 10;
+  if (direction === "right") {
+    if (currentScroll >= maxScroll - tolerance) {
+      container.scrollTo({
+        left: 0,
+        behavior: 'auto'
+      });
+    } else {
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  }
+  else if (direction === "left") {
+    if (currentScroll <= tolerance) {
+      container.scrollTo({
+        left: maxScroll,
+        behavior: 'auto'
+      });
+    } else {
+      container.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  }
+}
   // const handleScroll = (direction) => {
   //   const container = carouselRef.current
   //   if (!container) return
