@@ -4,7 +4,7 @@ import ITDevelopmentTeam from "../assets/ITDevelopmentTeam.png";
 
 const ChooseUs = () => {
   return (
-    <div className="choose_us w-full h-full mt-10 flex flex-col items-center justify-center text-center bg-[#FAFAFA] px-4 md:px-10 mt-10">
+    <div className="choose_us w-full h-full  flex flex-col items-center justify-center text-center bg-[#FAFAFA] px-4 md:px-10 mt-0 md:mt-10 pt-5 md:p-0">
       <h2 className="text-[32px] md:text-[48px] font-extrabold font-Montserrat text-black max-w-[90%] md:max-w-[974px]">
         Why Choose Us
       </h2>

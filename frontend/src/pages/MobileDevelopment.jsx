@@ -17,7 +17,7 @@ const MobileDevelopment = () => {
     <main className="w-full">
       {/* Hero Section */}
     <section
-  className="relative w-full h-[570px] md:h-[1048px] flex items-center justify-center bg-cover bg-center"
+  className="relative w-full h-[570px] md:h-[842px] flex items-center justify-center bg-cover bg-center"
   style={{ backgroundImage: `url(${Mobilebackimg})` }}
 >
   <div className="absolute inset-0 bg-black opacity-70 bg-cover"></div>

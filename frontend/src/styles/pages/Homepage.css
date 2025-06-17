@@ -209,12 +209,15 @@ hr.solid {
     text-align: center !important;
   }
 
-  .google_new {
-    padding: 11px !important;
+    .google_new {
+    padding: 5px !important;
+    white-space: nowrap;
+    width: 200px;
+    height: 40px;
   }
 
   .new_tag {
-    font-size: 13px !important;
+    font-size: 12px !important;
   }
 
   .baner_spce {

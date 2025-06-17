@@ -23,6 +23,17 @@
     text-align: left;
 }
 
+.testimonial-fade {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 @media only screen and (max-width: 767px) and (min-width: 0px) {
     .test_nomials {
       width: 100% !important;

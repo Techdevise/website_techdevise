@@ -6,22 +6,8 @@ import Alex from "../assets/Alex.svg";
 import Sarah from "../assets/Sarah.svg";
 import Michael from "../assets/Michael.svg";
 import Jessica from "../assets/Jessica.svg";
+import er from "../assets/“.svg";
 import Videoplayicon from "../assets/Videoplayicon.svg";
-
-const Play = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    fill="currentColor"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <polygon points="5 3 19 12 5 21 5 3" />
-  </svg>
-);
 
 const testimonials = [
   {
@@ -52,15 +38,24 @@ const testimonials = [
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const nextTestimonial = () => {
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+      setIsAnimating(false);
+    }, 300);
   };
 
   const prevTestimonial = () => {
-    setActiveIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveIndex(
+        (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      );
+      setIsAnimating(false);
+    }, 300);
   };
 
   const getIndex = (offset) => {
@@ -82,12 +77,9 @@ const Testimonials = () => {
           }}
           className="text-[32px] md:text-6xl font-bold text-[#c5e4d9]"
         >
-          {/* Mobile view (no <br>) */}
           <span className="block md:hidden">
             What our customers say about us
           </span>
-
-          {/* Desktop view (with <br>) */}
           <span className="hidden md:block">
             What our customers say
             <br />
@@ -95,7 +87,7 @@ const Testimonials = () => {
           </span>
         </h2>
 
-        <div className="flex justify-end arrow_new">
+        <div className="flex justify-end arrow_new mt-4 mb-6">
           <div className="flex gap-2">
             <button
               onClick={prevTestimonial}
@@ -112,37 +104,41 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-8 transition-all duration-300">
           <div className="abc hidden md:block w-1/6 bg-[#0a2a1e] p-4 rounded-lg">
             <div className="main_test relative rounded-lg overflow-hidden">
               <img
-                src={testimonials[getIndex(-1)].image || "/placeholder.svg"}
+                src={testimonials[getIndex(-1)].image}
                 alt={testimonials[getIndex(-1)].name}
                 className="w-full aspect-[3/4] object-cover rounded-lg testingg_img"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
                   src={Videoplayicon}
-                  alt="Videoplayicon"
+                  alt="Play"
                   className="w-12 h-12 text-white"
                 />
               </div>
             </div>
           </div>
 
-          {/* Main testimonial */}
-          <div className="abc flex-1 bg-[#0a2a1e] rounded-lg p-6 flex flex-col md:flex-row gap-8">
+          {/* MAIN TESTIMONIAL */}
+          <div
+            className={`abc flex-1 bg-[#0a2a1e] rounded-lg p-6 flex flex-col md:flex-row gap-8 ${
+              isAnimating ? "testimonial-fade" : "testimonial-visible"
+            }`}
+          >
             <div className="md:w-[50%]">
               <div className="main_test relative rounded-lg overflow-hidden">
                 <img
-                  src={testimonials[activeIndex].image || "/placeholder.svg"}
+                  src={testimonials[activeIndex].image}
                   alt={testimonials[activeIndex].name}
                   className="w-full aspect-[3/4] object-cover rounded-lg testingg_img"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
                     src={Videoplayicon}
-                    alt="Videoplayicon"
+                    alt="Play"
                     className="w-12 h-12 text-white"
                   />
                 </div>
@@ -156,8 +152,6 @@ const Testimonials = () => {
               <p className="text-white text-lg leading-relaxed mb-6">
                 {testimonials[activeIndex].text}
               </p>
-
-              {/* Star Rating */}
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <svg
@@ -168,8 +162,15 @@ const Testimonials = () => {
                   >
                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
+                  
                 ))}
+                 
               </div>
+              <img
+                    src={er}
+                    alt="Play"
+                    className="w-25 h-25  ml-[18.5rem] "
+                  />
             </div>
           </div>
 
@@ -178,16 +179,14 @@ const Testimonials = () => {
               <div key={offset} className="w-1/2 bg-[#0a2a1e] p-4 rounded-lg">
                 <div className="relative rounded-lg overflow-hidden">
                   <img
-                    src={
-                      testimonials[getIndex(offset)].image || "/placeholder.svg"
-                    }
+                    src={testimonials[getIndex(offset)].image}
                     alt={testimonials[getIndex(offset)].name}
                     className="w-full aspect-[3/4] object-cover rounded-lg testingg_img"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img
                       src={Videoplayicon}
-                      alt="Videoplayicon"
+                      alt="Play"
                       className="w-12 h-12 text-white"
                     />
                   </div>

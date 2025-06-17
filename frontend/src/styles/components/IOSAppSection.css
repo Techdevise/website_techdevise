@@ -13,6 +13,14 @@
   background: #67C792;
   border-radius: 4px;
 }
+.scroll-container {
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  scroll-snap-type: x mandatory; /* Optional: for better snapping behavior */
+}
+
+.app_step {
+  scroll-snap-align: start; /* Optional: for better snapping behavior */
+}
 
 @media only screen and (max-width:767px) and (min-width:0px){
     .new_sec_about {

@@ -78,16 +78,16 @@ const SocialMediaServices = () => {
           {/* Social Media Icons */}
           <div className="flex flex-row lg:flex-col gap-4 items-center justify-center mt-0 lg:mt-0">
   <div className="border border-dashed border-black rounded-full p-4">
-    <FaFacebookF className="text-[40px] lg:text-[60px]" />
+    <FaFacebookF className="text-[20px] lg:text-[60px]" />
   </div>
   <div className="border border-dashed border-black rounded-full p-4">
-    <FaXTwitter className="text-[40px] lg:text-[60px]" />
+    <FaXTwitter className="text-[20px] lg:text-[60px]" />
   </div>
   <div className="border border-dashed border-black rounded-full p-4">
-    <FaInstagram className="text-[40px] lg:text-[60px]" />
+    <FaInstagram className="text-[20px] lg:text-[60px]" />
   </div>
   <div className="border border-dashed border-black rounded-full p-4">
-    <FaYoutube className="text-[40px] lg:text-[60px]" />
+    <FaYoutube className="text-[20px] lg:text-[60px]" />
   </div>
 </div>
 

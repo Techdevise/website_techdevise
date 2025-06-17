@@ -26,22 +26,24 @@
         margin: 15px 0 0 0 !important;
     }
 
+   
     .custom-cards {
-        width: 100% !important;
-         height: 70%;
-        margin-top: 0px !important;
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-    }
+    width: 100%!important;
+    height: 70%;
+    margin-top: 0!important;
+    display: grid!important;
+    grid-template-columns: repeat(2,1fr) !important;
+    gap: 16px !important;
+}
 
+   
     .custom-card {
-        display: grid;
-        height: 70%;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        width: 100% !important;
-    }
+    display: grid !important;
+    height: 70% !important;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px !important;
+    width: 100%!important;
+}
 
     .new_col_mn {
         width: 100% !important;

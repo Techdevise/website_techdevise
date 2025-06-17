@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import '../styles/components/IOSAppSection.css'
 import Iospageimg from '../assets/Iospageimg.svg';
-import { ArrowRight } from "lucide-react";
+import { MoveRight  } from "lucide-react";
 
 export default function IOSAppDevelopment() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -36,8 +36,8 @@ export default function IOSAppDevelopment() {
   ];
 
   return (
-    <div className="max-w-[1680px] mx-auto bg-white rounded-[20px] flex flex-col md:flex-row items-center overflow-hidden">
-      <div className="w-full h-full px-4 md:px-12 py-8 relative">
+    <div className="max-w-[1728px] mx-auto bg-white rounded-[20px] flex flex-col md:flex-row items-center overflow-hidden">
+      <div className="w-full h-full px-4 md:px-4 py-8 relative">
         {/* Vertical "Solutions to Explore" text */}
         <div className="absolute left-[-8%] top-1/2 transform -translate-y-1/2">
           <div className="flex flex-col items-center hidden sm:flex">
@@ -64,14 +64,14 @@ export default function IOSAppDevelopment() {
                 <div
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`app_step flex-shrink-0 flex items-center px-4 py-2 rounded-md border cursor-pointer ${
+                  className={`app_step flex-shrink-0 flex items-center px-11 py-2 rounded-md border cursor-pointer ${
                     activeIndex === index
                       ? "bg-[#67C792] border-emerald-500 text-white"
                       : "bg-white border-gray-300 text-gray-800"
                   }`}
                 >
-                  <span className="mr-2 whitespace-nowrap">{step.title}</span>
-                  <ArrowRight size={16} />
+                  <span className="mr-2 whitespace-nowrap text-[16px] font-semibold">{step.title}</span>
+                  <MoveRight  size={26} />
                 </div>
               ))}
             </div>

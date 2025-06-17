@@ -17,7 +17,7 @@ const ITStaff = () => {
       >
         <div className="absolute inset-0 bg-black/30 "></div>
 
-        <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 md:px-6 lg:px-8 pt-[10rem] md:pt-[15rem] lg:pt-[23rem]">
+        <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 md:px-6 lg:px-8 pt-[2rem] md:pt-[4rem] lg:pt-[8rem]">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Left Text Column */}
             <div className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0 mt-[170px]">

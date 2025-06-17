@@ -188,11 +188,11 @@ function Homepage({ setIsModalOpen }) {
             </div>
 
             {/* CTA Button */}
-            <button
+           <button
               onClick={() => setIsModalOpen(true)}
               className="consultants_btn relative z-20 border border-white text-white px-[24px] py-[20px] rounded-[12px] 
-                  font-Archivo text-[20px] font-semibold flex items-center justify-center gap-2 
-                  w-[280px] h-[70px] mt-[115px] hover:bg-white hover:text-black 
+                  font-Archivo text-[15px] md:text-[20px] font-semibold flex items-center justify-center gap-2 
+                  w-[250px] md:w-[280px] h-[50px] md:h-[70px] mt-[115px]  hover:bg-white hover:text-black 
                   transition-colors duration-300 whitespace-nowrap"
             >
               Consult Our Experts

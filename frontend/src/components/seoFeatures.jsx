@@ -44,13 +44,13 @@ const SEOFeatures = () => {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -560, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: -260, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 560, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: 260, behavior: "smooth" });
     }
   };
 

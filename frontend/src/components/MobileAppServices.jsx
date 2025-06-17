@@ -16,8 +16,8 @@ const MobileAppServices = () => {
         ></div>
 
         {/* Content layer */}
-        <div className="mob_ser2 w-full relative z-10 bg-white/50 rounded-lg p-4 sm:p-6 md:p-8 mt-10">
-          <h2 className="mobile_title text-2xl sm:text-3xl lg:text-4xl xl:text-[48px] font-Montserrat font-extrabold text-black lg:leading-tight leading-snug sm:leading-tight mb-4">
+        <div className="mob_ser2 w-full relative z-10  rounded-lg p-4 sm:p-6 md:p-8 mt-10">
+          <h2 className="mobile_title text-2xl sm:text-3xl lg:text-4xl xl:text-[48px]  font-extrabold text-black lg:leading-tight leading-snug sm:leading-tight mb-4">
             Comprehensive Mobile App <br />
             Development Services <br />
             We Provide

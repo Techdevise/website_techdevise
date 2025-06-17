@@ -151,7 +151,7 @@ const TechStack = () => {
 
     gsap.to(wrapper, {
       xPercent: -50,
-      duration: 90,
+      duration: 60,
       ease: "none",
       repeat: -1,
     });
@@ -164,7 +164,7 @@ const TechStack = () => {
       </h1>
 
       <div className="bg-white rounded-lg shadow-lg w-full max-w-[1629px] h-auto lg:h-[284px] relative mx-auto">
-        <div className="flex overflow-x-auto border-b">
+        <div className="flex overflow-x-auto border-b px-1 sm:px-2 md:px-4">
           {tabs.map((tab) => (
             <button
               key={tab}

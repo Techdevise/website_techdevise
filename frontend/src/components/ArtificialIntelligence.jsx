@@ -47,14 +47,14 @@ const ArtificialIntelligence = () => {
         </p>
 
         {/* Navigation Arrows */}
-        <div className="flex gap-4 justify-center md:justify-start md:mt-4 md:ml-[-100px]">
+        {/* <div className="flex gap-4 justify-center md:justify-start md:mt-4 md:ml-[-100px]">
           <button onClick={handlePrev} className="bg-black text-white p-3 rounded-full">
             <FaArrowLeft size={15} />
           </button>
           <button onClick={handleNext} className="bg-black text-white p-3 rounded-full">
             <FaArrowRight size={15} />
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Right Image */}

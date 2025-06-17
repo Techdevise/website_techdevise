@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "../styles/components/ECommerceServices.css"
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; 
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 import Ecommerceimg from "../assets/Ecommerceimg.svg";
 import Ecommerceimg1 from "../assets/Ecommerceimg1.svg";
 import Ecommerceimg2 from "../assets/Ecommerceimg2.svg";
 import Ecommerceimg3 from "../assets/Ecommerceimg3.svg";
+import Ecommerceimg4 from "../assets/distribute-icon (1) 1.svg";
+import Ecommerceimg5 from "../assets/wire-transfer-icon 1.svg";
+import Ecommerceimg6 from "../assets/online-store-icon (1) 1.svg";
 import Commerceservicesbanner from "../assets/Commerceservicesbanner.svg";
 
 export default function ECommerceServices() {
@@ -30,22 +33,22 @@ export default function ECommerceServices() {
         "We work from scratch. Our first step is to review your idea, your competitor website to understand the process, make suggestions for you, discuss the way you want it work. Once we are done, you will have the complete details of the work process and all the details of the development work, features, design, etc.",
     },
     {
-      title: "Secure Payment Integration",
-      icon: <img src={Ecommerceimg1} alt="Secure Payment" className="w-[38px] h-[51px]" />,
+      title: "Plug-In & Module Development",
+      icon: <img src={Ecommerceimg4} alt="Plug-In & Module Development" className="w-[38px] h-[51px]" />,
       description:
-        "We work from scratch. Our first step is to review your idea, your competitor website to understand the process, make suggestions for you, discuss the way you want it work. Once we are done, you will have the complete details of the work process and all the details of the development work, features, design, etc.",
+        "We not only create E-commerce websites but also develop tools and plugins that will help your website to run smoother. Our plugins will add a new edge to your E-commerce website, and hence it will surely make your website unique and better than your competitors.",
     },
     {
-      title: "Product Management Tools",
-      icon: <img src={Ecommerceimg2} alt="Product Management" className="w-[38px] h-[51px]" />,
+      title: "Payment Gateway Integration",
+      icon: <img src={Ecommerceimg5} alt="Payment Gateway Integration" className="w-[38px] h-[51px]" />,
       description:
-        "We work from scratch. Our first step is to review your idea, your competitor website to understand the process, make suggestions for you, discuss the way you want it work. Once we are done, you will have the complete details of the work process and all the details of the development work, features, design, etc.",
+        "Do your customers complain that their payments are getting failed? Our experts understand how important it is for customers to have a smooth website. Therefore, we offer result oriented payment gateway integration that will not fail you anytime.",
     },
     {
-      title: "Customer Analytics",
-      icon: <img src={Ecommerceimg3} alt="Customer Analytics" className="w-[38px] h-[51px]" />,
+      title: "Shopping Cart Development",
+      icon: <img src={Ecommerceimg6} alt="Shopping Cart Development" className="w-[38px] h-[51px]" />,
       description:
-        "We work from scratch. Our first step is to review your idea, your competitor website to understand the process, make suggestions for you, discuss the way you want it work. Once we are done, you will have the complete details of the work process and all the details of the development work, features, design, etc.",
+        "Does your website not getting enough conversions? If yes, then try out our Shopping Cart Development services. Our team will create a unique shopping cart that will ensure higher conversion rates.",
     },
   ];
 

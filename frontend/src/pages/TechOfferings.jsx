@@ -15,14 +15,14 @@ const clocks = [
 
 const Clock = ({ country, timeZone, color }) => {
   const [time, setTime] = useState(new Date().toLocaleTimeString("en-US", { timeZone }))
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date().toLocaleTimeString("en-US", { timeZone }))
     }, 1000)
     return () => clearInterval(interval)
   }, [timeZone])
-
+  
   const date = new Date(new Date().toLocaleString("en-US", { timeZone }))
   const hours = date.getHours() % 12
   const minutes = date.getMinutes()
@@ -30,25 +30,25 @@ const Clock = ({ country, timeZone, color }) => {
   const hourAngle = hours * 30 + minutes * 0.5
   const minuteAngle = minutes * 6
   const secondAngle = seconds * 6
-
+  
   return (
     <div className="clock_wise">
       <div
         className={`main_new ${color} rounded-full flex items-center justify-center border-[3px] border-gray-300 shadow-md relative`}
-      >
+        >
         <div className="relative w-full h-full flex items-center justify-center">
           <div
             className="absolute w-[4px] h-[30%] bg-gray-600 top-[20%] left-1/2 transform -translate-x-1/2 origin-bottom"
             style={{ transform: `translateX(-50%) rotate(${hourAngle}deg)` }}
-          />
+            />
           <div
             className="absolute w-[3px] h-[40%] bg-gray-800 top-[10%] left-1/2 transform -translate-x-1/2 origin-bottom"
             style={{ transform: `translateX(-50%) rotate(${minuteAngle}deg)` }}
-          />
+            />
           <div
             className="absolute w-[1.5px] h-[45%] bg-red-500 top-[5%] left-1/2 transform -translate-x-1/2 origin-bottom shadow-md"
             style={{ transform: `translateX(-50%) rotate(${secondAngle}deg)` }}
-          />
+            />
           <div className="absolute w-3 h-3 bg-red-500 rounded-full inset-0 m-auto z-10 shadow-md"></div>
           <div className="absolute w-[2px] h-4 bg-orange-400 top-[4px] left-1/2 transform -translate-x-1/2"></div>
           <div className="absolute w-[2px] h-4 bg-orange-400 right-[4px] top-1/2 transform -translate-y-1/2"></div>
@@ -67,6 +67,7 @@ const Clock = ({ country, timeZone, color }) => {
 }
 
 const TechOfferings = () => {
+  const carouselRef = useRef(null)
   const steps = [
     {
       title: "Share your Requirements",
@@ -94,20 +95,20 @@ const TechOfferings = () => {
     },
   ]
 
-  const carouselRef = useRef(null)
 
-  const handleScroll = (direction) => {
-    const container = carouselRef.current
-    if (!container) return
-    const card = container.querySelector(".snjy_new")
-    const cardWidth = card?.offsetWidth || 1200
-    const gap = 32
-    const scrollAmount = (cardWidth + gap) * (direction === "left" ? -1 : 1)
-    container.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth",
-    })
-  }
+  // const handleScroll = (direction) => {
+  //   const container = carouselRef.current
+  //   if (!container) return
+  //   const card = container.querySelector(".snjy_new")
+  //   const cardWidth = card?.offsetWidth || 1200
+  //   const gap = 32
+  //   const scrollAmount = (cardWidth + gap) * (direction === "left" ? -1 : 1)
+    
+  //   container.scrollBy({
+  //     left: scrollAmount,
+  //     behavior: "smooth",
+  //   })
+  // }
 
   return (
     <div className="w-full max-w-[1920px] mx-auto text-white rounded-lg rounded-3xl overflow-hidden">
