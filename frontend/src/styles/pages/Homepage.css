@@ -269,8 +269,8 @@ hr.solid {
 
   .consultants_btn {
     position: relative;
-    top: -185px;
-    margin: 0 auto;
+    top: -185px !important;
+    margin: 0 auto !important;
   }
 
   .new_hild {
