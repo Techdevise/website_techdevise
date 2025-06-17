@@ -36,7 +36,7 @@ export default function IOSAppDevelopment() {
   ];
 
   return (
-    <div className="max-w-[1728px] mx-auto bg-white rounded-[20px] flex flex-col md:flex-row items-center overflow-hidden">
+    <div className="max-w-[1728px] mx-auto  rounded-[20px] flex flex-col md:flex-row items-center overflow-hidden">
       <div className="w-full h-full px-4 md:px-4 py-8 relative">
         {/* Vertical "Solutions to Explore" text */}
         <div className="absolute left-[-8%] top-1/2 transform -translate-y-1/2">
