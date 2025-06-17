@@ -52,12 +52,21 @@ function BlockchainDevelopment() {
     </button>
   </div>
 
-  <h1 className="text-[42px] font-Montserrat font-extrabold">
-    Blockchain Development Company
-  </h1>
-  <p className="text-lg leading-relaxed max-w-2xl">
-    With expertise in over 40 blockchain protocols, we are leading the charge toward the web3 future with our advanced blockchain development services.
-  </p>
+ <h1 className="text-[24px] sm:text-[32px] md:text-[48px] font-Montserrat font-extrabold" style={{
+                        display: 'inline-table',
+                        background: "linear-gradient(to right, #FFFFFF, #157B6C)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                        textFillColor: "transparent",
+                        color: "#157B6C",
+                    }}>
+  Blockchain Development Company
+</h1>
+<p className="text-base text-[16px] sm:text-lg leading-relaxed max-w-full sm:max-w-2xl">
+  With expertise in over 40 blockchain protocols, we are leading the charge toward the web3 future with our advanced blockchain development services.
+</p>
+
 
   <button className="flex items-center w-auto h-auto pt-[8px] pr-[10px] pb-[8px] pl-[20px] gap-2 bg-[#58C7B4] hover:bg-[#25a892] text-white text-[16px] font-Montserrat font-medium px-6 py-3 rounded-full transition-colors">
     <span>Consult Our Experts</span>

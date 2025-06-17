@@ -113,7 +113,7 @@ const BlockchainSolution = () => {
 
   return (
     <div
-    className="relative w-full max-w-[1920px] h-auto min-h-[500px] md:min-h-[650px] lg:h-[850px] m-auto overflow-hidden my-5 md:my-10"
+    className="relative w-full max-w-[1920px] h-auto min-h-[550px] md:min-h-[650px] lg:h-[850px] m-auto overflow-hidden my-5 md:my-10"
     style={{ background: "linear-gradient(to right, #E4F8F5, #BADBF7)" }}
   >
       {/* Main content container */}

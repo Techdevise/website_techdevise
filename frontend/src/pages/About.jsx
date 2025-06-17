@@ -34,7 +34,7 @@ function About() {
 </div>
 
 {/* Stats Section */}
-<div className="absolute bottom-0 right-0 w-full sm:w-[550px] h-[270px] bg-[#157B6C] text-white p-6 sm:p-8 grid grid-cols-2 gap-4">
+<div className="absolute bottom-0 right-0 w-full sm:w-[550px] h-[270px] bg-[#157B6C] text-white p-6 sm:p-8 grid grid-cols-2 gap-4 text-center sm:text-left">
   <div>
     <h3 className="text-2xl sm:text-3xl font-bold">10</h3>
     <p className="text-sm sm:text-base">Years of Experience</p>

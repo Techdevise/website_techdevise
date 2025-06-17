@@ -10,6 +10,7 @@ import techdeviselogo from "../assets/techdeviselogo.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [showServices, setShowServices] = useState(false);
   const location = useLocation(); // Step 2: Get current location
   const isHomePage = location.pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
@@ -199,14 +200,12 @@ const Navbar = () => {
             <Button />
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden flex items-center justify-center w-[40px] h-[40px] bg-white rounded-md"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
             {isOpen ? (
-
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 6L6 18" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M6 6L18 18" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -219,25 +218,111 @@ const Navbar = () => {
               </svg>
             )}
           </button>
+
+          {/* Mobile Menu - Only visible on mobile */}
+          {/* Mobile Menu - Only visible on mobile */}
           {isOpen && (
-            <div className="absolute top-16 left-0 w-full bg-[#061611] text-white p-4 space-y-4 shadow-md md:hidden">
+            <div className="absolute top-16 left-0 w-full bg-[#061611] text-white p-4 space-y-3 shadow-md md:hidden">
+
+              {/* Expandable Services Menu */}
+              <div className="py-2">
+                <div
+                  className="flex justify-between items-center cursor-pointer"
+                  onClick={() => setShowServices(!showServices)}
+                >
+                  <span className="hover:text-yellow-300">Services</span>
+                  <span className="text-white ml-2">
+                    {showServices ? (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 15L12 8L19 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    ) : (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 10L12 17L19 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </span>
+                </div>
+
+                {/* Services Submenu */}
+                {showServices && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    <Link
+                      to="/services/mobile-app-development"
+                      className="block py-1 text-gray-300 hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Mobile App Development
+                    </Link>
+                    <Link
+                      to="/services/digital-marketing"
+                      className="block py-1 text-gray-300 hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Digital Marketing
+                    </Link>
+                    <Link
+                      to="/services/website-development"
+                      className="block py-1 text-gray-300 hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Website Development
+                    </Link>
+                    <Link
+                      to="/services/quality-analysis"
+                      className="block py-1 text-gray-300 hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Quality Analysis
+                    </Link>
+                    <Link
+                      to="/services/blockchain-development"
+                      className="block py-1 text-gray-300 hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Blockchain Development
+                    </Link>
+                    <Link
+                      to="/services/ai-development"
+                      className="block py-1 text-gray-300 hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      AI Development
+                    </Link>
+                  </div>
+                )}
+              </div>
 
               <Link
-                to="/services"
-                className={`block ${servicesDropdown || isSticky.services ? "text-yellow-300" : ""}`}
-                onMouseEnter={() => handleServicesHover(true)}
-                onMouseLeave={() => handleServicesHover(false)}
-                onClick={() => toggleSticky("services")}
-                ref={servicesButtonRef}
+                to="/portfolio"
+                className="block hover:text-yellow-300"
+                onClick={() => setIsOpen(false)}
               >
-                Services
+                Portfolio
               </Link>
-              <Link to="/portfolio" className="block">Portfolio</Link>
-              <Link to="/career" className="block">Careers</Link>
-              <Link to="/about" className="block">About Us</Link>
-              <Link to="/contact" className="block">Contact Us</Link>
+              <Link
+                to="/career"
+                className="block hover:text-yellow-300"
+                onClick={() => setIsOpen(false)}
+              >
+                Careers
+              </Link>
+              <Link
+                to="/about"
+                className="block hover:text-yellow-300"
+                onClick={() => setIsOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link
+                to="/contact"
+                className="block hover:text-yellow-300"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact Us
+              </Link>
               <div className="block">
-                <Button />
+                <Button onClick={() => setIsOpen(false)} />
               </div>
             </div>
           )}

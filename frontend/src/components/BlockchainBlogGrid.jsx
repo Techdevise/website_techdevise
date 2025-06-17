@@ -29,16 +29,17 @@ const BlockchainBlogGrid = () => {
   return (
     <div className="new_blog w-full mx-auto px-4 md:px-8 lg:px-12 py-16 mt-20" style={{ background: 'linear-gradient(to right, #FDFDFD, #F1F4E5)' }}>
         <div className="w-[1680px] m-auto px-4">
-      <div className="text-center mb-16">
-        <h2 className="text-[48px] font-Montserrat font-extrabold text-black leading-snug mb-4">
-          Our Expertise In Blockchain Development <br /> Services Spans Multiple Platforms
-        </h2>
-        <p className="text-gray-700 max-w-2xl mx-auto text-base font-medium leading-relaxed">
-          As a leading Blockchain development company, <span className="font-semibold">TechDevise</span> only hires Blockchain developers
-          with a proven track record. That’s why we can handle any task or project, even the most
-          complicated ones.
-        </p>
-      </div>
+    <div className="text-center mb-16">
+  <h2 className="text-[22px] leading-snug mb-4 font-Montserrat font-extrabold text-black sm:text-[40px] md:text-[48px]">
+    Our Expertise In Blockchain Development <br /> Services Spans Multiple Platforms
+  </h2>
+  <p className="text-sm leading-relaxed font-medium text-gray-700 mx-auto max-w-full sm:text-base sm:max-w-2xl">
+    As a leading Blockchain development company, <span className="font-semibold">TechDevise</span> only hires Blockchain developers
+    with a proven track record. That’s why we can handle any task or project, even the most
+    complicated ones.
+  </p>
+</div>
+
 
       <div className="new_rid grid grid-cols-2 gap-10 max-w-[1680px] mx-auto">
         <div className="flex flex-col gap-10">

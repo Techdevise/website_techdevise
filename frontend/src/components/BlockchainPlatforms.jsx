@@ -29,7 +29,7 @@ const BlockchainPlatforms = () => {
   return (
     <div className="new_plat w-full h-[800px] flex flex-col items-center justify-center px-4 mx-auto mt-8 sm:mt-20 lg:mt-20">
       <div className="text-center mb-12">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-Montserrat font-extrabold text-black leading-snug lg:leading-tight mb-4">
+        <h2 className="text-[22px] sm:text-3xl md:text-4xl lg:text-[48px] font-Montserrat font-extrabold text-black leading-snug lg:leading-tight mb-4">
           Our Expertise In Blockchain Development <br /> Services Spans Multiple Platforms
         </h2>
         <p className="text-gray-700 max-w-2xl mx-auto text-base font-medium leading-relaxed">
