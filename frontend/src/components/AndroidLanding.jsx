@@ -75,7 +75,7 @@ const AndroidLanding = () => {
 
   return (
     <div className="android_main flex justify-center items-center ">
-      <div className="new_text_min w-[1678px] h-[1000px] bg-white p-8 flex flex-col items-center">
+      <div className="new_text_min w-[1678px] h-auto bg-white p-8 flex flex-col items-center">
         {/* Heading Section */}
         <div className="text-center mb-10 mt-8 max-w-3xl">
           <h1 className="new_txxt text-[40px] font-Montserrat font-extrabold leading-tight">
