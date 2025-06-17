@@ -6,7 +6,13 @@
     background-clip: text;
     color: transparent;
 } */
-
+.scrollbar-hide::-webkit-scrollbar {
+  height: 4px;
+}
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  background: #67C792;
+  border-radius: 4px;
+}
 
 @media only screen and (max-width:767px) and (min-width:0px){
     .new_sec_about {

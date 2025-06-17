@@ -73,26 +73,26 @@ const LocationSection1 = () => {
 
   {/* Overlay for location cards, centered */}
 <div className="absolute inset-0 z-10 flex items-center justify-center">
-  <div className="flex justify-center items-center gap-6 flex-wrap max-w-auto ">
+  <div className="flex justify-center items-center gap-6 flex-wrap">
     {locations.map((loc, index) => (
       <div
         key={index}
-        className="bg-white text-black rounded-2xl p-4 w-[520px] h-[200px] md-w-[300px] md-h-[200px] sm-w-[300px] sm-h-[200px]  flex-shrink-0 flex items-center gap-4 shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
+         className="bg-[#061611] rounded-2xl p-4 w-full sm:w-[350px] md:w-[500px] h-[200px] flex-shrink-0 flex items-center gap-4 border border-gray-100"
       >
         {/* Left image */}
         <img
           src={loc.image}
           alt={`${loc.country} landmark`}
-          className="w-[193px] h-[150px] object-cover rounded-xl"
+      className="w-[120px] sm:w-[150px] md:w-[193px] h-[120px] sm:h-[150px] object-cover rounded-xl"
         />
 
         {/* Right text block */}
         <div className="flex flex-col justify-center">
           <div className="flex items-center mb-2">
             {loc.flag}
-            <h4 className="ml-2 text-lg font-semibold">{loc.country}</h4>
+            <h4 className="ml-2 text-[18px] sm:text-[20px] md:text-[21px] font-semibold">{loc.country}</h4>
           </div>
-          <p className="text-sm leading-snug">{loc.address}</p>
+          <p className="text-[14px] sm:text-[15px] md:text-[16px] font-light font-Montserrat leading-snug ">{loc.address}</p>
         </div>
       </div>
     ))}

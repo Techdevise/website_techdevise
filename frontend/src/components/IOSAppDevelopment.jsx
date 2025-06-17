@@ -4,7 +4,6 @@ import Iospageimg from '../assets/Iospageimg.svg';
 import { ArrowRight } from "lucide-react";
 
 export default function IOSAppDevelopment() {
-
   const [activeIndex, setActiveIndex] = useState(0);
 
   const steps = [
@@ -36,7 +35,6 @@ export default function IOSAppDevelopment() {
     },
   ];
 
-
   return (
     <div className="max-w-[1680px] mx-auto bg-white rounded-[20px] flex flex-col md:flex-row items-center overflow-hidden">
       <div className="w-full h-full px-4 md:px-12 py-8 relative">
@@ -59,21 +57,24 @@ export default function IOSAppDevelopment() {
 
         {/* Main content container */}
         <div className="ml-0 md:ml-24 h-full flex flex-col justify-center">
-          {/* Process steps */}
-          <div className="w-full flex flex-wrap gap-3 mb-10">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`app_step flex items-center px-4 py-2 rounded-md border cursor-pointer ${activeIndex === index
-                    ? "bg-[#67C792] border-emerald-500 text-white"
-                    : "bg-white border-gray-300 text-gray-800"
+          {/* Process steps - now horizontally scrollable */}
+          <div className="w-full mb-10 overflow-x-auto scrollbar-hide">
+            <div className="flex gap-3 pb-4" style={{ minWidth: `${steps.length * 280}px` }}>
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`app_step flex-shrink-0 flex items-center px-4 py-2 rounded-md border cursor-pointer ${
+                    activeIndex === index
+                      ? "bg-[#67C792] border-emerald-500 text-white"
+                      : "bg-white border-gray-300 text-gray-800"
                   }`}
-              >
-                <span className="mr-2">{step.title}</span>
-                <ArrowRight size={16} />
-              </div>
-            ))}
+                >
+                  <span className="mr-2 whitespace-nowrap">{step.title}</span>
+                  <ArrowRight size={16} />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Content section */}
@@ -85,7 +86,6 @@ export default function IOSAppDevelopment() {
               <p className="text-[#000000] font-Montserrat text-[16px] md:text-[18px] leading-relaxed">
                 {steps[activeIndex].description}
               </p>
-
             </div>
             <div className="w-full md:w-[338px] relative lg:ml-[100px]">
               <img
