@@ -55,12 +55,12 @@ const TeamShowcase = () => {
           <h2 className="text-3xl md:text-4xl font-semibold text-[#157B66]">
             Life @ Techdevise
           </h2>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-nowrap overflow-x-auto gap-2 w-full sm:flex-wrap sm:justify-start">
             {['all', 'teamWork', 'officeActivity'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-lg font-medium transition ${
+                className={`px-3 py-2 rounded-lg font-medium transition whitespace-nowrap ${
                   activeTab === tab
                     ? 'bg-[#02574B] text-white'
                     : 'border border-[#02574B] text-[#02574B]'
