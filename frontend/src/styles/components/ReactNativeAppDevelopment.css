@@ -11,6 +11,15 @@
     }
 
 } */
+ .fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .react_nnative {
        width: 442px !important;
@@ -44,7 +53,7 @@
   
   @media only screen and (min-width: 1280px) and (max-width: 1600px) {
     .react_nnative {
-        width: 442px !important;
+        width: 410px !important;
      }
      .react_img {
         max-width: 379px !important;

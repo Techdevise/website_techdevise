@@ -28,7 +28,7 @@ const IOSAppSection = () => {
     setTimeout(() => {
       setCurrentSlide(newIndex);
       setIsFading(false);
-    }, 300); // match with CSS duration (fade-out time)
+    }, 300);
   };
 
   const goToPrevSlide = () => {

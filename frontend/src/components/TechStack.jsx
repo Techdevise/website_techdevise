@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "../styles/components/TechStack.css";
+
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // >>>>>>>>>>>>>>>>>>>>programming languages<<<<<<<<<<<<<<<<<<<<<<<<<<<
 import Csharp from "../assets/programming languages/cPlus.svg";
@@ -57,7 +58,7 @@ const TechStack = () => {
   const [activeTab, setActiveTab] = useState("Programming Languages");
   const wrapperRef = useRef(null);
   const slideRef = useRef(null);
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
   const tabs = [
     "Programming Languages",
     "Frameworks",
@@ -78,7 +79,7 @@ const TechStack = () => {
       { name: "JavaScript", logo: javascripttlogo },
       { name: "Kotlin", logo: Kotlinlogo },
     ],
-    "Frameworks": [
+    Frameworks: [
       { name: "Xamarin", logo: XamarinLogo },
       { name: "Phonegap", logo: Phonegaplogo },
       { name: "Node.js", logo: nodejslogo },
@@ -86,7 +87,7 @@ const TechStack = () => {
       { name: "Flutter", logo: flutterlogo },
       { name: "Appcelerator", logo: appceleratorlogo },
     ],
-    "Databases": [
+    Databases: [
       { name: "SQL Server", logo: sql_serverlogo },
       { name: "PostgreSQL", logo: postgreSQLlogo },
       { name: "Oracle", logo: oraclelogo },
@@ -97,7 +98,7 @@ const TechStack = () => {
       { name: "Apache Hive", logo: apachehivelogo },
       { name: "Apache HBase", logo: apachehbaselogo },
     ],
-    "Devops": [
+    Devops: [
       { name: "Ansible", logo: ansiblelogo },
       { name: "Chef", logo: cheflogo },
       { name: "Docker", logo: dockerlogo },
@@ -115,7 +116,7 @@ const TechStack = () => {
       { name: "Alipay", logo: alipaylogo },
       { name: "Adyen", logo: adyenlogo },
     ],
-    "Clouds": [
+    Clouds: [
       { name: "AWS", logo: awslogo },
       { name: "Azure", logo: azurelogo },
       { name: "Digital Ocean", logo: digitaloceanlogo },
@@ -135,7 +136,7 @@ const TechStack = () => {
       prevIndex === totalSlides - 1 ? 0 : prevIndex + 1
     );
   };
-   useEffect(() => {
+  useEffect(() => {
     if (!slideRef.current || !wrapperRef.current) return;
 
     const wrapper = wrapperRef.current;
@@ -159,17 +160,17 @@ const TechStack = () => {
 
   return (
     <div className="tech_sttack px-4 sm:px-6 lg:px-8 xl:px-10">
-      <h1 className="tech_title w-full max-w-[488px] text-3xl sm:text-4xl lg:text-[48px] font-Montserrat font-extrabold mb-6 ml-0 lg:ml-[100px] mx-auto">
+      <h1 className="tech_title w-full max-w-[488px] text-3xl sm:text-4xl lg:text-[48px] font-Montserrat font-extrabold mb-6 ml-0 lg:ml-[20px] mx-auto">
         Tech Stack We Use
       </h1>
-
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-[1629px] h-auto lg:h-[284px] relative mx-auto">
-        <div className="flex overflow-x-auto border-b px-1 sm:px-2 md:px-4">
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-[1629px] h-auto lg:h-[350px] relative mx-auto">
+        <div className="flex justify-between w-full overflow-x-auto px-1 sm:px-2 md:px-4">
           {tabs.map((tab) => (
             <button
               key={tab}
-              className={`flex-shrink-0 px-4 sm:px-6 py-2 sm:py-4 text-base sm:text-lg lg:text-[24px] font-Montserrat font-semibold whitespace-nowrap ${activeTab === tab ? "border-b-2 border-black" : "text-gray-500"
-                }`}
+              className={`flex-shrink-0  sm:px-2 py-2 sm:py-4 text-base sm:text-lg lg:text-[24px] font-Montserrat  whitespace-nowrap ${
+                activeTab === tab ? "border-b-2 border-black font-semibold" : "text-black  "
+              }`}
               onClick={() => setActiveTab(tab)}
             >
               {tab}
@@ -178,13 +179,13 @@ const TechStack = () => {
         </div>
 
         <div className="relative flex justify-start overflow-hidden">
-          <div
-            ref={wrapperRef}
-            className="flex w-max gap-8 py-6 px-4"
-          >
+          <div ref={wrapperRef} className="flex w-max gap-8 py-6 px-4">
             <div ref={slideRef} className="flex gap-8">
               {technologies[activeTab].map((tech, index) => (
-                <div key={index} className="flex flex-col items-center min-w-[162px]">
+                <div
+                  key={index}
+                  className="flex flex-col items-center min-w-[162px]"
+                >
                   <div className="w-full h-[120px] sm:h-[145px] border rounded-xl flex items-center justify-center mb-2">
                     <img
                       src={tech.logo || "/placeholder.svg"}
@@ -198,21 +199,16 @@ const TechStack = () => {
             </div>
           </div>
         </div>
-        {/* {totalSlides > 1 && (
-          <div className="absolute bottom-4 right-4 flex space-x-2">
-            <button onClick={handlePrev} className="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center">
-              <FaArrowLeft />
-            </button>
-            <button onClick={handleNext} className="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center">
-              <FaArrowRight />
-            </button>
-          </div>
-        )} */}
 
         <div className="hidden lg:block absolute w-[5%] right-[-50px] mt-[-100px] top-1/2 transform -translate-y-1/2 rotate-450">
           <span
-            className="text-[#A2A2A2] whitespace-nowrap font-Montserrat font-extrabold text-[20px] tracking-wide"
-            style={{ background: "linear-gradient(99.51deg, #A2A2A2, #00000000)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}
+            className="text-[#A2A2A2] whitespace-nowrap font-Montserrat font-extrabold text-[22px] tracking-wide"
+            style={{
+              background: "linear-gradient(99.51deg, #A2A2A2, #00000000)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
           >
             Programming Languages
           </span>

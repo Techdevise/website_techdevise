@@ -50,7 +50,7 @@ function DigitalMarketing() {
   Renowned <br className="hidden sm:block " /> SEO Experts
 </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-gray-300 mt-4 w-full md:max-w-[600px] lg:max-w-[819px]">
+          <p className="text-sm sm:text-[20px] md:text-[15px] text-gray-300 mt-4 w-full md:max-w-[600px] lg:max-w-[819px]">
             At <span className="text-white-400 font-semibold">Tech Devise</span> we have one of the most promising and
             talented SEO experts
             <br className="hidden md:block" /> who strive to deliver results. Our result-oriented SEO strategies will

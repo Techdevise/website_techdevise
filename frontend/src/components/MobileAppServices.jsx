@@ -8,7 +8,7 @@ import Mobileserviceimg1 from "../assets/Mobileserviceimg1.svg";
 const MobileAppServices = () => {
   return (
     <div className="mob_ser w-[1678px] flex flex-col md:flex-row items-start justify-between  py-10 mx-auto gap-0 md:gap-10">
-      <div className="mob_ser1 relative w-full md:w-[720px] h-[350px] text-center md:text-start mb-8 md:mb-0">
+      <div className="mob_ser1 relative w-full md:w-[780px] h-[350px] text-center md:text-start mb-8 md:mb-0">
         {/* Image layer with 30% opacity */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 rounded-lg"
@@ -17,7 +17,7 @@ const MobileAppServices = () => {
 
         {/* Content layer */}
         <div className="mob_ser2 w-full relative z-10  rounded-lg p-4 sm:p-6 md:p-8 mt-10">
-          <h2 className="mobile_title text-2xl sm:text-3xl lg:text-4xl xl:text-[48px]  font-extrabold text-black lg:leading-tight leading-snug sm:leading-tight mb-4">
+          <h2 className="mobile_title text-2xl sm:text-[32px] lg:text-4xl xl:text-[44px]  font-extrabold text-black lg:leading-tight leading-snug sm:leading-tight mb-4">
             Comprehensive Mobile App <br />
             Development Services <br />
             We Provide
@@ -37,7 +37,7 @@ const MobileAppServices = () => {
           <div className="w-[70px] h-[70px] bg-white rounded-full flex items-center justify-center mr-4 shrink-0">
             <img src={Appleicon} alt="iOS" className="w-[30px] h-[34px]" />
           </div>
-          <p className="text-black font-Montserrat font-extrabold text-[24px]">
+          <p className="text-black font-Montserrat font-bold text-[24px]">
             iOS App <br /> Development
           </p>
         </div>
@@ -51,7 +51,7 @@ const MobileAppServices = () => {
               className="w-[32px] h-[36px]"
             />
           </div>
-          <p className="text-black font-Montserrat font-extrabold text-[24px]">
+          <p className="text-black font-Montserrat font-bold text-[24px]">
             Android App <br /> Development
           </p>
         </div>
@@ -65,7 +65,7 @@ const MobileAppServices = () => {
               className="w-[30px] h-[34px]"
             />
           </div>
-          <p className="text-black font-Montserrat font-extrabold text-[24px]">
+          <p className="text-black font-Montserrat font-bold text-[24px]">
             React Native <br /> Development
           </p>
         </div>

@@ -1,11 +1,14 @@
 @import "tailwindcss";
 /* In your main CSS file */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap'); */
 /* @import './styles/global.css'; */
 
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
+body{
+    font-family: "Montserrat", sans-serif;
+}
 @keyframes scroll {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }

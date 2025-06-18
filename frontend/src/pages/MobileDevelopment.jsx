@@ -11,6 +11,7 @@ import TechStack from "../components/TechStack";
 import blockchainarrow from "../assets/blockchainarrow.svg";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
+import Workspace from "../assets/workspace-with.svg";
 
 const MobileDevelopment = () => {
   return (
@@ -46,10 +47,10 @@ const MobileDevelopment = () => {
     </div>
 
     <h1
-      className="text-3xl sm:text-4xl md:text-5xl font-Montserrat font-bold mb-4 mt-6 md:mt-10 leading-tight"
+      className="text-3xl  md:text-[62px] font-Montserrat font-extrabold mb-4 mt-6 md:mt-10 leading-[45px] md:leading-[68px]"
       style={{
         display: "inline-table",
-        background: "linear-gradient(to right, #FFFFFF, #444444)",
+        background: "linear-gradient(to right, #EDF5F3, #157B6C)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         backgroundClip: "text",
@@ -68,7 +69,7 @@ const MobileDevelopment = () => {
       technologies.
     </p>
 
-    <button className="flex items-center gap-2 bg-[#157B6C] hover:bg-[#25a892] text-white font-medium px-5 py-2 sm:px-6 sm:py-3 rounded-full transition-colors mx-auto">
+    <button className="flex items-center gap-2 bg-[#157B6C] hover:bg-[#25a892] text-white font-medium px-2 py-2 sm:px-3 sm:py-3 rounded-full transition-colors mx-auto">
       <span className="text-sm sm:text-base">Mobile App Development</span>
       <div className="bg-white rounded-full w-[30px] h-[30px] sm:w-[38px] sm:h-[38px] flex items-center justify-center ml-4 sm:ml-5">
         <img
@@ -108,7 +109,14 @@ const MobileDevelopment = () => {
       >
         <ReactNativeAppDevelopment />
       </section>
-      <section className="techh_stck py-20">
+      <section className="techh_stck py-20  bg-[#FAFAFA] "  style={{
+        backgroundImage: `url(${Workspace})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "70vh",
+        width: "100%",
+      }}>
         <TechStack />
       </section>
     </main>
