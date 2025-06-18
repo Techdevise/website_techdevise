@@ -64,7 +64,7 @@ const IOSAppSection = () => {
         <p className="text-gray-700 text-left font-Montserrat text-[18px] mt-[20px]">
           {slides[currentSlide].message}
         </p>
-        <button className="w-[265px] h-[65px] mt-6 px-6 py-3 bg-[#FCFFEE] text-[#000000] font-Archivo font-semibold text-[20px] border-2 border-[#000000] rounded-xl shadow-md flex items-center gap-2 hover:bg-gray-100">
+        <button className="w-[265px] h-[65px] mt-6 px-6 py-3 bg-[#FCFFEE] text-[#000000] font-Archivo font-semibold text-[16px] border-2 border-[#000000] rounded-xl shadow-md flex items-center gap-2 hover:bg-gray-100">
           More Information <img src={Mobilerrowicon} alt="" />
         </button>
 

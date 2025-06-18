@@ -18,8 +18,48 @@
     /* Larger laptops like 15", 15.6" */
     .social_mmedia {
         width: 94% !important;
+        
        
+    }
+    .hp{
+      font-size: 57px !important;
+      margin-top: -6px;
     }
  
   }
+  .slide-in-right {
+  animation: slideInRight 0.5s ease-in-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Disabled button style */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
   

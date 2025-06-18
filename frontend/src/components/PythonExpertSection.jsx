@@ -63,7 +63,7 @@ const PythonExpertSection = () => {
   };
 
   return (
-    <div className="w-full mx-auto h-auto bg-[#EEFCFE] opacity-100 rounded-none flex flex-col lg:flex-row mt-5 sm:mt-8 lg:mt-10">
+    <div className="w-full mx-auto h-[700px] bg-[#EEFCFE] opacity-100 rounded-none flex flex-col lg:flex-row mt-5 sm:mt-8 lg:mt-10">
     <div className="w-full lg:max-w-[45%] relative h-[400px] sm:h-auto">
   <img
     src={codeimage || "/placeholder.svg"}
@@ -103,7 +103,7 @@ const PythonExpertSection = () => {
         </div>
 
         {/* Navigation and Python Image (Visible on larger screens) */}
-        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end mt-6 sm:mt-8 lg:mt-6 relative z-10">
+        <div className="flex flex-col sm:flex-row justify-end items-center sm:items-end mt-6 sm:mt-8 lg:mt-6 relative z-10">
           {/* <div className="flex space-x-4 mb-6 sm:mb-10 lg:mb-16 w-full justify-center sm:justify-start">
             <button
               className="bg-black text-white p-2 sm:p-3 rounded-full transition-transform duration-300 hover:scale-110"

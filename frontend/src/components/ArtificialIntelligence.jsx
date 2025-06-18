@@ -37,12 +37,12 @@ const ArtificialIntelligence = () => {
      
         {/* Vertical Heading */}
       <div className="hidden md:flex md:self-start">
-        <h2 className="text-[25px] ml-[-160px] mt-[90px] font-extrabold font-Montserrat text-black transform -rotate-89 whitespace-nowrap">
+        <h2 className="text-[20px] ml-[-160px] mt-[90px] font-extrabold font-Montserrat text-black transform -rotate-89 whitespace-nowrap">
           Artificial Intelligence
         </h2>
       </div>
       <div className="w-full w-2/2 flex flex-col gap-4 md:gap-6 order-2 md:order-1">
-        <p className="w-full text-sm md:text-base lg:text-[16px] text-black leading-relaxed md:ml-[-100px]">
+        <p className="w-full text-sm ptag md:text-base lg:text-[18px] text-black leading-relaxed md:ml-[-100px]">
         {slide.content}
         </p>
 

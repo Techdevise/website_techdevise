@@ -37,6 +37,24 @@ const seoFeatures = [
     textColor: "text-[#DA7273]",
     
   },
+    {
+    id: "05",
+    title: "SEO Content optimization",
+    description:
+      "The content listed plays a vital role in grabbing the attention of your target audience. The professional team of Tech Devise are highly experienced and can formulate engaging and creative content that captivates your target audience in the long run.",
+    bgColor: "bg-[#B6F1A5]",
+    textColor: "text-[#579C43]",
+    
+  },
+    {
+    id: "06",
+    title: "Result Oriented Strategies",
+    description:
+      "At Tech Devise, we believe in generating results. The foremost goal of our company is to meet client expectations. Therefore, the strategies formulated are result oriented that will surely give your business long term benefits.",
+    bgColor: "bg-[#FFDDA5]",
+    textColor: "text-[#579C43]",
+    
+  },
 ];
 
 const SEOFeatures = () => {
@@ -55,8 +73,8 @@ const SEOFeatures = () => {
   };
 
   return (
-   <div className="relative w-full m-auto px-4 sm:px-6 md:px-10 lg:px-20 py-20 pt-0 bg-white">
-  <div className="w-[1620px] max-w-full mx-auto">
+   <div className="relative w-full m-auto px-4 sm:px-6 md:px-10 lg:pr-0 py-15 pt-0 bg-white bg-[#FAFAFA]">
+  <div className="w-[1680px] max-w-full mx-auto">
     {/* Scrollable Section */}
     <div
       ref={scrollRef}
@@ -65,7 +83,7 @@ const SEOFeatures = () => {
       {seoFeatures.map((feature, index) => (
         <div
           key={index}
-          className={`snap-start flex-shrink-0 w-[90%] sm:w-[50%] md:w-[33.33%] lg:w-[30%] xl:w-[28%] p-6 rounded-lg shadow-md ${feature.bgColor}`}
+          className={`snap-start flex-shrink-0 w-[90%] sm:w-[50%] md:w-[33.33%] lg:w-[30%] xl:w-[32.4%] p-6 rounded-lg shadow-md ${feature.bgColor}`}
         >
           <h2 className={`text-[48px] sm:text-[64px] md:text-[72px] font-Montserrat font-extrabold ${feature.textColor}`}>
             {feature.id}
@@ -79,7 +97,7 @@ const SEOFeatures = () => {
     </div>
 
     {/* Navigation Arrows */}
-    <div className="absolute left-33 bottom-4 flex gap-4">
+    <div className=" relative  flex gap-4 mt-5">
       <button onClick={scrollLeft} className="bg-black text-white p-3 rounded-full">
         <FaArrowLeft size={15} />
       </button>

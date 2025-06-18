@@ -31,7 +31,7 @@ const WorkModules = () => {
   };
 
   return (
-    <div className="work_modules w-full max-w-[1620px] h-auto px-4 py-12 md:px-16 pt-8 mx-auto relative mt-0 md:mt-10 md:pt-2">
+    <div className="work_modules w-full max-w-[1620px] h-auto px-4 py-12 md:px-16 pt-10 mx-auto relative mt-0 md:mt-10 md:pt-8">
       <div className="relative">
         <div className="absolute right-4 top-4 flex gap-4 z-10">
           <button 
@@ -55,8 +55,8 @@ const WorkModules = () => {
 
           <div className="flex-1">
             <div className="w-full mb-6 px-4 md:px-0">
-              <p className="w-full text-[16px] text-black font-Montserrat leading-6 max-w-7xl">
-                <span className="text-[20px] md:text-[30px] font-Montserrat font-semibold">Content Management System</span> - Our team follows a very meticulous and precise procedure that allows us to meet the client requirements adequately within the deadline date. We take great pride in our module and the work ethic we possess.
+              <p className="w-full text-[16px] text-black font-Montserrat leading-6 max-w-7xl sp ">
+                <span className="text-[20px]  md:text-[30px] font-Montserrat font-semibold">Content Management System</span> - Our team follows a very meticulous and precise procedure that allows us to meet the client requirements adequately within the deadline date. We take great pride in our module and the work ethic we possess.
               </p>
             </div>
 

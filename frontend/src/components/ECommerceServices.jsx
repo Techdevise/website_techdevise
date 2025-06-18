@@ -70,7 +70,7 @@ export default function ECommerceServices() {
 
   return (
     <div
-      className="w-full h-auto bg-[#F5F5F5] m-auto opacity-100 rounded-none flex flex-col items-center justify-center relative pt-10 pb-30"
+      className="w-full h-auto bg-[#F5F5F5] m-auto opacity-100 rounded-none flex flex-col items-center justify-center relative pt-10 pb-10"
       style={{
         backgroundImage: `url(${Commerceservicesbanner})`,
         backgroundSize: "cover",
@@ -81,13 +81,13 @@ export default function ECommerceServices() {
       <h2 className="text-[28px] md:text-[36px] lg:text-[48px] text-[#060606] font-Montserrat font-extrabold text-center mb-4 px-4">
         Our E-Commerce Services
       </h2>
-      <p className="text-[16px] md:text-[18px] font-Montserrat text-black mt-2 w-full max-w-[90%] md:max-w-[60%] mb-10 px-4 text-center">
+      <p className="text-[16px] md:text-[18px] font-Montserrat text-black mt-2 w-full max-w-[90%] md:max-w-[60%] mb-10 px-4 text-center ml-[35px] md:ml-[120px]">
       We are a team of experts! We work together towards the sole goal of meeting our clients’ requirements. We
         promise to deliver high performance service to all of our customers and offer best possible post delivery
         support.
       </p>
 
-      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 px-4">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 pl-[0rem] md:pl-[8rem] sm:pl-[3rem]">
         {visibleSlides.map((service, index) => (
           <div
             key={index}
@@ -106,7 +106,7 @@ export default function ECommerceServices() {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="absolute bottom-10 left-40 flex space-x-4">
+      <div className=" bottom-10 ml-[120px] pt-10 flex space-x-4">
         <button
           onClick={handlePrev}
           className="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full"

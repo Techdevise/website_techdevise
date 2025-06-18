@@ -4,5 +4,9 @@
     .ecommerce_services {
       width: 90% !important;
     }
+    .main{
+      padding-left: 4rem !important;
+      padding-right: 4rem !important;
+    }
   }
   

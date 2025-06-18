@@ -1,5 +1,5 @@
 import React from "react";
-// import '../styles/components/SEOSection.css'
+import '../styles/components/SEOSection.css'
 import seoimage from "../assets/seoimage.png"; // Replace with actual image path
 
 const SEOSection = () => {
@@ -10,7 +10,7 @@ const SEOSection = () => {
         {/* Left Side: Text Content */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2
-            className="seo-title text-[26px] md:text-[48px] font-Montserrat font-extrabold leading-tight"
+            className="seo-title text-[26px] md:text-[44px] font-Montserrat font-extrabold leading-tight"
             style={{
               display: "inline-table",
               background: "linear-gradient(to right,rgb(185, 221, 201), #157B6C)",

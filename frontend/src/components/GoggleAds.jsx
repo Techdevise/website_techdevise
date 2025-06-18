@@ -84,7 +84,7 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-[1440px] h-[600px] mx-auto overflow-hidden px-4 sm:px-6 lg:px-8">
+    <div className="relative w-full max-w-[1440px] h-[550px] mx-auto overflow-hidden px-2 sm:px-3 lg:px-5 bg-[#FAFAFA]">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -95,7 +95,7 @@ export default function Portfolio() {
             <div className="w-full max-w-7xl flex flex-col md:flex-row items-center justify-center md:justify-between gap-10">
               {/* Image */}
               <div
-                className={`relative w-full max-w-[400px] ${slide.bgColor} rounded-xl p-4 sm:p-6`}
+                className={`relative w-full max-w-[400px] ${slide.bgColor} rounded-xl p-4 sm:p-6 right-0  md:right-[-130px]`}
               >
                 <img
                   src={slide.image}
@@ -123,7 +123,7 @@ export default function Portfolio() {
                   </span>
                 </h1>
                 <p
-                  className="mt-4  mt-2 ml-[-1rem] text-[14px] sm:text-[16px] text-[#000000] w-full"
+                  className="mt-4  mt-2 ml-0  md:ml-[-1rem] text-[14px] sm:text-[12px] text-[#000000] w-full relative right-0  md:right-[-80px]"
                   style={{ fontFamily: "Montserrat" }}
                 >
                   {slide.description}
