@@ -42,9 +42,9 @@ const LocationSection = () => {
     <div className={`relative w-full pt-20 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-white" : "bg-black text-white"}`}>
       {/* Header */}
       <div className="relative z-10 text-center mb-20">
-        <h3 className="text-[#00C2A8] text-xl font-semibold mb-3">Location</h3>
+        <h3 className="text-[#157B6C] text-[32px] font-Montserrat font-bold mb-3">Location</h3>
         <h2 className="text-4xl md:text-5xl font-extrabold font-Montserrat mb-4 text-white">
-          We’d love to <span className="text-[#00C2A8]">hear</span> from you
+          We’d love to hear from you
         </h2>
         <p className="text-lg text-gray-300 mb-6">
           We have offices and teams all around the world.

@@ -2,11 +2,13 @@ import { useEffect, useState, useRef } from 'react';
 import '../styles/pages/ExperienceSection.css'
 const ExperienceCard = ({ targetValue, label, bgColor, highlightColor }) => {
   const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false); 
   const cardRef = useRef(null);
   useEffect(() => {
-    let observer = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true); 
           let start = 0;
           const duration = 5000;
           const increment = targetValue / (duration / 16);
@@ -23,15 +25,16 @@ const ExperienceCard = ({ targetValue, label, bgColor, highlightColor }) => {
       },
       { threshold: 0.5 }
     );
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+   const currentCard = cardRef.current;
+    if (currentCard) {
+      observer.observe(currentCard);
     }
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (currentCard) {
+        observer.unobserve(currentCard);
       }
     };
-  }, [targetValue]);
+  }, [targetValue, hasAnimated]);
   return (
     <div
       ref={cardRef}

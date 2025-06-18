@@ -296,7 +296,7 @@ const ContactForm = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#FFFFFF] text-[#137365] font-bold py-4 px-12 rounded-lg hover:bg-[#3BC46F] transition-colors shadow-md hover:text-white hover:bg-green-700 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-[#061611] text-[20px] font-Montserrat text-[#ffffff] border border-white font-bold py-4 px-12 rounded-lg hover:bg-[#157B6C] hover:scale-104 transition-colors shadow-md hover:text-white hover:bg-[#157B6C] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </button>
