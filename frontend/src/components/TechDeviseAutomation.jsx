@@ -4,7 +4,7 @@ import chatbotimage from "../assets/chatbotimage.png";
 
 const TechDeviseAutomation = () => {
   return (
-    <div className="tech_automation w-full max-w-[1620px] mx-auto mt-10 bg-white rounded-xl shadow-md flex flex-col lg:flex-row items-center justify-between p-4 sm:p-6 md:p-10 space-y-8 lg:space-y-0">
+    <div className="tech_automation w-full max-w-[1620px] mx-auto mt-10 bg-white rounded-xl  flex flex-col lg:flex-row items-center justify-between p-4 sm:p-6 md:p-10 space-y-8 lg:space-y-0">
       <div className="w-full lg:w-1/2 text-left">
         <h2 className="automation_title text-[24px] sm:text-[28px] md:text-[32px] lg:text-[48px] font-extrabold font-Montserrat text-black mb-6 leading-tight text-left lg:text-left md:text-center">
           Tech Devise: Developing User

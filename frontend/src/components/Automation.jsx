@@ -2,7 +2,7 @@ import React from "react";
 
 const Automation = () => {
   return (
-    <div className="w-full min-h-[160px] mt-10 px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col items-center justify-center text-left md:text-center">
+    <div className="w-full min-h-[160px] mt-10 px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col items-center justify-center text-left md:text-center bg-[#FAFAFA]">
 <h2 className="w-full max-w-[974px] text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-extrabold font-Montserrat text-black">
 Automation
 </h2>

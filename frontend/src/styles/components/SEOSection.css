@@ -21,7 +21,12 @@
         width: 90% !important;
     }
     .seo-title {
-      font-size: 46px !important;
+      font-size: 30px !important;
     }
+    .seo_image {
+      max-width:24rem;
+      margin-left: auto;
+    }
+    
   }
   

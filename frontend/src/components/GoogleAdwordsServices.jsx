@@ -1,8 +1,12 @@
 import React, { useState } from "react"
-// import "../styles/components/GoogleAdwordsServices.css"
+import "../styles/components/GoogleAdwordsServices.css"
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import GoogleAdwordsimg1 from "../assets/GoogleAdwordsimg1.svg"
 import GoogleAdwordsimg2 from "../assets/GoogleAdwordsimg2.svg"
+import GoogleAdwordsimg6 from "../assets/Vector12.svg"
+import GoogleAdwordsimg5 from "../assets/Group12.svg"
+import GoogleAdwordsimg4 from "../assets/analysis_icon (1) 1.svg"
+import GoogleAdwordsimg3 from "../assets/data_icon 1.svg"
 
 const slides = [
   {
@@ -18,16 +22,28 @@ const slides = [
       "Our expert team understands that only investing in Google Adwords is not enough to ensure conversions. Hence, we provide unique and out of the box landing page and advertisement services to increase the conversion rate.",
   },
   {
-    img: GoogleAdwordsimg2,
-    title: "Landing Page\nCreation",
+    img: GoogleAdwordsimg3,
+    title: "Keyword \nResearch ",
     description:
-      "Our expert team understands that only investing in Google Adwords is not enough to ensure conversions. Hence, we provide unique and out of the box landing page and advertisement services to increase the conversion rate.",
+      "The most important factor to get the best result from your Adword campaign is the selection of the right keywords. Our experts will find the best keywords that suit your business and will increase traffic to your website.",
   },
   {
-    img: GoogleAdwordsimg2,
-    title: "Landing Page\nCreation",
+    img: GoogleAdwordsimg4,
+    title: "Detailed \nReporting",
     description:
-      "Our expert team understands that only investing in Google Adwords is not enough to ensure conversions. Hence, we provide unique and out of the box landing page and advertisement services to increase the conversion rate.",
+      "We believe in maintaining a transparent relationship with our clients. Hence, we offer weekly reports about the work done and the results it is fetching. This way you will understand the progress of these marketing campaigns.",
+  },
+    {
+    img: GoogleAdwordsimg5,
+    title: "Campaign \nCreation",
+    description:
+      "We not only create strategies for Google Adword campaign but also have the expertise to create these campaigns and implement them. The campaigns created by us are planned meticulously to ensure that you get the highest ROI.",
+  },
+    {
+    img: GoogleAdwordsimg6,
+    title: "Precise Campaign \nROI Calculations",
+    description:
+      "We believe that if you are investing in anything, then you should get some assurance from our end. For every campaign, we do a precise calculation about how successful the campaign is going to get and what are the possible results out of it.",
   },
   
   // Add more cards here if needed
@@ -58,14 +74,14 @@ export default function GoogleAdwordsServices() {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {/* Left side content */}
       <div className="flex flex-col justify-center">
-        <h2 className="w-full md:max-w-[600px] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[48px] font-extrabold font-Montserrat text-black mb-4 lg:mb-6 leading-snug lg:leading-tight">
+        <h2 className="w-full md:max-w-[600px] text-2xl h2p sm:text-2xl md:text-2xl lg:text-2xl xl:text-[48px] font-extrabold font-Montserrat text-black mb-4 lg:mb-6 leading-snug lg:leading-tight">
           The Services we offer
           <br className="hidden lg:block" />
           under Google
           <br className="hidden lg:block" />
           Adwords
         </h2>
-        <p className="text-sm sm:text-base md:text-lg font-Montserrat text-black max-w-2xl">
+        <p className="text-sm sm:text-base md:text-lg hp1 font-Montserrat text-black max-w-2xl">
           We all know that the internet is flooded with millions of websites. Hence, getting your website to be
           noticed among this huge crowd is a challenging task. But nothing is impossible. With the help from our
           Google Adword experts, you can achieve the desired traffic to your website and improve its visibility. Our
@@ -75,7 +91,7 @@ export default function GoogleAdwordsServices() {
       </div>
 
       {/* Right side content - Dynamic Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 ">
         {visibleSlides.map((slide, index) => (
           <div key={index} className="bg-white p-4 sm:p-6 rounded-lg shadow-sm">
             <div className="mb-4">

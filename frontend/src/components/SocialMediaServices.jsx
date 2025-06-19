@@ -31,89 +31,106 @@ const services = [
 
 const SocialMediaServices = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const [slideDirection, setSlideDirection] = useState('right');
 
   const visibleCards = services.slice(startIndex, startIndex + 3);
 
   const handlePrev = () => {
-    if (startIndex > 0) setStartIndex(startIndex - 1);
+    if (startIndex > 0) {
+      setSlideDirection('left');
+      setStartIndex(startIndex - 1);
+    }
   };
 
   const handleNext = () => {
-    if (startIndex + 3 < services.length) setStartIndex(startIndex + 1);
+    if (startIndex + 3 < services.length) {
+      setSlideDirection('right');
+      setStartIndex(startIndex + 1);
+    }
   };
 
   return (
     <section
-    className="w-full py-10 px-4 sm:px-6 md:px-10"
-    style={{ background: 'linear-gradient(to right, #EFFFF4, #92E3A9)' }}
-  >
-        <div className="social_mmedia max-w-[1620px] mx-auto">
-      <h1 className="text-[28px] sm:text-[36px] md:text-[48px] font-extrabold font-Montserrat text-black">
-        Our Social Media Marketing Services
-      </h1>
-      <p className="text-left font-Montserrat text-[16px] sm:text-[18px] text-black mt-6">
-        At Tech Devise our team of Social Media experts strives to provide our clients with the best social media marketing
-        solutions that will surely<br /> improve your business’s online visibility. With the help of your experts, you can increase your
-        online customer base as well.
-      </p>
+      className="w-full py-10 px-4 sm:px-6 md:px-10"
+      style={{ background: 'linear-gradient(to right, #EFFFF4, #92E3A9)' }}
+    >
+      <div className="social_mmedia max-w-[1620px] mx-auto">
+        <p className="text-[72px]  md:text-[72px] hp font-extrabold font-Montserrat text-black opacity-5 absolute mt-[-16px]">
+          Our Social Media Marketing Services
+        </p>
+        <h1 className="text-[28px] sm:text-[36px] md:text-[48px] font-extrabold font-Montserrat text-black relative">
+          Our Social Media Marketing Services
+        </h1>
+     
+        <p className="text-left font-Montserrat text-[16px] sm:text-[18px] text-black mt-6">
+          At Tech Devise our team of Social Media experts strives to provide our clients with the best social media marketing
+          solutions that will surely<br /> improve your business's online visibility. With the help of your experts, you can increase your
+          online customer base as well.
+        </p>
 
-      <div className="mt-10 flex flex-col lg:flex-row gap-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
-        {visibleCards.map((service, index) => (
-          <div key={index} className="bg-[#DBFFE5] shadow-xl rounded-xl p-6 w-full text-left">
-            <div className="bg-[#94E4AB] w-[90px] h-[90px] flex items-center justify-center rounded-full">
-              <span className="text-black text-xl">
-                <img src={service.image} alt={service.title} className="w-[40px] h-[40px] text-white" />
-              </span>
+        <div className="mt-10 flex flex-col lg:flex-row gap-10">
+          <div className="flex-1 relative overflow-hidden">
+            <div 
+              className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 ease-in-out ${
+                slideDirection === 'right' ? 'slide-in-right' : 'slide-in-left'
+              }`}
+            >
+              {visibleCards.map((service, index) => (
+                <div 
+                  key={index} 
+                  className="bg-[#DBFFE5]  rounded-xl p-6 w-full text-left  transition-transform duration-300"
+                >
+                  <div className="bg-[#94E4AB] w-[90px] h-[90px] flex items-center justify-center rounded-full">
+                    <span className="text-black text-xl">
+                      <img src={service.image} alt={service.title} className="w-[40px] h-auto text-white" />
+                    </span>
+                  </div>
+                  <h2 className="font-Montserrat font-semibold text-[28px] mt-4 whitespace-pre-line">
+                    {service.title}
+                  </h2>
+                  <p className="text-[#000000] mt-8 font-Montserrat text-[16px]">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
             </div>
-            <h2 className="font-Montserrat font-semibold text-[28px] mt-4 whitespace-pre-line">
-              {service.title}
-            </h2>
-            <p className="text-[#000000] mt-8 font-Montserrat text-[16px]">
-              {service.description}
-            </p>
           </div>
-        ))}
-      </div>
+          
           {/* Social Media Icons */}
           <div className="flex flex-row lg:flex-col gap-4 items-center justify-center mt-0 lg:mt-0">
-  <div className="border border-dashed border-black rounded-full p-4">
-    <FaFacebookF className="text-[20px] lg:text-[60px]" />
-  </div>
-  <div className="border border-dashed border-black rounded-full p-4">
-    <FaXTwitter className="text-[20px] lg:text-[60px]" />
-  </div>
-  <div className="border border-dashed border-black rounded-full p-4">
-    <FaInstagram className="text-[20px] lg:text-[60px]" />
-  </div>
-  <div className="border border-dashed border-black rounded-full p-4">
-    <FaYoutube className="text-[20px] lg:text-[60px]" />
-  </div>
-</div>
+            <div className="border border-dashed border-black rounded-full p-4 hover:bg-black hover:text-white transition-colors duration-300">
+              <FaFacebookF className="text-[20px] lg:text-[60px]" />
+            </div>
+            <div className="border border-dashed border-black rounded-full p-4 hover:bg-black hover:text-white transition-colors duration-300">
+              <FaXTwitter className="text-[20px] lg:text-[60px]" />
+            </div>
+            <div className="border border-dashed border-black rounded-full p-4 hover:bg-black hover:text-white transition-colors duration-300">
+              <FaInstagram className="text-[20px] lg:text-[60px]" />
+            </div>
+            <div className="border border-dashed border-black rounded-full p-4 hover:bg-black hover:text-white transition-colors duration-300">
+              <FaYoutube className="text-[20px] lg:text-[60px]" />
+            </div>
+          </div>
+        </div>
 
-
-      {/* Navigation Arrows */}
-      {/* <div className=" bottom-40 flex gap-4">
-        <button onClick={handlePrev} className="bg-black text-white p-3 rounded-full">
-          <FaArrowLeft size={15} />
-        </button>
-        <button onClick={handleNext} className="bg-black text-white p-3 rounded-full">
-          <FaArrowRight size={15} />
-        </button>
-      </div> */}
+        <div className="mt-10 flex gap-4 justify-center lg:justify-start">
+          <button 
+            onClick={handlePrev} 
+            className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-colors duration-300"
+            disabled={startIndex === 0}
+          >
+            <FaArrowLeft size={15} />
+          </button>
+          <button 
+            onClick={handleNext} 
+            className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-colors duration-300"
+            disabled={startIndex + 3 >= services.length}
+          >
+            <FaArrowRight size={15} />
+          </button>
+        </div>
       </div>
-      <div className="mt-10 flex gap-4 justify-center lg:justify-start">
-        <button onClick={handlePrev} className="bg-black text-white p-3 rounded-full">
-          <FaArrowLeft size={15} />
-        </button>
-        <button onClick={handleNext} className="bg-black text-white p-3 rounded-full">
-          <FaArrowRight size={15} />
-        </button>
-      </div>
-
-    
-      </div>
-      </section>
+    </section>
   );
 };
 
