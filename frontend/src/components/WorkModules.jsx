@@ -83,7 +83,7 @@ const WorkModules = () => {
               style={{ scrollBehavior: 'smooth' }}
             >
               {/* Slide 1 */}
-              <div className="min-w-[320px] sm:min-w-[412px] bg-[#E5FCFF] p-6 rounded-lg shadow-md">
+              <div className=" min-w-[320px] sm:min-w-[415px] bg-[#E5FCFF] p-6 rounded-lg shadow-md Slide1">
                 <div className="bg-[#11BEEA] w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <img src={Reviewplanning} alt="Review Planning" className="h-[54px] w-[55px]" />
                 </div>
@@ -96,7 +96,7 @@ const WorkModules = () => {
               </div>
 
               {/* Slide 2 */}
-              <div className="min-w-[320px] sm:min-w-[412px] bg-[#EBF8F1] p-6 rounded-lg shadow-md">
+              <div className="min-w-[320px] sm:min-w-[415px] bg-[#EBF8F1] p-6 rounded-lg shadow-md Slide2">
                 <div className="bg-[#43B97F] w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <img src={Design} alt="Design" className="h-[54px] w-[55px]" />
                 </div>
@@ -110,7 +110,7 @@ const WorkModules = () => {
               </div>
 
               {/* Slide 3 */}
-              <div className="min-w-[320px] sm:min-w-[412px] bg-[#EDF5C0] p-6 rounded-lg shadow-md">
+              <div className="min-w-[320px] sm:min-w-[415px] bg-[#EDF5C0] p-6 rounded-lg shadow-md Slide3">
                 <div className="bg-[#B7CA4B] w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <img src={Development} alt="Development" className="h-[54px] w-[55px]" />
                 </div>
@@ -123,7 +123,7 @@ const WorkModules = () => {
               </div>
 
               {/* Slide 4 */}
-              <div className="min-w-[320px] sm:min-w-[412px] bg-[#FFD3E5] p-6 rounded-lg shadow-md">
+              <div className="min-w-[320px] sm:min-w-[415px] bg-[#FFD3E5] p-6 rounded-lg shadow-md Slide4">
                 <div className="bg-[#DF739F] w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <img src={Contentupload} alt="Content Upload" className="h-[54px] w-[55px]" />
                 </div>
@@ -136,7 +136,7 @@ const WorkModules = () => {
               </div>
               
               {/* Slide 5 */}
-              <div className="min-w-[320px] sm:min-w-[412px] bg-[#D0EBFF] p-6 rounded-lg shadow-md">
+              <div className="min-w-[320px] sm:min-w-[415px] bg-[#D0EBFF] p-6 rounded-lg shadow-md Slide5">
                 <div className="bg-[#11BEEA] w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <img src={Reviewplanning} alt="Review Planning" className="h-[54px] w-[55px]" />
                 </div>
@@ -147,7 +147,7 @@ const WorkModules = () => {
               </div>
 
               {/* Slide 6 */}
-              <div className="min-w-[320px] sm:min-w-[412px] bg-[#FFF0BA] p-6 rounded-lg shadow-md">
+              <div className="min-w-[320px] sm:min-w-[415px] bg-[#FFF0BA] p-6 rounded-lg shadow-md Slide6">
                 <div className="bg-[#43B97F] w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <img src={Design} alt="Design" className="h-[54px] w-[55px]" />
                 </div>

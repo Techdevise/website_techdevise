@@ -113,7 +113,7 @@ const IT_Roles = () => {
     <div className="w-full py-20 px-4 sm:px-8 mt-[20px]">
       <div className="max-w-[1600px] mx-auto">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 mb-16">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 mb-16 md:mt-10 mt-0">
           <div className="lg:w-2/3">
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-4">
               We Staff IT Roles Across Any{" "}

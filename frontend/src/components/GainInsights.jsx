@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
+  import '../styles/components/ArtificialIntelligence.css'
 
 import Image1 from "../assets/Group 596.png";
 import Image2 from "../assets/Group 591.png";
@@ -59,7 +60,6 @@ const GainInsights = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
-          
           scrub: 1,
           snap: 1 / (panels.length - 1),
           end: () =>
@@ -93,11 +93,11 @@ const GainInsights = () => {
   return (
    <div
       ref={sectionRef}
-      className="w-full overflow-hidden"
+      className="w-full h-[600px]  md:h-auto overflow-hidden"
       style={{ background: "linear-gradient(to bottom, #0B6F4F, #021711)" }}
     >
-      <div className="w-full max-w-[1650px] mx-auto px-4 py-10 flex justify-between items-center">
-        <h1 className="text-white text-[40px] font-extrabold leading-tight font-Montserrat">
+      <div className="w-full max-w-[1650px]  mx-auto px-4 py-5 flex justify-between items-center md:mt">
+        <h1 className="text-white text-[28px] md:text-[48px] font-extrabold leading-tight font-Montserrat">
           Gain Insights into <br /> our Services
         </h1>
         <button className="flex items-center gap-2 text-white font-medium px-4 py-2 rounded-full border border-white transition-colors">
@@ -108,11 +108,11 @@ const GainInsights = () => {
         </button>
       </div>
 
-      <div className="flex w-[500vw] h-[80vh] ml-[115px] mb-[40px]">
+      <div className="flex w-[200vw] md:w-[500vw] h-[40vh] md:h-[80vh] ml-[115px] mb-[40px]">
         {categories.map((item, index) => (
           <div
             key={index}
-            className="panel w-[1680px] h-full relative flex-shrink-0"
+            className="panel w-[900px] md:w-[1680px] h-full relative flex-shrink-0"
             ref={(el) => (panelsRef.current[index] = el)}
           >
             <img
@@ -122,10 +122,10 @@ const GainInsights = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#00000099] to-[#00000000] p-10 flex flex-col justify-end">
               <div className="text-white max-w-[900px] ml-[50px]">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 leading-snug">
+                <h2 className="text-[20px] md:text-[48px] font-bold mb-4 leading-snug gainh2">
                   {item.text}
                 </h2>
-                <p className="text-sm opacity-90 mb-8">{item.subtitle}</p>
+                <p className="text-[10px] md:text-[20px] opacity-90 mb-8">{item.subtitle}</p>
                 <button className="flex items-center gap-2 text-sm mb-4 text-white font-semibold px-5 py-2 rounded-full border border-white hover:bg-white hover:text-black transition">
                   Know More
                   <div className="bg-white rounded-full w-6 h-6 flex items-center justify-center ml-1">
@@ -139,7 +139,7 @@ const GainInsights = () => {
       </div>
 
       {/* Dots navigation */}
-      <div className="flex justify-center gap-3 mt-[-2rem]">
+      <div className="flex justify-center gap-3 md:mt-[-2rem] md-10">
         {categories.map((_, index) => (
           <button
             key={index}

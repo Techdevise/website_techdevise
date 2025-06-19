@@ -29,9 +29,10 @@
         max-width: 1448px !important;
         margin: 0 auto !important;
     }
-    /* .tech_title {
-        margin-left: 0 !important;
-    } */
+    .tech_title {
+        margin-left: 8 !important;
+    }
+     
  
   }
   

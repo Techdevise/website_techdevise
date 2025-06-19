@@ -3,19 +3,32 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Aiservicesimg5 from "../assets/Aiservicesimg5.svg";
 import axios from "axios";
 
+import '../styles/components/ArtificialIntelligence.css'
 const AiSolutionsSection = () => {
   const sliderRef = useRef(null);
   const [cards, setCards] = useState([]);
 
-  const handleScroll = (direction) => {
-    const scrollAmount = 400;
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
+const handleScroll = (direction) => {
+  const scrollAmount = 550;
+  if (sliderRef.current) {
+    const currentScroll = sliderRef.current.scrollLeft;
+    const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+    
+    
+    let targetScroll;
+    if (direction === "left") {
+      targetScroll = Math.max(0, currentScroll - scrollAmount);
+    } else {
+      targetScroll = Math.min(maxScroll, currentScroll + scrollAmount);
     }
-  };
+    
+    
+    sliderRef.current.scrollTo({
+      left: targetScroll,
+      behavior: "smooth",
+    });
+  }
+};
 
   // Fetch data from the API
   useEffect(() => {
@@ -42,10 +55,10 @@ const AiSolutionsSection = () => {
     >
       {/* Header */}
       <div className="text-center max-w-4xl mx-auto my-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#0F0F0F] mb-4">
+        <h1 className="text-[25px] md:text-[48px] font-extrabold text-[#0F0F0F] mb-4">
           Why Choose AI Integrated Solutions For Your Business?
         </h1>
-        <p className="text-gray-700 text-base md:text-lg">
+        <p className="text-gray-700 text-[15px]  md:text-[20px]">
           From chatbots to predictive analytics systems, our AI development company offers customized artificial intelligence
           development services. Turn raw data into actionable reports, predict customer behavior, and increase workforce
           productivity with our intelligent AI services.
@@ -53,7 +66,7 @@ const AiSolutionsSection = () => {
       </div>
 
       {/* Content */}
-      <div className="flex items-start justify-center gap-6 max-w-[1600px] mx-auto">
+      <div className="new_slid flex items-start justify-center gap-6 max-w-[1600px] mx-auto">
         {/* Robot Image */}
         <div className="flex-shrink-0 hidden lg:block">
           <img
@@ -74,7 +87,7 @@ const AiSolutionsSection = () => {
             {cards.map((card, idx) => (
               <div
                 key={idx}
-                className="min-w-[400px] max-w-[400px] h-[300px] bg-cover bg-center rounded-lg relative overflow-hidden flex items-end p-4 text-white shadow-lg"
+                className=" new_slid1 md:min-w-[400px] md:max-w-[400px] min-w-[343px] max-w-[343px] h-[300px] bg-cover bg-center rounded-lg relative overflow-hidden flex items-end p-4 text-white shadow-lg"
                 style={{ backgroundImage: `url(http://localhost:9090/images${card.image})` }}
                 title={card.title?.replace(/<br\/?>/g, ' ')}
               >
@@ -88,7 +101,7 @@ const AiSolutionsSection = () => {
           </div>
 
           {/* Arrows */}
-          <div className="flex gap-3 z-10 justify-end mt-10" title="Carousel Navigation">
+          <div className="arrow_slid flex gap-3 z-10 justify-end mt-10" title="Carousel Navigation">
             <button
               onClick={() => handleScroll("left")}
               className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shadow-md"

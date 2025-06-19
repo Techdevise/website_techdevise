@@ -5,5 +5,47 @@
     .ptag {
       font-size: 16px !important;
     }
+    .servicesC{
+      width: 1320px;
+      height: 550px;
+      margin-left: 30px;
+    }
+    .fuel{
+      width: 1150px !important;
+      margin-right: -40px !important;
+    }
+    .gainh2{
+      font-size: 30px !important;
+    }
+    .new_slid  .new_slid1{
+      width: 280px !important;
+    max-width: 280px !important;
+    min-width: 280px !important;
+}
   }
+  .new_slid{
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative;
+    left: 92px;
+}
+.new_slid1{
+      width: 360px !important;
+    max-width: 360px !important;
+    min-width: 360px !important;
+}
+.arrow_slid{
+  position: relative;
+    right: 100px;
+}
+@media only screen and (max-width:767px){
+  .new_slid {
+    left: 0 !important;
+}
+/* .new_slid1{
+      width: 400px !important;
+    max-width: 400px !important;
+    min-width: 400px !important;
+} */
+}
   

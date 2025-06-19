@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+  import '../styles/components/ArtificialIntelligence.css'
 
 const AccelerateBusiness = () => {
   const [activeService, setActiveService] = useState('digitalAssurance');
@@ -67,7 +68,7 @@ const AccelerateBusiness = () => {
         </div>
 
         {/* Services Navigation */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12 ">
           {Object.keys(services).map((serviceKey) => (
             <button
               key={serviceKey}
@@ -84,7 +85,7 @@ const AccelerateBusiness = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 servicesC">
           {services[activeService].items.map((item, index) => (
             <div
               key={index}
@@ -101,7 +102,7 @@ const AccelerateBusiness = () => {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-                  <h4 className="text-[20px] font-semibold text-white">{item.name}</h4>
+                  <h4 className="text-[15px] md:text-[18px] font-semibold text-white">{item.name}</h4>
                   <p className="text-sm text-white">{item.message}</p>
                 </div>
               </div>

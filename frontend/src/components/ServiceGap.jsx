@@ -20,57 +20,57 @@ const ServiceGap = () => {
 
   {/* Content Section */}
   <div className="w-full lg:w-1/2 xl:w-[50%] text-left px-6 lg:px-[5rem] py-10 bg-[#F4F6FF]">
-    <h1 className="services_title text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] font-extrabold font-Montserrat text-black mb-6 leading-tight">
+    <h1 className="services_title text-[25px] sm:text-[28px] md:text-[32px] lg:text-[48px] font-extrabold font-Montserrat text-black mb-6 leading-tight">
       Filling the Tech <br /> Services Gap
     </h1>
 
-    <div className="mb-8">
-      <h2 className="text-[20px] sm:text-[22px] md:text-[24px] font-bold mb-4">Did you know...</h2>
-      <p className="mb-4">
-        75% of decision makers see all those within their Internet. Some of the top roles include:
-      </p>
-      <ul className="flex items-center gap-x-6 flex-wrap">
-        {[
-          { icon: Computer, label: "Artificial<br/>intelligence", isStrong: true },
-          { icon: Setting, label: "IT<br/>Operations", isStrong: false },
-          { icon: Vector, label: "Cloud", isStrong: false },
-          { icon: microchip, label: "Software<br/>Development", isStrong: true }
-        ].map((item, i) => (
-          <li key={i} className="flex flex-col items-center text-center">
-            <div className="bg-white rounded-lg p-3">
-              <img src={item.icon} alt={item.label} className="w-5 h-5" />
-            </div>
-            {item.isStrong ? (
-              <strong
-                className="mt-2 text-black text-sm"
-                dangerouslySetInnerHTML={{ __html: item.label }}
-              />
-            ) : (
-              <span
-                className="mt-2 text-black text-sm"
-                dangerouslySetInnerHTML={{ __html: item.label }}
-              />
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+   <div className="mb-8">
+  <h2 className="text-[20px] sm:text-[22px] md:text-[24px] font-bold mb-4">Did you know...</h2>
+  <p className="mb-4">
+    75% of decision makers see all those within their Internet. Some of the top roles include:
+  </p>
+  <ul className="flex items-center gap-x-6 flex-wrap">
+    {[
+      { icon: Computer, label: "Artificial<br/>intelligence", isStrong: true },
+      { icon: Setting, label: "IT<br/>Operations", isStrong: true },
+      { icon: Vector, label: "Cloud", isStrong: true, className: "aa mb-4" },
+      { icon: microchip, label: "Software<br/>Development", isStrong: true }
+    ].map((item, i) => (
+      <li key={i} className={`flex flex-col items-center text-center ${item.className || ""}`}>
+        <div className="bg-white rounded-lg p-3 ">
+          <img src={item.icon} alt={item.label} className="w-6 h-6" />
+        </div>
+        {item.isStrong ? (
+          <strong
+            className="mt-2 text-black text-sm"
+            dangerouslySetInnerHTML={{ __html: item.label }}
+          />
+        ) : (
+          <span
+            className="mt-2 text-black text-sm"
+            dangerouslySetInnerHTML={{ __html: item.label }}
+          />
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
 
     <div className="mb-8">
-      <h2 className="text-[20px] sm:text-[22px] md:text-[24px] font-bold mb-4">
+      <h2 className="text-[15px] sm:text-[16px] md:text-[18px] font-bold mb-4">
         What Impact does this have on business?
       </h2>
-      <p>
+      <p className="text-[12px] md:text-[16px]">
         Reduced ability to meet business objectives. Higher operating costs.
         Longer project durations and decreased quality. Increased stress among IT employees.
       </p>
     </div>
 
     <div>
-      <h2 className="text-[20px] sm:text-[22px] md:text-[24px] font-bold mb-4">
+      <h2 className="ttext-[15px] sm:text-[16px] md:text-[18px] font-bold mb-4">
         Get Access to the Right Solutions
       </h2>
-      <p>
+      <p className="text-[12px] md:text-[16px]">
         <span className="font-bold text-black">TechDevise</span> delivers world-class technical and
         talent services to IT clients around the globe through Evergreen, our professional services
         division. With staffing experts in 70+ offices across North America, Europe, and Asia, as

@@ -57,33 +57,33 @@ function TeamInto() {
 
   return (
     <div className="max-w-[1680px] mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+      <h1 className="md:text-[48px] text-[25px] font-bold text-center text-gray-800 mb-8">
         Turn Your Team into Test <br /> Automation Experts
       </h1>
 
-      <p className="text-xl text-gray-600 text-center mb-12">
+      <p className="md:text-[20px]  text-[18px] text-gray-600 text-center mb-12">
         Leverage user-friendly keywords and smart automation to unify experiences across teams and deliver <br />
         quality releases at enterprise scale.
       </p>
 
       <div className="rounded-lg p-8 shadow-[0_0_20px_rgba(0,0,0,0.15)]">
         {/* Tabs */}
-        <div className="flex flex-wrap justify-between gap-4 w-full max-w-[1680px] mx-auto mb-12">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-white rounded-lg">
-              <button
-                onClick={() => setActiveIndex(index)}
-                className={`font-semibold whitespace-nowrap px-4 py-2 border-b-2 transition-all duration-200 ${
-                  activeIndex === index
-                    ? "text-[#02574B] border-[#02574B]"
-                    : "text-gray-800 border-transparent"
-                }`}
-              >
-                {feature.title}
-              </button>
-            </div>
-          ))}
-        </div>
+        <div className="flex flex-nowrap overflow-x-auto gap-4 w-full max-w-[1680px] mx-auto mb-12 md:flex-wrap md:justify-between md:overflow-visible">
+  {features.map((feature, index) => (
+    <div key={index} className="bg-white rounded-lg flex-shrink-0">
+      <button
+        onClick={() => setActiveIndex(index)}
+        className={`font-semibold whitespace-nowrap px-4 py-2 border-b-2 transition-all duration-200 ${
+          activeIndex === index
+            ? "text-[#02574B] border-[#02574B]"
+            : "text-gray-800 border-transparent"
+        }`}
+      >
+        {feature.title}
+      </button>
+    </div>
+  ))}
+</div>
 
         {/* Active Feature Display */}
         <div className="flex flex-col lg:flex-row items-center gap-8 mt-12">
@@ -99,13 +99,13 @@ function TeamInto() {
             <img
               src={activeFeature.image}
               alt={activeFeature.title}
-              className="w-[82%] h-auto rounded-lg shadow-md"
+              className="md:w-[82%] w-[100%] h-auto rounded-lg shadow-md"
             />
 
                         {/* Rotated Label Text on Right */}
                         <div className="hidden lg:block absolute top-[215px] left-[490px]  transform -translate-y-1/2" style={{ transform: "translateY(-50%) rotate(450deg)" }}>
                             <span
-                                className="text-[#A2A2A2] whitespace-nowrap  font-normal font-extrabold text-[40px] tracking-wide"
+                                className="text-[#A2A2A2] whitespace-nowrap  font-normal font-extrabold text-[35px] tracking-wide"
                                 style={{
                                     background: "linear-gradient(99.51deg, #005163, #01090A)",
                                     WebkitBackgroundClip: "text",

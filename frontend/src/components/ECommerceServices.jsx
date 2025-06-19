@@ -81,13 +81,12 @@ export default function ECommerceServices() {
       <h2 className="text-[28px] md:text-[36px] lg:text-[48px] text-[#060606] font-Montserrat font-extrabold text-center mb-4 px-4">
         Our E-Commerce Services
       </h2>
-      <p className="text-[16px] md:text-[18px] font-Montserrat text-black mt-2 w-full max-w-[90%] md:max-w-[60%] mb-10 px-4 text-center ml-[35px] md:ml-[120px]">
-      We are a team of experts! We work together towards the sole goal of meeting our clients’ requirements. We
-        promise to deliver high performance service to all of our customers and offer best possible post delivery
-        support.
+      <p className="text-[16px] pteg md:text-[18px] font-Montserrat text-black mt-2 w-full max-w-[90%] md:max-w-[100%] mb-10 px-4 text-center ">
+  We are a team of experts who offer unique and innovative E-commerce solutions. So, if you are looking to take your business digital,<br />
+our E-commerce services will surely help you to take your business to the next level. 
       </p>
 
-      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 pl-[0rem] md:pl-[8rem] sm:pl-[3rem]">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6  ">
         {visibleSlides.map((service, index) => (
           <div
             key={index}

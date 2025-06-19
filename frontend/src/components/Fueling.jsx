@@ -1,5 +1,6 @@
 import React from "react";
 import Reactnativeimage from "../assets/fueling.svg";
+  import '../styles/components/ArtificialIntelligence.css'
 
 const categories = [
   {
@@ -36,7 +37,7 @@ const categories = [
 
 const Fueling = () => {
   return (
-    <div className="w-full max-w-[1678px] px-4 py-8 mx-auto mr-[160px] ">
+    <div className="w-full max-w-[1678px] px-4 py-8 mx-auto  md:ml-[4.5rem]  ">
       {/* Header Section */}
    
 
@@ -51,7 +52,7 @@ const Fueling = () => {
         </div>
 
         {/* Right Cards Grid */}
-        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6 mr-[-40px]">
+        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6 mr-[2px] md:mr-[-40px]">
           {categories.slice(0, 6).map((item, index) => (
             <div
               key={index}

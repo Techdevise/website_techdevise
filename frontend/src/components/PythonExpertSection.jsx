@@ -63,7 +63,7 @@ const PythonExpertSection = () => {
   };
 
   return (
-    <div className="w-full mx-auto h-[700px] bg-[#EEFCFE] opacity-100 rounded-none flex flex-col lg:flex-row mt-5 sm:mt-8 lg:mt-10">
+    <div className="w-full mx-auto h-[900px] bg-[#EEFCFE] opacity-100 rounded-none flex flex-col lg:flex-row mt-5 sm:mt-8 lg:mt-10">
     <div className="w-full lg:max-w-[45%] relative h-[400px] sm:h-auto">
   <img
     src={codeimage || "/placeholder.svg"}
