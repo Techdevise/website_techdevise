@@ -188,9 +188,9 @@ hr.solid {
 }
 
 
-@media (max-width: 768px) {}
+/* @media (max-width: 768px) {}
 
-@media (min-width: 769px) and (max-width: 1024px) {}
+@media (min-width: 769px) and (max-width: 1024px) {} */
 
 @media only screen and (max-width:767px) and (min-width:0px) {
   .digi_tal h2 {
@@ -269,7 +269,7 @@ hr.solid {
 
   .consultants_btn {
     position: relative;
-    top: -185px !important;
+    top: 55px !important;
     margin: 0 auto !important;
   }
 

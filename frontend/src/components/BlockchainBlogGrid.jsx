@@ -70,7 +70,7 @@ const BlogCard = ({ post, large }) => {
               {post.title}
             </h3>
             <p className="text-gray-500 text-sm mb-4">{post.date}</p>
-            <button className="flex items-center w-[189px] h-[56px] gap-2 w-fit px-5 py-2 font-Montserrat fobnt-medium text-[16px] bg-[#157B6C] text-white rounded-full shadow hover:bg-green-700 transition">
+            <button className="flex items-center w-auto h-auto pt-[8px] pr-[10px] pb-[8px] pl-[20px] gap-2 w-fit px-8 py-3 font-Montserrat fobnt-medium text-[14px] md:text-[16px] bg-[#157B6C] text-white rounded-full shadow hover:bg-green-700 transition">
             Read More
                <div className="bg-white rounded-full w-[38px] h-[38px] flex items-center justify-center ml-6">
                                <img src={Blockchainrrowblack} alt="blockchainarrow" className='w-4 h-4 text-black' />
@@ -96,9 +96,9 @@ const BlogCard = ({ post, large }) => {
         </h3>
         <p className="text-gray-500 text-sm mb-4">{post.date}</p>
       </div>
-      <button className="flex items-center gap-2 px-5 py-2 font-medium text-[16px] bg-[#157B6C] text-white rounded-full shadow hover:bg-green-700 transition w-fit">
+      <button className="flex items-center w-auto h-auto pt-[8px] pr-[10px] pb-[8px] pl-[20px] gap-2 px-8 py-3 font-medium text-[14px] md:text-[16px] bg-[#157B6C] text-white rounded-full shadow hover:bg-green-700 transition w-fit">
         Read More
-        <div className="bg-white rounded-full w-[38px] h-[38px] flex items-center justify-center ml-6">
+        <div className="bg-white rounded-full w-[38px] h-[38px] flex items-center justify-center ml-2">
           <img src={Blockchainrrowblack} alt="blockchainarrow" className="w-4 h-4" />
         </div>
       </button>

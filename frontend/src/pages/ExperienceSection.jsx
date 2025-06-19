@@ -87,7 +87,7 @@ const ExperienceSection = () => {
           </div>
         </div>
         {/* Right Column - Secondary Cards Grid */}
-        <div className="custom-cards grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+        <div className="custom-cards">
           <ExperienceCard targetValue={10} label="Years of Experience" bgColor="bg-[#67C792]" highlightColor="bg-[#FFFFFF94]" />
               <ExperienceCard targetValue={500} label="Clients" bgColor="bg-[#E8F3BA]" highlightColor="bg-[#FFFFFF94]" />
           <ExperienceCard targetValue={500} label="Clients" bgColor="bg-[#EA99B9]" highlightColor="bg-[#FFFFFF94]" />

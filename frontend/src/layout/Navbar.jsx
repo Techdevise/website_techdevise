@@ -289,6 +289,13 @@ const Navbar = () => {
                     >
                       AI Development
                     </Link>
+                    <Link
+                      to="/services/it_staff"
+                      className="block py-1 text-gray-300 hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      ITStaff
+                    </Link>
                   </div>
                 )}
               </div>

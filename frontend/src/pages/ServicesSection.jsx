@@ -46,7 +46,7 @@ export default function ServicesSection() {
         <div className=" develop w-full md:w-[810px] h-auto md:h-[229px] bg-[#99EAE0] text-black rounded-3xl md:rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-lg md:mt-[250px]">
           {/* Text Content */}
           <div className="new_seec_serv w-full md:w-1/2 p-4 md:p-8">
-            <h3 className="text-xl md:text-2xl font-bold">E-commerce Website</h3>
+            <h3 className="text-xl md:text-xl font-bold">E-commerce Website</h3>
             <p className="mt-2 text-gray-800 text-sm md:text-base">
               Enhance your brand's presence with our creative digital marketing tools! Engage your audience and see your business grow.
             </p>
@@ -57,7 +57,7 @@ export default function ServicesSection() {
               </span>
             </button>
           </div>
-          <div className="new_seec_serv w-full md:w-1/2 flex items-center justify-center bg-[#5DC6B9] p-4" style={{
+          <div className="new_seec_serv w-full md:w-1/2 flex items-center justify-center bg-[#5DC6B9] p-4 mobile-gradient-bg" style={{
             background: 'linear-gradient(to left, #5DC6B9 0%, #5DC6B9 40%, #99EAE0 40%, #99EAE0 100%)',
           }}>
             <img

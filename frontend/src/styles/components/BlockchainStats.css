@@ -81,7 +81,7 @@
     .stats_block {
         width: 90%;
         height: auto;
-        padding: 50px 0 0 0 !important;
+        padding: 50px 0 25px 0 !important;
         margin-bottom: 100px;
     }
     .stats_block1 {

@@ -3,4 +3,21 @@
         width: 90% !important;
     }
   }
+
+  @media screen and (min-width: 1280px) and (max-width: 1600px) {
+  .custom-card-size {
+    width: 400px !important;
+    height: 350px !important;
+    padding-left: 10px;
+  }
+
+  .custom-card-size.middle {
+    height: 400px !important;
+  }
+
+  .custom-carousel-width {
+    max-width: 1220px !important;
+  }
+}
+
   

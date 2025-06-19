@@ -138,7 +138,7 @@ const TechSolutions = () => {
 
         
         <div className="tech_solution w-full md:mt-0 h-full overflow-auto no-scrollbar">
-          <p className="paragraph w-full text-[16px] mb-6 w-[656px] opacity-100 font-montserrat font-medium text-[#FFFFFF] mt-[50px] text-left md:text-right">
+          <p className="paragraph w-full text-[14px] md:text-[16px] mb-6 w-[656px] opacity-100 font-montserrat font-medium text-[#FFFFFF] mt-[20px] md:mt-[50px] text-left md:text-right">
             Empowering businesses with cutting-edge IT solutions, including
             cloud <br /> computing, cybersecurity, AI, automation, and software
             development <br /> to drive efficiency, security, and growth cybersecurity, AI, automation.<br />

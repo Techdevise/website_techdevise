@@ -4,7 +4,7 @@
 }
 .custom-cards{
     width: 42% !important;
-    margin-top: -5px;
+    margin-top: 20px;
 }
 .new_post {
     rotate: 90deg;
@@ -25,7 +25,13 @@
         line-height: 28px;
         margin: 15px 0 0 0 !important;
     }
+    .new_continer .new_col_mn {
+    width: 100% !important;
+    }
+    .new_continer .custom-cards {
+        row-gap: 20px !important;
 
+    }
    
     .custom-cards {
     width: 100%!important;
@@ -34,6 +40,7 @@
     display: grid!important;
     grid-template-columns: repeat(2,1fr) !important;
     gap: 16px !important;
+    
 }
 
    
@@ -57,7 +64,7 @@
     }
 
     .new_col_mn div span {
-        font-size: 16px !important;
+        font-size: 14px !important;
     }
 
     .crds_pla {
@@ -132,9 +139,9 @@
     .main_head_ing {
         margin-bottom: 78px !important;
     }
-    .custom-cards {
-        margin-top: 42px !important;
-    }
+    .new_continer .custom-cards {
+    margin-top: 4px !important;
+}
     .new_col_mn span:nth-child(2) {
         font-size: 19px !important;
     }
@@ -153,3 +160,20 @@
         width: 90% !important;
     }
 }
+
+.custom-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 44px !important;
+    margin-top: -15px !important;
+}
+.new_col_mn {
+    width: 46% !important;
+}
+@media only screen and (max-width:1600px) and (min-width:1440px){
+ .new_continer .custom-cards {
+    margin-top: 29px !important;
+}
+}
+

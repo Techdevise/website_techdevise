@@ -152,7 +152,7 @@ const BlockchainFeatures = () => {
                 key={index}
                 className={`bg-white rounded-[20px] 
     p-4 xs:p-4 sm:p-6 shadow-md relative flex-shrink-0 flex flex-col 
-    ${isMiddleCard(index) ? "border-2 border-[#44ACAB]" : ""}`}
+    ${isMiddleCard(index) ? "border-2 border-[#44ACAB] custom-card-size middle" : "custom-card-size"}`}
                 style={{
                   width: `${cardWidth}px`,
                   height: isMiddleCard(index)

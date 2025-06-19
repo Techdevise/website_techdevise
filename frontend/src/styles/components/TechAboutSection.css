@@ -29,7 +29,7 @@
     }
     
     .innovate_sol h1 {
-        font-size: 25px;
+        font-size: 24px;
         width: 100%;
     }
     .innovate {
@@ -100,6 +100,12 @@
       width: 90%; 
     }
     
+  }
+  @media screen and (min-width: 1280px) and (max-width: 1440px) {
+    .main_first .tech_dessc {
+     font-size: 14px !important;
+     
+    }
   }
 
 @media screen and (min-width: 1280px) and (max-width: 1600px) {

@@ -13,6 +13,9 @@ import Crypto from "../assets/Crypto.svg"
 import Decentralized from "../assets/Decentralized.svg"
 import Metaverse from "../assets/Metaverse.svg"
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+
 
 const BlockchainServices = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -80,27 +83,52 @@ const BlockchainServices = () => {
   // const middleIndex = Math.floor(cards.length / 2)
 
   // Handle next and previous navigation
-  const goNext = () => {
-    setCurrentIndex(prev => {
-      const newIndex = prev + 1
-      return newIndex >= originalCards.length ? 0 : newIndex
-    })
-  }
+  // const goNext = () => {
+  //   setCurrentIndex(prev => {
+  //     const newIndex = prev + 1
+  //     return newIndex >= originalCards.length ? 0 : newIndex
+  //   })
+  // }
 
-  const goPrev = () => {
-    setCurrentIndex(prev => {
-      const newIndex = prev - 1
-      return newIndex < 0 ? originalCards.length - 1 : newIndex
-    })
-  }
+  // const goPrev = () => {
+  //   setCurrentIndex(prev => {
+  //     const newIndex = prev - 1
+  //     return newIndex < 0 ? originalCards.length - 1 : newIndex
+  //   })
+  // }
 
   // Auto-rotate cards
-  useEffect(() => {
-    const interval = setInterval(() => {
-      goNext()
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [])
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     goNext()
+  //   }, 5000)
+  //   return () => clearInterval(interval)
+  // }, [])
+
+const scrollToCard = (index) => {
+  const container = containerRef.current;
+  const cards = cardsRef.current?.children;
+  if (!container || !cards || !cards.length) return;
+
+  // We have tripled cards, so calculate correct target index
+  const middleSetStartIndex = originalCards.length;
+  const targetCard = cards[middleSetStartIndex + index];
+
+  if (!targetCard) return;
+
+  const containerCenter = container.offsetWidth / 2;
+  const cardCenter = targetCard.offsetLeft + targetCard.offsetWidth / 2;
+  const scrollTo = cardCenter - containerCenter;
+
+  gsap.to(container, {
+    scrollTo: { x: scrollTo, autoKill: false },
+    duration: 0.6,
+    ease: "power3.out",
+  });
+
+  setCurrentIndex(index);
+};
+
 
   // Handle mouse down for dragging
   const handleMouseDown = (e) => {
@@ -338,14 +366,14 @@ const BlockchainServices = () => {
         {/* Slide indicators */}
         <div className="flex justify-center gap-3">
           {originalCards.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-[6px] rounded-full transition-all duration-300 ${currentIndex === index
-                ? "bg-white w-8"
-                : "bg-white/30 w-6 hover:bg-white/50"
-                }`}
-            />
+           <button
+  key={index}
+  onClick={() => scrollToCard(index)}
+  className={`h-[6px] rounded-full transition-all duration-300 ${
+    currentIndex === index ? "bg-white w-8" : "bg-white/30 w-6 hover:bg-white/50"
+  }`}
+/>
+
           ))}
         </div>
 

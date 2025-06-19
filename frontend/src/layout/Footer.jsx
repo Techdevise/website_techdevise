@@ -16,7 +16,7 @@
   import Phonelogo from "../assets/Phonelogo.png"
   const Footer = ({onContactClick }) => {
     return (
-      <footer className="footer-bg relative text-white py-12 px-6 fotter_padding">
+      <footer className="footer-bg relative text-white pt-12 pb-6 px-6 fotter_padding">
         <div className="px-6 mx-auto">
           {/* Background Image */}
           <div

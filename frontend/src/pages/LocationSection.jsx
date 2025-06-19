@@ -39,7 +39,7 @@ const LocationSection = () => {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div className={`relative w-full pt-20 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-white" : "bg-black text-white"}`}>
+    <div className={`relative w-full pt-20 pb-10 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-white" : "bg-black text-white"}`}>
       {/* Header */}
       <div className="relative z-10 text-center mb-20">
         <h3 className="text-[#157B6C] text-[32px] font-Montserrat font-bold mb-3">Location</h3>
