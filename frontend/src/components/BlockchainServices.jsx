@@ -77,7 +77,7 @@ const BlockchainServices = () => {
   const cards = [...originalCards, ...originalCards, ...originalCards]
 
   // Calculate the middle index
-  const middleIndex = Math.floor(cards.length / 2)
+  // const middleIndex = Math.floor(cards.length / 2)
 
   // Handle next and previous navigation
   const goNext = () => {

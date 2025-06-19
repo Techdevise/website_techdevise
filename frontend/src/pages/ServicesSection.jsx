@@ -32,7 +32,7 @@ export default function ServicesSection() {
 
         </p>
       </div>
-      <div className="new_main_flx">
+      <div className="new_main_flx flex px-2">
         {/* Website Development */}
         <div className="develop">
           <ServiceCard
@@ -90,7 +90,7 @@ export default function ServicesSection() {
         {/* Mobile Application development */}
         <div className="develop">
           <ServiceCard
-            title="Mobile Application development"
+            title="Mobile Application Development"
             description="Enhance your brand's presence with our creative digital marketing tools! Engage your audience and see your business grow."
             topColor="#EA99B9"
             bottomColor="#DD7AA2"

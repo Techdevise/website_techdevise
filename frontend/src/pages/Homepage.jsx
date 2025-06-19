@@ -98,7 +98,7 @@ function Homepage({ setIsModalOpen }) {
             <div className="new_hild flex gap-4 p-4 ml-[-10px]">
               <div className="google_new rounded-xl shadow-md p-5 flex items-center gap-2 w-[229px] h-[56px] rounded-[15px] border border-[#fffff] p-2">
                 <img src={Google} alt="Google Partner" className="w-6 h-6" />
-                <span className="new_tag text-[20px] font-semibold">
+                <span className="new_tag text-[20px] font-semibold whitespace-nowrap">
                   <span className="text-white">Google</span>{" "}
                   <span className="text-white">Partner</span>
                 </span>

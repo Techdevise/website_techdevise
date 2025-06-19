@@ -74,7 +74,7 @@ const ExperienceSection = () => {
               textFillColor: "transparent",
               color: "#157B6C",
             }} className="text-[56px] font-black text-[#A3E4C5] leading-none">Experience</h1>
-            <p className="mt-8 text-[20px] font-Montserrat text-white leading-relaxed max-w-[550px]">
+            <p className="mt-8 text-[18px] font-Montserrat text-white leading-relaxed max-w-[640px]">
               With years of experience in the IT industry, we have successfully delivered cutting-edge software solutions,
               web and mobile applications, and enterprise-grade systems. Our expertise spans various technologies, ensuring
               innovative, scalable, and secure digital solutions tailored to your business needs.
