@@ -52,7 +52,7 @@ const Fueling = () => {
         </div>
 
         {/* Right Cards Grid */}
-        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6 mr-[2px] md:mr-[-40px]">
+        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6 mr-[2px] md:mr-[-40px] fueling">
           {categories.slice(0, 6).map((item, index) => (
             <div
               key={index}

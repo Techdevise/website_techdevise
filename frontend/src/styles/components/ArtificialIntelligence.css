@@ -22,6 +22,22 @@
     max-width: 280px !important;
     min-width: 280px !important;
 }
+.h3tag{
+  font-size: 21px  !important;
+  
+}
+.pteg{
+  font-size: 13px !important;
+}
+.spanTag{
+  font-size: 15px !important;
+  margin-left: 40px  !important;
+}
+.fueling{
+  width: 800px !important;
+  height: auto !important;
+  font-size: 14px !important;
+}
   }
   .new_slid{
     width: 100% !important;

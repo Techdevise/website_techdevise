@@ -1,5 +1,6 @@
 import Ai from "../assets/Group.svg";
 import Man_wearing from "../assets/man-wearing-1.svg";
+  import '../styles/components/ArtificialIntelligence.css'
 
 const AIPillars = () => {
   return (
@@ -32,12 +33,12 @@ const AIPillars = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {/* Title card */}
             <div className="text-white p-4 md:p-5 rounded-lg flex flex-col h-auto sm:h-[304px]">
-              <h3 className="text-2xl sm:text-3xl md:text-[31px] font-bold mb-3 md:mb-4">
+              <h3 className="text-2xl sm:text-3xl md:text-[31px] font-bold mb-3 md:mb-4 h3tag">
                 5 Pillars of Our<br />
                 AI Development<br />
                 Services
               </h3>
-              <p className="text-[13px] md:text-[16px]">
+              <p className="text-[13px] md:text-[16px] pteg">
                 As a leading Blockchain development company, TechDevise only hires blockchain developers with a proven
                 track record. That's why we can handle any task or project, even the most complicated ones.
               </p>
@@ -45,8 +46,8 @@ const AIPillars = () => {
 
             {/* Data Quality */}
             <div className="bg-[#e6f7ff] text-[#001028] p-4 md:p-5 rounded-lg flex flex-col h-auto sm:h-[304px]">
-              <h3 className="text-[20] sm:text-[28px] font-bold mb-2">Data Quality</h3>
-              <p className="text-[13px] md:text-[16px]">
+              <h3 className="text-[20] sm:text-[28px] font-bold mb-2 h3tag">Data Quality</h3>
+              <p className="text-[13px] md:text-[16px] pteg">
                 Our AI ML development services built the foundation for clean, structured, and reliable data solutions.
                 By leveraging AI development frameworks, we ensure the best possible datasets power your AI models.
               </p>
@@ -54,8 +55,8 @@ const AIPillars = () => {
 
             {/* Explainability */}
             <div className="bg-[#e6f7ff] text-[#001028] p-4 md:p-5 rounded-lg flex flex-col h-auto sm:h-[304px]">
-              <h3 className="text-[20] sm:text-[28px] font-bold mb-2">Explainability</h3>
-              <p className="text-[13px] md:text-[16px]">
+              <h3 className="text-[20] sm:text-[28px] font-bold  h3tag mb-2">Explainability</h3>
+              <p className="text-[13px] md:text-[16px] pteg">
                 We prioritize transparency by making AI solutions easily interpretable for businesses and end-user
                 alike. With our top-class AI development services, your enterprise gains clear and actionable insights
                 from AI-driven analytics.
@@ -64,8 +65,8 @@ const AIPillars = () => {
 
             {/* Scalability */}
             <div className="bg-[#e6f7ff] text-[#001028] p-4 md:p-5 rounded-lg flex flex-col h-auto sm:h-[304px]">
-              <h3 className="text-[20] sm:text-[28px] font-bold mb-2">Scalability</h3>
-              <p className="text-[13px] md:text-[16px]">
+              <h3 className="text-[20] sm:text-[28px] font-bold mb-2 h3tag">Scalability</h3>
+              <p className="text-[13px] md:text-[16px] pteg">
                 Our AI systems are built to grow with your business. From initial deployment to future expansions, we
                 offer scalable solutions that adapt to your evolving needs, providing long-term value and flexibility.
               </p>
@@ -73,8 +74,8 @@ const AIPillars = () => {
 
             {/* Predictable ROI */}
             <div className="bg-[#e6f7ff] text-[#001028] p-4 md:p-5 rounded-lg flex flex-col h-auto sm:h-[304px]">
-              <h3 className="text-[20] sm:text-[28px] font-bold mb-2">Predictable ROI</h3>
-              <p className="text-[13px] md:text-[16px]">
+              <h3 className="text-[20] sm:text-[28px] font-bold mb-2 h3tag">Predictable ROI</h3>
+              <p className="text-[13px] md:text-[16px] pteg">
                 We guarantee a predictable return on investment by aligning AI strategies with business goals. Our AI
                 development platforms streamline operations and optimize decision-making for better profitability.
               </p>
@@ -82,8 +83,8 @@ const AIPillars = () => {
 
             {/* Security */}
             <div className="bg-[#e6f7ff] text-[#001028] p-4 md:p-5 rounded-lg flex flex-col h-auto sm:h-[304px] sm:col-span-2 lg:col-span-1">
-              <h3 className="text-[20] sm:text-[28px] font-bold mb-2">Security</h3>
-              <p className="text-[13px] md:text-[16px]">
+              <h3 className="text-[20] sm:text-[28px] font-bold mb-2 h3tag">Security</h3>
+              <p className="text-[13px] md:text-[16px] pteg">
                 We implement robust security measures during the AI software development process to ensure compliance
                 and data integrity. As the best AI development company, we offer scalable AI systems tailored to meet
                 your needs.

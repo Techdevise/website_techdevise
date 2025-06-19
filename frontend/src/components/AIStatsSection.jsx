@@ -2,6 +2,7 @@ import React from "react";
 import Aiservicesimg3 from "../assets/Aiservicesimg3.svg";
 import AIlog0 from "../assets/Group 457.svg";
 import { ArrowUpRight } from "lucide-react";
+  import '../styles/components/ArtificialIntelligence.css'
 
 const AIStatsSection = () => {
   return (
@@ -29,7 +30,7 @@ const AIStatsSection = () => {
           {/* Card 1 */}
           <div className="bg-[#FFF2CD] text-black rounded-lg flex items-center px-4 py-6 h-[120px]">
             <span className="text-[32px] md:text-[40px] font-bold w-[30%] text-left">20%</span>
-            <span className="text-[18px] md:text-[20px] text-left w-[70%]">
+            <span className="text-[18px] md:text-[20px] text-left w-[70%] spanTag">
               Reduction in <br />
               Manual Work
             </span>
@@ -38,7 +39,7 @@ const AIStatsSection = () => {
           {/* Card 2 */}
           <div className="bg-white text-black rounded-lg flex items-center px-4 py-6 h-[120px]">
             <span className="text-[32px] md:text-[40px] font-bold w-[30%] text-left">30%</span>
-            <span className="text-[18px] md:text-[20px] text-left w-[70%]">
+            <span className="text-[18px] md:text-[20px] text-left w-[70%] spanTag">
               Lower Operational <br />
               Costs
             </span>
@@ -47,7 +48,7 @@ const AIStatsSection = () => {
           {/* Card 3 */}
           <div className="bg-[#CFF1DD] text-black rounded-lg flex items-center px-4 py-6 h-[120px]">
             <span className="text-[32px] md:text-[40px] font-bold w-[30%] text-left">40%</span>
-            <span className="text-[18px] md:text-[20px] text-left w-[70%]">
+            <span className="text-[18px] md:text-[20px] text-left w-[70%] spanTag">
               Faster Data <br />
               Reporting
             </span>
@@ -56,7 +57,7 @@ const AIStatsSection = () => {
           {/* Card 4 */}
           <div className="bg-[#FFE5E5] text-black rounded-lg flex items-center px-4 py-6 h-[120px]">
             <span className="text-[32px] md:text-[40px] font-bold w-[30%] text-left">30%</span>
-            <span className="text-[18px] md:text-[20px] text-left w-[70%]">
+            <span className="text-[18px] md:text-[20px] text-left w-[70%] spanTag">
               Increased <br />
               Productivity
             </span>
