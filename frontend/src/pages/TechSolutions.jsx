@@ -12,7 +12,7 @@ import Meteor from "../assets/Meteor.svg";
 import Java from "../assets/Java.svg";
 import Nodejs from "../assets/nodejs.svg";
 import Php from "../assets/Php.svg";
-import Python from "../assets/Python.svg";
+import Python from "../assets/python.svg";
 import Go from "../assets/Go.svg";
 import Dotnet from "../assets/Dotnet.svg";
 import Maskgroup from "../assets/Maskgroup.png";
