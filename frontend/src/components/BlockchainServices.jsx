@@ -325,7 +325,7 @@ const scrollToCard = (index) => {
             return (
               <div
                 key={index}
-                className="card flex flex-col sm:flex-row w-[300px] md:w-[680px] bg-[#0B3327] rounded-[20px] p-4 sm:p-6 border border-transparent bg-gradient-to-r from-[#157B6C] to-[#ffffff] p-[2px] h-auto mb-auto flex-shrink-0 shadow-lg shadow-[#157B6C]/20 transition-all duration-300"
+                className="features_card card flex flex-col sm:flex-row w-[300px] md:w-[680px] bg-[#0B3327] rounded-[20px] p-4 sm:p-6 border border-transparent bg-gradient-to-r from-[#157B6C] to-[#ffffff] p-[2px] h-auto mb-auto flex-shrink-0 shadow-lg shadow-[#157B6C]/20 transition-all duration-300"
                 style={{
                   zIndex: zIndex,
                   scrollSnapAlign: "center"
@@ -338,7 +338,7 @@ const scrollToCard = (index) => {
 
                 {/* Right: Text */}
                 <div className="w-full sm:w-[60%] sm:pl-6 flex flex-col justify-center items-center text-center sm:items-start sm:text-left min-h-[280px] sm:min-h-[320px] py-4">
-                  <h3 className="text-[20px] sm:text-[28px] font-Montserrat font-bold text-white mb-3 leading-snug">
+                  <h3 className="text-[20px] sm:text-[28px] font-Montserrat font-bold text-white mb-3 leading-snug custom-heading-size">
                     {card.title.split("\n").map((line, i) => (
                       <React.Fragment key={i}>
                         {line}
@@ -346,7 +346,7 @@ const scrollToCard = (index) => {
                       </React.Fragment>
                     ))}
                   </h3>
-                  <p className="text-[14px] sm:text-[16px] font-Montserrat text-white leading-relaxed">{card.description}</p>
+                  <p className="text-[12px] sm:text-[16px] font-Montserrat text-white leading-relaxed custom-description-size">{card.description}</p>
                 </div>
               </div>
             )

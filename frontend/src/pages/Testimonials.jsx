@@ -169,7 +169,7 @@ const Testimonials = () => {
               <img
                     src={er}
                     alt="Play"
-                    className="w-25 h-25 ml-[11.5rem] md:ml-[18.5rem]"
+                    className="w-25 h-25 ml-[11.5rem] md:ml-[18.5rem] aarow_playimg"
                   />
             </div>
           </div>
