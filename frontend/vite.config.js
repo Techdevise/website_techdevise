@@ -10,10 +10,10 @@ export default defineConfig({
     },
   },
   server: {
-    host: true,
-    port: 3000,
-    strictPort: true,
-  },
+  host: '0.0.0.0',
+  port: 3000,
+  strictPort: true,
+},
   build: {
     outDir: 'build', // <--- Ye line add karo
   },
