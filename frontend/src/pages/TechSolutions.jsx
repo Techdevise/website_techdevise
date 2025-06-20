@@ -22,7 +22,7 @@ import Flutter from "../assets/flutter.svg";
 import Cordova from "../assets/Cordova.svg";
 import Xamarin from "../assets/xamarin.svg";
 import Pwa from "../assets/Pwa.svg";
-import Ionic from "../assets/Ionic.svg";
+import Ionic from "../assets/ionic.svg";
 import Reactnative from "../assets/Reactnative.svg";
 import Figma from "../assets/Figma.svg";
 import Adobe from "../assets/Adobe.svg";
