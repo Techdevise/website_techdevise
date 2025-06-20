@@ -8,11 +8,11 @@ const IOSAppSection = () => {
   const [slides, setSlides] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isFading, setIsFading] = useState(false);
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     const fetchSlides = async () => {
       try {
-        const response = await axios.get("http://localhost:9090/api/react_native");
+        const response = await axios.get(`${API_BASE_URL}/api/react_native`);
         if (response.data.success) {
           setSlides(response.data.data);
         }
@@ -50,7 +50,7 @@ const IOSAppSection = () => {
       {/* Image */}
       <div className="w-full md:w-1/2 lg:w-1/3 m-0 flex justify-center px-4">
         <img
-          src={`http://localhost:9090/images${slides[currentSlide].image}`}
+          src={`${API_BASE_URL}/images${slides[currentSlide].image}`}
           alt="Slide Visual"
           className={`new_imgg slide-image w-full max-w-[526px] h-auto rounded-lg shadow-md object-cover ${isFading ? "fade-out" : ""}`}
         />

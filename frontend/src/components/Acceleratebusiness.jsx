@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const AccelerateBusiness = () => {
   const [activeService, setActiveService] = useState('digitalAssurance');
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [services, setServices] = useState({
     digitalAssurance: {
       title: "Digital Assurance",
@@ -17,14 +18,14 @@ const AccelerateBusiness = () => {
     }
   });
 
-  const BASE_URL = "http://localhost:9090/images"; 
+  const BASE_URL = `${API_BASE_URL}/images`; 
 
   useEffect(() => {
     const fetchServices = async () => {
       try {
         const [assuranceRes, engineeringRes] = await Promise.all([
-          axios.get('http://localhost:9090/api/digital_As'),
-          axios.get('http://localhost:9090/api/digital_Eng')
+          axios.get(`${API_BASE_URL}/api/digital_As`),
+          axios.get(`${API_BASE_URL}/api/digital_Eng`)
         ]);
 
         if (assuranceRes.data.success && engineeringRes.data.success) {

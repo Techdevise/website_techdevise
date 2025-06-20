@@ -6,11 +6,11 @@ import "../styles/pages/IndustryVision.css";
 
 const DesktopIndustryVision = () => {
   const [industries, setIndustries] = useState([]);
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     const fetchIndustries = async () => {
       try {
-        const res = await axios.get("http://localhost:9090/api/seamless"); 
+        const res = await axios.get(`${API_BASE_URL}/api/seamless`); 
         if (res.data.success) {
           setIndustries(res.data.data);
         }

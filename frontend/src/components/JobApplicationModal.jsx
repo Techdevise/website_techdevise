@@ -18,6 +18,8 @@ const JobApplicationModal = ({ isOpen, onClose, jobId, jobTitle }) => {
   const [resume, setResume] = useState(null);
   const [countryCode, setCountryCode] = useState("+91");
   const [loading, setLoading] = useState(false);
+
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -44,7 +46,8 @@ const JobApplicationModal = ({ isOpen, onClose, jobId, jobTitle }) => {
     if (resume) form.append("pdf_file", resume);
     setLoading(true);
     try {
-      await axios.post(`http://localhost:9090/api/job_position`, form);
+
+      await axios.post(`${API_BASE_URL}/api/job_position`, form);
       toast.success("Application submitted successfully!");
       onClose();
     } catch (error) {

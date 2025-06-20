@@ -38,12 +38,12 @@ const LocationSection1 = () => {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div className={`relative w-full pt-20 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-black" : "bg-white text-black"}`}>
+    <div className={`relative w-full pt-20 md:mb-0 mb-8 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-black" : "bg-white text-black"}`}>
       {/* Header */}
       <div className="relative z-10 text-center mb-20">
         <h3 className="text-[#00C2A8] text-xl font-semibold mb-3">Location</h3>
        <h2
-          className={`text-4xl md:text-5xl font-extrabold font-Montserrat mb-4 ${isHomePage ? 'text-white' : 'text-gray-800'
+          className={`text-[25px] md:text-[48px] font-extrabold font-Montserrat mb-4 ${isHomePage ? 'text-white' : 'text-gray-800'
             }`}
         >
           We’d love to <span className="text-[#00C2A8]">hear</span> from you

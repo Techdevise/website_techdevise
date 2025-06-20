@@ -11,10 +11,11 @@ function OpenPositions() {
   const [selectedJobDetails, setSelectedJobDetails] = useState(null);
   const [isJobModalOpen, setIsJobModalOpen] = useState(false);
  const modalRef = useRef(null)
+ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await axios.get("http://localhost:9090/api/jobs");
+        const res = await axios.get(`${API_BASE_URL}/api/jobs`);
         if (res.data.success) {
           setFunctions(res.data.data);
         }
@@ -29,7 +30,7 @@ function OpenPositions() {
     const fetchSubJobs = async () => {
       if (!selectedFunction) return;
       try {
-        const res = await axios.get(`http://localhost:9090/api/sub_jobs/${selectedFunction.id}`);
+        const res = await axios.get(`${API_BASE_URL}/api/sub_jobs/${selectedFunction.id}`);
         if (res.data.success) {
           setSubJobs(res.data.data);
         }
@@ -42,7 +43,7 @@ function OpenPositions() {
 
   const openJobModal = async (jobId) => {
     try {
-      const res = await axios.get(`http://localhost:9090/api/jobs_Options/${jobId}`);
+      const res = await axios.get(`${API_BASE_URL}/api/jobs_Options/${jobId}`);
       if (res.data.success) {
          
       setSelectedJobDetails(res.data.data);
@@ -161,7 +162,7 @@ function OpenPositions() {
       <div className="border-t mt-6 md:mt-8 pt-4 md:pt-6 px-4 md:px-0">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
           <span className="text-base md:text-lg font-bold min-w-[100px]">Experience</span>
-          <div className="flex flex-wrap gap-2 md:gap-4">
+          <div className="flex flex-wrap gap-2 md:gap-4 md:w-auto w-[520px]">
             {["Fresher", "1 to 3 Years", "3 to 6 Years"].map((exp, index) => (
               <button
                 key={index}

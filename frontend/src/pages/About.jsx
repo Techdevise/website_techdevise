@@ -21,7 +21,7 @@ function About() {
 >
                 {/* Overlay Text and Content */}
               {/* Overlay Text Section */}
-<div className="absolute bottom-0  left-0 w-[1680px] bg-black/50 p-6 sm:p-10 h-[270px]">
+<div className="absolute bottom-0  left-0 w-[1680px] bg-black/50 p-6 sm:p-10 md:h-[270px] h-[165px]">
 
 <div className="pl-[200px] pt-[45px]"> {/* Adjust this value as needed */}
     <h2 className="text-2xl sm:text-3xl md:text-3xl text-white mb-2 sm:mb-4">
@@ -34,21 +34,21 @@ function About() {
 </div>
 
 {/* Stats Section */}
-<div className="absolute bottom-0 right-0 w-full sm:w-[550px] h-[270px] bg-[#157B6C] text-white p-6 sm:p-8 grid grid-cols-2 gap-4 text-center sm:text-left">
+<div className="absolute bottom-0 right-0 w-full sm:w-[550px]  md:h-[270px] h-[165px] bg-[#157B6C] text-white p-6 sm:p-8 grid grid-cols-2 gap-4 text-center sm:text-left">
   <div>
-    <h3 className="text-2xl sm:text-3xl font-bold">10</h3>
+    <h3 className="text-xl sm:text-3xl font-bold">10</h3>
     <p className="text-sm sm:text-base">Years of Experience</p>
   </div>
   <div>
-    <h3 className="text-2xl sm:text-3xl font-bold">20+</h3>
+    <h3 className="text-xl sm:text-3xl font-bold">20+</h3>
     <p className="text-sm sm:text-base">Countries Served</p>
   </div>
   <div>
-    <h3 className="text-2xl sm:text-3xl font-bold">20+</h3>
+    <h3 className="text-xl sm:text-3xl font-bold">20+</h3>
     <p className="text-sm sm:text-base">Tech Enthusiast</p>
   </div>
   <div>
-    <h3 className="text-2xl sm:text-3xl font-bold">20+</h3>
+    <h3 className="text-xl sm:text-3xl font-bold">20+</h3>
     <p className="text-sm sm:text-base">Product Delivered</p>
   </div>
 </div>

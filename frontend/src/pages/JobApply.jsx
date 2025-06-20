@@ -8,7 +8,7 @@ import { X } from "lucide-react";
 function JobApply() {
   const location = useLocation();
   const job = location.state?.job;
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -54,7 +54,7 @@ function JobApply() {
 
     setLoading(true);
     try {
-      await axios.post(`http://localhost:9090/api/job_position`, form);
+      await axios.post(`${API_BASE_URL}/api/job_position`, form);
       toast.success("Application submitted successfully!");
     } catch (error) {
       console.error("Error submitting form:", error);

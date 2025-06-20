@@ -50,7 +50,7 @@ const GoogleAdwordsLayout = () => {
   return (
     <div className="w-full bg-[#E3FFEB] flex flex-col items-center justify-center text-center -mb-12 px-2 md:px-0">
       <div className="google_layout w-full max-w-[1620px] mx-auto min-h-[550px] lg:h-[550px] bg-white rounded-[10px] p-6 sm:p-6 mb-16 flex flex-col md:flex-row items-center justify-between shadow-md">
-        <div className="w-full md:w-1/3 lg:w-[40%] xl:w-1/3 mb-8 md:mb-0 space-y-2 sm:space-y-4 ml-10 md:ml-[6.5rem]">
+        <div className="w-full md:w-1/3 lg:w-[40%] xl:w-1/3 mb-8 md:mb-0 space-y-2 sm:space-y-4 ml-[-10px] md:ml-[6.5rem]">
           {items.map((item, index) => {
             const isSelected = selectedIndex === index;
             return (

@@ -48,10 +48,10 @@ function ITExperts() {
             {/* Left Side Text */}
             <div className="w-full lg:w-1/2 lg:pr-12">
                 <div className="relative max-w-screen-xl mx-auto">
-                    <h2 className="text-center md:text-left text-4xl font-bold font-montserrat text-[#157B6C] mb-2">
+                    <h2 className="text-center md:text-left md:text-[48px] text-[25px] font-bold font-montserrat text-[#157B6C] mb-2">
                         Meet Our IT Experts
                     </h2>
-                    <h1 className="w-full font-montserrat font-bold text-2xl sm:text-3xl md:text-5xl text-black leading-snug text-center md:text-left">
+                    <h1 className="w-full font-montserrat font-bold text-xl sm:text-2xl md:text-4xl text-black leading-snug text-center md:text-left">
                         Driving Innovation Forward
                     </h1>
                     <p className='w-full max-w-2xl text-[14px] sm:text-[16px] md:text-[18px] font-montserrat text-black font-medium mt-4 text-center md:text-left mx-auto md:mx-0'>Get an inside look at our talented IT team, the minds behind our cutting-edge solutions. Their expertise, dedication, and innovation power our success, ensuring seamless technology solutions for business worldwide.</p>

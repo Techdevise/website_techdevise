@@ -34,7 +34,7 @@ function TeamSection() {
       className="w-full max-w-[1750px] h-auto mt-10 px-4 md:px-10 mx-auto bg-white"
       style={{ overflow: 'hidden' }}
     >
-      <h2 className="text-center text-4xl font-bold text-black">
+      <h2 className="text-center md:text-[48px] text-[25px] font-bold text-black">
         Meet The Visionaries Behind{' '} <br />
         <span className="text-[#157B6C]">TechDevise</span>
       </h2>

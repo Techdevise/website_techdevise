@@ -33,7 +33,7 @@ const Toast = ({ message, isVisible, onClose, type = "success" }) => {
     </div>
   )
 }
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const ContactForm = () => {
   const [budget, setBudget] = useState(20000)
 
@@ -60,7 +60,7 @@ const ContactForm = () => {
   useEffect(() => {
     const fetchExperts = async () => {
       try {
-        const response = await fetch("http://localhost:9090/api/experts")
+        const response = await fetch(`${API_BASE_URL}/api/experts`)
         if (response.ok) {
           const data = await response.json()
           setExperts(data)

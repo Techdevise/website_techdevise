@@ -8,14 +8,14 @@ const TeamShowcase = () => {
   const [teamImages, setTeamImages] = useState([]);
   const [teamWorkImages, setTeamWorkImages] = useState([]);
   const [officeActivityImages, setOfficeActivityImages] = useState([]);
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   // Fetch teamWork and officeActivity images
   useEffect(() => {
     const fetchImages = async () => {
       try {
         const [teamRes, officeRes] = await Promise.all([
-          axios.get('http://localhost:9090/api/teams'),
-          axios.get('http://localhost:9090/api/officeActivity'),
+          axios.get(`${API_BASE_URL}/api/teams`),
+          axios.get(`${API_BASE_URL}/api/officeActivity`),
         ]);
 
         if (teamRes.data.success) {
@@ -52,15 +52,15 @@ const TeamShowcase = () => {
     <div className="relative w-full max-w-[1680px] bg-white mx-auto px-4 md:px-8 lg:px-8">
       <div className="w-full max-w-[1680px] mx-auto">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 md:mb-8 gap-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#157B66]">
+          <h2 className="text-2xl md:text-4xl font-semibold text-[#157B66]">
             Life @ Techdevise
           </h2>
-          <div className="flex flex-nowrap overflow-x-auto gap-2 w-full sm:flex-wrap sm:justify-start">
+          <div className="flex flex-nowrap overflow-x-auto gap-2  md:w-full w-[375px] sm:flex-wrap sm:justify-start">
             {['all', 'teamWork', 'officeActivity'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-3 py-2 rounded-lg font-medium transition whitespace-nowrap ${
+                className={`md:px-3 py-2 px-2 py-1 rounded-lg md:font-medium font-[12px] transition whitespace-nowrap ${
                   activeTab === tab
                     ? 'bg-[#02574B] text-white'
                     : 'border border-[#02574B] text-[#02574B]'
@@ -91,7 +91,7 @@ const TeamShowcase = () => {
                   onClick={() => openImagePopup(image)}
                 >
                   <img
-                    src={`http://localhost:9090/images/${image.image || image.image}`} 
+                    src={`${API_BASE_URL}/images/${image.image || image.image}`} 
                     alt={image.alt || 'Team Image'}
                     className="w-full h-[250px] md:h-[300px] lg:h-[350px] object-cover"
                   />
@@ -116,7 +116,7 @@ const TeamShowcase = () => {
               ×
             </button>
             <img
-              src={`http://localhost:9090/images${selectedImage.image || selectedImage.image}`}
+              src={`${API_BASE_URL}/images${selectedImage.image || selectedImage.image}`}
               alt={selectedImage.alt || 'Selected Image'}
               className="w-full max-h-[80vh] object-contain"
             />

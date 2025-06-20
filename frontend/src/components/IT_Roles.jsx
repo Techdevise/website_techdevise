@@ -15,7 +15,7 @@ const IT_Roles = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userType, setUserType] = useState(null);
   const modalRef = useRef(null);
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -35,7 +35,7 @@ const IT_Roles = () => {
   useEffect(() => {
     const fetchRoles = async () => {
       try {
-        const res = await axios.get("http://localhost:9090/api/roles");
+        const res = await axios.get(`${API_BASE_URL}/api/roles`);
         if (res.data.success && res.data.data) {
           setRoles(res.data.data);
         }
@@ -75,7 +75,7 @@ const IT_Roles = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:9090/api/roles/create",
+        `${API_BASE_URL}/api/roles/create`,
         formData,
         {
           headers: {
