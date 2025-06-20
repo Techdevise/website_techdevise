@@ -10,7 +10,7 @@ import Next from "../assets/Next.svg";
 import elogo from "../assets/elogo.svg";
 import Meteor from "../assets/Meteor.svg";
 import Java from "../assets/Java.svg";
-import Nodejs from "../assets/Nodejs.svg";
+import Nodejs from "../assets/nodejs.svg";
 import Php from "../assets/Php.svg";
 import Python from "../assets/Python.svg";
 import Go from "../assets/Go.svg";
