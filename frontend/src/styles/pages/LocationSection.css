@@ -131,7 +131,29 @@
 } */
 @media screen and (min-width: 1280px) and (max-width: 1600px) {
   .location{
-    width: 375px !important;
+    width: 325px !important;
+    padding: 0;
+  }
+  .locImage{
+    width: 123px !important;
+    height: 125px !important;
+  }
+  .locCountry{
+    /* width: 38px !important; */
+    font-size:16px !important ;
+      /* height: 25px !important; */
+  }
+  .Paddress{
+    font-size: 14px !important;
+  }
+  .arrologo{
+    left: 71% !important;
+  }
+  
+}
+@media screen and (min-width: 1600px) and (max-width: 1900px) {
+  .location{
+    width: 390px !important;
   }
   .locImage{
     width: 123px !important;

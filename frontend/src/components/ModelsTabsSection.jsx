@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Aicomputervision from "../assets/Aicomputervision.svg";
+  import '../styles/components/AnalystRecognition.css'
 
 const tabsData = [
   {
@@ -65,7 +66,7 @@ const ModelsTabsSection = () => {
   const { heading, description, image } = tabsData[activeTab].content;
 
   return (
-    <div className="w-full max-w-[1620px] bg-white rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.1)] px-4 sm:px-6 md:px-8 lg:px-10 py-8 md:py-12 mx-auto">
+    <div className="w-full max-w-[1620px] bg-white rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.1)] px-4 sm:px-6 md:px-8 lg:px-10 py-8 md:py-12 mx-auto aiTech">
       {/* Tabs */}
       <div className="overflow-x-auto pb-2 mb-6 md:mb-10">
         <ul className="flex w-full space-x-8 md:space-x-10 lg:space-x-14 min-w-max px-8">

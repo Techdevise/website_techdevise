@@ -1,6 +1,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+  import '../styles/components/AnalystRecognition.css'
+
 import Aiservicesimg4 from "../assets/Aiservicesimg4.svg"
 import Csharp from "../assets/programming languages/cPlus.svg";
 import javascripttlogo from "../assets/programming languages/javascript-1 1.svg";
@@ -172,7 +174,7 @@ const AiTechStack = () => {
     </p>
   </div>
 
-  <div className="rounded-lg shadow-lg w-full max-w-[1629px] h-auto mx-auto relative mt-4 text-center justify-center bg-dark"
+  <div className="rounded-lg shadow-lg w-full max-w-[1629px] h-auto mx-auto relative mt-4 text-center justify-center bg-dark aiTech"
     style={{
       backgroundImage: `linear-gradient(to right, rgba(136, 139, 155, 0.26), rgb(29, 29, 65)), url(${Aiservicesimg4})`,
       backgroundSize: "cover",
