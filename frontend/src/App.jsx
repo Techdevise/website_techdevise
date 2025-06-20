@@ -25,7 +25,7 @@ import SEODevelopment from './components/SEODevelopment';
 import Careers1 from './pages/Careers1';
 import JobApply from './pages/JobApply';
 import QualityAnalysis from './pages/QualityAnalysis';
-import ITStaff from './pages/ItStaff';
+import Iistaff from './pages/ItTeam';
 
 
 
@@ -69,7 +69,7 @@ function App() {
           <Route path="/services/website-development" element={<WebsiteDevelopment />} />
           <Route path="/services/blockchain-development" element={<BlockchainDevelopment />} />
           <Route path="/services/ai-development" element={<AiDevelopment />} />
-          <Route path="/services/it_staff" element={<ITStaff />} />
+          <Route path="/services/it_staff" element={<Iistaff />} />
         </Routes>
       </main>
       
