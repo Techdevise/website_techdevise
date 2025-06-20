@@ -162,7 +162,7 @@ const TechStack = () => {
     <div className="tech_sttack px-4 sm:px-6 lg:px-8 xl:px-10">
       
       
-      <div className="rounded-lg shadow-lg  w-full max-w-[1629px] h-auto lg:h-[350px] relative mx-auto">
+      <div className="rounded-lg shadow-lg  w-full max-w-[1629px] h-auto lg:h-[350px] relative mx-auto techStack">
             <h1 className="tech_title w-full max-w-[488px] text-3xl sm:text-4xl lg:text-[48px] font-Montserrat font-extrabold mb-6 ml-0 lg:ml-[8px] mx-auto">
         Tech Stack We Use
       </h1>

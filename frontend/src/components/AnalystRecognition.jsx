@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
-
+import "../styles/components/AnalystRecognition.css";
 import Image2 from "../assets/Group 600.svg";
 import Image3 from "../assets/Group 599.svg";
 import Image4 from "../assets/Group 598.svg";
@@ -46,19 +46,19 @@ const AnalystRecognition = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const nextSlide = () => {
-    setActiveIndex((prevIndex) => 
+    setActiveIndex((prevIndex) =>
       prevIndex === categories.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
-    setActiveIndex((prevIndex) => 
+    setActiveIndex((prevIndex) =>
       prevIndex === 0 ? categories.length - 1 : prevIndex - 1
     );
   };
@@ -88,11 +88,11 @@ const AnalystRecognition = () => {
     >
       <div className="w-full max-w-[1680px] mx-auto px-4 py-16 flex flex-col lg:flex-row gap-12">
         {/* Left: Text Section */}
-        <div className="lg:w-[435px] ">
-          <h1 className="text-white text-[25px] md:text-[40px] font-extrabold leading-tight font-Montserrat mb-6">
+        <div className="lg:w-[435px] analyst ">
+          <h1 className="text-white text-[25px] md:text-[40px] font-extrabold leading-tight font-Montserrat mb-6 analystH1">
             Analyst Recognition
           </h1>
-          <p className="text-white md:text-[20px] text-[18px] mb-10 max-w-3xl">
+          <p className="text-white md:text-[20px] text-[18px] mb-10 max-w-3xl analystP">
             Our AI development services company delivers cutting-edge computer
             vision models for image recognition, object detection, and quality
             inspections. These models are powered by our AI software development
@@ -117,21 +117,48 @@ const AnalystRecognition = () => {
               let isExpanded = false;
               let widthClass = "w-[160px]";
 
-              if (isHovered) {
-                widthClass = "w-[600px]";
-                isExpanded = true;
-              } else if (hoveredIndex !== null && isActive) {
-                widthClass = "w-[160px]";
-                isExpanded = false;
-              } else if (hoveredIndex === null && isActive) {
-                widthClass = "w-[600px]";
-                isExpanded = true;
+              if (window.innerWidth < 1280) {
+                // For screens below 1280px
+                if (isHovered) {
+                  widthClass = "w-[330px]";
+                  isExpanded = true;
+                } else if (hoveredIndex !== null && isActive) {
+                  widthClass = "w-[160px]";
+                  isExpanded = false;
+                } else if (hoveredIndex === null && isActive) {
+                  widthClass = "w-[330px]";
+                  isExpanded = true;
+                }
+              } else if (window.innerWidth < 1600) {
+                // For screens between 1280px and 1600px
+                if (isHovered) {
+                  widthClass = "w-[330px]";
+                  isExpanded = true;
+                } else if (hoveredIndex !== null && isActive) {
+                  widthClass = "w-[160px]";
+                  isExpanded = false;
+                } else if (hoveredIndex === null && isActive) {
+                  widthClass = "w-[330px]";
+                  isExpanded = true;
+                }
+              } else {
+                // For screens 1600px and above (original behavior)
+                if (isHovered) {
+                  widthClass = "w-[600px]";
+                  isExpanded = true;
+                } else if (hoveredIndex !== null && isActive) {
+                  widthClass = "w-[160px]";
+                  isExpanded = false;
+                } else if (hoveredIndex === null && isActive) {
+                  widthClass = "w-[600px]";
+                  isExpanded = true;
+                }
               }
 
               return (
                 <div
                   key={index}
-                  className={`relative h-[400px] rounded-lg overflow-hidden shadow-lg transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${widthClass}`}
+                  className={` relative h-[400px] rounded-lg overflow-hidden shadow-lg transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${widthClass}`}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
@@ -165,7 +192,7 @@ const AnalystRecognition = () => {
             })}
           </div>
         ) : (
-          <div 
+          <div
             className="relative w-full"
             ref={sliderRef}
             onTouchStart={handleTouchStart}

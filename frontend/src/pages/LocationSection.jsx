@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { FaCaretUp, FaCaretDown } from "react-icons/fa";
-
+import "../styles/pages/LocationSection.css";
 import indianflag from "../assets/indianflag.png";
 import unitedflag from "../assets/unitedflag.png";
 import netherland from "../assets/netherland.png";
@@ -55,7 +55,7 @@ const LocationSection = () => {
           <img
             src={Arrologo}
             alt="Arrow"
-            className="absolute w-[70px] left-[65%] -translate-x-1/2 top-[-35%]"
+            className="absolute w-[70px] left-[65%] -translate-x-1/2 top-[-35%] arrologo"
           />
         </div>
       </div>
@@ -74,24 +74,24 @@ const LocationSection = () => {
   {locations.map((loc, index) => (
     <div
       key={index}
-      className="bg-[#061611] rounded-2xl p-4 w-full sm:w-[350px] md:w-[500px] h-[200px] flex-shrink-0 flex items-center gap-4 border border-gray-100"
+      className="bg-[#061611] rounded-2xl p-4 w-full sm:w-[350px] md:w-[500px] h-[200px] flex-shrink-0 flex items-center gap-4 border border-gray-100 location"
     >
       {/* Left image */}
       <img
         src={loc.image}
         alt={`${loc.country} landmark`}
-        className="w-[120px] sm:w-[150px] md:w-[193px] h-[120px] sm:h-[150px] object-cover rounded-xl"
+        className="w-[120px] sm:w-[150px] md:w-[193px] h-[120px] sm:h-[150px] object-cover rounded-xl locImage"
       />
 
       {/* Right text block */}
       <div className="flex flex-col justify-center">
         <div className="flex items-center mb-2">
           {loc.flag}
-          <h4 className="ml-2 text-[18px] sm:text-[20px] md:text-[21px] font-semibold font-Montserrat text-[#FFFFFF]">
+          <h4 className="ml-2 text-[18px] sm:text-[20px] md:text-[20px] font-semibold font-Montserrat text-[#FFFFFF] locCountry">
             {loc.country}
           </h4>
         </div>
-        <p className="text-[14px] sm:text-[15px] md:text-[16px] font-light font-Montserrat leading-snug text-[#FFFFFF]">
+        <p className="text-[14px] sm:text-[15px] md:text-[16px] font-light font-Montserrat leading-snug text-[#FFFFFF] Paddress">
           {loc.address}
         </p>
       </div>

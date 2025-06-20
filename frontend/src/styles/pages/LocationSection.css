@@ -1,7 +1,7 @@
 /* .location-flag:nth-child(1) {
     margin-top: 30px !important;
   } */
-  .country-image {
+  /* .country-image {
     border-top-right-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
     
@@ -13,10 +13,10 @@
   height: 100%;
   max-height: 160px;
   object-fit: cover;
-}
+} */
 
 /* Mobile devices */
-@media only screen and (max-width: 767px) and (min-width: 0px) {
+/* @media only screen and (max-width: 767px) and (min-width: 0px) {
   .location-section {
     padding: 40px 16px;
   }
@@ -34,10 +34,10 @@
     padding: 10px;
     min-height: 160px;
   }
-}
+} */
 
 /* Tablets */
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+/* @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .location-section {
     padding: 60px 24px;
   }
@@ -50,10 +50,10 @@
   .country-image {
     max-height: 140px;
   }
-}
+} */
 
 /* Small laptops (13"-14") */
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+/* @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .location-section {
     padding: 80px 40px;
     max-width: 1200px;
@@ -73,10 +73,10 @@
     max-height: 150px;
     width: auto;
   }
-}
+} */
 
 /* Medium laptops (15.6") */
-@media only screen and (max-width: 1600px) and (min-width: 1281px) {
+/* @media only screen and (max-width: 1600px) and (min-width: 1281px) {
   .location-section {
     padding: 80px 60px;
     max-width: 1400px;
@@ -96,10 +96,10 @@
     max-height: 160px;
     width: auto;
   }
-}
+} */
 
 /* Large screens */
-@media only screen and (min-width: 1601px) {
+/* @media only screen and (min-width: 1601px) {
   .location-section {
     padding: 80px 80px;
     max-width: 1800px;
@@ -119,39 +119,33 @@
     max-height: 180px;
     width: auto;
   }
-}
+} */
 
 /* Fix for specific laptop screens to match 80% view on 15.6" laptop */
-@media only screen and (min-width: 1025px) and (max-width: 1600px) and (max-height: 900px) {
+/* @media only screen and (min-width: 1025px) and (max-width: 1600px) and (max-height: 900px) {
   .location-section {
     max-width: 100%;
     margin: 0 auto;
   }
 
-  /* .location-cards {
-    gap: 20px;
-  } */
-
-  /* .location-card {
-    padding: 10px;
-  } */
-}
+} */
 @media screen and (min-width: 1280px) and (max-width: 1600px) {
-  .location-section {
-    padding-left: 5rem !important;
-    padding-right: 5rem !important;
+  .location{
+    width: 375px !important;
   }
-
-  .header_country {
-    font-size: 16px !important;
+  .locImage{
+    width: 123px !important;
+    height: 125px !important;
   }
-  .address_country {
+  .locCountry{
+    width: 38px !important;
+      /* height: 25px !important; */
+  }
+  .Paddress{
     font-size: 14px !important;
-    line-height: 22px !important;
   }
-  .country-flag {
-    width: 40px;
-    height: 26px;
+  .arrologo{
+    left: 71% !important;
   }
 }
 

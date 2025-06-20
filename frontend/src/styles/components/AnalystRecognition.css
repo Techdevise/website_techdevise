@@ -1,0 +1,13 @@
+  @media only screen and (min-width: 1280px) and (max-width: 1600px) {
+   
+    .analyst{
+        margin-left: 3.25rem !important;
+
+    }
+    .analystH1{
+        font-size: 34px !important;
+    }
+ .analystP{
+    font-size: 18px !important;
+ }
+  }
