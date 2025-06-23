@@ -15,7 +15,7 @@
   },
   "production": {
     "username": "root",
-    "password": "",
+    "password": "root1234",
     "database": "techdevise",
     "host": "127.0.0.1",
     "dialect": "mysql"
