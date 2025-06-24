@@ -17,4 +17,6 @@ export default defineConfig({
   build: {
     outDir: 'build', // <--- Ye line add karo
   },
+  base: '/',
+  
 });
