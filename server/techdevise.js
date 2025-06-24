@@ -37,6 +37,12 @@ app.use((req, res, next) => {
   res.locals.error_msg = req.flash('error_msg');
   next();
 });
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// Serve Static Files for Admin (CSS, JS, Images)
+app.use('/admin', express.static(path.join(__dirname, 'public')));
 app.use('/admin', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
@@ -55,7 +61,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-const port = process.env.PORT || 9091
+const port = process.env.PORT || 8000
 app.listen(port, () => {
     console.log(`Serving... running on port ${port}`)
 })  
