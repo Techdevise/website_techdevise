@@ -38,11 +38,12 @@ app.use((req, res, next) => {
   next();
 });
 
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Serve Static Files for Admin (CSS, JS, Images)
-app.use('/admin', express.static(path.join(__dirname, 'public')));
+app.use('/admin/assets', express.static(path.join(__dirname, 'public/assets')));
 app.use('/admin', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
