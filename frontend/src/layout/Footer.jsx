@@ -140,7 +140,7 @@ const Footer = ({ onContactClick }) => {
               </div>
             </div>
           </div>
-
+<div className="block md:hidden">
           <div
             // style={{ padding: "30px 30px" }}
             className="relative text-white md:py-6 py-0 px-6 md:px-20 rounded-lg bg-cover bg-center bg-no-repeat opacity-100 text-6xl font-semibold bg-transition  md:bg-[rgba(255,255,255,0.05)] my-12 macbook-footer"
@@ -222,6 +222,68 @@ const Footer = ({ onContactClick }) => {
               </div>
             </div>
           </div>
+          </div>
+          <div className="hidden md:block">
+    <div
+            style={{ padding: "30px 30px" }}
+            className="relative text-white py-6 px-6 md:px-20 rounded-lg bg-cover bg-center bg-no-repeat opacity-100 text-6xl font-semibold bg-[rgba(255,255,255,0.05)] my-12 macbook-footer"
+          >
+            <div className="flex flex-col md:flex-row justify-between items-center text-gray-300 text-sm text-center md:text-left">
+              {/* Address and Contact */}
+              <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 macbook-contact-container">
+                <p
+                  style={{ padding: "0 70px 0 0" }}
+                  className="flex items-center space-x-2 text-white font-normal text-[18px] opacity-100 leading-[29px] macbook-address"
+                >
+                  <img src={Location || "/placeholder.svg"} alt="Location Icon" className="w-6 h-6 macbook-icon" />
+                  <span>
+                    F - 268, Industrial Area, Sector 74, Sahibzada <br /> Ajit Singh Nagar, Punjab 160071
+                  </span>
+                </p>
+                <p
+                  style={{ padding: "0 70px 0 0" }}
+                  className="flex items-center space-x-2 text-white font-normal text-[18px] opacity-100 leading-[29px] macbook-email"
+                >
+                  <img src={Gmaillogo || "/placeholder.svg"} alt="Gmail Icon" className="macbook-icon" />
+                  <span>techdevise@gmail.com</span>
+                </p>
+                <p className="flex items-center space-x-2 text-white font-normal text-[18px] opacity-100 leading-[29px] macbook-phone">
+                  <img src={Phonelogo || "/placeholder.svg"} alt="Phone Icon" className="macbook-icon" />
+                  <span>+91 1234567891</span>
+                </p>
+              </div>
+
+              {/* Social Icons */}
+              <div className="flex space-x-3 text-lg mt-4 items-center justify-center opacity-100 md:justify-end macbook-social">
+                <a
+                  href="#"
+                  className="w-[30px] h-[30px] flex items-center justify-center rounded-lg opacity-100 macbook-social-icon"
+                >
+                  <img src={Facebook || "/placeholder.svg"} alt="Facebook" className="w-full h-full object-contain" />
+                </a>
+                <a
+                  href="#"
+                  className="w-[30px] h-[30px] flex items-center justify-center rounded-lg opacity-100 macbook-social-icon"
+                >
+                  <img src={Instagram || "/placeholder.svg"} alt="Instagram" className="w-full h-full object-contain" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all"
+                  className="w-[30px] h-[30px] flex items-center justify-center rounded-lg opacity-100 macbook-social-icon"
+                >
+                  <img src={LinkedIN || "/placeholder.svg"} alt="LinkedIn" className="w-full h-full object-contain" />
+                </a>
+                <a
+                  href="#"
+                  className="w-[30px] h-[30px] flex items-center justify-center rounded-lg opacity-100 macbook-social-icon"
+                >
+                  <img src={Twitter || "/placeholder.svg"} alt="Twitter" className="w-full h-full object-contain" />
+                </a>
+              </div>
+            </div>
+          </div>
+  </div>
+
           {/* <hr className="border-gray-500 my-6" /> */}
 
           {/* Copyright Section */}
