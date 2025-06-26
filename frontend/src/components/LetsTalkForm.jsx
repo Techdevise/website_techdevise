@@ -19,6 +19,8 @@ const LetsTalkForm = () => {
     launch_timeline: "",
     message: ""
   });
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  // const API_CONTACT_US = `${API_BASE_URL}/contact_us`;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,7 +46,7 @@ const LetsTalkForm = () => {
   };
 
   try {
-    const res = await fetch("http://localhost:9090/api/contact_us", {
+    const res = await fetch(`${API_BASE_URL}/api/contact_us`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

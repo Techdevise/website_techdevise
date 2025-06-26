@@ -51,12 +51,14 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
   // Loading state
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [experts, setExperts] = useState([])
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  console.log("API Base URL:", API_BASE_URL)
 
   // Fetch experts data
   useEffect(() => {
     const fetchExperts = async () => {
       try {
-        const response = await fetch("http://localhost:9090/api/experts")
+        const response = await fetch(`${API_BASE_URL}/api/experts`)
         if (response.ok) {
           const data = await response.json()
           setExperts(data)
@@ -103,7 +105,7 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
 
       console.log("Submitting payload:", payload)
 
-      const response = await fetch("http://localhost:9090/api/experts", {
+      const response = await fetch(`${API_BASE_URL}/api/experts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -314,10 +316,10 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
                     onChange={handleInputChange}
                     className="w-full border-b border-gray-300 pb-2 bg-transparent text-black focus:outline-none"
                   >
-                    <option value="Immediately">Immediately</option>
-                    <option value="1-3 Months">1-3 Months</option>
-                    <option value="3-6 Months">3-6 Months</option>
-                    <option value="6+ Months">6+ Months</option>
+                    <option value="1">Immediately</option>
+                    <option value="2">1-3 Months</option>
+                    <option value="3">3-6 Months</option>
+                    <option value="4">6+ Months</option>
                   </select>
                 </div>
 

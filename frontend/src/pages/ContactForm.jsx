@@ -5,6 +5,7 @@ import Contactformimg from "../assets/Contactformimg.svg";
 
 
 
+
 const Toast = ({ message, isVisible, onClose, type = "success" }) => {
   useEffect(() => {
     if (isVisible) {
