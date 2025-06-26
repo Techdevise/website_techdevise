@@ -6,7 +6,7 @@ import Bigdatabg from "../assets/Bigdatabg.svg"
 import Blockchainicon1 from "../assets/Blockchainicon1.svg"
 import Blockchainicon2 from "../assets/Blockchainicon2.svg"
 import Blockchainicon3 from "../assets/Blockchainicon3.svg"
-import Blackchainleftarrow from "../assets/Blackchainleftarrow.svg"
+// import Blackchainleftarrow from "../assets/Blackchainleftarrow.svg"
 
 const BlockchainFeatures = () => {
   const cardData = [
@@ -46,59 +46,70 @@ const BlockchainFeatures = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const carouselRef = useRef(null)
 
-  // Responsive values
+  // Responsive values with improved laptop support
   const [cardWidth, setCardWidth] = useState(469)
   const [visibleCards, setVisibleCards] = useState(3)
-  const cardGap = 24 // Gap between cards
+  const [containerMaxWidth, setContainerMaxWidth] = useState(1500)
+  const cardGap = 24
 
-  // Update card width and visible cards based on screen size
+  // Enhanced responsive logic for consistent laptop display
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth
+
       if (width < 640) {
         // Mobile
         setCardWidth(280)
         setVisibleCards(1)
+        setContainerMaxWidth(280)
       } else if (width < 1024) {
         // Tablet
         setCardWidth(320)
         setVisibleCards(2)
-      } else {
-        // Desktop
+        setContainerMaxWidth(664)
+      } else if (width >= 1280 && width <= 1440) {
+        // Laptop (1280px-1440px) - MacBook Pro 13", smaller laptops
+        setCardWidth(400)
+        setVisibleCards(3)
+        setContainerMaxWidth(1248)
+      } else if (width > 1440 && width <= 1600) {
+        // Laptop (1440px-1600px) - MacBook Pro 14", mid-size laptops
+        setCardWidth(440)
+        setVisibleCards(3)
+        setContainerMaxWidth(1368)
+      } else if (width > 1600 && width <= 1920) {
+        // Large Laptop/Desktop (1600px-1920px) - MacBook Pro 16", large laptops
         setCardWidth(469)
         setVisibleCards(3)
+        setContainerMaxWidth(1455)
+      } else {
+        // Ultra-wide and larger screens (>1920px)
+        setCardWidth(500)
+        setVisibleCards(3)
+        setContainerMaxWidth(1548)
       }
     }
 
-
     handleResize()
-
-
     window.addEventListener("resize", handleResize)
-
-
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-
   const handleNextSlide = () => {
     if (currentIndex < cardData.length - visibleCards) {
-      setCurrentIndex(currentIndex + 1);
+      setCurrentIndex(currentIndex + 1)
     } else {
-      setCurrentIndex(0);
+      setCurrentIndex(0)
     }
   }
-
 
   const handlePrevSlide = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1)
     } else {
-      // Loop to the end
       setCurrentIndex(cardData.length - visibleCards)
     }
   }
-
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -107,18 +118,32 @@ const BlockchainFeatures = () => {
     }
   }, [currentIndex, cardWidth])
 
-
   const isMiddleCard = (index) => {
-
     if (visibleCards === 1) {
       return index === currentIndex
     }
-
     if (visibleCards === 2) {
       return index === currentIndex || index === currentIndex + 1
     }
-
+    // For 3 cards, middle card is always the center one
     return index === currentIndex + 1
+  }
+
+  // Dynamic card heights based on screen size
+  const getCardHeight = (isMiddle) => {
+    const width = window.innerWidth
+
+    if (width < 640) {
+      return isMiddle ? "360px" : "300px"
+    } else if (width < 1024) {
+      return isMiddle ? "400px" : "350px"
+    } else if (width >= 1280 && width <= 1440) {
+      return isMiddle ? "420px" : "350px"
+    } else if (width > 1440 && width <= 1600) {
+      return isMiddle ? "440px" : "370px"
+    } else {
+      return isMiddle ? "460px" : "380px"
+    }
   }
 
   return (
@@ -128,7 +153,7 @@ const BlockchainFeatures = () => {
       </h2>
 
       <div
-        className="w-full max-w-[1672px] h-auto min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:h-[729px] mx-auto bg-cover bg-center rounded-3xl flex flex-col items-center justify-center relative mt-4 md:mt-10 overflow-hidden py-10 md:py-0"
+        className="w-full max-w-[1672px] h-auto min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:h-auto mx-auto bg-cover bg-center rounded-3xl flex flex-col items-center justify-center relative mt-4 md:mt-10 overflow-hidden py-10 md:py-0"
         style={{ backgroundImage: `url(${Bigdatabg})` }}
       >
 
@@ -177,7 +202,7 @@ const BlockchainFeatures = () => {
 
                 {index < cardData.length - 1 && (
                   <div className="absolute right-[-25px] top-1/2 transform -translate-y-1/2 z-10 hidden lg:block">
-                    <img src={Blackchainleftarrow || "/placeholder.svg"} alt="Left Arrow" className="w-[600px]" />
+                    {/* <img src={Blackchainleftarrow || "/placeholder.svg"} alt="Left Arrow" className="w-[600px]" /> */}
                   </div>
                 )}
               </div>
@@ -186,7 +211,7 @@ const BlockchainFeatures = () => {
         </div>
 
 
-        <div className="mt-8 lg:absolute lg:bottom-16 flex gap-4 justify-center">
+        <div className="mt-8 lg:absolute md:bottom-4 lg:bottom-4 flex gap-4 justify-center">
           <button
             className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center shadow"
             onClick={handlePrevSlide}

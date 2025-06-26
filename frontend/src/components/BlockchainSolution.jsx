@@ -120,7 +120,7 @@ const BlockchainSolution = () => {
       <div className="px-4 sm:px-8 md:px-12 lg:px-16 py-6 md:py-8 lg:py-20 w-full mx-auto">
         {/* Heading section */}
         <div className="max-w-full">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-extrabold font-Montserrat mb-4 md:mb-8 ml-2 sm:ml-8 md:ml-12 lg:ml-20">
+          <h1 className="block_deliver text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-extrabold font-Montserrat mb-4 md:mb-8 ml-2 sm:ml-8 md:ml-12 lg:ml-20">
             Blockchain Development Solutions We Deliver
           </h1>
           <p className="text-sm md:text-[16px] text-black font-medium font-Montserrat mb-4 sm:mb-8 lg:mb-12 ml-2 sm:ml-8 md:ml-12 lg:ml-20">

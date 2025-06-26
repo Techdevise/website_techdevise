@@ -10,7 +10,7 @@ const ExperienceCard = ({ targetValue, label, bgColor, highlightColor }) => {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true); 
           let start = 0;
-          const duration = 5000;
+          const duration = 7000;
           const increment = targetValue / (duration / 16);
           const counter = setInterval(() => {
             start += increment;

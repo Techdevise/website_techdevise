@@ -6,9 +6,10 @@
 
   @media screen and (min-width: 1280px) and (max-width: 1600px) {
   .custom-card-size {
-    width: 400px !important;
+    width: 390px !important;
     height: 350px !important;
     padding-left: 10px;
+    margin-left: 8.5px;
   }
 
   .custom-card-size.middle {
