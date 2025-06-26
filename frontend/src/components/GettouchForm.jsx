@@ -51,12 +51,14 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
   // Loading state
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [experts, setExperts] = useState([])
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  console.log("API Base URL:", API_BASE_URL)
 
   // Fetch experts data
   useEffect(() => {
     const fetchExperts = async () => {
       try {
-        const response = await fetch("http://localhost:9090/api/experts")
+        const response = await fetch(`${API_BASE_URL}/api/experts`)
         if (response.ok) {
           const data = await response.json()
           setExperts(data)
@@ -103,7 +105,7 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
 
       console.log("Submitting payload:", payload)
 
-      const response = await fetch("http://localhost:9090/api/experts", {
+      const response = await fetch(`${API_BASE_URL}/api/experts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
