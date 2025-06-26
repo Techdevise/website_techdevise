@@ -316,10 +316,10 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
                     onChange={handleInputChange}
                     className="w-full border-b border-gray-300 pb-2 bg-transparent text-black focus:outline-none"
                   >
-                    <option value="Immediately">Immediately</option>
-                    <option value="1-3 Months">1-3 Months</option>
-                    <option value="3-6 Months">3-6 Months</option>
-                    <option value="6+ Months">6+ Months</option>
+                    <option value="1">Immediately</option>
+                    <option value="2">1-3 Months</option>
+                    <option value="3">3-6 Months</option>
+                    <option value="4">6+ Months</option>
                   </select>
                 </div>
 

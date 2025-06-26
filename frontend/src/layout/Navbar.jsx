@@ -127,7 +127,7 @@ const Navbar = () => {
       >
         <div className="navMain w-[1728px] m-auto  md:px-6 flex justify-between items-center bg-cover bg-center">
           <div className="flex items-center w-auto xl:w-[55%] h-[60px] md:h-[70px] xl:h-[90px]">
-            <Link to="https://app.techdevise.com/">
+            <Link to="https://dev.techdevise.com/">
               <img
                 alt="Tech Devise Logo"
                 className="w-[100px] sm:w-[110px] md:w-[140px] lg:w-[160px] xl:w-[130px] h-auto"
