@@ -410,12 +410,22 @@ hr.solid {
   }
 }
 
-@media only screen and (max-width:1400px) and (min-width:1281px) {
+@media only screen and (max-width:1440px) and (min-width:1281px) {
   .baner_spce {
     max-width: 100%;
     padding-left: 44px;
+    
   }
 
+ 
+  .baner_space{
+top: 120px !important;
+
+
+  }
+  .home-bg {
+height: 770px !important;
+  }
   .lamp_banner {
     top: 159px;
     left: 687px;
@@ -428,14 +438,28 @@ hr.solid {
   .digi_tal1 {
     font-size: 27px !important;
   }
+  /* home-bg{
+    height: 500px !important;
+  } */
 }
 
-@media only screen and (max-width:1600px) and (min-width:1401px) {
+@media only screen and (max-width:1600px) and (min-width:1440px) {
   .baner_spce {
     max-width: 100%;
     padding-left: 44px;
   }
+    .baner_space{
+top: 155px !important
+  }
 
+  .Lamp{
+    /* width: 29px !important; */
+    top: -269px  !important
+  }
+  .Lamp_Logo{
+     top: -270px  !important
+     
+  }
   .lamp_banner {
     top: 159px;
     left: 790px;

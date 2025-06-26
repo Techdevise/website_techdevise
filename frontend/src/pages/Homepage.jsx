@@ -19,6 +19,8 @@ import Googleanaylicts from "../assets/Googleanaylicts.svg";
 import Ellipse from "../assets/Ellipse 3.svg";
 import lamp from "../assets/lamp.png";
 import light from "../assets/light.png";
+import lamp1 from '../assets/Group 19.svg';
+import light2 from '../assets/Group 21.svg';
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 
@@ -93,7 +95,7 @@ function Homepage({ setIsModalOpen }) {
           {/* <Navbar /> */}
 
           {/* Main Content Section */}
-          <div className="baner_space relative z-10 top-[302px] w-full max-w-[1680px] m-auto pb-[100px]">
+          <div className="baner_space relative z-10 top-[177px]  w-full max-w-[1680px] m-auto pb-[50px] mt-[45px]">
             {/* Badges Section */}
             <div className="new_hild flex gap-4 p-4 ml-[-10px]">
               <div className="google_new rounded-xl shadow-md p-5 flex items-center gap-2 w-[229px] h-[56px] rounded-[15px] border border-[#fffff] p-2">
@@ -160,7 +162,7 @@ function Homepage({ setIsModalOpen }) {
               <img
                 src={Homeimg}
                 alt="Design Element"
-                className="w-full mt-[-20px] object-contain opacity-100"
+                className="w-full  object-contain opacity-100"
               />
 
               <div
@@ -168,20 +170,20 @@ function Homepage({ setIsModalOpen }) {
                 style={{ backgroundImage: `url(${Ellipse})` }}
               >
                 <img
-                  src={lamp}
+                  src={light2}
                   alt="Lamp"
-                  className="absolute left-[300px] w-[36.31px] h-[230.56px] opacity-100"
+                  className="absolute Lamp left-[362px] w-[36.31px] h-auto opacity-100"
                   style={{
-                    top: window.innerWidth === 1440 ? "-411px" : "-390px",
+                    top: window.innerWidth === 1440 ? "-411px" : "-312px",
                   }}
                 />
 
                 <img
-                  src={light}
+                  src={lamp1}
                   alt="Lamp Logo"
-                  className="absolute left-[470px] w-[49.99px] h-[317.44px] opacity-100"
+                  className="absolute Lamp_Logo left-[470px] w-[49.99px] h-auto opacity-100"
                   style={{
-                    top: window.innerWidth === 1440 ? "-412px" : "-390px",
+                    top: window.innerWidth === 1440 ? "-412px" : "-312px",
                   }}
                 />
               </div>
@@ -192,7 +194,7 @@ function Homepage({ setIsModalOpen }) {
               onClick={() => setIsModalOpen(true)}
               className="consultants_btn relative z-20 border border-white text-white px-[24px] py-[20px] rounded-[12px] 
                   font-Archivo text-[15px] md:text-[20px] font-semibold flex items-center justify-center gap-2 
-                  w-[250px] md:w-[280px] h-[50px] md:h-[70px] mt-[115px]  hover:bg-white hover:text-black 
+                  w-[250px] md:w-[280px] h-[50px] md:h-[70px]   hover:bg-white hover:text-black 
                   transition-colors duration-300 whitespace-nowrap"
             >
               Consult Our Experts
@@ -202,7 +204,7 @@ function Homepage({ setIsModalOpen }) {
         </div>
       </div>
 
-      <div className="w-full relative z-10 flex items-center m-auto">
+      <div className="w-full relative z-10 flex items-center m-auto bottom-[40px]">
         <TrustedBy />
       </div>
 
