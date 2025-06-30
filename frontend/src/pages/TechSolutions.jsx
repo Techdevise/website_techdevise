@@ -79,7 +79,7 @@ const TechSolutions = () => {
 
   return (
     <div
-  className="mask_group border-2 p-6 rounded-[26px] border border-[#2d4642] w-full max-w-[1680px] mx-auto h-auto z-20 relative bg-no-repeat bg-center bg-cover w-macbook"
+  className="mask_group p-6 rounded-[26px] border border-[#2d4642] w-full max-w-[1680px] mx-auto h-auto z-20 relative bg-no-repeat bg-center bg-cover w-macbook"
   style={{ backgroundImage: `url(${Maskgroup})` }}
 >
 

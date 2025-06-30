@@ -11,7 +11,7 @@ export default function ServicesSection() {
   return (
     <div className="services-section w-full max-w-[1680px] px-4 py-8 md:p-6 bg-[#061611] mx-auto md:ml-0 flex flex-col">
       {/* Services Header */}
-      <div className="services-main w-full max-w-[810px] p-4 md:h-[229px] mx-auto text-center mb-8 border border-[#529D92] rounded-[16px] md:rounded-[26px] opacity-100">
+      <div className="services-main w-full max-w-[810px] p-4 md:h-[229px] mx-auto text-center mb-8 border border-[#2d4642] rounded-[16px] md:rounded-[26px] opacity-100">
         <h2
           style={{
             display: "inline-table",

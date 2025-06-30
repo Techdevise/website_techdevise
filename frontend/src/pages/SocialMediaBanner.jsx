@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/pages/SocialMediaBanner.css"
-import whitearrow from "../assets/whitearrow.png";
+import Linkdinlogo from "../assets/Linkdinlogo.svg";
 import Vector from "../assets/Vector.png";
 import Upwork from "../assets/Upwork.png";
 import Arrowlogo from "../assets/Arrowlogo.png"
-import Upworklogo from "../assets/Upworklogo.png"
-import Trustpilot from "../assets/Trustpilot.png"
-import Clutch from "../assets/Clutch.png"
+import Upworklogo from "../assets/Upworklogo.svg"
+import Trustpilot from "../assets/Trustpilot.svg"
+import Clutch from "../assets/Clutch.svg"
 // import Linkdinarrow from "../assets/Linkdinarrow.svg"
 // import ArrowIcon from "../assets/ArrowIcon.svg"
 
@@ -29,9 +29,9 @@ const SocialMediaBanner = () => {
         <div className="socl_icco grid grid-cols-2 gap-0">
           <a href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all" className="bg-[#0077B5] text-white w-[440px] h-[132px] opacity-100 flex items-center justify-center text-xl font-bold">
             <img
-              src={whitearrow}
+              src={Linkdinlogo}
               alt="LinkedIn"
-              className="new_wid w-[196px] h-auto mr-auto ml-6"
+              className="new_wid w-[364px] h-auto mr-auto ml-6"
             />
          
           </a>
@@ -39,21 +39,21 @@ const SocialMediaBanner = () => {
             <img
               src={Upworklogo}
               alt="Upwork"
-              className="new_wid w-[137px] h-auto mr-auto"
+              className="new_wid w-[228px] h-auto mr-auto"
             />
           </a>
           <a href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all" className="bg-[#17313B] text-white w-[440px] h-[132px] opacity-100 flex items-center justify-center text-xl font-bold">
             <img
               src={Clutch}
               alt="clutch"
-              className="new_wid w-[120px] h-auto mr-auto ml-6"
+              className="new_wid w-[228px] h-auto mr-auto ml-6"
             />
           </a>
           <a href="https://www.linkedin.com/company/tech-devise/posts/?feedView=all" className="bg-[#0AB67B] text-white px-6 py-4 rounded-br-2xl flex items-center justify-center text-xl font-bold">
             <img
               src={Trustpilot}
               alt="Trustpilot"
-              className="new_wid w-[206px] h-auto mr-auto"
+              className="new_wid w-[228px] h-auto mr-auto"
             />
           </a>
         </div>

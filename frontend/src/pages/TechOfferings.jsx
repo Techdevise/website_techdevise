@@ -1,4 +1,4 @@
-"use client"
+
 
 import React, { useState, useEffect, useRef } from "react"
 import "../styles/pages/TechOfferings.css"
@@ -9,7 +9,7 @@ import Arrowleft from "../assets/Arrowleft.svg"
 const clocks = [
   { country: "India", timeZone: "Asia/Kolkata", color: "bg-[#B9CFEC]" },
   { country: "Canada", timeZone: "America/Toronto", color: "bg-[#EA99B9]" },
-  { country: "USA", timeZone: "America/New_York", color: "bg-[#FDE3DA]" },
+  { country: "USA", timeZone: "America/Los_Angeles", color: "bg-[#FDE3DA]" },
   { country: "Netherlands", timeZone: "Europe/Amsterdam", color: "bg-[#719E91]" },
 ]
 
@@ -68,6 +68,19 @@ const Clock = ({ country, timeZone, color }) => {
 
 const TechOfferings = () => {
   const carouselRef = useRef(null)
+  // useEffect(() => {
+  //   const container = carouselRef.current;
+  //   if (!container) return;
+
+  //   const onWheel = (e) => {
+  //     if (e.deltaY === 0) return;
+  //     e.preventDefault();
+  //     container.scrollBy({ left: e.deltaY });
+  //   };
+
+  //   container.addEventListener("wheel", onWheel, { passive: false });
+  //   return () => container.removeEventListener("wheel", onWheel);
+  // }, []);
   const steps = [
     {
       title: "Share your Requirements",
@@ -179,7 +192,6 @@ const handleScroll = (direction) => {
           </button>
         </div>
       </div>
-
       <div
         ref={carouselRef}
         className="tech_offering flex flex-nowrap gap-8 overflow-x-auto scroll-smooth px-4 md:px-8"
@@ -247,6 +259,7 @@ const handleScroll = (direction) => {
         </div>
       </div>
     </div>
+  
   )
 }
 

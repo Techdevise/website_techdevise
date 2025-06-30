@@ -38,7 +38,7 @@ function TechAboutSection() {
                     <span>Technology</span>
                 </h1>
 
-                <div className="text-white font-Montserrat text-base sm:text-[17px] md:text-[18px] lg:text-[19px] mt-5 space-y-4 max-w-7xl mx-auto tech_dessc">
+                <div className="text-white font-Montserrat text-base sm:text-[16px] md:text-[18px] lg:text-[18px] mt-5 space-y-4 max-w-7xl mx-auto tech_dessc">
   <p>
     At <span className="font-semibold">Tech Devise</span>, we are passionate about delivering innovative technology solutions that<br className="hidden sm:block" />
     drive business success. With a team of highly skilled developers, designers, and IT experts,<br className="hidden sm:block" />

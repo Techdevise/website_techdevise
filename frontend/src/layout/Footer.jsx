@@ -22,7 +22,7 @@ const Footer = ({ onContactClick }) => {
         <div className=" inset-0 z-0 rounded-t-[90px]"></div>
 
         {/* Main Footer Content */}
-        <div className="relative z-10 container mx-auto min-h-[50vh]">
+        <div className="relative z-10 container_footer mx-auto min-h-[50vh]">
           {/* Top Section */}
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="md:w-1/2">
@@ -30,9 +30,9 @@ const Footer = ({ onContactClick }) => {
                 Keep up with the latest
               </h2>
             </div>
-            <div className="md:w-1/2 flex justify-end mt-2">
-              <div className="flex items-center border rounded-[12px] p-2 w-[600px] md:w-[450px] h-[45px] md:h-[65px] bg-[rgba(255,255,255,.26)]">
-               <input type="email" placeholder="Enter your email" className="bg-transparent text-white w-full outline-none px-4 placeholder-white text-[20px] font-medium leading-[46px] font-montserrat opacity-70 md:placeholder:text-[20px] placeholder:text-[16px]" />
+            <div className="md:w-1/2 flex justify-end mt-2 md:mt-0">
+              <div className="flex items-center border rounded-[12px] p-2 w-[600px] md:w-[450px] h-[45px] md:h-[65px] bg-[#ffffff] md:bg-[rgba(255,255,255,.26)]">
+               <input type="email" placeholder="Enter your email" className="bg-transparent text-white w-full outline-none px-4 placeholder-[#157B6C] md:placeholder-white text-[20px] font-medium leading-[46px] font-montserrat opacity-70 md:placeholder:text-[20px] placeholder:text-[16px]" />
                 <button className="bg-[#157B6C] text-white md:px-8 px-4 py-0   md:py-3 rounded-[9px] md:w-[140px] w-[100px] h-[30px] md:h-[50px]  opacity-100 font-bold md:text-[18px] text-[16px] font-montserrat">
                   Send
                 </button>
@@ -53,7 +53,7 @@ const Footer = ({ onContactClick }) => {
                 />
                 <span className="text-2xl font-bold ml-2"></span>
               </div>
-              <p className="text-white opacity-100 space-y-2 text-[14px] md:text-[16px] font-normal leading-[27px] font-montserrat text-center md:text-left">
+              <p className="text-white opacity-100 space-y-2 text-[12px] md:text-[14px] font-normal leading-[20px] md:leading-[27px] font-montserrat text-center md:text-left">
                 Tech Devise is a digital solution provider which offers various
                 digital services that will help your online business to
                 flourish. We expertise in providing services like digital
@@ -63,7 +63,7 @@ const Footer = ({ onContactClick }) => {
               <div className="flex justify-center md:justify-start">
                 <button
                   onClick={onContactClick}
-                  className="whitespace-nowrap mt-4 w-[183px] h-[49px] rounded-lg bg-white font-bold text-[16px] text-[#137365] px-10 py-2"
+                  className="mt-4 w-[162px] h-[45px] md:w-[165px] md:h-[49px] sm:w-[162px] sm:h-[45px] max-w-full rounded-lg bg-white font-bold text-base text-[16px] md:text-[16px] sm:text-sm text-[#137365] px-6 py-2"
                 >
                   Contact Now!
                 </button>
@@ -75,7 +75,7 @@ const Footer = ({ onContactClick }) => {
               <h3 className="text-[20px] font-semibold mb-3 text-white font-montserrat">
                 Services
               </h3>
-              <ul className="text-white opacity-100 space-y-2 text-[16px] font-normal leading-[27px] font-montserrat">
+              <ul className="text-white opacity-100 space-y-2 text-[14px] font-normal leading-[27px] font-montserrat">
                 <li>Android Development</li>
                 <li>iOS Development</li>
                 <li>CMS</li>
@@ -90,7 +90,7 @@ const Footer = ({ onContactClick }) => {
               <h3 className="font-semibold mb-3 text-white text-[20px] font-montserrat">
                 Quick Links
               </h3>
-              <ul className="text-white opacity-100 space-y-2 text-[16px] font-normal leading-[27px] font-montserrat">
+              <ul className="text-white opacity-100 space-y-2 text-[14px] font-normal leading-[27px] font-montserrat">
                 <li>
                   <Link to="/about">About TechDevise</Link>
                 </li>
@@ -120,9 +120,9 @@ const Footer = ({ onContactClick }) => {
                     <img
                       src={blog.image}
                       alt="Blog"
-                      className="w-full h-[120px] rounded-[10px] object-cover"
+                      className="w-full h-[100px] rounded-[10px] object-cover"
                     />
-                    <p className="text-sm font-semibold text-center mt-2">
+                    <p className="text-[12px] md:text-[10px] font-montserrat font-semibold text-center mt-2">
                       Innovative Design: Crafting Seamless...
                     </p>
                     <span className="bg-[#20856f] text-white text-sm px-3 py-1 rounded-md mt-2">
@@ -132,7 +132,7 @@ const Footer = ({ onContactClick }) => {
                 ))}
               </div>
               <div className="flex justify-center md:justify-end mt-4">
-                <button className="border border-white text-white px-6 py-2 rounded-[6px] font-semibold hover:bg-white hover:text-[#0F5B4F] transition">
+                <button className="text-[12px] border border-white text-white px-6 py-2 rounded-[6px] font-semibold hover:bg-white hover:text-[#0F5B4F] transition">
                   View More
                 </button>
               </div>
@@ -157,22 +157,25 @@ const Footer = ({ onContactClick }) => {
                     Singh Nagar, Punjab 160071
                   </span>
                 </p>
-                <p className="flex items-center space-x-2 pr-0 md:pr-[70px] text-white font-normal text-[18px] opacity-100 leading-[29px] macbook-email">
-                  <img
-                    src={Gmaillogo || "/placeholder.svg"}
-                    alt="Gmail Icon"
-                    className="macbook-icon"
-                  />
-                  <span>techdevise@gmail.com</span>
-                </p>
-                <p className="flex items-center space-x-2 text-white font-normal text-[18px] opacity-100 leading-[29px] macbook-phone">
-                  <img
-                    src={Phonelogo || "/placeholder.svg"}
-                    alt="Phone Icon"
-                    className="macbook-icon"
-                  />
-                  <span>+91 1234567891</span>
-                </p>
+               <div className="flex items-center justify-between flex-wrap text-white text-[12px] leading-[29px] font-normal w-full max-w-[300px]">
+  <div className="flex items-center space-x-1">
+    <img
+      src={Gmaillogo || "/placeholder.svg"}
+      alt="Gmail Icon"
+      className="macbook-icon"
+    />
+    <span>techdevise@gmail.com</span>
+  </div>
+  <div className="flex items-center space-x-2 mt-1 md:mt-0">
+    <img
+      src={Phonelogo || "/placeholder.svg"}
+      alt="Phone Icon"
+      className="macbook-icon"
+    />
+    <span>+91 1234567891</span>
+  </div>
+</div>
+
               </div>
 
               {/* Social Icons */}
@@ -231,7 +234,7 @@ const Footer = ({ onContactClick }) => {
               <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 macbook-contact-container">
                 <p
                   style={{ padding: "0 70px 0 0" }}
-                  className="flex items-center space-x-2 text-white font-normal text-[16px] opacity-100 leading-[29px] macbook-address"
+                  className="flex items-center space-x-2 text-white font-normal text-[14px] opacity-100 leading-[29px] macbook-address"
                 >
                   <img src={Location || "/placeholder.svg"} alt="Location Icon" className="w-6 h-6 macbook-icon" />
                   <span>
@@ -240,12 +243,12 @@ const Footer = ({ onContactClick }) => {
                 </p>
                 <p
                   style={{ padding: "0 70px 0 0" }}
-                  className="flex items-center space-x-2 text-white font-normal text-[18px] opacity-100 leading-[29px] macbook-email"
+                  className="flex items-center space-x-2 text-white font-normal text-[14px] opacity-100 leading-[29px] macbook-email"
                 >
                   <img src={Gmaillogo || "/placeholder.svg"} alt="Gmail Icon" className="macbook-icon" />
                   <span>techdevise@gmail.com</span>
                 </p>
-                <p className="flex items-center space-x-2 text-white font-normal text-[18px] opacity-100 leading-[29px] macbook-phone">
+                <p className="flex items-center space-x-2 text-white font-normal text-[14px] opacity-100 leading-[29px] macbook-phone">
                   <img src={Phonelogo || "/placeholder.svg"} alt="Phone Icon" className="macbook-icon" />
                   <span>+91 1234567891</span>
                 </p>
@@ -286,10 +289,10 @@ const Footer = ({ onContactClick }) => {
 
           {/* Copyright Section */}
           <div className="opacity-100 flex flex-col md:flex-row justify-between items-center text-[16px] text-white font-normal text-center md:text-left gap-2">
-            <p className="text-[10px] md:text-[14px]">
+            <p className="text-[10px] md:text-[12px]">
               Privacy Policy &nbsp; | &nbsp; Terms & Conditions
             </p>
-            <p className="text-[10px] md:text-[14px]">
+            <p className="text-[10px] md:text-[12px]">
               Techdevise &copy; 2025. All Rights Reserved.
             </p>
           </div>

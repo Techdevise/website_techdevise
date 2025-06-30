@@ -52,7 +52,7 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [experts, setExperts] = useState([])
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-  console.log("API Base URL:", API_BASE_URL)
+  // console.log("API Base URL:", API_BASE_URL)
 
   // Fetch experts data
   useEffect(() => {
@@ -62,7 +62,7 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
         if (response.ok) {
           const data = await response.json()
           setExperts(data)
-          console.log("Experts data:", data)
+          // console.log("Experts data:", data)
         } else {
           console.error("Failed to fetch experts")
         }
@@ -114,7 +114,7 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
       })
 
       const result = await response.json()
-      console.log("API Response:", result)
+      // console.log("API Response:", result)
 
       if (response.ok && result.success) {
         // Show success toast
@@ -206,11 +206,11 @@ const GettouchForm = ({ isOpen, onClose, className = "" }) => {
             </div>
 
             <div className="flex justify-center mt-8 gap-2">
-              <div className="w-24 md:w-32 bg-white rounded-3xl overflow-hidden shadow-lg">
+              <div className="overflow-hidden shadow-lg">
                 <img
                   src={Mobileshowcase}
                   alt="App Screenshot"
-                  className="w-full h-[100px] md:h-[122px]"
+                  className="w-full h-auto object-cover"
                 />
               </div>
             </div>

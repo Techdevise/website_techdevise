@@ -64,7 +64,7 @@ const Testimonials = () => {
 
   return (
     <div className="test_nomials w-full max-w-[1680px] mx-auto mt-10 px-4 wtest-macbook">
-      <div className="mx-auto mb-24">
+      <div className="mx-auto mb-16">
         <h2
           style={{
             display: "inline-table",
@@ -75,7 +75,7 @@ const Testimonials = () => {
             textFillColor: "transparent",
             color: "#157B6C",
           }}
-          className="text-[32px] md:text-6xl font-bold text-[#c5e4d9]"
+          className="text-[24px] md:text-5xl font-bold text-[#c5e4d9]"
         >
           <span className="block md:hidden">
             What our customers say about us
@@ -87,7 +87,7 @@ const Testimonials = () => {
           </span>
         </h2>
 
-        <div className="flex justify-end arrow_new mt-4 mb-6">
+        <div className="flex justify-end arrow_new mt-4">
           <div className="flex gap-2">
             <button
               onClick={prevTestimonial}

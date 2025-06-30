@@ -39,7 +39,7 @@
 
 @media screen and (min-width: 1280px) and (max-width: 1728px) {
   .block_deliver {
-  font-size: 40px;
+  font-size: 40px !important;
 }
 }
   

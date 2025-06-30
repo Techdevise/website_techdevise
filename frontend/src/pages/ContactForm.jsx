@@ -167,7 +167,7 @@ const ContactForm = () => {
   }
 
     return (
-        <div className="contact-wrapper max-w-[1680px] h-auto bg-[#061611] text-white rounded-[10px] mx-auto md:p-8 flex flex-col md:flex-row border border-[#529D92] w-macbook">
+        <div className="contact-wrapper max-w-[1680px] h-auto bg-[#061611] text-white rounded-[10px] mx-auto md:p-8 flex flex-col md:flex-row border border-[#2d4642] w-macbook">
           
             <div className="w-full md:w-1/2 pr-0 md:pr-16 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#1E3D32] mb-8 md:mb-0">
                 <h2 style={{
@@ -209,7 +209,7 @@ const ContactForm = () => {
               value={formData.fullname}
               onChange={handleInputChange}
               placeholder="Full Name"
-              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
+              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#2d4642]"
               required
             />
             <input
@@ -218,7 +218,7 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Business Email"
-              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
+              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#2d4642]"
               required
             />
             <input
@@ -227,7 +227,7 @@ const ContactForm = () => {
               value={formData.phone}
               onChange={handleInputChange}
               placeholder="Mobile Number"
-              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
+              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#2d4642]"
               required
             />
             <input
@@ -236,14 +236,14 @@ const ContactForm = () => {
               value={formData.company_name}
               onChange={handleInputChange}
               placeholder="Company Name"
-              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92]"
+              className="w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#2d4642]"
               required
             />
            <select
   name="job_title"
   value={formData.job_title}
   onChange={handleInputChange}
-  className="w-full appearance-none p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92] [&::-ms-expand]:hidden"
+  className="w-full appearance-none p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#2d4642] [&::-ms-expand]:hidden"
   required
 >
   <option value="">Job Title</option>
@@ -259,7 +259,7 @@ const ContactForm = () => {
   name="launch_timeline"
   value={formData.launch_timeline}
   onChange={handleInputChange}
-  className="w-full appearance-none p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#529D92] [&::-ms-expand]:hidden"
+  className="w-full appearance-none p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] border border-[#2d4642] [&::-ms-expand]:hidden"
   required
 >
   <option value="">Launch Timeline?</option>
@@ -270,7 +270,7 @@ const ContactForm = () => {
 </select>
 
 
-            <div className="budget-bg col-span-2">
+            <div className="budget-bg col-span-2 border border-[#2d4642]">
               <label className="block text-[#ffffff] mb-2">Budget</label>
               <div className="flex items-center gap-4">
                 <input
@@ -290,7 +290,7 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleInputChange}
               placeholder="Message"
-              className="col-span-2 w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] h-[150px] border border-[#529D92]"
+              className="col-span-2 w-full p-4 bg-[#0F261E] rounded-[10px] text-white outline-none font-Montserrat text-[16px] md:text-[18px] h-[150px] border border-[#2d4642]"
             ></textarea>
 
             <div className="col-span-2 flex justify-start">

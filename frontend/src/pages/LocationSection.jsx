@@ -17,19 +17,19 @@ const locations = [
   {
     country: "India",
     address: "F - 268, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160071",
-    flag: <img src={indianflag} alt="Indian flag" className="w-[50px] h-[34px]" />,
+    flag: <img src={indianflag} alt="Indian flag" className="w-[50px] h-[34px] Indian_flag" />,
     image: indiaLandmarkImg,
   },
   {
     country: "United States",
     address: "1600 Pennsylvania Avenue NW, Washington, DC 20500, USA",
-    flag: <img src={unitedflag} alt="US flag" className="w-[50px] h-[34px]" />,
+    flag: <img src={unitedflag} alt="US flag" className="w-[50px] h-[34px] Indian_flag" />,
     image: usaLandmarkImg,
   },
   {
     country: "Netherland",
     address: "Paleisstraat 1, 1012 RB Amsterdam, Netherlands",
-    flag: <img src={netherland} alt="Netherlands flag" className="w-[50px] h-[34px]" />,
+    flag: <img src={netherland} alt="Netherlands flag" className="w-[50px] h-[34px] Indian_flag" />,
     image: netherlandsLandmarkImg,
   },
 ];
@@ -39,9 +39,9 @@ const LocationSection = () => {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div className={`relative w-full pt-20 pb-10 px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-white" : "bg-black text-white"}`}>
+    <div className={`mapp_pd relative w-full pt-20 pb-10 sm:pb-[120px] px-4 md:px-32 ${isHomePage ? "bg-[#061611] text-white" : "bg-black text-white"}`}>
       {/* Header */}
-      <div className="relative z-10 text-center mb-20">
+      <div className="relative z-10 text-center mb-0">
         <h3 className="text-[#157B6C] text-[32px] font-Montserrat font-bold mb-3">Location</h3>
         <h2 className="text-3xl md:text-5xl font-extrabold font-Montserrat mb-4 text-white">
           We’d love to hear from you
@@ -61,20 +61,20 @@ const LocationSection = () => {
       </div>
 
       {/* World Map with Cards */}
-   <div className="relative w-full h-[400px] -top-[119px]">
+   <div className="relative w-full">
   <img
     src={worldMap}
     alt="World Map"
-    className="absolute inset-0 w-full h-full "
+    className="worldMap_map absolute inset-0 w-full h-full "
   />
 
   {/* Overlay for location cards, centered */}
-<div className="absolute inset-0 z-10 flex items-center justify-center">
+<div className="inset-0 z-10 flex items-center justify-center">
  <div className="flex justify-center items-center gap-6 flex-wrap">
   {locations.map((loc, index) => (
     <div
       key={index}
-      className="bg-[#061611] rounded-2xl p-4 w-full sm:w-[350px] md:w-[500px] h-[200px] flex-shrink-0 flex items-center gap-4 border border-gray-100 location"
+      className="bg-[#061611] rounded-2xl p-4 w-full sm:w-[350px] md:w-[500px] h-auto flex-shrink-0 flex items-center gap-4 border border-[#2d4642] location"
     >
       {/* Left image */}
       <img
@@ -87,7 +87,7 @@ const LocationSection = () => {
       <div className="flex flex-col justify-center">
         <div className="flex items-center mb-2">
           {loc.flag}
-          <h4 className="ml-2 text-[18px] sm:text-[20px] md:text-[20px] font-semibold font-Montserrat text-[#FFFFFF] locCountry">
+          <h4 className="ml-2 text-[14px] sm:text-[14px] md:text-[20px] font-semibold font-Montserrat text-[#FFFFFF] locCountry">
             {loc.country}
           </h4>
         </div>

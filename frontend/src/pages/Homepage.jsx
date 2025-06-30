@@ -17,8 +17,8 @@ import Homeimg from "../assets/Homeimg.svg";
 import Google from "../assets/Google.svg";
 import Googleanaylicts from "../assets/Googleanaylicts.svg";
 import Ellipse from "../assets/Ellipse 3.svg";
-import lamp from "../assets/lamp.png";
-import light from "../assets/light.png";
+import lamping from "../assets/lamping.svg";
+import light1 from "../assets/light1.svg";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 
@@ -41,43 +41,50 @@ function Homepage({ setIsModalOpen }) {
     };
   }, []);
 
-  useEffect(() => {
-    const fullText = "Digital marketing";
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+ useEffect(() => {
+  const texts = [
+    "Digital marketing",
+    "Web development",
+    "UI/UX design",
+    "Software consultancy",
+  ];
 
-    // Animate text appearing
+  const tl = gsap.timeline({ repeat: -1 });
+
+  texts.forEach((fullText, index) => {
+    // Type the full text
     tl.to(textRef.current, {
-      duration: 2.5,
-      text: fullText,
+      duration: fullText.length * 0.2,
+      text: fullText + "|", 
       ease: "power1.inOut",
-      onStart: () => {
-        cursorRef.current.style.display = "inline";
-      },
+      
     });
+    tl.to({}, { duration: 0.5 });
 
-    // Blink cursor
-    tl.to(cursorRef.current, {
-      opacity: 0,
+  
+    tl.to(textRef.current, {
       duration: 0.5,
-      repeat: 6,
+      text: fullText + " ", // blink OFF
+      repeat: 4,
       yoyo: true,
       ease: "power1.inOut",
     });
 
-    // Erase text from the end manually
+    // Erase character by character (with cursor)
     for (let i = fullText.length; i >= 0; i--) {
       tl.to(textRef.current, {
         duration: 0.05,
-        text: fullText.substring(0, i),
+        text: fullText.substring(0, i) + "|",
         ease: "power1.inOut",
       });
     }
+    
+  });
+  
 
-    // Reset cursor visibility
-    tl.set(cursorRef.current, { display: "inline" });
+  return () => tl.kill();
+}, []);
 
-    return () => tl.kill();
-  }, []);
   return (
     <main className="relative h-full">
       <div className="home-bg relative">
@@ -93,24 +100,24 @@ function Homepage({ setIsModalOpen }) {
           {/* <Navbar /> */}
 
           {/* Main Content Section */}
-          <div className="baner_space relative z-10 top-[302px] w-full max-w-[1680px] m-auto pb-[100px]">
+          <div className="baner_space relative z-10 top-[174px] w-full max-w-[1680px] m-auto pb-[100px]">
             {/* Badges Section */}
             <div className="new_hild flex gap-4 p-4 ml-[-10px]">
-              <div className="google_new rounded-xl shadow-md p-5 flex items-center gap-2 w-[229px] h-[56px] rounded-[15px] border border-[#fffff] p-2">
+              <div className="google_new rounded-lg shadow-md p-5 flex items-center gap-2 w-[230px] md:w-[200px] h-[50px] rounded-[15px] border border-[#fffff] p-2">
                 <img src={Google} alt="Google Partner" className="w-6 h-6" />
-                <span className="new_tag text-[20px] font-semibold whitespace-nowrap">
+                <span className="new_tag text-[16px] font-semibold whitespace-nowrap">
                   <span className="text-white">Google</span>{" "}
                   <span className="text-white">Partner</span>
                 </span>
               </div>
 
-              <div className="google_new rounded-xl shadow-md p-5 flex items-center gap-2 w-[229px] h-[56px] md:w-[250px] rounded-[15px] border border-[#ffffff] p-2">
+              <div className="google_new rounded-lg shadow-md p-5 flex items-center gap-2 w-[235px] h-[50px] md:w-[205px] rounded-[15px] border border-[#ffffff] p-2">
                 <img
                   src={Googleanaylicts}
                   alt="Google Analytics"
                   className="w-6 h-6"
                 />
-                <span className="new_tag text-[20px] font-semibold whitespace-nowrap">
+                <span className="new_tag text-[16px] font-semibold whitespace-nowrap">
                   <span className="text-white">Google</span>{" "}
                   <span className="text-white">Analytics</span>
                 </span>
@@ -128,7 +135,7 @@ function Homepage({ setIsModalOpen }) {
                 className="absolute -top-10 -left-10 w-[353px] h-[3053px] opacity-20 z-0 pointer-events-none"
               />
               <h2
-                className="text-[96px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] to-[#157B6C] font-Montserrat"
+                className="text-[90px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] to-[#157B6C] font-Montserrat home_text"
                 style={{
                   display: "inline-table",
                   background: "linear-gradient(to right, #E0E0E0, #157B6C)",
@@ -142,16 +149,6 @@ function Homepage({ setIsModalOpen }) {
                 }}
               >
                 <span ref={textRef}></span>
-                <span
-                  ref={cursorRef}
-                  style={{
-                    display: "inline",
-                    marginLeft: "2px",
-                    animation: "blink 1s step-start infinite",
-                  }}
-                >
-                  |
-                </span>
               </h2>
               <hr className="hidden md:block solid"></hr>
             </div>
@@ -160,7 +157,7 @@ function Homepage({ setIsModalOpen }) {
               <img
                 src={Homeimg}
                 alt="Design Element"
-                className="w-full mt-[-20px] object-contain opacity-100"
+                className="w-full mt-[-33px] object-contain opacity-100"
               />
 
               <div
@@ -168,20 +165,20 @@ function Homepage({ setIsModalOpen }) {
                 style={{ backgroundImage: `url(${Ellipse})` }}
               >
                 <img
-                  src={lamp}
+                  src={lamping}
                   alt="Lamp"
                   className="absolute left-[300px] w-[36.31px] h-[230.56px] opacity-100"
                   style={{
-                    top: window.innerWidth === 1440 ? "-411px" : "-390px",
+                    top: window.innerWidth === 1440 ? "-310px" : "-307px",
                   }}
                 />
 
                 <img
-                  src={light}
+                  src={light1}
                   alt="Lamp Logo"
                   className="absolute left-[470px] w-[49.99px] h-[317.44px] opacity-100"
                   style={{
-                    top: window.innerWidth === 1440 ? "-412px" : "-390px",
+                    top: window.innerWidth === 1440 ? "-316px" : "-315px",
                   }}
                 />
               </div>
@@ -192,7 +189,7 @@ function Homepage({ setIsModalOpen }) {
               onClick={() => setIsModalOpen(true)}
               className="consultants_btn relative z-20 border border-white text-white px-[24px] py-[20px] rounded-[12px] 
                   font-Archivo text-[15px] md:text-[20px] font-semibold flex items-center justify-center gap-2 
-                  w-[250px] md:w-[280px] h-[50px] md:h-[70px] mt-[115px]  hover:bg-white hover:text-black 
+                  w-[250px] md:w-[280px] h-[50px] md:h-[70px] mt-[45px]  hover:bg-white hover:text-black 
                   transition-colors duration-300 whitespace-nowrap"
             >
               Consult Our Experts
