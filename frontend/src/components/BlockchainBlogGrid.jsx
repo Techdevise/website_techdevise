@@ -58,11 +58,11 @@ const BlockchainBlogGrid = () => {
 const BlogCard = ({ post, large }) => {
     if (large) {
       return (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden w-[854px] h-[735px]">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden w-[854px] h-[735px] lg:mt-0 md:mt-0 sm:mt-8 mt-8">
           <img
             src={post.image}
             alt={post.title}
-            className="w-full h-[400px] object-cover"
+            className="w-full h-[440px] p-[25px] object-cover"
           />
           <div className="p-6">
             <p className="text-[#157B6C] font-semibold text-sm mb-1">Blog</p>

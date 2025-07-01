@@ -105,7 +105,7 @@ our E-commerce services will surely help you to take your business to the next l
       </div>
 
       {/* Navigation Buttons */}
-      <div className=" bottom-10 ml-[120px] pt-10 flex space-x-4">
+      <div className=" bottom-10 justify-center md:justify-start pt-10 flex space-x-4">
         <button
           onClick={handlePrev}
           className="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full"

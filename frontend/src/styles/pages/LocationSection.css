@@ -129,25 +129,47 @@
   }
 
 } */
+/* .mapp_pad {
+    padding: 100px !important;
+   
+} */
+
+.worldMap_map{
+  top: -53px !important;
+    width: 634px !important;
+    height: 319px !important;
+    object-fit: cover;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.location {
+    z-index: 9;
+}
+
 @media screen and (min-width: 1280px) and (max-width: 1600px) {
   .location{
     width: 325px !important;
-    padding: 0;
+    /* padding: 10px; */
   }
   .locImage{
     width: 123px !important;
     height: 125px !important;
   }
-  .locCountry{
-    /* width: 38px !important; */
-    font-size:16px !important ;
-      /* height: 25px !important; */
-  }
+
   .Paddress{
-    font-size: 14px !important;
+    font-size: 12px !important;
+    min-height: 60px !important;
   }
   .arrologo{
     left: 71% !important;
+  }
+  .Indian_flag{
+    width: 38px !important;
+    height: 25px !important;
+  }
+  .locCountry{
+    font-size: 14px !important;      
   }
   
 }
@@ -163,9 +185,7 @@
     width: 38px !important;
       /* height: 25px !important; */
   }
-  .Paddress{
-    font-size: 14px !important;
-  }
+  
   .arrologo{
     left: 71% !important;
   }
