@@ -5,16 +5,20 @@
   max-width: 100%;
   height: auto;
 }
+.block_chain .dragging {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
 /* Add these styles to your BlockchainServices.css file */
 
-.carousel-container {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+/* .carousel-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
 }
 
 .carousel-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
-}
+  display: none; 
+} */
 
 /* Smooth transitions for cards */
 .card {

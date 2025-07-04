@@ -6,15 +6,17 @@ import { FaSearch } from "react-icons/fa";
 const BlogCard = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const formatDate = (dateString) => {
   const options = { year: "numeric", month: "long", day: "numeric" };
   return new Date(dateString).toLocaleDateString("en-US", options);
 };
+  const BASE_URL = `${API_BASE_URL}/images`; 
   // Fetch blogs from the API
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:9090/api/blogs");
+        const response = await axios.get(`${API_BASE_URL}/api/blogs`);
         if (response.data.success) {
           setBlogs(response.data.data);
         } else {
@@ -65,7 +67,7 @@ const formatDate = (dateString) => {
         <div className="flex flex-col lg:flex-row bg-white border border-[#529D92] rounded-[20px] overflow-hidden mt-2">
           <div className="w-full lg:w-1/2">
             <img
-            src={`http://localhost:9090/images${blogs[0].image}`}
+            src={`${BASE_URL}${blogs[0].image}`}
               alt="Blog Thumbnail"
               className="w-full h-full object-cover p-[20px]"
             />
@@ -92,7 +94,7 @@ const formatDate = (dateString) => {
           >
             <div className="h-[250px]">
               <img
-                src={`http://localhost:9090/images${blog.image}`}
+                src={`${BASE_URL}${blog.image}`}
                 alt="Blog Thumbnail"
                 className="w-full h-full object-cover rounded-t-[20px] rounded-b-[20px]"
               />
@@ -122,7 +124,7 @@ const formatDate = (dateString) => {
             >
               <div className="h-[220px] sm:h-[260px] md:h-[300px]">
                 <img
-                   src={`http://localhost:9090/images${blog.image}`}
+                   src={`${BASE_URL}${blog.image}`}
                   alt="Blog Thumbnail"
                   className="w-full h-full object-cover rounded-t-[20px] rounded-b-[20px]"
                 />

@@ -9,11 +9,12 @@ import Lamp2 from '../assets/Lamp2.svg';
 const BlockchainConsulting = () => {
   const [slides, setSlides] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
-
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const BASE_URL = `${API_BASE_URL}/images`; 
   useEffect(() => {
     const fetchSlides = async () => {
       try {
-        const res = await fetch('http://localhost:9090/api/blockchain_con'); // Adjust URL as needed
+        const res = await fetch(`${API_BASE_URL}/api/blockchain_con`); // Adjust URL as needed
         const data = await res.json();
         if (data.success) {
           setSlides(data.data);
@@ -49,7 +50,7 @@ const BlockchainConsulting = () => {
       <div className="w-full lg:w-1/2 flex justify-center">
         <div className="w-full h-full">
           <img
-            src={`http://localhost:9090/images${current.image}`}
+            src={`${BASE_URL}/${current.image}`}
             alt="Slide"
             className="w-full max-w-[662px] h-auto lg:h-[620px] object-cover rounded-[20px] lg:rounded-[30px]"
           />

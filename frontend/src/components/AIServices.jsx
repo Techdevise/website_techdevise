@@ -5,11 +5,11 @@ import axios from "axios";
 const AIServices = () => {
   const [services, setServices] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
-
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     const fetchAIServices = async () => {
       try {
-        const response = await axios.get("http://localhost:9090/api/ai_service"); 
+        const response = await axios.get(`${API_BASE_URL}/api/ai_service`); 
         if (response.data.success) {
           setServices(response.data.data);
         }
@@ -71,7 +71,7 @@ const AIServices = () => {
           >
             <div className="aspect-w-16 aspect-h-9">
               <img
-                src={`http://localhost:9090/images${selectedService?.image}`}
+                src={`${API_BASE_URL}/images${selectedService?.image}`}
                 alt={selectedService?.title}
                 className="w-full h-48 sm:h-56 md:h-64 lg:h-[22rem] object-cover"
               />

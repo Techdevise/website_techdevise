@@ -2,40 +2,37 @@ import React, { useRef, useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Aiservicesimg5 from "../assets/Aiservicesimg5.svg";
 import axios from "axios";
+import "../styles/components/ArtificialIntelligence.css";
 
-import '../styles/components/ArtificialIntelligence.css'
 const AiSolutionsSection = () => {
   const sliderRef = useRef(null);
   const [cards, setCards] = useState([]);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-const handleScroll = (direction) => {
-  const scrollAmount = 550;
-  if (sliderRef.current) {
-    const currentScroll = sliderRef.current.scrollLeft;
-    const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
-    
-    
-    let targetScroll;
-    if (direction === "left") {
-      targetScroll = Math.max(0, currentScroll - scrollAmount);
-    } else {
-      targetScroll = Math.min(maxScroll, currentScroll + scrollAmount);
+  const handleScroll = (direction) => {
+    const scrollAmount = 550;
+    if (sliderRef.current) {
+      const currentScroll = sliderRef.current.scrollLeft;
+      const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+
+      const targetScroll =
+        direction === "left"
+          ? Math.max(0, currentScroll - scrollAmount)
+          : Math.min(maxScroll, currentScroll + scrollAmount);
+
+      sliderRef.current.scrollTo({
+        left: targetScroll,
+        behavior: "smooth",
+      });
     }
-    
-    
-    sliderRef.current.scrollTo({
-      left: targetScroll,
-      behavior: "smooth",
-    });
-  }
-};
+  };
 
-  // Fetch data from the API
   useEffect(() => {
     const fetchAiSolutions = async () => {
       try {
-        const res = await axios.get("http://localhost:9090/api/ai");
+        const res = await axios.get(`${API_BASE_URL}/api/ai`);
         if (res.data.success) {
+          console.log("Fetched AI Solutions:", res.data.data);
           setCards(res.data.data);
         } else {
           console.error("Failed to fetch AI solutions");
@@ -87,12 +84,19 @@ const handleScroll = (direction) => {
             {cards.map((card, idx) => (
               <div
                 key={idx}
-                className=" new_slid1 md:min-w-[400px] md:max-w-[400px] min-w-[343px] max-w-[343px] h-[300px] bg-cover bg-center rounded-lg relative overflow-hidden flex items-end p-4 text-white shadow-lg"
-                style={{ backgroundImage: `url(http://localhost:9090/images${card.image})` }}
-                title={card.title?.replace(/<br\/?>/g, ' ')}
+                className="new_slid1 md:min-w-[400px] md:max-w-[400px] min-w-[343px] max-w-[343px] h-[300px] bg-cover bg-center rounded-lg relative overflow-hidden flex items-end p-4 text-white shadow-lg"
+                style={{
+                  backgroundImage: card.image
+                    ? `url(${API_BASE_URL}/images/${card.image})`
+                    : "linear-gradient(to right, #999, #bbb)",
+                }}
+                title={card.title?.replace(/<br\/?>/g, " ")}
               >
                 <div className="z-10">
-                  <h2 className="text-[30px] font-bold" dangerouslySetInnerHTML={{ __html: card.title }} />
+                  <h2
+                    className="text-[28px] font-bold"
+                    dangerouslySetInnerHTML={{ __html: card.title }}
+                  />
                   <p className="text-sm mt-1">{card.message}</p>
                 </div>
                 <div className="absolute inset-0 bg-black bg-opacity-30 z-0" />
@@ -101,7 +105,10 @@ const handleScroll = (direction) => {
           </div>
 
           {/* Arrows */}
-          <div className="arrow_slid flex gap-3 z-10 justify-end mt-10" title="Carousel Navigation">
+          <div
+            className="arrow_slid flex gap-3 z-10 justify-end mt-10"
+            title="Carousel Navigation"
+          >
             <button
               onClick={() => handleScroll("left")}
               className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shadow-md"

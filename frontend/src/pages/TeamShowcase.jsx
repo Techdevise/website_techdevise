@@ -91,7 +91,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
                   onClick={() => openImagePopup(image)}
                 >
                   <img
-                    src={`${API_BASE_URL}/images/${image.image || image.image}`} 
+                    src={`${API_BASE_URL}/images${image.image || image.image}`} 
                     alt={image.alt || 'Team Image'}
                     className="w-full h-[250px] md:h-[300px] lg:h-[350px] object-cover"
                   />

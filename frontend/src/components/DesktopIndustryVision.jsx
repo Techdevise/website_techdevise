@@ -71,7 +71,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
               >
               <img src={`${API_BASE_URL}/images${item.image}`} alt={item.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent z-10">
-                  <p className="absolute bottom-4 left-4 text-white-700 font-bold text-[20px] font-montserrat z-20">{item.title}</p>
+                  <p className="absolute bottom-4 left-4 text-white-700 font-bold text-[14px] font-semibold z-20">{item.title}</p>
                 </div>
               </div>
             ))}

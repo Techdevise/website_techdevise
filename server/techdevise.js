@@ -42,8 +42,6 @@ app.use((req, res, next) => {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Serve Static Files for Admin (CSS, JS, Images)
-app.use('/assets', express.static(path.join(__dirname, 'public/assets')));
 app.use('/admin', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
@@ -62,7 +60,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 8080
 app.listen(port, () => {
     console.log(`Serving... running on port ${port}`)
 })  
